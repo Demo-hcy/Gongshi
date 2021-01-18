@@ -1,0 +1,14 @@
+2020-12-10 15:44:46.551 | INFO     | library.mqtt_lib.mqtt_client:on_connect:73 - 连接结果：连接成功
+2020-12-10 15:44:46.649 | INFO     | library.mqtt_lib.simulator:listen:178 - 开始监听：holter
+2020-12-10 15:44:46.650 | INFO     | library.mqtt_lib.mqtt_client:subscribe:182 - 订阅的topic：/device/DH-001/DH0000000002/property/report
+2020-12-10 15:44:54.091 | INFO     | library.mqtt_lib.mqtt_client:on_message:43 - 获取消息：{"msgId":"1607586293024","timestamp":1607586293024,"params":{"holter":{"humidity":{"humidity":29,"hiThreshold":"40","alarming":false,"lowThreshold":"15","online":true},"water":{"status":false,"online":true},"di1":false,"enabled":true,"interval":30,"do1Default":false,"di2":false,"do2":false,"do1":true,"alarmInterval":30,"tilt":{"threshold":"999","angle":0,"direction":0,"online":true,"alarming":false},"do2Default":true,"temperature":{"lowThreshold":"10","alarming":false,"hiThreshold":"40","online":true,"temperature":36}}}}
+2020-12-10 15:44:54.169 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:190 - 取消订阅的topic：/device/DH-001/DH0000000002/property/report
+2020-12-10 15:44:54.170 | INFO     | library.mqtt_lib.simulator:listen:189 - 结束监听：holter
+2020-12-10 15:44:54.170 | INFO     | library.mqtt_lib.simulator:listen:191 - 进行响应
+2020-12-10 15:44:54.171 | INFO     | library.mqtt_lib.mqtt_client:publish:167 - 发布的topic：/device/DH-001/DH0000000002/property/report_reply
+2020-12-10 15:44:54.171 | INFO     | library.mqtt_lib.mqtt_client:publish:168 - 发布的payload：{'msgId': '1607586293024', 'timestamp': 1607586294171, 'code': 0, 'message': 'AutoTesterSuccess', 'data': {}}
+2020-12-10 15:44:54.173 | INFO     | library.mqtt_lib.simulator:listen:178 - 开始监听：waterAlarm
+2020-12-10 15:44:54.174 | INFO     | library.mqtt_lib.mqtt_client:subscribe:182 - 订阅的topic：/device/DH-001/DH0000000002/event/waterAlarm/report
+2020-12-10 15:46:54.232 | ERROR    | library.mqtt_lib.mqtt_client:get_msg:278 - 获取消息异常：消息为空
+2020-12-10 15:46:54.233 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:190 - 取消订阅的topic：/device/DH-001/DH0000000002/event/waterAlarm/report
+2020-12-10 15:46:54.234 | INFO     | library.mqtt_lib.simulator:listen:189 - 结束监听：waterAlarm

@@ -1,0 +1,10 @@
+2021-01-12 15:21:32.592 | INFO     | library.mqtt_lib.mqtt_client:on_connect:114 - 连接结果：连接成功
+2021-01-12 15:21:32.692 | INFO     | library.mqtt_lib.mqtt_client:subscribe:229 - 订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/property/report
+2021-01-12 15:21:32.693 | INFO     | library.mqtt_lib.mqtt_client:subscribe:229 - 订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/service/updateFirmware/invoke_reply
+2021-01-12 15:21:32.694 | INFO     | library.mqtt_lib.mqtt_client:publish:216 - 发布的主题：/device/D1_7G_DHWG/D26670974B34332A/service/updateFirmware/invoke
+2021-01-12 15:21:32.695 | INFO     | library.mqtt_lib.mqtt_client:publish:217 - 发布的payload：{'params': {'url': 'http://192.168.52.21:5002/download?fileId=uImage', 'md5Sum': 'f98fe9054b0e8d732a998365b5d8c3f6'}, 'msgId': '16495897', 'timestamp': 1610436092693}
+2021-01-12 15:21:32.795 | INFO     | library.mqtt_lib.mqtt_client:on_message:83 - 获取消息：{"msgId":"16495897","timestamp":1610436091000,"code":0,"message":"success","data":{}}
+2021-01-12 15:21:32.797 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:237 - 取消订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/service/updateFirmware/invoke_reply
+2021-01-12 15:21:48.610 | INFO     | library.mqtt_lib.mqtt_client:on_message:83 - 获取消息：{"msgId":"1610436107391","timestamp":1610436107391,"params":{"holter":{"enabled":true,"tilt":{"online":true,"angle":1,"threshold":30,"alarming":false},"temperature":{"online":true,"lowThreshold":10,"temperature":24,"alarming":false,"type":"none","hiThreshold":50},"do1Default":false,"water":{"online":true,"status":false},"humidity":{"online":true,"lowThreshold":10,"alarming":false,"type":"none","hiThreshold":50,"humidity":16},"do1":false,"alarmInterval":30,"do2":false,"eth":{"port1":true,"port2":true,"port3":true,"port4":true},"voip":{"online":false,"busy":false,"volume":30},"di2":false,"di1":false,"do2Default":false,"interval":240}}}
+2021-01-12 15:21:48.644 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:237 - 取消订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/property/report
+2021-01-12 15:21:48.645 | INFO     | library.mqtt_lib.base_controller:parse_msg:133 - 响应消息状态：成功 success

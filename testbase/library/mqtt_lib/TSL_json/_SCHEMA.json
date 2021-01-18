@@ -1,0 +1,273 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "definitions": {
+    "allTypes": {
+      "enum": [
+        "array",
+        "boolean",
+        "integer",
+        "null",
+        "number",
+        "object",
+        "string"
+      ]
+    },
+    "simpleWithStructTypes": {
+      "enum": [
+        "array",
+        "boolean",
+        "integer",
+        "null",
+        "number",
+        "struct",
+        "string"
+      ]
+    },
+    "noArrayObjectTypes": {
+      "enum": [
+        "boolean",
+        "integer",
+        "null",
+        "number",
+        "string"
+      ]
+    },
+    "noObjectTypes": {
+      "enum": [
+        "array",
+        "boolean",
+        "integer",
+        "null",
+        "number",
+        "string"
+      ]
+    },
+    "format": {
+      "enum": [
+        "date",
+        "date-time",
+        "time",
+        "email",
+        "idn-email",
+        "hostname",
+        "idn-hostname",
+        "ipv4",
+        "ipv6",
+        "uri",
+        "uri-reference",
+        "iri",
+        "iri-reference",
+        "uri-template",
+        "json-pointer",
+        "relative-json-pointer",
+        "regex"
+      ]
+    },
+    "idString": {
+      "type": "string",
+      "minLength": 6,
+      "maxLength": 128
+    },
+    "nameString": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "specsDef": {
+      "type": "object",
+      "properties": {
+        "min": {
+          "type": "number"
+        },
+        "max": {
+          "type": "number"
+        },
+        "step": {
+          "type": "number"
+        },
+        "unit": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 10
+        },
+        "unitName": {
+          "$ref": "#/definitions/nameString"
+        },
+        "optional": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "oneOf": [{
+                    "type": "string"
+                  },
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "boolean"
+                  }
+                ]
+              },
+              "desc": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "columnSimple": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/definitions/noObjectTypes"
+        },
+        "columnSimple": {
+          "$ref": "#/definitions/columnSimple"
+        },
+        "columnComplex": {
+          "$ref": "#/definitions/columnComplex"
+        }
+      },
+      "additionalProperties": false
+    },
+    "columnComplex": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/parameterDef"
+      },
+      "additionalItems": false
+    },
+    "parameterDef": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/nameString"
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "name": {
+          "$ref": "#/definitions/nameString"
+        },
+        "type": {
+          "$ref": "#/definitions/simpleWithStructTypes"
+        },
+        "accessMode": {
+          "enum": [
+            "ro",
+            "rw"
+          ]
+        },
+        "format": {
+          "$ref": "#/definitions/format"
+        },
+        "columnSimple": {
+          "$ref": "#/definitions/columnSimple"
+        },
+        "columnComplex": {
+          "$ref": "#/definitions/columnComplex"
+        },
+        "struct": {
+          "$ref": "#/definitions/structDef"
+        },
+        "specs": {
+          "$ref": "#/definitions/specsDef"
+        },
+        "description": {
+          "type": "string"
+        },
+        "default": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "parametersDef": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/parameterDef"
+      }
+    },
+    "structDef": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/parameterDef"
+      }
+    }
+  },
+  "$id": "http://7g.cn/schema",
+  "type": "object",
+  "properties": {
+    "productId": {
+      "$ref": "#/definitions/idString"
+    },
+    "productName": {
+      "$ref": "#/definitions/nameString"
+    },
+    "properties": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/parameterDef"
+      },
+      "additionalItems": false
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/definitions/nameString"
+          },
+          "name": {
+            "$ref": "#/definitions/nameString"
+          },
+          "parameters": {
+            "$ref": "#/definitions/parametersDef"
+          },
+          "description": {
+            "type": "string"
+          },
+          "default": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "services": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/definitions/nameString"
+          },
+          "name": {
+            "$ref": "#/definitions/nameString"
+          },
+          "timeout": {
+            "type": "integer",
+            "description": "超时时间,单位毫秒."
+          },
+          "parameters": {
+            "$ref": "#/definitions/parametersDef"
+          },
+          "output": {
+            "$ref": "#/definitions/parametersDef"
+          },
+          "description": {
+            "type": "string"
+          },
+          "default": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

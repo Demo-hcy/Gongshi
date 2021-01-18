@@ -1,0 +1,16 @@
+2020-12-24 10:31:29.674 | INFO     | library.mqtt_lib.mqtt_client:on_connect:73 - 连接结果：连接成功
+2020-12-24 10:31:29.773 | INFO     | library.mqtt_lib.mqtt_client:subscribe:182 - 订阅的topic：/device/DH-001/DH0000000002/service/setBasic/invoke_reply
+2020-12-24 10:31:29.774 | INFO     | library.mqtt_lib.mqtt_client:publish:167 - 发布的topic：/device/DH-001/DH0000000002/service/setBasic/invoke
+2020-12-24 10:31:29.775 | INFO     | library.mqtt_lib.mqtt_client:publish:168 - 发布的payload：{'params': {'enabled': True, 'interval': 180, 'alarmInterval': 1800, 'do1': False}, 'msgId': '23353730', 'timestamp': 1608777089774}
+2020-12-24 10:31:29.986 | INFO     | library.mqtt_lib.mqtt_client:on_message:43 - 获取消息：{"msgId":"23353730","timestamp":2575057,"code":0,"message":"success","data":{}}
+2020-12-24 10:31:30.076 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:190 - 取消订阅的topic：/device/DH-001/DH0000000002/service/setBasic/invoke_reply
+2020-12-24 10:31:30.076 | INFO     | library.mqtt_lib.simulator:_parse_resp:129 - 响应消息状态：成功 success
+2020-12-24 10:31:30.077 | INFO     | library.mqtt_lib.simulator:_parse_resp:149 - 响应消息数据：{}
+2020-12-24 10:31:30.077 | INFO     | library.mqtt_lib.mqtt_client:subscribe:182 - 订阅的topic：/device/DH-001/DH0000000002/service/setSensor/invoke_reply
+2020-12-24 10:31:30.078 | INFO     | library.mqtt_lib.mqtt_client:publish:167 - 发布的topic：/device/DH-001/DH0000000002/service/setSensor/invoke
+2020-12-24 10:31:30.078 | INFO     | library.mqtt_lib.mqtt_client:publish:168 - 发布的payload：{'params': {'tempHiThreshold': 20, 'tempLowThreshold': 10, 'humiHiThreshold': 50, 'humiLowThreshold': 10}, 'msgId': '67278985', 'timestamp': 1608777090078}
+2020-12-24 10:31:30.301 | INFO     | library.mqtt_lib.mqtt_client:on_message:43 - 获取消息：{"msgId":"67278985","timestamp":2575373,"code":0,"message":"success","data":{}}
+2020-12-24 10:31:30.379 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:190 - 取消订阅的topic：/device/DH-001/DH0000000002/service/setSensor/invoke_reply
+2020-12-24 10:31:30.380 | INFO     | library.mqtt_lib.simulator:_parse_resp:129 - 响应消息状态：成功 success
+2020-12-24 10:31:30.380 | INFO     | library.mqtt_lib.simulator:_parse_resp:149 - 响应消息数据：{}
+2020-12-24 10:31:30.380 | INFO     | library.mqtt_lib.mqtt_client:on_disconnect:89 - 断开结果：断开成功

@@ -1,0 +1,8 @@
+2020-12-29 15:55:40.644 | INFO     | library.mqtt_lib.mqtt_client:on_connect:111 - 连接结果：连接成功
+2020-12-29 15:55:40.741 | INFO     | library.mqtt_lib.mqtt_client:subscribe:232 - 订阅的topic：/device/DH_001/DH0000000001/service/updateFirmware/invoke_reply
+2020-12-29 15:55:40.743 | INFO     | library.mqtt_lib.mqtt_client:publish:219 - 发布的topic：/device/DH_001/DH0000000001/service/updateFirmware/invoke
+2020-12-29 15:55:40.744 | INFO     | library.mqtt_lib.mqtt_client:publish:220 - 发布的payload：{'params': {'url': 'http://192.168.52.21:5002/download?fileId=XingRenYueJieJinRuJiDongCheDao.mp3', 'md5Sum': '3d55e4024635cc686e0ea8a8903d4290'}, 'msgId': '94055581', 'timestamp': 1609228540741}
+2020-12-29 15:55:40.797 | INFO     | library.mqtt_lib.mqtt_client:on_message:81 - 获取消息：{"msgId":"94055581","timestamp":1609228540000,"code":0,"message":"success","data":{}}
+2020-12-29 15:55:40.872 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:240 - 取消订阅的topic：/device/DH_001/DH0000000001/service/updateFirmware/invoke_reply
+2020-12-29 15:55:40.873 | INFO     | library.mqtt_lib.simulator:parse_msg:144 - 响应消息状态：成功 success
+2020-12-29 15:55:40.873 | INFO     | library.mqtt_lib.simulator:parse_msg:152 - 响应消息数据：{}

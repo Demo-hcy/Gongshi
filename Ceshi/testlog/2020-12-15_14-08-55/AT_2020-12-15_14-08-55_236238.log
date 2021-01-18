@@ -1,0 +1,4 @@
+2020-12-15 14:08:55.327 | INFO     | library.mqtt_lib.mqtt_client:on_connect:73 - 连接结果：连接成功
+2020-12-15 14:08:55.426 | INFO     | library.mqtt_lib.mqtt_client:subscribe:182 - 订阅的topic：/device/DH-001/DH0000000002/service/setDO/invoke_reply
+2020-12-15 14:08:55.426 | INFO     | library.mqtt_lib.mqtt_client:publish:167 - 发布的topic：/device/DH-001/DH0000000002/service/setDO/invoke
+2020-12-15 14:08:55.426 | INFO     | library.mqtt_lib.mqtt_client:publish:168 - 发布的payload：{'params': {'port': 'ceshi'}, 'msgId': '79419397', 'timestamp': 1608012535426}

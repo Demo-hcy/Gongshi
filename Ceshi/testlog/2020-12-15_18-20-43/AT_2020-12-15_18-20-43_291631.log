@@ -1,0 +1,14 @@
+2020-12-15 18:20:43.413 | INFO     | library.mqtt_lib.mqtt_client:on_connect:73 - 连接结果：连接成功
+2020-12-15 18:20:43.511 | INFO     | library.mqtt_lib.mqtt_client:subscribe:182 - 订阅的topic：/device/DH-001/DH0000000002/service/setBasic/invoke_reply
+2020-12-15 18:20:43.512 | INFO     | library.mqtt_lib.mqtt_client:publish:167 - 发布的topic：/device/DH-001/DH0000000002/service/setBasic/invoke
+2020-12-15 18:20:43.512 | INFO     | library.mqtt_lib.mqtt_client:publish:168 - 发布的payload：{'params': {'enabled': True, 'interval': 30, 'do1': False}, 'msgId': '2856580', 'timestamp': 1608027643512}
+2020-12-15 18:20:43.723 | INFO     | library.mqtt_lib.mqtt_client:on_message:43 - 获取消息：{"msgId":"2856580","timestamp":1608027642306,"code":0,"message":"success","data":{}}
+2020-12-15 18:20:43.813 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:190 - 取消订阅的topic：/device/DH-001/DH0000000002/service/setBasic/invoke_reply
+2020-12-15 18:20:43.814 | INFO     | library.mqtt_lib.simulator:_parse_resp:129 - 响应消息状态：成功 success
+2020-12-15 18:20:43.815 | INFO     | library.mqtt_lib.simulator:_parse_resp:149 - 响应消息数据：{}
+2020-12-15 18:20:43.816 | INFO     | library.mqtt_lib.mqtt_client:subscribe:182 - 订阅的topic：/device/DH-001/DH0000000002/service/setSensor/invoke_reply
+2020-12-15 18:20:43.819 | INFO     | library.mqtt_lib.mqtt_client:publish:167 - 发布的topic：/device/DH-001/DH0000000002/service/setSensor/invoke
+2020-12-15 18:20:43.819 | INFO     | library.mqtt_lib.mqtt_client:publish:168 - 发布的payload：{'params': {'humiLowThreshold': '10'}, 'msgId': '51029406', 'timestamp': 1608027643816}
+2020-12-15 18:21:13.843 | ERROR    | library.mqtt_lib.mqtt_client:get_msg:278 - 获取消息异常：消息为空
+2020-12-15 18:21:13.847 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:190 - 取消订阅的topic：/device/DH-001/DH0000000002/service/setSensor/invoke_reply
+2020-12-15 18:21:13.847 | INFO     | library.mqtt_lib.mqtt_client:on_disconnect:89 - 断开结果：断开成功

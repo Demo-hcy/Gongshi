@@ -1,0 +1,763 @@
+{
+  "productId": "7G-ZNDY-001",
+  "productName": "智慧灯杆电源",
+  "properties": [{
+      "id": "SN",
+      "name": "设备SN号",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "specs": {}
+    },
+    {
+      "id": "rs485Addr",
+      "name": "rs485地址",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "specs": {}
+    },
+    {
+      "id": "rs485Port",
+      "name": "rs485端口",
+      "accessMode": "rw",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 1,
+        "max": 8,
+        "step": 1
+      }
+    },
+    {
+      "id": "rs485Baund",
+      "name": "波特率",
+      "accessMode": "rw",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 1200,
+        "max": 19200,
+        "step": 1200
+      }
+    },
+    {
+      "id": "rs485DataBit",
+      "name": "数据位",
+      "accessMode": "rw",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "optional": [{
+            "value": 6,
+            "desc": "6数据位"
+          },
+          {
+            "value": 7,
+            "desc": "7数据位"
+          },
+          {
+            "value": 8,
+            "desc": "8数据位"
+          }
+        ]
+      }
+    },
+    {
+      "id": "rs485Parity",
+      "name": "校验位",
+      "accessMode": "rw",
+      "required": true,
+      "type": "string",
+      "specs": {
+        "optional": [{
+            "value": "N",
+            "desc": "无校验"
+          },
+          {
+            "value": "E",
+            "desc": "偶校验"
+          },
+          {
+            "value": "O",
+            "desc": "奇校验"
+          }
+        ]
+      }
+    },
+    {
+      "id": "rs485StopBit",
+      "name": "停止位",
+      "accessMode": "rw",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "optional": [{
+            "value": 1,
+            "desc": "1停止位"
+          },
+          {
+            "value": 2,
+            "desc": "2停止位"
+          }
+        ]
+      }
+    },
+    {
+      "id": "mode",
+      "name": "控制模式",
+      "accessMode": "rw",
+      "required": true,
+      "type": "string",
+      "specs": {
+        "optional": [{
+            "value": "manual",
+            "desc": "手动"
+          },
+          {
+            "value": "auto",
+            "desc": "自动"
+          }
+        ]
+      }
+    },
+    {
+      "id": "channelNumber",
+      "name": "通道号",
+      "accessMode": "rw",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "optional": [{
+            "value": 0,
+            "desc": "通道号"
+          },
+          {
+            "value": 1,
+            "desc": "通道号"
+          },
+          {
+            "value": 2,
+            "desc": "通道号"
+          },
+          {
+            "value": 3,
+            "desc": "通道号"
+          },
+          {
+            "value": 5,
+            "desc": "通道号"
+          },
+          {
+            "value": 6,
+            "desc": "通道号"
+          }
+        ]
+      }
+    },
+    {
+      "id": "model",
+      "name": "设备型号",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "specs": {}
+    },
+    {
+      "id": "systemError",
+      "name": "系统异常",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "specs": {
+        "optional": [{
+            "value": "DS18B20_2_ERROR",
+            "desc": "DS18B20_2_ERROR"
+          },
+          {
+            "value": "DS18B20_1_ERROR",
+            "desc": "DS18B20_1_ERROR"
+          },
+          {
+            "value": "FLASH_ERROR",
+            "desc": "FLASH_ERROR"
+          },
+          {
+            "value": "RAM_ERROR",
+            "desc": "RAM_ERROR"
+          },
+          {
+            "value": "CLOCK_ERROR",
+            "desc": "CLOCK_ERROR"
+          },
+          {
+            "value": "EEPROM_ERROR",
+            "desc": "EEPROM_ERROR"
+          }
+        ]
+      }
+    },
+    {
+      "id": "channelError",
+      "name": "通道异常",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "specs": {
+        "optional": [{
+            "value": "lostVoltage",
+            "desc": "lostVoltage"
+          },
+          {
+            "value": "underVoltage",
+            "desc": "underVoltage"
+          },
+          {
+            "value": "overVoltage",
+            "desc": "overVoltage"
+          },
+          {
+            "value": "lostCurrent",
+            "desc": "lostCurrent"
+          },
+          {
+            "value": "overCurrent",
+            "desc": "overCurrent"
+          },
+          {
+            "value": "overLoad",
+            "desc": "overLoad"
+          },
+          {
+            "value": "reverse",
+            "desc": "reverse"
+          },
+          {
+            "value": "lostPhase",
+            "desc": "lostPhase"
+          },
+          {
+            "value": "cutCurrent",
+            "desc": "cutCurrent"
+          },
+          {
+            "value": "activeExcess",
+            "desc": "activeExcess"
+          },
+          {
+            "value": "reactiveExcess",
+            "desc": "reactiveExcess"
+          },
+          {
+            "value": "powerExceed",
+            "desc": "powerExceed"
+          },
+          {
+            "value": "cutCurrent",
+            "desc": "cutCurrent"
+          },
+          {
+            "value": "shortCircuit",
+            "desc": "shortCircuit"
+          },
+          {
+            "value": "inShortCircuit",
+            "desc": "inShortCircuit"
+          },
+          {
+            "value": "leakage",
+            "desc": "leakage"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hardwareVersion",
+      "name": "设备硬件版本",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "specs": {}
+    },
+    {
+      "id": "softwareVersion",
+      "name": "设备软件版本",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "specs": {}
+    },
+    {
+      "id": "voltage",
+      "name": "电压值",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 180000,
+        "max": 260000,
+        "unit": "mV",
+        "unitName": "毫伏",
+        "step": 100
+      }
+    },
+    {
+      "id": "leakageCurrent",
+      "name": "漏电电流值",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 0,
+        "max": 5,
+        "unit": "mA",
+        "unitName": "毫安",
+        "step": 0.1
+      }
+    },
+    {
+      "id": "frequency",
+      "name": "频率",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 25,
+        "max": 100,
+        "unit": "Hz",
+        "unitName": "赫兹",
+        "step": 1
+      }
+    },
+    {
+      "id": "apparentPower",
+      "name": "视在功率",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 0,
+        "max": 10000000,
+        "unit": "W",
+        "unitName": "瓦",
+        "step": 1
+      }
+    },
+    {
+      "id": "activePower",
+      "name": "有功功率",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 0,
+        "max": 1000000,
+        "unit": "W",
+        "unitName": "瓦",
+        "step": 1
+      }
+    },
+    {
+      "id": "reactivePower",
+      "name": "无功功率",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 0,
+        "max": 100000,
+        "unit": "Var",
+        "unitName": "无功功率单位",
+        "step": 1
+      }
+    },
+    {
+      "id": "powerFactor",
+      "name": "功率因数",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 500,
+        "max": 900,
+        "unit": "permill",
+        "unitName": "通道功率因数单位",
+        "step": 1
+      }
+    },
+    {
+      "id": "activeTotalEnergy",
+      "name": "有功总电能",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 0,
+        "max": 100000,
+        "unit": "Wh",
+        "unitName": "瓦时",
+        "step": 1
+      }
+    },
+    {
+      "id": "reactiveTotalEnergy",
+      "name": "无功总电能",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 0,
+        "max": 1000000,
+        "unit": "Wh",
+        "unitName": "瓦时",
+        "step": 1
+      }
+    },
+    {
+      "id": "channelVoltage",
+      "name": "通道电压值",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 180000,
+        "max": 260000,
+        "unit": "mV",
+        "unitName": "伏",
+        "step": 1
+      }
+    },
+    {
+      "id": "channelLeakageCurrent",
+      "name": "通道漏电电流值",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 0,
+        "max": 5,
+        "unit": "mA",
+        "unitName": "毫安",
+        "step": 0.1
+      }
+    },
+    {
+      "id": "channelApparentPower",
+      "name": "通道视在功率",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 0,
+        "max": 1000000,
+        "unit": "W",
+        "unitName": "瓦特",
+        "step": 1
+      }
+    },
+    {
+      "id": "channelActivePower",
+      "name": "通道有功功率",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 0,
+        "max": 100000,
+        "unit": "W",
+        "unitName": "瓦特",
+        "step": 1
+      }
+    },
+    {
+      "id": "channelReactivePower",
+      "name": "通道无功功率",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 0,
+        "max": 100000,
+        "unit": "Var",
+        "unitName": "无功功率单位",
+        "step": 1
+      }
+    },
+    {
+      "id": "channelPowerFactor",
+      "name": "通道功率因数",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 500,
+        "max": 900,
+        "unit": "permill",
+        "step": 1
+      }
+    },
+    {
+      "id": "channelActiveTotalEnergy",
+      "name": "通道有功总电能",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 0,
+        "max": 100000,
+        "unit": "Wh",
+        "unitName": "瓦时",
+        "step": 1
+      }
+    },
+    {
+      "id": "channelReactiveTotalEnergy",
+      "name": "通道无功总电能",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 0,
+        "max": 10000,
+        "unit": "Wh",
+        "unitName": "瓦时",
+        "step": 1
+      }
+    },
+    {
+      "id": "channelCurrent",
+      "name": "通道电流值",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 0,
+        "max": 100000,
+        "unit": "mA",
+        "unitName": "毫安",
+        "step": 1
+      }
+    },
+    {
+      "id": "channelArcError",
+      "name": "通道线路电弧故障状态",
+      "accessMode": "ro",
+      "required": true,
+      "type": "boolean",
+      "specs": {}
+    },
+    {
+      "id": "channelHolding",
+      "name": "通道保持",
+      "accessMode": "ro",
+      "required": true,
+      "type": "boolean",
+      "specs": {}
+    },
+    {
+      "id": "channelOnOff",
+      "name": "开关状态",
+      "accessMode": "ro",
+      "required": true,
+      "type": "boolean",
+      "specs": {}
+    },
+    {
+      "id": "channelChannelError",
+      "name": "channel通道异常",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "specs": {
+        "optional": [{
+            "value": "lostVoltage",
+            "desc": "lostVoltage"
+          },
+          {
+            "value": "underVoltage",
+            "desc": "underVoltage"
+          },
+          {
+            "value": "overVoltage",
+            "desc": "overVoltage"
+          },
+          {
+            "value": "lostCurrent",
+            "desc": "lostCurrent"
+          },
+          {
+            "value": "overCurrent",
+            "desc": "overCurrent"
+          },
+          {
+            "value": "overLoad",
+            "desc": "overLoad"
+          },
+          {
+            "value": "reverse",
+            "desc": "reverse"
+          },
+          {
+            "value": "lostPhase",
+            "desc": "lostPhase"
+          },
+          {
+            "value": "cutCurrent",
+            "desc": "cutCurrent"
+          },
+          {
+            "value": "activeExcess",
+            "desc": "activeExcess"
+          },
+          {
+            "value": "reactiveExcess",
+            "desc": "reactiveExcess"
+          },
+          {
+            "value": "powerExceed",
+            "desc": "powerExceed"
+          },
+          {
+            "value": "cutCurrent",
+            "desc": "cutCurrent"
+          },
+          {
+            "value": "shortCircuit",
+            "desc": "shortCircuit"
+          },
+          {
+            "value": "inShortCircuit",
+            "desc": "inShortCircuit"
+          },
+          {
+            "value": "leakage",
+            "desc": "leakage"
+          }
+        ]
+      }
+    }
+  ],
+  "events": [],
+  "services": [{
+      "id": "setOnOff",
+      "name": "开关智能电源",
+      "parameters": [{
+        "id": "onOff",
+        "name": "开关",
+        "required": true,
+        "type": "string",
+        "specs": {
+          "optional": [{
+              "value": 0,
+              "desc": "关"
+            },
+            {
+              "value": 1,
+              "desc": "开"
+            }
+          ]
+        }
+      }],
+      "output": []
+    },
+    {
+      "id": "setChannelOnOff",
+      "name": "开关智能电源",
+      "parameters": [{
+          "id": "onOff",
+          "name": "开关",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "optional": [{
+                "value": 0,
+                "desc": "关"
+              },
+              {
+                "value": 1,
+                "desc": "开"
+              }
+            ]
+          }
+        },
+        {
+          "id": "channel",
+          "name": "通道号",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "optional": [{
+                "value": 0,
+                "desc": "通道号"
+              },
+              {
+                "value": 1,
+                "desc": "通道号"
+              },
+              {
+                "value": 2,
+                "desc": "通道号"
+              },
+              {
+                "value": 3,
+                "desc": "通道号"
+              },
+              {
+                "value": 5,
+                "desc": "通道号"
+              },
+              {
+                "value": 6,
+                "desc": "通道号"
+              }
+            ]
+          }
+        }
+      ],
+      "output": []
+    },
+    {
+      "id": " switchMode",
+      "name": "切换控制模式",
+      "parameters": [{
+        "id": "mode",
+        "name": "控制模式",
+        "required": true,
+        "type": "string",
+        "specs": {
+          "optional": [{
+              "value": "manual",
+              "desc": "手动"
+            },
+            {
+              "value": "auto",
+              "desc": "自动"
+            }
+          ]
+        }
+      }]
+    },
+    {
+      "id": "setHolding",
+      "name": "设置通道是否保持",
+      "parameters": [{
+        "id": "status",
+        "name": "是否保持",
+        "required": true,
+        "type": "integer",
+        "specs": {
+          "optional": [{
+              "value": 0,
+              "desc": "否"
+            },
+            {
+              "value": 1,
+              "desc": "是"
+            }
+          ]
+        }
+      }],
+      "output": []
+    }
+  ]
+}

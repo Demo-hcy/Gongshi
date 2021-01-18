@@ -1,0 +1,466 @@
+{
+  "productId": "7G_PDU",
+  "productName": "7G光电盒",
+  "properties": [{
+      "id": "rs485Addr",
+      "name": "rs485地址",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "id": "rs485Port",
+      "name": "rs485端口",
+      "accessMode": "rw",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 1,
+        "max": 8,
+        "step": 1
+      }
+    },
+    {
+      "id": "rs485Baund",
+      "name": "波特率",
+      "accessMode": "rw",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 1200,
+        "max": 19200,
+        "step": 1200
+      }
+    },
+    {
+      "id": "rs485DataBit",
+      "name": "数据位",
+      "accessMode": "rw",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "optional": [{
+            "value": 6,
+            "desc": "6数据位"
+          },
+          {
+            "value": 7,
+            "desc": "7数据位"
+          },
+          {
+            "value": 8,
+            "desc": "8数据位"
+          }
+        ]
+      }
+    },
+    {
+      "id": "rs485Parity",
+      "name": "校验位",
+      "accessMode": "rw",
+      "required": true,
+      "type": "string",
+      "specs": {
+        "optional": [{
+            "value": "N",
+            "desc": "无校验"
+          },
+          {
+            "value": "E",
+            "desc": "偶校验"
+          },
+          {
+            "value": "O",
+            "desc": "奇校验"
+          }
+        ]
+      }
+    },
+    {
+      "id": "rs485StopBit",
+      "name": "停止位",
+      "accessMode": "rw",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "optional": [{
+            "value": 1,
+            "desc": "1停止位"
+          },
+          {
+            "value": 2,
+            "desc": "2停止位"
+          }
+        ]
+      }
+    },
+    {
+      "id": "mode",
+      "name": "控制模式",
+      "accessMode": "rw",
+      "required": true,
+      "type": "string",
+      "specs": {
+        "optional": [{
+            "value": "manual",
+            "desc": "手动"
+          },
+          {
+            "value": "auto",
+            "desc": "自动"
+          }
+        ]
+      }
+    },
+    {
+      "id": "voltage",
+      "name": "电压",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 0,
+        "max": 220,
+        "unit": "V",
+        "unitName": "伏",
+        "step": 1
+      }
+    },
+    {
+      "id": "current",
+      "name": "电流",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 0,
+        "max": 99,
+        "unit": "A",
+        "unitName": "安培",
+        "step": 1
+      }
+    },
+    {
+      "id": "totalPower",
+      "name": "总电能功率",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 0,
+        "max": 100000,
+        "unit": "W",
+        "unitName": "瓦特",
+        "step": 1
+      }
+    },
+    {
+      "id": "deviceNumber",
+      "name": "设备编号",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 0,
+        "max": 1000,
+        "step": 1
+      }
+    },
+    {
+      "id": "frequency",
+      "name": "频率",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 0,
+        "max": 100,
+        "unit": "Hz",
+        "unitName": "赫兹",
+        "step": 1
+      }
+    },
+    {
+      "id": "model",
+      "name": "设备型号",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "id": "sn",
+      "name": "sn序列号",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "id": "online",
+      "name": "离线在线",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "optional": [{
+            "value": 0,
+            "desc": "离线"
+          },
+          {
+            "value": 1,
+            "desc": "在线"
+          }
+        ]
+      }
+    },
+    {
+      "id": "channelAttritbutes ",
+      "name": "通道号",
+      "required": true,
+      "type": "struct",
+      "struct": [{
+          "id": "channel",
+          "name": "通道号",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "optional": [{
+                "value": 0,
+                "desc": "通道号"
+              },
+              {
+                "value": 1,
+                "desc": "通道号"
+              },
+              {
+                "value": 2,
+                "desc": "通道号"
+              },
+              {
+                "value": 3,
+                "desc": "通道号"
+              },
+              {
+                "value": 4,
+                "desc": "通道号"
+              }
+            ]
+          }
+        },
+        {
+          "id": "onOff",
+          "name": "开关状态",
+          "accessMode": "rw",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "optional": [{
+                "value": 1,
+                "desc": "开"
+              },
+              {
+                "value": 0,
+                "desc": "关"
+              }
+            ]
+          }
+        },
+        {
+          "id": "current",
+          "name": "电流",
+          "accessMode": "ro",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "min": 0,
+            "max": 99,
+            "unit": "A",
+            "unitName": "安培",
+            "step": 1
+          }
+        },
+        {
+          "id": "voltage",
+          "name": "电压",
+          "accessMode": "ro",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "min": 0,
+            "max": 220,
+            "unit": "V",
+            "unitName": "伏",
+            "step": 1
+          }
+        },
+        {
+          "id": "powerFactor",
+          "name": "功率因素",
+          "accessMode": "ro",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "min": 0,
+            "max": 1000,
+            "unit": "permill",
+            "unitName": "通道功率因数单位",
+            "step": 1
+          }
+        },
+        {
+          "id": "activePower",
+          "name": "有功功率",
+          "accessMode": "ro",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "min": 0,
+            "max": 100000,
+            "unit": "W",
+            "unitName": "瓦特",
+            "step": 1
+          }
+        },
+        {
+          "id": "reactivePower",
+          "name": "无功功率",
+          "accessMode": "ro",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "min": 0,
+            "max": 100000,
+            "unit": "var",
+            "unitName": "无功功率单位",
+            "step": 1
+          }
+        },
+        {
+          "id": "activeTotalEnergy",
+          "name": "有功总电能",
+          "accessMode": "ro",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "min": 0,
+            "max": 100000,
+            "unit": "Wh",
+            "unitName": "瓦时",
+            "step": 1
+          }
+        },
+        {
+          "id": "activeForwardEnergy",
+          "name": "有功正向电能",
+          "accessMode": "ro",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "min": 0,
+            "max": 100000,
+            "unit": "Wh",
+            "unitName": "瓦时",
+            "step": 1
+          }
+        },
+        {
+          "id": "activeBackwardEnergy",
+          "name": "有功反向电能",
+          "accessMode": "ro",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "min": 0,
+            "max": 100000,
+            "unit": "Wh",
+            "unitName": "瓦时",
+            "step": 1
+          }
+        }
+      ]
+    }
+  ],
+  "events": [],
+  "services": [{
+      "id": "setOnOff",
+      "name": "设置开关",
+      "parameters": [{
+        "id": "onOff",
+        "name": "开关",
+        "accessMode": "rw",
+        "required": true,
+        "type": "integer",
+        "specs": {
+          "optional": [{
+              "value": 1,
+              "desc": "开"
+            },
+            {
+              "value": 0,
+              "desc": "关"
+            }
+          ]
+        }
+      }],
+      "output": []
+    },
+    {
+      "id": "switchMode",
+      "name": "切换控制模式",
+      "parameters": [{
+        "id": "mode",
+        "name": "控制模式",
+        "required": true,
+        "type": "string",
+        "specs": {
+          "optional": [{
+              "value": "manual",
+              "desc": "手动"
+            },
+            {
+              "value": "auto",
+              "desc": "自动"
+            }
+          ]
+        }
+      }]
+    },
+    {
+      "id": "reboot",
+      "name": "重启",
+      "parameters": [],
+      "output": []
+    },
+    {
+      "id": "electricEnergyClear",
+      "name": "总电能清零",
+      "parameters": [],
+      "output": []
+    },
+    {
+      "id": "channelEnergyClear",
+      "name": "通道电能清零",
+      "accessMode": "rw",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "optional": [{
+            "value": 1,
+            "desc": "通道"
+          },
+          {
+            "value": 2,
+            "desc": "通道"
+          },
+          {
+            "value": 3,
+            "desc": "通道"
+          },
+          {
+            "value": 4,
+            "desc": "通道"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+2021-01-13 10:58:27.283 | INFO     | library.mqtt_lib.mqtt_client:on_connect:114 - 连接结果：连接成功
+2021-01-13 10:58:27.379 | INFO     | library.mqtt_lib.mqtt_client:subscribe:229 - 订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/property/report
+2021-01-13 10:58:27.380 | INFO     | library.mqtt_lib.mqtt_client:subscribe:229 - 订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/service/setDO/invoke_reply
+2021-01-13 10:58:27.381 | INFO     | library.mqtt_lib.mqtt_client:publish:216 - 发布的主题：/device/D1_7G_DHWG/D26670974B34332A/service/setDO/invoke
+2021-01-13 10:58:27.381 | INFO     | library.mqtt_lib.mqtt_client:publish:217 - 发布的payload：{'params': {'port': 1, 'status': False, 'shootTime': 6000}, 'msgId': '16050033', 'timestamp': 1610506707380}
+2021-01-13 10:58:27.473 | INFO     | library.mqtt_lib.mqtt_client:on_message:83 - 获取消息：{"msgId":"16050033","timestamp":1610506705000,"code":0,"message":"success","data":{}}
+2021-01-13 10:58:27.484 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:237 - 取消订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/service/setDO/invoke_reply
+2021-01-13 10:58:57.583 | ERROR    | library.mqtt_lib.mqtt_client:get_msg:337 - 获取消息异常：消息为空
+2021-01-13 10:58:57.584 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:237 - 取消订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/property/report

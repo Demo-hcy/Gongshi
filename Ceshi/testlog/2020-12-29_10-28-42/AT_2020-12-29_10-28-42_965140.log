@@ -1,0 +1,13 @@
+2020-12-29 10:28:43.064 | INFO     | library.mqtt_lib.mqtt_client:on_connect:111 - 连接结果：连接成功
+2020-12-29 10:28:43.164 | INFO     | library.mqtt_lib.simulator:event_report_listen:659 - 开始监听事件：calibrate
+2020-12-29 10:28:43.165 | INFO     | library.mqtt_lib.mqtt_client:subscribe:232 - 订阅的topic：/device/DH_001/DH0000000001/event/calibrate/report
+2020-12-29 10:28:45.472 | INFO     | library.mqtt_lib.mqtt_client:on_message:81 - 获取消息：{"msgId":"1609208913385","timestamp":1609208913385,"params":{"status":"success","resultCode":0}}
+2020-12-29 10:28:45.572 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:240 - 取消订阅的topic：/device/DH_001/DH0000000001/event/calibrate/report
+2020-12-29 10:28:45.573 | INFO     | library.mqtt_lib.simulator:event_report_listen:664 - 结束监听事件：calibrate
+2020-12-29 10:28:45.573 | INFO     | library.mqtt_lib.simulator:event_report_reply:682 - 响应事件上报：calibrate
+2020-12-29 10:28:45.573 | INFO     | library.mqtt_lib.mqtt_client:publish:219 - 发布的topic：/device/DH_001/DH0000000001/event/calibrate/report_reply
+2020-12-29 10:28:45.574 | INFO     | library.mqtt_lib.mqtt_client:publish:220 - 发布的payload：{'msgId': '1609208913385', 'timestamp': 1609208925574, 'code': 0, 'message': 'AutoTester', 'data': {}}
+2020-12-29 10:28:45.574 | INFO     | library.mqtt_lib.simulator:event_report_reply:682 - 响应事件上报：calibrate
+2020-12-29 10:28:45.574 | INFO     | library.mqtt_lib.mqtt_client:publish:219 - 发布的topic：/device/DH_001/DH0000000001/event/calibrate/report_reply
+2020-12-29 10:28:45.576 | INFO     | library.mqtt_lib.mqtt_client:publish:220 - 发布的payload：{'msgId': '1609208913385', 'timestamp': 1609208925575, 'code': True, 'message': 'AutoTester', 'data': {}}
+2020-12-29 10:28:45.578 | INFO     | library.mqtt_lib.mqtt_client:on_disconnect:127 - 断开结果：断开成功

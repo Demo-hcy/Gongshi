@@ -1,0 +1,7 @@
+2020-12-28 17:39:51.268 | INFO     | library.mqtt_lib.mqtt_client:on_connect:111 - 连接结果：连接成功
+2020-12-28 17:39:51.367 | INFO     | library.mqtt_lib.mqtt_client:subscribe:232 - 订阅的topic：/device/DH_001/DH0000000001/service/setDO/invoke_reply
+2020-12-28 17:39:51.367 | INFO     | library.mqtt_lib.mqtt_client:publish:219 - 发布的topic：/device/DH_001/DH0000000001/service/setDO/invoke
+2020-12-28 17:39:51.368 | INFO     | library.mqtt_lib.mqtt_client:publish:220 - 发布的payload：{'params': {'port': 1, 'status': True, 'shootTime': 0}, 'msgId': '60263155', 'timestamp': 1609148391367}
+2020-12-28 17:40:21.446 | ERROR    | library.mqtt_lib.mqtt_client:get_msg:332 - 获取消息异常：消息为空
+2020-12-28 17:40:21.460 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:240 - 取消订阅的topic：/device/DH_001/DH0000000001/service/setDO/invoke_reply
+2020-12-28 17:40:21.461 | ERROR    | library.mqtt_lib.simulator:parse_msg:164 - 消息错误：消息为空

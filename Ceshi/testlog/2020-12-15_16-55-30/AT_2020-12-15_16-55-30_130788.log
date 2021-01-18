@@ -1,0 +1,142 @@
+2020-12-15 16:55:30.228 | INFO     | library.mqtt_lib.mqtt_client:on_connect:73 - 连接结果：连接成功
+2020-12-15 16:55:30.326 | INFO     | library.mqtt_lib.mqtt_client:subscribe:182 - 订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-15 16:55:30.327 | INFO     | library.mqtt_lib.mqtt_client:publish:167 - 发布的topic：/device/DH-001/DH0000000002/property/read
+2020-12-15 16:55:30.327 | INFO     | library.mqtt_lib.mqtt_client:publish:168 - 发布的payload：{'params': {'properties': ['sn']}, 'msgId': '19752168', 'timestamp': 1608022530326}
+2020-12-15 16:55:30.426 | INFO     | library.mqtt_lib.mqtt_client:on_message:43 - 获取消息：{"msgId":"19752168","timestamp":1608022529278,"code":0,"message":"success","data":{"sn":"DH0000000002"}}
+2020-12-15 16:55:30.428 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:190 - 取消订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-15 16:55:30.428 | INFO     | library.mqtt_lib.simulator:_parse_resp:129 - 响应消息状态：成功 success
+2020-12-15 16:55:30.428 | INFO     | library.mqtt_lib.simulator:_parse_resp:149 - 响应消息数据：{'sn': 'DH0000000002'}
+2020-12-15 16:55:30.429 | INFO     | library.mqtt_lib.mqtt_client:subscribe:182 - 订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-15 16:55:30.430 | INFO     | library.mqtt_lib.mqtt_client:publish:167 - 发布的topic：/device/DH-001/DH0000000002/property/read
+2020-12-15 16:55:30.430 | INFO     | library.mqtt_lib.mqtt_client:publish:168 - 发布的payload：{'params': {'properties': ['sn']}, 'msgId': '13370176', 'timestamp': 1608022530430}
+2020-12-15 16:55:30.549 | INFO     | library.mqtt_lib.mqtt_client:on_message:43 - 获取消息：{"msgId":"13370176","timestamp":1608022529401,"code":0,"message":"success","data":{"sn":"DH0000000002"}}
+2020-12-15 16:55:30.631 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:190 - 取消订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-15 16:55:30.632 | INFO     | library.mqtt_lib.simulator:_parse_resp:129 - 响应消息状态：成功 success
+2020-12-15 16:55:30.632 | INFO     | library.mqtt_lib.simulator:_parse_resp:149 - 响应消息数据：{'sn': 'DH0000000002'}
+2020-12-15 16:55:30.632 | INFO     | library.mqtt_lib.mqtt_client:subscribe:182 - 订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-15 16:55:30.633 | INFO     | library.mqtt_lib.mqtt_client:publish:167 - 发布的topic：/device/DH-001/DH0000000002/property/read
+2020-12-15 16:55:30.633 | INFO     | library.mqtt_lib.mqtt_client:publish:168 - 发布的payload：{'params': {'properties': ['model']}, 'msgId': '69065771', 'timestamp': 1608022530633}
+2020-12-15 16:55:30.776 | INFO     | library.mqtt_lib.mqtt_client:on_message:43 - 获取消息：{"msgId":"69065771","timestamp":1608022529625,"code":0,"message":"success","data":{"model":"DH01"}}
+2020-12-15 16:55:30.834 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:190 - 取消订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-15 16:55:30.835 | INFO     | library.mqtt_lib.simulator:_parse_resp:129 - 响应消息状态：成功 success
+2020-12-15 16:55:30.836 | INFO     | library.mqtt_lib.simulator:_parse_resp:149 - 响应消息数据：{'model': 'DH01'}
+2020-12-15 16:55:30.840 | INFO     | library.mqtt_lib.mqtt_client:subscribe:182 - 订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-15 16:55:30.842 | INFO     | library.mqtt_lib.mqtt_client:publish:167 - 发布的topic：/device/DH-001/DH0000000002/property/read
+2020-12-15 16:55:30.842 | INFO     | library.mqtt_lib.mqtt_client:publish:168 - 发布的payload：{'params': {'properties': ['model']}, 'msgId': '40016177', 'timestamp': 1608022530840}
+2020-12-15 16:55:30.896 | INFO     | library.mqtt_lib.mqtt_client:on_message:43 - 获取消息：{"msgId":"40016177","timestamp":1608022529748,"code":0,"message":"success","data":{"model":"DH01"}}
+2020-12-15 16:55:30.943 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:190 - 取消订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-15 16:55:30.945 | INFO     | library.mqtt_lib.simulator:_parse_resp:129 - 响应消息状态：成功 success
+2020-12-15 16:55:30.946 | INFO     | library.mqtt_lib.simulator:_parse_resp:149 - 响应消息数据：{'model': 'DH01'}
+2020-12-15 16:55:30.946 | INFO     | library.mqtt_lib.mqtt_client:subscribe:182 - 订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-15 16:55:30.947 | INFO     | library.mqtt_lib.mqtt_client:publish:167 - 发布的topic：/device/DH-001/DH0000000002/property/read
+2020-12-15 16:55:30.947 | INFO     | library.mqtt_lib.mqtt_client:publish:168 - 发布的payload：{'params': {'properties': ['mode']}, 'msgId': '29592957', 'timestamp': 1608022530946}
+2020-12-15 16:55:31.129 | INFO     | library.mqtt_lib.mqtt_client:on_message:43 - 获取消息：{"msgId":"29592957","timestamp":1608022529975,"code":0,"message":"success","data":{"mode":"DH-001"}}
+2020-12-15 16:55:31.148 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:190 - 取消订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-15 16:55:31.149 | INFO     | library.mqtt_lib.simulator:_parse_resp:129 - 响应消息状态：成功 success
+2020-12-15 16:55:31.150 | INFO     | library.mqtt_lib.simulator:_parse_resp:149 - 响应消息数据：{'mode': 'DH-001'}
+2020-12-15 16:55:31.150 | INFO     | library.mqtt_lib.mqtt_client:subscribe:182 - 订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-15 16:55:31.150 | INFO     | library.mqtt_lib.mqtt_client:publish:167 - 发布的topic：/device/DH-001/DH0000000002/property/read
+2020-12-15 16:55:31.151 | INFO     | library.mqtt_lib.mqtt_client:publish:168 - 发布的payload：{'params': {'properties': ['mode']}, 'msgId': '93321894', 'timestamp': 1608022531150}
+2020-12-15 16:55:31.248 | INFO     | library.mqtt_lib.mqtt_client:on_message:43 - 获取消息：{"msgId":"93321894","timestamp":1608022530100,"code":0,"message":"success","data":{"mode":"DH-001"}}
+2020-12-15 16:55:31.251 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:190 - 取消订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-15 16:55:31.252 | INFO     | library.mqtt_lib.simulator:_parse_resp:129 - 响应消息状态：成功 success
+2020-12-15 16:55:31.252 | INFO     | library.mqtt_lib.simulator:_parse_resp:149 - 响应消息数据：{'mode': 'DH-001'}
+2020-12-15 16:55:31.253 | INFO     | library.mqtt_lib.mqtt_client:subscribe:182 - 订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-15 16:55:31.255 | INFO     | library.mqtt_lib.mqtt_client:publish:167 - 发布的topic：/device/DH-001/DH0000000002/property/read
+2020-12-15 16:55:31.256 | INFO     | library.mqtt_lib.mqtt_client:publish:168 - 发布的payload：{'params': {'properties': ['networkInfo']}, 'msgId': '15474556', 'timestamp': 1608022531253}
+2020-12-15 16:55:31.372 | INFO     | library.mqtt_lib.mqtt_client:on_message:43 - 获取消息：{"msgId":"15474556","timestamp":1608022530223,"code":0,"message":"success","data":{"networkInfo":{"wirelessSupport":"none","mask":"255.255.255.0","gateway":"192.168.54.1","ip":"192.168.54.211","dhcp":true,"mac":"08:00:27:00:01:92","networkAvailable":true,"networkType":"wired"}}}
+2020-12-15 16:55:31.458 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:190 - 取消订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-15 16:55:31.459 | INFO     | library.mqtt_lib.simulator:_parse_resp:129 - 响应消息状态：成功 success
+2020-12-15 16:55:31.460 | INFO     | library.mqtt_lib.simulator:_parse_resp:149 - 响应消息数据：{'networkInfo': {'wirelessSupport': 'none', 'mask': '255.255.255.0', 'gateway': '192.168.54.1', 'ip': '192.168.54.211', 'dhcp': True, 'mac': '08:00:27:00:01:92', 'networkAvailable': True, 'networkType': 'wired'}}
+2020-12-15 16:55:31.460 | INFO     | library.mqtt_lib.mqtt_client:subscribe:182 - 订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-15 16:55:31.461 | INFO     | library.mqtt_lib.mqtt_client:publish:167 - 发布的topic：/device/DH-001/DH0000000002/property/read
+2020-12-15 16:55:31.461 | INFO     | library.mqtt_lib.mqtt_client:publish:168 - 发布的payload：{'params': {'properties': ['networkInfo']}, 'msgId': '89358729', 'timestamp': 1608022531461}
+2020-12-15 16:55:31.598 | INFO     | library.mqtt_lib.mqtt_client:on_message:43 - 获取消息：{"msgId":"89358729","timestamp":1608022530448,"code":0,"message":"success","data":{"networkInfo":{"wirelessSupport":"none","mask":"255.255.255.0","gateway":"192.168.54.1","ip":"192.168.54.211","dhcp":true,"mac":"08:00:27:00:01:92","networkAvailable":true,"networkType":"wired"}}}
+2020-12-15 16:55:31.662 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:190 - 取消订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-15 16:55:31.663 | INFO     | library.mqtt_lib.simulator:_parse_resp:129 - 响应消息状态：成功 success
+2020-12-15 16:55:31.664 | INFO     | library.mqtt_lib.simulator:_parse_resp:149 - 响应消息数据：{'networkInfo': {'wirelessSupport': 'none', 'mask': '255.255.255.0', 'gateway': '192.168.54.1', 'ip': '192.168.54.211', 'dhcp': True, 'mac': '08:00:27:00:01:92', 'networkAvailable': True, 'networkType': 'wired'}}
+2020-12-15 16:55:31.664 | INFO     | library.mqtt_lib.mqtt_client:subscribe:182 - 订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-15 16:55:31.664 | INFO     | library.mqtt_lib.mqtt_client:publish:167 - 发布的topic：/device/DH-001/DH0000000002/property/read
+2020-12-15 16:55:31.665 | INFO     | library.mqtt_lib.mqtt_client:publish:168 - 发布的payload：{'params': {'properties': ['serverA']}, 'msgId': '73458086', 'timestamp': 1608022531664}
+2020-12-15 16:55:31.823 | INFO     | library.mqtt_lib.mqtt_client:on_message:43 - 获取消息：{"msgId":"73458086","timestamp":1608022530672,"code":0,"message":"success","data":{"serverA":{"host":"192.168.49.68","port":1883,"usr":"mosquitto","password":"tN9NQe#fPh"}}}
+2020-12-15 16:55:31.867 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:190 - 取消订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-15 16:55:31.868 | INFO     | library.mqtt_lib.simulator:_parse_resp:129 - 响应消息状态：成功 success
+2020-12-15 16:55:31.868 | INFO     | library.mqtt_lib.simulator:_parse_resp:149 - 响应消息数据：{'serverA': {'host': '192.168.49.68', 'port': 1883, 'usr': 'mosquitto', 'password': 'tN9NQe#fPh'}}
+2020-12-15 16:55:31.870 | INFO     | library.mqtt_lib.mqtt_client:subscribe:182 - 订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-15 16:55:31.871 | INFO     | library.mqtt_lib.mqtt_client:publish:167 - 发布的topic：/device/DH-001/DH0000000002/property/read
+2020-12-15 16:55:31.873 | INFO     | library.mqtt_lib.mqtt_client:publish:168 - 发布的payload：{'params': {'properties': ['serverA']}, 'msgId': '70550809', 'timestamp': 1608022531870}
+2020-12-15 16:55:32.046 | INFO     | library.mqtt_lib.mqtt_client:on_message:43 - 获取消息：{"msgId":"70550809","timestamp":1608022530898,"code":0,"message":"success","data":{"serverA":{"host":"192.168.49.68","port":1883,"usr":"mosquitto","password":"tN9NQe#fPh"}}}
+2020-12-15 16:55:32.074 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:190 - 取消订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-15 16:55:32.076 | INFO     | library.mqtt_lib.simulator:_parse_resp:129 - 响应消息状态：成功 success
+2020-12-15 16:55:32.077 | INFO     | library.mqtt_lib.simulator:_parse_resp:149 - 响应消息数据：{'serverA': {'host': '192.168.49.68', 'port': 1883, 'usr': 'mosquitto', 'password': 'tN9NQe#fPh'}}
+2020-12-15 16:55:32.078 | INFO     | library.mqtt_lib.mqtt_client:subscribe:182 - 订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-15 16:55:32.078 | INFO     | library.mqtt_lib.mqtt_client:publish:167 - 发布的topic：/device/DH-001/DH0000000002/property/read
+2020-12-15 16:55:32.078 | INFO     | library.mqtt_lib.mqtt_client:publish:168 - 发布的payload：{'params': {'properties': ['serverB']}, 'msgId': '87993117', 'timestamp': 1608022532078}
+2020-12-15 16:55:32.171 | INFO     | library.mqtt_lib.mqtt_client:on_message:43 - 获取消息：{"msgId":"87993117","timestamp":1608022531021,"code":0,"message":"success","data":{"serverB":{"host":"192.168.52.21","port":1883,"usr":"mosquitto","password":"tN9NQe#fPh"}}}
+2020-12-15 16:55:32.179 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:190 - 取消订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-15 16:55:32.179 | INFO     | library.mqtt_lib.simulator:_parse_resp:129 - 响应消息状态：成功 success
+2020-12-15 16:55:32.180 | INFO     | library.mqtt_lib.simulator:_parse_resp:149 - 响应消息数据：{'serverB': {'host': '192.168.52.21', 'port': 1883, 'usr': 'mosquitto', 'password': 'tN9NQe#fPh'}}
+2020-12-15 16:55:32.181 | INFO     | library.mqtt_lib.mqtt_client:subscribe:182 - 订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-15 16:55:32.181 | INFO     | library.mqtt_lib.mqtt_client:publish:167 - 发布的topic：/device/DH-001/DH0000000002/property/read
+2020-12-15 16:55:32.181 | INFO     | library.mqtt_lib.mqtt_client:publish:168 - 发布的payload：{'params': {'properties': ['serverB']}, 'msgId': '75703777', 'timestamp': 1608022532181}
+2020-12-15 16:55:32.293 | INFO     | library.mqtt_lib.mqtt_client:on_message:43 - 获取消息：{"msgId":"75703777","timestamp":1608022531144,"code":0,"message":"success","data":{"serverB":{"host":"192.168.52.21","port":1883,"usr":"mosquitto","password":"tN9NQe#fPh"}}}
+2020-12-15 16:55:32.382 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:190 - 取消订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-15 16:55:32.383 | INFO     | library.mqtt_lib.simulator:_parse_resp:129 - 响应消息状态：成功 success
+2020-12-15 16:55:32.383 | INFO     | library.mqtt_lib.simulator:_parse_resp:149 - 响应消息数据：{'serverB': {'host': '192.168.52.21', 'port': 1883, 'usr': 'mosquitto', 'password': 'tN9NQe#fPh'}}
+2020-12-15 16:55:32.384 | INFO     | library.mqtt_lib.mqtt_client:subscribe:182 - 订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-15 16:55:32.384 | INFO     | library.mqtt_lib.mqtt_client:publish:167 - 发布的topic：/device/DH-001/DH0000000002/property/read
+2020-12-15 16:55:32.385 | INFO     | library.mqtt_lib.mqtt_client:publish:168 - 发布的payload：{'params': {'properties': ['ntpInfo']}, 'msgId': '94267661', 'timestamp': 1608022532384}
+2020-12-15 16:55:32.519 | INFO     | library.mqtt_lib.mqtt_client:on_message:43 - 获取消息：{"msgId":"94267661","timestamp":1608022531370,"code":0,"message":"success","data":{"ntpInfo":{"hostB":"47.116.64.22","ntpStatus":true,"hostA":"47.116.64.22"}}}
+2020-12-15 16:55:32.586 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:190 - 取消订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-15 16:55:32.587 | INFO     | library.mqtt_lib.simulator:_parse_resp:129 - 响应消息状态：成功 success
+2020-12-15 16:55:32.589 | INFO     | library.mqtt_lib.simulator:_parse_resp:149 - 响应消息数据：{'ntpInfo': {'hostB': '47.116.64.22', 'ntpStatus': True, 'hostA': '47.116.64.22'}}
+2020-12-15 16:55:32.592 | INFO     | library.mqtt_lib.mqtt_client:subscribe:182 - 订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-15 16:55:32.593 | INFO     | library.mqtt_lib.mqtt_client:publish:167 - 发布的topic：/device/DH-001/DH0000000002/property/read
+2020-12-15 16:55:32.594 | INFO     | library.mqtt_lib.mqtt_client:publish:168 - 发布的payload：{'params': {'properties': ['ntpInfo']}, 'msgId': '60795751', 'timestamp': 1608022532593}
+2020-12-15 16:55:32.644 | INFO     | library.mqtt_lib.mqtt_client:on_message:43 - 获取消息：{"msgId":"60795751","timestamp":1608022531493,"code":0,"message":"success","data":{"ntpInfo":{"hostB":"47.116.64.22","ntpStatus":true,"hostA":"47.116.64.22"}}}
+2020-12-15 16:55:32.695 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:190 - 取消订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-15 16:55:32.695 | INFO     | library.mqtt_lib.simulator:_parse_resp:129 - 响应消息状态：成功 success
+2020-12-15 16:55:32.696 | INFO     | library.mqtt_lib.simulator:_parse_resp:149 - 响应消息数据：{'ntpInfo': {'hostB': '47.116.64.22', 'ntpStatus': True, 'hostA': '47.116.64.22'}}
+2020-12-15 16:55:32.696 | INFO     | library.mqtt_lib.mqtt_client:subscribe:182 - 订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-15 16:55:32.696 | INFO     | library.mqtt_lib.mqtt_client:publish:167 - 发布的topic：/device/DH-001/DH0000000002/property/read
+2020-12-15 16:55:32.696 | INFO     | library.mqtt_lib.mqtt_client:publish:168 - 发布的payload：{'params': {'properties': ['upTime']}, 'msgId': '56184555', 'timestamp': 1608022532696}
+2020-12-15 16:55:32.867 | INFO     | library.mqtt_lib.mqtt_client:on_message:43 - 获取消息：{"msgId":"56184555","timestamp":1608022531718,"code":0,"message":"success","data":{"upTime":"3180.27"}}
+2020-12-15 16:55:32.898 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:190 - 取消订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-15 16:55:32.898 | INFO     | library.mqtt_lib.simulator:_parse_resp:129 - 响应消息状态：成功 success
+2020-12-15 16:55:32.898 | INFO     | library.mqtt_lib.simulator:_parse_resp:149 - 响应消息数据：{'upTime': '3180.27'}
+2020-12-15 16:55:32.899 | INFO     | library.mqtt_lib.mqtt_client:subscribe:182 - 订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-15 16:55:32.899 | INFO     | library.mqtt_lib.mqtt_client:publish:167 - 发布的topic：/device/DH-001/DH0000000002/property/read
+2020-12-15 16:55:32.899 | INFO     | library.mqtt_lib.mqtt_client:publish:168 - 发布的payload：{'params': {'properties': ['upTime']}, 'msgId': '78592854', 'timestamp': 1608022532899}
+2020-12-15 16:55:32.992 | INFO     | library.mqtt_lib.mqtt_client:on_message:43 - 获取消息：{"msgId":"78592854","timestamp":1608022531841,"code":0,"message":"success","data":{"upTime":"3180.40"}}
+2020-12-15 16:55:33.001 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:190 - 取消订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-15 16:55:33.002 | INFO     | library.mqtt_lib.simulator:_parse_resp:129 - 响应消息状态：成功 success
+2020-12-15 16:55:33.003 | INFO     | library.mqtt_lib.simulator:_parse_resp:149 - 响应消息数据：{'upTime': '3180.40'}
+2020-12-15 16:55:33.005 | INFO     | library.mqtt_lib.mqtt_client:subscribe:182 - 订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-15 16:55:33.007 | INFO     | library.mqtt_lib.mqtt_client:publish:167 - 发布的topic：/device/DH-001/DH0000000002/property/read
+2020-12-15 16:55:33.008 | INFO     | library.mqtt_lib.mqtt_client:publish:168 - 发布的payload：{'params': {'properties': ['hwInfo']}, 'msgId': '47960398', 'timestamp': 1608022533005}
+2020-12-15 16:55:33.113 | INFO     | library.mqtt_lib.mqtt_client:on_message:43 - 获取消息：{"msgId":"47960398","timestamp":1608022531964,"code":0,"message":"success","data":{"hwInfo":{"hwVersion":"1.0","fwVersion":"01.01"}}}
+2020-12-15 16:55:33.209 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:190 - 取消订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-15 16:55:33.209 | INFO     | library.mqtt_lib.simulator:_parse_resp:129 - 响应消息状态：成功 success
+2020-12-15 16:55:33.210 | INFO     | library.mqtt_lib.simulator:_parse_resp:149 - 响应消息数据：{'hwInfo': {'hwVersion': '1.0', 'fwVersion': '01.01'}}
+2020-12-15 16:55:33.210 | INFO     | library.mqtt_lib.mqtt_client:subscribe:182 - 订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-15 16:55:33.210 | INFO     | library.mqtt_lib.mqtt_client:publish:167 - 发布的topic：/device/DH-001/DH0000000002/property/read
+2020-12-15 16:55:33.211 | INFO     | library.mqtt_lib.mqtt_client:publish:168 - 发布的payload：{'params': {'properties': ['hwInfo']}, 'msgId': '82099934', 'timestamp': 1608022533210}
+2020-12-15 16:55:33.338 | INFO     | library.mqtt_lib.mqtt_client:on_message:43 - 获取消息：{"msgId":"82099934","timestamp":1608022532189,"code":0,"message":"success","data":{"hwInfo":{"hwVersion":"1.0","fwVersion":"01.01"}}}
+2020-12-15 16:55:33.412 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:190 - 取消订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-15 16:55:33.412 | INFO     | library.mqtt_lib.simulator:_parse_resp:129 - 响应消息状态：成功 success
+2020-12-15 16:55:33.413 | INFO     | library.mqtt_lib.simulator:_parse_resp:149 - 响应消息数据：{'hwInfo': {'hwVersion': '1.0', 'fwVersion': '01.01'}}
+2020-12-15 16:55:33.413 | INFO     | library.mqtt_lib.mqtt_client:subscribe:182 - 订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-15 16:55:33.413 | INFO     | library.mqtt_lib.mqtt_client:publish:167 - 发布的topic：/device/DH-001/DH0000000002/property/read
+2020-12-15 16:55:33.414 | INFO     | library.mqtt_lib.mqtt_client:publish:168 - 发布的payload：{'params': {'properties': ['holter']}, 'msgId': '4510864', 'timestamp': 1608022533414}
+2020-12-15 16:55:33.565 | INFO     | library.mqtt_lib.mqtt_client:on_message:43 - 获取消息：{"msgId":"4510864","timestamp":1608022532413,"code":0,"message":"success","data":{"holter":{"enabled":true,"water":{"online":true,"status":false},"do2Default":true,"interval":30,"di1":false,"do1Default":true,"do2":true,"temperature":{"lowThreshold":"10","online":true,"temperature":34,"alarming":true,"hiThreshold":"0"},"alarmInterval":600,"di2":false,"do1":true,"humidity":{"lowThreshold":"30","online":true,"humidity":23,"alarming":true,"hiThreshold":"20"},"tilt":{"angle":0,"online":true,"threshold":"999","direction":0,"alarming":false}}}}
+2020-12-15 16:55:33.615 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:190 - 取消订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-15 16:55:33.615 | INFO     | library.mqtt_lib.simulator:_parse_resp:129 - 响应消息状态：成功 success
+2020-12-15 16:55:33.615 | INFO     | library.mqtt_lib.simulator:_parse_resp:149 - 响应消息数据：{'holter': {'enabled': True, 'water': {'online': True, 'status': False}, 'do2Default': True, 'interval': 30, 'di1': False, 'do1Default': True, 'do2': True, 'temperature': {'lowThreshold': '10', 'online': True, 'temperature': 34, 'alarming': True, 'hiThreshold': '0'}, 'alarmInterval': 600, 'di2': False, 'do1': True, 'humidity': {'lowThreshold': '30', 'online': True, 'humidity': 23, 'alarming': True, 'hiThreshold': '20'}, 'tilt': {'angle': 0, 'online': True, 'threshold': '999', 'direction': 0, 'alarming': False}}}
+2020-12-15 16:55:33.617 | INFO     | library.mqtt_lib.mqtt_client:subscribe:182 - 订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-15 16:55:33.619 | INFO     | library.mqtt_lib.mqtt_client:publish:167 - 发布的topic：/device/DH-001/DH0000000002/property/read
+2020-12-15 16:55:33.619 | INFO     | library.mqtt_lib.mqtt_client:publish:168 - 发布的payload：{'params': {'properties': ['holter']}, 'msgId': '70864715', 'timestamp': 1608022533617}
+2020-12-15 16:55:33.688 | INFO     | library.mqtt_lib.mqtt_client:on_message:43 - 获取消息：{"msgId":"70864715","timestamp":1608022532538,"code":0,"message":"success","data":{"holter":{"enabled":true,"water":{"online":true,"status":false},"do2Default":true,"interval":30,"di1":false,"do1Default":true,"do2":true,"temperature":{"lowThreshold":"10","online":true,"temperature":34,"alarming":true,"hiThreshold":"0"},"alarmInterval":600,"di2":false,"do1":true,"humidity":{"lowThreshold":"30","online":true,"humidity":23,"alarming":true,"hiThreshold":"20"},"tilt":{"angle":0,"online":true,"threshold":"999","direction":0,"alarming":false}}}}
+2020-12-15 16:55:33.720 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:190 - 取消订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-15 16:55:33.722 | INFO     | library.mqtt_lib.simulator:_parse_resp:129 - 响应消息状态：成功 success
+2020-12-15 16:55:33.724 | INFO     | library.mqtt_lib.simulator:_parse_resp:149 - 响应消息数据：{'holter': {'enabled': True, 'water': {'online': True, 'status': False}, 'do2Default': True, 'interval': 30, 'di1': False, 'do1Default': True, 'do2': True, 'temperature': {'lowThreshold': '10', 'online': True, 'temperature': 34, 'alarming': True, 'hiThreshold': '0'}, 'alarmInterval': 600, 'di2': False, 'do1': True, 'humidity': {'lowThreshold': '30', 'online': True, 'humidity': 23, 'alarming': True, 'hiThreshold': '20'}, 'tilt': {'angle': 0, 'online': True, 'threshold': '999', 'direction': 0, 'alarming': False}}}
+2020-12-15 16:55:33.729 | INFO     | library.mqtt_lib.mqtt_client:on_disconnect:89 - 断开结果：断开成功

@@ -1,0 +1,207 @@
+{
+  "productId": "RS-GZWS-N01-2",
+  "productName": "建大仁科温湿度传感器",
+  "properties": [{
+      "id": "model",
+      "name": "型号",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "id": "online",
+      "name": "在线状态",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "optional": [{
+            "value": 0,
+            "desc": "离线"
+          },
+          {
+            "value": 1,
+            "desc": "在线"
+          }
+        ]
+      }
+    },
+    {
+      "id": "rs485Addr",
+      "name": "rs485地址",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "id": "rs485Port",
+      "name": "rs485端口",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 1,
+        "max": 4,
+        "step": 1
+      }
+    },
+    {
+      "id": "rs485Baund",
+      "name": "波特率",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 1200,
+        "max": 19200,
+        "step": 1200
+      }
+    },
+    {
+      "id": "rs485DataBit",
+      "name": "数据位",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 5,
+        "max": 8,
+        "step": 1
+      }
+    },
+    {
+      "id": "rs485Parity",
+      "name": "校验位",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "specs": {
+        "optional": [{
+            "value": "N",
+            "desc": "无校验"
+          },
+          {
+            "value": "E",
+            "desc": "偶校验"
+          },
+          {
+            "value": "O",
+            "desc": "奇校验"
+          }
+        ]
+      }
+    },
+    {
+      "id": "rs485StopBit",
+      "name": "停止位",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "optional": [{
+            "value": 1,
+            "desc": "1个停止位"
+          },
+          {
+            "value": 2,
+            "desc": "2停止位"
+          }
+        ]
+      }
+    },
+    {
+      "id": "mode",
+      "name": "控制模式",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "specs": {
+        "optional": [{
+            "value": "manual",
+            "desc": "手动"
+          },
+          {
+            "value": "auto",
+            "desc": "自动"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sn",
+      "name": "设备sn",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "specs": {
+
+      }
+    },
+    {
+      "id": "temperature",
+      "name": "温度",
+      "accessMode": "ro",
+      "required": true,
+      "type": "number",
+      "specs": {
+        "min": -40,
+        "max": 80,
+        "unit": "℃",
+        "unitName": "摄氏度",
+        "step": 0.1
+      }
+    },
+    {
+      "id": "humidity",
+      "name": "湿度",
+      "accessMode": "ro",
+      "required": true,
+      "type": "number",
+      "specs": {
+        "min": 0,
+        "max": 100,
+        "unit": "%",
+        "unitName": "%",
+        "step": 0.1
+      }
+    },
+    {
+      "id": "lux",
+      "name": "照度",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 0,
+        "max": 65535,
+        "unit": "Lux",
+        "unitName": "Lux",
+        "step": 1
+      }
+    }
+  ],
+  "events": [
+
+  ],
+  "services": [{
+    "id": "switchMode",
+    "name": "切换控制模式",
+    "parameters": [{
+      "id": "mode",
+      "name": "控制模式",
+      "required": true,
+      "type": "string",
+      "specs": {
+        "optional": [{
+            "value": "manual",
+            "desc": "手动"
+          },
+          {
+            "value": "auto",
+            "desc": "自动"
+          }
+        ]
+      }
+    }]
+  }]
+}

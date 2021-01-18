@@ -1,0 +1,8 @@
+2020-12-28 17:20:05.259 | INFO     | library.mqtt_lib.mqtt_client:on_connect:111 - 连接结果：连接成功
+2020-12-28 17:20:05.359 | INFO     | library.mqtt_lib.mqtt_client:subscribe:232 - 订阅的topic：/device/DH_001/DH0000000001/service/setSensor/invoke_reply
+2020-12-28 17:20:05.359 | INFO     | library.mqtt_lib.mqtt_client:publish:219 - 发布的topic：/device/DH_001/DH0000000001/service/setSensor/invoke
+2020-12-28 17:20:05.359 | INFO     | library.mqtt_lib.mqtt_client:publish:220 - 发布的payload：{'params': {'tempHiThreshold': 50}, 'msgId': '53621461', 'timestamp': 1609147205359}
+2020-12-28 17:20:06.020 | INFO     | library.mqtt_lib.mqtt_client:on_message:81 - 获取消息：{"msgId":"53621461","timestamp":1609147205070,"code":0,"message":"success","data":{}}
+2020-12-28 17:20:06.066 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:240 - 取消订阅的topic：/device/DH_001/DH0000000001/service/setSensor/invoke_reply
+2020-12-28 17:20:06.066 | INFO     | library.mqtt_lib.simulator:parse_msg:144 - 响应消息状态：成功 success
+2020-12-28 17:20:06.067 | INFO     | library.mqtt_lib.simulator:parse_msg:152 - 响应消息数据：{}

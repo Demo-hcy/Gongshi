@@ -1,0 +1,61 @@
+2021-01-12 09:57:04.615 | INFO     | __main__:json_validate:32 - 7G-PDU.json 验证成功！
+2021-01-12 09:57:04.620 | INFO     | __main__:<module>:246 - 7G_PDU_MODEL.py 生成成功！
+2021-01-12 09:57:04.647 | INFO     | __main__:json_validate:32 - 7G-ZNDY-001.json 验证成功！
+2021-01-12 09:57:04.653 | INFO     | __main__:<module>:246 - 7G_ZNDY_001_MODEL.py 生成成功！
+2021-01-12 09:57:04.701 | INFO     | __main__:json_validate:32 - AIHub001.json 验证成功！
+2021-01-12 09:57:04.714 | INFO     | __main__:<module>:246 - AIHub001_MODEL.py 生成成功！
+2021-01-12 09:57:04.734 | ERROR    | library.common.logger:logger_error_debug:41 - CAMERA_IPC.json 不符合schema规定：
+出错字段：productId
+提示信息：'IPCID' is too short
+2021-01-12 09:57:04.736 | DEBUG    | library.common.logger:logger_error_debug:42 - Traceback (most recent call last):
+  File "E:/AutoTester/testbase/library/mqtt_lib/tool/create_model.py", line 22, in json_validate
+    validate(instance=json_data, schema=schema, format_checker=draft7_format_checker)
+  File "E:\Program Files\Python37\lib\site-packages\jsonschema\validators.py", line 934, in validate
+    raise error
+jsonschema.exceptions.ValidationError: 'IPCID' is too short
+
+Failed validating 'minLength' in schema['properties']['productId']:
+    {'maxLength': 128, 'minLength': 6, 'type': 'string'}
+
+On instance['productId']:
+    'IPCID'
+
+2021-01-12 09:57:04.736 | ERROR    | __main__:<module>:248 - CAMERA_IPC_MODEL.py 生成失败！
+2021-01-12 09:57:04.761 | INFO     | __main__:json_validate:32 - D1_7G_DHWG.json 验证成功！
+2021-01-12 09:57:04.771 | INFO     | __main__:<module>:246 - D1_7G_DHWG_MODEL.py 生成成功！
+2021-01-12 09:57:04.800 | INFO     | __main__:json_validate:32 - DH-001.json 验证成功！
+2021-01-12 09:57:04.810 | INFO     | __main__:<module>:246 - DH_001_MODEL.py 生成成功！
+2021-01-12 09:57:04.846 | INFO     | __main__:json_validate:32 - INFORSCREEN_COLORLIGHT.json 验证成功！
+2021-01-12 09:57:04.857 | INFO     | __main__:<module>:246 - INFORSCREEN_COLORLIGHT_MODEL.py 生成成功！
+2021-01-12 09:57:04.893 | INFO     | __main__:json_validate:32 - IPCAMERA_DH-SD-6A9233XA-HNT.json 验证成功！
+2021-01-12 09:57:04.902 | INFO     | __main__:<module>:246 - IPCAMERA_DH_SD_6A9233XA_HNT_MODEL.py 生成成功！
+2021-01-12 09:57:04.920 | INFO     | __main__:json_validate:32 - LAMP_YM103-1-L-R-KCT.json 验证成功！
+2021-01-12 09:57:04.925 | INFO     | __main__:<module>:246 - LAMP_YM103_1_L_R_KCT_MODEL.py 生成成功！
+2021-01-12 09:57:04.940 | INFO     | __main__:json_validate:32 - LOCK_RHL-JGS869.json 验证成功！
+2021-01-12 09:57:04.943 | INFO     | __main__:<module>:246 - LOCK_RHL_JGS869_MODEL.py 生成成功！
+2021-01-12 09:57:04.959 | INFO     | __main__:json_validate:32 - PROJECTOR_GC8086.json 验证成功！
+2021-01-12 09:57:04.962 | INFO     | __main__:<module>:246 - PROJECTOR_GC8086_MODEL.py 生成成功！
+2021-01-12 09:57:04.979 | INFO     | __main__:json_validate:32 - RFID_XC-RF807-FBT.json 验证成功！
+2021-01-12 09:57:04.981 | INFO     | __main__:<module>:246 - RFID_XC_RF807_FBT_MODEL.py 生成成功！
+2021-01-12 09:57:04.995 | INFO     | __main__:json_validate:32 - SENSOR_RDM202.json 验证成功！
+2021-01-12 09:57:04.998 | INFO     | __main__:<module>:246 - SENSOR_RDM202_MODEL.py 生成成功！
+2021-01-12 09:57:05.024 | INFO     | __main__:json_validate:32 - SENSOR_RS-GZWS-N01-2.json 验证成功！
+2021-01-12 09:57:05.029 | INFO     | __main__:<module>:246 - SENSOR_RS_GZWS_N01_2_MODEL.py 生成成功！
+2021-01-12 09:57:05.044 | INFO     | __main__:json_validate:32 - SENSOR_RS-SJ-N01-2.json 验证成功！
+2021-01-12 09:57:05.047 | INFO     | __main__:<module>:246 - SENSOR_RS_SJ_N01_2_MODEL.py 生成成功！
+2021-01-12 09:57:05.076 | INFO     | __main__:json_validate:32 - SENSOR_RS-SJ-N01R01-2.json 验证成功！
+2021-01-12 09:57:05.079 | INFO     | __main__:<module>:246 - SENSOR_RS_SJ_N01R01_2_MODEL.py 生成成功！
+2021-01-12 09:57:05.099 | INFO     | __main__:json_validate:32 - SENSOR_RS-SJ-NR01-2.json 验证成功！
+2021-01-12 09:57:05.101 | INFO     | __main__:<module>:246 - SENSOR_RS_SJ_NR01_2_MODEL.py 生成成功！
+2021-01-12 09:57:05.119 | INFO     | __main__:json_validate:32 - SENSOR_RS-WS-N01-2.json 验证成功！
+2021-01-12 09:57:05.123 | INFO     | __main__:<module>:246 - SENSOR_RS_WS_N01_2_MODEL.py 生成成功！
+2021-01-12 09:57:05.142 | INFO     | __main__:json_validate:32 - SENSOR_ZCT245RD-LBQ-E2-77.json 验证成功！
+2021-01-12 09:57:05.147 | INFO     | __main__:<module>:246 - SENSOR_ZCT245RD_LBQ_E2_77_MODEL.py 生成成功！
+2021-01-12 09:57:05.170 | INFO     | __main__:json_validate:32 - SENSOR_ZC_ZCT245RDLBQE277.json 验证成功！
+2021-01-12 09:57:05.175 | INFO     | __main__:<module>:246 - SENSOR_ZC_ZCT245RDLBQE277_MODEL.py 生成成功！
+2021-01-12 09:57:05.220 | INFO     | __main__:json_validate:32 - SMARTBOX.json 验证成功！
+2021-01-12 09:57:05.231 | INFO     | __main__:<module>:246 - SMARTBOX_MODEL.py 生成成功！
+2021-01-12 09:57:05.246 | INFO     | __main__:json_validate:32 - SPEAKER.json 验证成功！
+2021-01-12 09:57:05.249 | INFO     | __main__:<module>:246 - SPEAKER_MODEL.py 生成成功！
+2021-01-12 09:57:05.271 | INFO     | __main__:json_validate:32 - TRAFFICSCREEN.json 验证成功！
+2021-01-12 09:57:05.275 | INFO     | __main__:<module>:246 - TRAFFICSCREEN_MODEL.py 生成成功！

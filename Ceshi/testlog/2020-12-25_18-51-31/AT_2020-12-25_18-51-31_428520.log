@@ -1,0 +1,13 @@
+2020-12-25 18:51:31.602 | INFO     | library.mqtt_lib.mqtt_client:on_connect:73 - 连接结果：连接成功
+2020-12-25 18:51:31.700 | INFO     | library.mqtt_lib.mqtt_client:subscribe:194 - 订阅的topic：/device/DH-001/DH0000000003/service/setRs485/invoke_reply
+2020-12-25 18:51:31.701 | INFO     | library.mqtt_lib.mqtt_client:publish:181 - 发布的topic：/device/DH-001/DH0000000003/service/setRs485/invoke
+2020-12-25 18:51:31.701 | INFO     | library.mqtt_lib.mqtt_client:publish:182 - 发布的payload：{'params': {'port': 2, 'baudRate': 300, 'byteSize': 8, 'stopBit': '1', 'parities': 'N'}, 'msgId': '38186035', 'timestamp': 1608893491700}
+2020-12-25 18:51:31.890 | INFO     | library.mqtt_lib.mqtt_client:on_message:43 - 获取消息：{"msgId":"38186035","timestamp":1608893490740,"code":0,"message":"success","data":{}}
+2020-12-25 18:51:32.002 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:202 - 取消订阅的topic：/device/DH-001/DH0000000003/service/setRs485/invoke_reply
+2020-12-25 18:51:32.003 | INFO     | library.mqtt_lib.mqtt_client:subscribe:194 - 订阅的topic：/device/DH-001/DH0000000003/service/writeRs485/invoke_reply
+2020-12-25 18:51:32.004 | INFO     | library.mqtt_lib.mqtt_client:publish:181 - 发布的topic：/device/DH-001/DH0000000003/service/writeRs485/invoke
+2020-12-25 18:51:32.005 | INFO     | library.mqtt_lib.mqtt_client:publish:182 - 发布的payload：{'params': {'port': 2, 'data': '8855', 'flush': True}, 'msgId': '53771586', 'timestamp': 1608893492003}
+2020-12-25 18:51:32.106 | INFO     | library.mqtt_lib.mqtt_client:on_message:43 - 获取消息：{"msgId":"53771586","timestamp":1608893490956,"code":0,"message":"success","data":{}}
+2020-12-25 18:51:32.109 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:202 - 取消订阅的topic：/device/DH-001/DH0000000003/service/writeRs485/invoke_reply
+2020-12-25 18:51:32.110 | INFO     | library.mqtt_lib.simulator:parse_msg:133 - 响应消息状态：成功 success
+2020-12-25 18:51:32.111 | INFO     | library.mqtt_lib.simulator:parse_msg:141 - 响应消息数据：{}

@@ -1,0 +1,7 @@
+2020-12-14 10:28:38.739 | INFO     | library.mqtt_lib.mqtt_client:on_connect:73 - 连接结果：连接成功
+2020-12-14 10:28:38.837 | INFO     | library.mqtt_lib.mqtt_client:subscribe:182 - 订阅的topic：/device/DH-001/DH0000000002/service/setNtpHost/invoke_reply
+2020-12-14 10:28:38.838 | INFO     | library.mqtt_lib.mqtt_client:publish:167 - 发布的topic：/device/DH-001/DH0000000002/service/setNtpHost/invoke
+2020-12-14 10:28:38.838 | INFO     | library.mqtt_lib.mqtt_client:publish:168 - 发布的payload：{'params': {'hostC': '47.116.64.22', 'hostB': ''}, 'msgId': '71713966', 'timestamp': 1607912918838}
+2020-12-14 10:29:08.915 | ERROR    | library.mqtt_lib.mqtt_client:get_msg:278 - 获取消息异常：消息为空
+2020-12-14 10:29:08.943 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:190 - 取消订阅的topic：/device/DH-001/DH0000000002/service/setNtpHost/invoke_reply
+2020-12-14 10:29:08.946 | INFO     | library.mqtt_lib.mqtt_client:on_disconnect:89 - 断开结果：断开成功

@@ -1,0 +1,7 @@
+2020-12-15 17:52:28.302 | INFO     | library.mqtt_lib.mqtt_client:on_connect:73 - 连接结果：连接成功
+2020-12-15 17:52:28.396 | INFO     | library.mqtt_lib.mqtt_client:subscribe:182 - 订阅的topic：/device/DH-001/DH0000000002/service/setSensor/invoke_reply
+2020-12-15 17:52:28.397 | INFO     | library.mqtt_lib.mqtt_client:publish:167 - 发布的topic：/device/DH-001/DH0000000002/service/setSensor/invoke
+2020-12-15 17:52:28.399 | INFO     | library.mqtt_lib.mqtt_client:publish:168 - 发布的payload：{'params': {'humiLowThreshold': True}, 'msgId': '40908515', 'timestamp': 1608025948397}
+2020-12-15 17:52:58.403 | ERROR    | library.mqtt_lib.mqtt_client:get_msg:278 - 获取消息异常：消息为空
+2020-12-15 17:52:58.427 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:190 - 取消订阅的topic：/device/DH-001/DH0000000002/service/setSensor/invoke_reply
+2020-12-15 17:52:58.430 | INFO     | library.mqtt_lib.mqtt_client:on_disconnect:89 - 断开结果：断开成功

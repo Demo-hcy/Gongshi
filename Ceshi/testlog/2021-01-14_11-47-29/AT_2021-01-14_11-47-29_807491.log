@@ -1,0 +1,9 @@
+2021-01-14 11:47:29.986 | INFO     | library.mqtt_lib.mqtt_client:on_connect:114 - 连接结果：连接成功
+2021-01-14 11:47:30.087 | INFO     | library.mqtt_lib.mqtt_client:subscribe:229 - 订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/property/report
+2021-01-14 11:47:30.088 | INFO     | library.mqtt_lib.mqtt_client:subscribe:229 - 订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/service/updateFirmware/invoke_reply
+2021-01-14 11:47:30.089 | INFO     | library.mqtt_lib.mqtt_client:publish:216 - 发布的主题：/device/D1_7G_DHWG/D26670974B34332A/service/updateFirmware/invoke
+2021-01-14 11:47:30.089 | INFO     | library.mqtt_lib.mqtt_client:publish:217 - 发布的payload：{'params': {'url': 'http://192.168.52.21:5002/download?fileId=shenghuaweiji.mp3', 'md5Sum': '2b9e8d7cb65f905369b148084d1e0104'}, 'msgId': '49999066', 'timestamp': 1610596050088}
+2021-01-14 11:47:30.182 | INFO     | library.mqtt_lib.mqtt_client:on_message:83 - 获取消息：{"msgId":"49999066","timestamp":296000,"code":0,"message":"success","data":{}}
+2021-01-14 11:47:30.205 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:237 - 取消订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/service/updateFirmware/invoke_reply
+2021-01-14 11:48:00.289 | ERROR    | library.mqtt_lib.mqtt_client:get_msg:337 - 获取消息异常：消息为空
+2021-01-14 11:48:00.290 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:237 - 取消订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/property/report

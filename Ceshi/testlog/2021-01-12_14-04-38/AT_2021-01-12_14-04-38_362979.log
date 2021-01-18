@@ -1,0 +1,10 @@
+2021-01-12 14:04:38.474 | INFO     | library.mqtt_lib.mqtt_client:on_connect:114 - 连接结果：连接成功
+2021-01-12 14:04:38.562 | INFO     | library.mqtt_lib.platform_controller:event_report_listen:206 - 开始监听事件上报：calibrate
+2021-01-12 14:04:38.563 | INFO     | library.mqtt_lib.mqtt_client:subscribe:229 - 订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/event/calibrate/report
+2021-01-12 14:05:00.772 | INFO     | library.mqtt_lib.mqtt_client:on_message:83 - 获取消息：{"msgId":"1610431499277","timestamp":1610431499277,"params":{"status":"success","resultCode":0}}
+2021-01-12 14:05:00.836 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:237 - 取消订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/event/calibrate/report
+2021-01-12 14:05:00.836 | INFO     | library.mqtt_lib.platform_controller:event_report_listen:210 - 结束监听事件上报：calibrate
+2021-01-12 14:05:00.837 | INFO     | library.mqtt_lib.platform_controller:event_report_reply:228 - 响应事件上报：calibrate
+2021-01-12 14:05:00.837 | INFO     | library.mqtt_lib.mqtt_client:publish:216 - 发布的主题：/device/D1_7G_DHWG/D26670974B34332A/event/calibrate/report_reply
+2021-01-12 14:05:00.837 | INFO     | library.mqtt_lib.mqtt_client:publish:217 - 发布的payload：{'msgId': '1610431499277', 'timestamp': 1610431500838, 'code': 0, 'message': 'AutoTester', 'data': None}
+2021-01-12 14:05:00.838 | INFO     | library.mqtt_lib.mqtt_client:on_disconnect:130 - 断开结果：断开成功

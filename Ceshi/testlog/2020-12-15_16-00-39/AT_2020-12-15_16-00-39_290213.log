@@ -1,0 +1,9 @@
+2020-12-15 16:00:39.375 | INFO     | library.mqtt_lib.mqtt_client:on_connect:73 - 连接结果：连接成功
+2020-12-15 16:00:39.473 | INFO     | library.mqtt_lib.mqtt_client:subscribe:182 - 订阅的topic：/device/DH-001/DH0000000002/service/updateFirmware/invoke_reply
+2020-12-15 16:00:39.473 | INFO     | library.mqtt_lib.mqtt_client:publish:167 - 发布的topic：/device/DH-001/DH0000000002/service/updateFirmware/invoke
+2020-12-15 16:00:39.474 | INFO     | library.mqtt_lib.mqtt_client:publish:168 - 发布的payload：{'params': {'url': 123123, 'md5Sum': 123123}, 'msgId': '21692979', 'timestamp': 1608019239473}
+2020-12-15 16:00:39.522 | INFO     | library.mqtt_lib.mqtt_client:on_message:43 - 获取消息：{"msgId": "21692979","timestamp":1608019238000,"code":2,"message":"Params Error","data":{}}
+2020-12-15 16:00:39.575 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:190 - 取消订阅的topic：/device/DH-001/DH0000000002/service/updateFirmware/invoke_reply
+2020-12-15 16:00:39.575 | ERROR    | library.mqtt_lib.simulator:_parse_resp:148 - 响应消息状态：失败 Params Error
+2020-12-15 16:00:39.576 | INFO     | library.mqtt_lib.simulator:_parse_resp:149 - 响应消息数据：{}
+2020-12-15 16:00:39.576 | INFO     | library.mqtt_lib.mqtt_client:on_disconnect:89 - 断开结果：断开成功

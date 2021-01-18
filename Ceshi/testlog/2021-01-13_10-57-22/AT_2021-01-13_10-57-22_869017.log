@@ -1,0 +1,10 @@
+2021-01-13 10:57:22.963 | INFO     | library.mqtt_lib.mqtt_client:on_connect:114 - 连接结果：连接成功
+2021-01-13 10:57:23.064 | INFO     | library.mqtt_lib.mqtt_client:subscribe:229 - 订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/property/report
+2021-01-13 10:57:23.064 | INFO     | library.mqtt_lib.mqtt_client:subscribe:229 - 订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/service/setDO/invoke_reply
+2021-01-13 10:57:23.065 | INFO     | library.mqtt_lib.mqtt_client:publish:216 - 发布的主题：/device/D1_7G_DHWG/D26670974B34332A/service/setDO/invoke
+2021-01-13 10:57:23.066 | INFO     | library.mqtt_lib.mqtt_client:publish:217 - 发布的payload：{'params': {'port': 1, 'status': False, 'shootTime': 0}, 'msgId': '41609043', 'timestamp': 1610506643065}
+2021-01-13 10:57:23.161 | INFO     | library.mqtt_lib.mqtt_client:on_message:83 - 获取消息：{"msgId":"41609043","timestamp":1610506640000,"code":0,"message":"success","data":{}}
+2021-01-13 10:57:23.167 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:237 - 取消订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/service/setDO/invoke_reply
+2021-01-13 10:57:38.644 | INFO     | library.mqtt_lib.mqtt_client:on_message:83 - 获取消息：{"msgId":"1610506656330","timestamp":1610506656330,"params":{"holter":{"tilt":{"alarming":false,"threshold":25,"online":true,"angle":0},"interval":250,"humidity":{"hiThreshold":40,"lowThreshold":10,"type":"none","alarming":false,"humidity":17,"online":true},"alarmInterval":240,"do2Default":true,"voip":{"volume":30,"online":false,"busy":false},"di2":false,"do2":false,"temperature":{"hiThreshold":40,"lowThreshold":10,"type":"none","alarming":false,"online":true,"temperature":26},"do1Default":true,"do1":false,"water":{"status":false,"online":true},"eth":{"port4":true,"port3":true,"port2":true,"port1":true},"enabled":true,"di1":false}}}
+2021-01-13 10:57:38.743 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:237 - 取消订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/property/report
+2021-01-13 10:57:38.744 | INFO     | library.mqtt_lib.base_controller:parse_msg:133 - 响应消息状态：成功 success

@@ -1,0 +1,11 @@
+2021-01-14 20:00:23.557 | INFO     | library.mqtt_lib.mqtt_client:on_connect:114 - 连接结果：连接成功
+2021-01-14 20:00:23.658 | INFO     | library.mqtt_lib.platform_controller:report_listen:158 - 开始监听属性上报：['holter']
+2021-01-14 20:00:23.658 | INFO     | library.mqtt_lib.mqtt_client:subscribe:229 - 订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/property/report
+2021-01-14 20:00:29.641 | INFO     | library.mqtt_lib.mqtt_client:on_message:83 - 获取消息：{"msgId":"1610625629101","timestamp":1610625629101,"params":{"holter":{"voip":{"volume":1,"online":false,"busy":false},"humidity":{"lowThreshold":10,"type":"none","alarming":false,"humidity":23,"online":true,"hiThreshold":40},"tilt":{"alarming":false,"online":true,"angle":0,"threshold":29},"temperature":{"lowThreshold":10,"type":"none","alarming":false,"temperature":28,"online":true,"hiThreshold":70},"enabled":true,"water":{"online":true,"status":false},"do1Default":true,"di2":false,"interval":15,"alarmInterval":240,"di1":false,"eth":{"port3":true,"port2":true,"port1":true,"port4":true},"do2Default":true,"do2":true,"do1":true}}}
+2021-01-14 20:00:29.676 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:237 - 取消订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/property/report
+2021-01-14 20:00:29.677 | INFO     | library.mqtt_lib.platform_controller:report_listen:162 - 结束监听属性上报：['holter']
+2021-01-14 20:00:29.677 | INFO     | library.mqtt_lib.platform_controller:report_reply:188 - 响应属性上报：['holter']
+2021-01-14 20:00:29.678 | INFO     | library.mqtt_lib.mqtt_client:publish:216 - 发布的主题：/device/D1_7G_DHWG/D26670974B34332A/property/report_reply
+2021-01-14 20:00:29.678 | INFO     | library.mqtt_lib.mqtt_client:publish:217 - 发布的payload：{'msgId': '1610625629101', 'timestamp': 1610625629678, 'code': 0, 'message': 'AutoTester', 'data': None}
+2021-01-14 20:00:29.678 | INFO     | library.mqtt_lib.platform_controller:report_listen:158 - 开始监听属性上报：['holter']
+2021-01-14 20:00:29.679 | INFO     | library.mqtt_lib.mqtt_client:subscribe:229 - 订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/property/report

@@ -1,0 +1,10 @@
+2021-01-13 10:26:23.006 | INFO     | library.mqtt_lib.mqtt_client:on_connect:114 - 连接结果：连接成功
+2021-01-13 10:26:23.107 | INFO     | library.mqtt_lib.mqtt_client:subscribe:229 - 订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/property/report
+2021-01-13 10:26:23.107 | INFO     | library.mqtt_lib.mqtt_client:subscribe:229 - 订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/service/setBasic/invoke_reply
+2021-01-13 10:26:23.108 | INFO     | library.mqtt_lib.mqtt_client:publish:216 - 发布的主题：/device/D1_7G_DHWG/D26670974B34332A/service/setBasic/invoke
+2021-01-13 10:26:23.108 | INFO     | library.mqtt_lib.mqtt_client:publish:217 - 发布的payload：{'params': {'enabled': True, 'interval': 10, 'alarmInterval': 30, 'do1': False, 'do2': False}, 'msgId': '41516313', 'timestamp': 1610504783107}
+2021-01-13 10:26:23.684 | INFO     | library.mqtt_lib.mqtt_client:on_message:83 - 获取消息：{"msgId":"41516313","timestamp":1610504781391,"code":0,"message":"success","data":{}}
+2021-01-13 10:26:23.718 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:237 - 取消订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/service/setBasic/invoke_reply
+2021-01-13 10:26:24.094 | INFO     | library.mqtt_lib.mqtt_client:on_message:83 - 获取消息：{"msgId":"1610504781802","timestamp":1610504781802,"params":{"holter":{"tilt":{"alarming":false,"threshold":25,"online":true,"angle":0},"interval":10,"humidity":{"hiThreshold":40,"lowThreshold":10,"type":"none","alarming":false,"humidity":18,"online":true},"alarmInterval":30,"do2Default":false,"voip":{"volume":30,"online":false,"busy":false},"di2":false,"do2":false,"temperature":{"hiThreshold":40,"lowThreshold":10,"type":"none","alarming":false,"online":true,"temperature":25},"do1Default":false,"do1":false,"water":{"status":false,"online":true},"eth":{"port4":true,"port3":true,"port2":true,"port1":true},"enabled":true,"di1":false}}}
+2021-01-13 10:26:24.119 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:237 - 取消订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/property/report
+2021-01-13 10:26:24.120 | INFO     | library.mqtt_lib.base_controller:parse_msg:133 - 响应消息状态：成功 success

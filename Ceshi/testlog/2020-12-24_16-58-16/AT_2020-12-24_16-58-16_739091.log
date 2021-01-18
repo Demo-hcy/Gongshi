@@ -1,0 +1,9 @@
+2020-12-24 16:58:16.882 | INFO     | library.mqtt_lib.mqtt_client:on_connect:73 - 连接结果：连接成功
+2020-12-24 16:58:16.975 | INFO     | library.mqtt_lib.mqtt_client:subscribe:194 - 订阅的topic：/device/DH-001/DH0000000003/service/setBasic/invoke_reply
+2020-12-24 16:58:16.976 | INFO     | library.mqtt_lib.mqtt_client:publish:181 - 发布的topic：/device/DH-001/DH0000000003/service/setBasic/invoke
+2020-12-24 16:58:16.977 | INFO     | library.mqtt_lib.mqtt_client:publish:182 - 发布的payload：{'params': {'enabled': True, 'interval': 180, 'alarmInterval': 30, 'do1': False, 'do2': True}, 'msgId': '72954664', 'timestamp': 1608800296975}
+2020-12-24 16:58:17.142 | INFO     | library.mqtt_lib.mqtt_client:on_message:43 - 获取消息：{"msgId":"72954664","timestamp":1608800296063,"code":0,"message":"success","data":{}}
+2020-12-24 16:58:17.178 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:202 - 取消订阅的topic：/device/DH-001/DH0000000003/service/setBasic/invoke_reply
+2020-12-24 16:58:17.179 | INFO     | library.mqtt_lib.simulator:_parse_resp:132 - 响应消息状态：成功 success
+2020-12-24 16:58:17.180 | INFO     | library.mqtt_lib.simulator:_parse_resp:152 - 响应消息数据：{}
+2020-12-24 16:58:17.181 | INFO     | library.mqtt_lib.mqtt_client:on_disconnect:89 - 断开结果：断开成功

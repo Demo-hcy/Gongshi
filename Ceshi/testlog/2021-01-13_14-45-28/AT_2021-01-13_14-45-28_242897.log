@@ -1,0 +1,7 @@
+2021-01-13 14:45:28.339 | INFO     | library.mqtt_lib.mqtt_client:on_connect:114 - 连接结果：连接成功
+2021-01-13 14:45:28.439 | INFO     | library.mqtt_lib.mqtt_client:subscribe:229 - 订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/property/report
+2021-01-13 14:45:28.440 | INFO     | library.mqtt_lib.mqtt_client:subscribe:229 - 订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/service/setSensor/invoke_reply
+2021-01-13 14:45:28.440 | INFO     | library.mqtt_lib.mqtt_client:publish:216 - 发布的主题：/device/D1_7G_DHWG/D26670974B34332A/service/setSensor/invoke
+2021-01-13 14:45:28.441 | INFO     | library.mqtt_lib.mqtt_client:publish:217 - 发布的payload：{'params': {'tiltCalibrate': True, 'tiltThreshold': '', 'tempHiThreshold': 40, 'tempLowThreshold': 10, 'humiHiThreshold': 40, 'humiLowThreshold': 10}, 'msgId': '69614982', 'timestamp': 1610520328440}
+2021-01-13 14:45:28.539 | INFO     | library.mqtt_lib.mqtt_client:on_message:83 - 获取消息：{"msgId":"69614982","timestamp":1610520327000,"code":2,"message":"Params Error","data":{}}
+2021-01-13 14:45:28.581 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:237 - 取消订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/service/setSensor/invoke_reply

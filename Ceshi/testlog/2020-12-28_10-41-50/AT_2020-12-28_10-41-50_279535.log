@@ -1,0 +1,4 @@
+2020-12-28 10:41:50.402 | INFO     | library.mqtt_lib.mqtt_client:on_connect:73 - 连接结果：连接成功
+2020-12-28 10:41:50.498 | INFO     | library.mqtt_lib.mqtt_client:subscribe:194 - 订阅的topic：/device/DH_001/DH0000000002/property/read_reply
+2020-12-28 10:41:50.498 | INFO     | library.mqtt_lib.mqtt_client:publish:181 - 发布的topic：/device/DH_001/DH0000000002/property/read
+2020-12-28 10:41:50.499 | INFO     | library.mqtt_lib.mqtt_client:publish:182 - 发布的payload：{'params': {'properties': ['sn']}, 'msgId': '98708857', 'timestamp': 1609123310499}

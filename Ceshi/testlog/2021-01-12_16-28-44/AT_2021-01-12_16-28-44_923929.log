@@ -1,0 +1,19 @@
+2021-01-12 16:28:45.019 | INFO     | library.mqtt_lib.mqtt_client:on_connect:114 - 连接结果：连接成功
+2021-01-12 16:28:45.117 | INFO     | library.mqtt_lib.platform_controller:report_listen:158 - 开始监听属性上报：['holter']
+2021-01-12 16:28:45.118 | INFO     | library.mqtt_lib.mqtt_client:subscribe:229 - 订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/property/report
+2021-01-12 16:31:52.444 | INFO     | library.mqtt_lib.mqtt_client:on_message:83 - 获取消息：{"msgId":"1610440311209","timestamp":1610440311209,"params":{"holter":{"tilt":{"alarming":false,"threshold":30,"online":true,"angle":0},"interval":240,"humidity":{"hiThreshold":50,"lowThreshold":10,"type":"none","alarming":false,"humidity":16,"online":true},"alarmInterval":30,"do2Default":false,"voip":{"volume":30,"online":false,"busy":false},"di2":false,"do2":false,"temperature":{"hiThreshold":50,"lowThreshold":10,"type":"none","alarming":false,"online":true,"temperature":26},"do1Default":false,"do1":false,"water":{"status":false,"online":true},"eth":{"port4":true,"port3":true,"port2":true,"port1":true},"enabled":true,"di1":false}}}
+2021-01-12 16:31:52.495 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:237 - 取消订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/property/report
+2021-01-12 16:31:52.495 | INFO     | library.mqtt_lib.platform_controller:report_listen:162 - 结束监听属性上报：['holter']
+2021-01-12 16:31:52.496 | INFO     | library.mqtt_lib.platform_controller:report_reply:188 - 响应属性上报：['holter']
+2021-01-12 16:31:52.496 | INFO     | library.mqtt_lib.mqtt_client:publish:216 - 发布的主题：/device/D1_7G_DHWG/D26670974B34332A/property/report_reply
+2021-01-12 16:31:52.496 | INFO     | library.mqtt_lib.mqtt_client:publish:217 - 发布的payload：{'msgId': '1610440311209', 'timestamp': 1610440312496, 'code': 0, 'message': 'AutoTester', 'data': None}
+2021-01-12 16:31:52.497 | INFO     | library.mqtt_lib.platform_controller:report_listen:158 - 开始监听属性上报：['holter']
+2021-01-12 16:31:52.497 | INFO     | library.mqtt_lib.mqtt_client:subscribe:229 - 订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/property/report
+2021-01-12 16:35:53.405 | INFO     | library.mqtt_lib.mqtt_client:on_message:83 - 获取消息：{"msgId":"1610440552169","timestamp":1610440552169,"params":{"holter":{"tilt":{"alarming":false,"threshold":30,"online":true,"angle":4},"interval":240,"humidity":{"hiThreshold":50,"lowThreshold":10,"type":"none","alarming":false,"humidity":16,"online":true},"alarmInterval":30,"do2Default":false,"voip":{"volume":30,"online":false,"busy":false},"di2":false,"do2":false,"temperature":{"hiThreshold":50,"lowThreshold":10,"type":"none","alarming":false,"online":true,"temperature":26},"do1Default":false,"do1":false,"water":{"status":false,"online":true},"eth":{"port4":true,"port3":true,"port2":true,"port1":true},"enabled":true,"di1":false}}}
+2021-01-12 16:35:53.444 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:237 - 取消订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/property/report
+2021-01-12 16:35:53.445 | INFO     | library.mqtt_lib.platform_controller:report_listen:162 - 结束监听属性上报：['holter']
+2021-01-12 16:35:53.445 | INFO     | library.mqtt_lib.platform_controller:report_reply:188 - 响应属性上报：['holter']
+2021-01-12 16:35:53.446 | INFO     | library.mqtt_lib.mqtt_client:publish:216 - 发布的主题：/device/D1_7G_DHWG/D26670974B34332A/property/report_reply
+2021-01-12 16:35:53.446 | INFO     | library.mqtt_lib.mqtt_client:publish:217 - 发布的payload：{'msgId': '1610440552169', 'timestamp': 1610440553446, 'code': 0, 'message': 'AutoTester', 'data': None}
+2021-01-12 16:35:53.449 | INFO     | library.mqtt_lib.platform_controller:event_report_listen:206 - 开始监听事件上报：firmwareUpdate
+2021-01-12 16:35:53.450 | INFO     | library.mqtt_lib.mqtt_client:subscribe:229 - 订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/event/firmwareUpdate/report

@@ -1,0 +1,14 @@
+2020-12-15 15:47:48.729 | INFO     | library.mqtt_lib.mqtt_client:on_connect:73 - 连接结果：连接成功
+2020-12-15 15:47:48.828 | INFO     | library.mqtt_lib.simulator:listen:178 - 开始监听：holter
+2020-12-15 15:47:48.829 | INFO     | library.mqtt_lib.mqtt_client:subscribe:182 - 订阅的topic：/device/DH-001/DH0000000002/property/report
+2020-12-15 15:47:54.265 | INFO     | library.mqtt_lib.mqtt_client:on_message:43 - 获取消息：{"msgId":"1608018473013","timestamp":1608018473013,"params":{"holter":{"tilt":{"direction":0,"alarming":false,"threshold":"999","angle":0,"online":true},"do2Default":true,"alarmInterval":600,"do1":true,"do2":true,"water":{"online":true,"status":false},"humidity":{"alarming":true,"online":true,"humidity":23,"hiThreshold":"20","lowThreshold":"30"},"do1Default":true,"interval":30,"enabled":true,"di2":false,"di1":false,"temperature":{"alarming":true,"online":true,"hiThreshold":"30","temperature":34,"lowThreshold":"40"}}}}
+2020-12-15 15:47:54.346 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:190 - 取消订阅的topic：/device/DH-001/DH0000000002/property/report
+2020-12-15 15:47:54.346 | INFO     | library.mqtt_lib.simulator:listen:189 - 结束监听：holter
+2020-12-15 15:47:54.347 | INFO     | library.mqtt_lib.simulator:listen:191 - 进行响应
+2020-12-15 15:47:54.347 | INFO     | library.mqtt_lib.mqtt_client:publish:167 - 发布的topic：/device/DH-001/DH0000000002/property/report_reply
+2020-12-15 15:47:54.349 | INFO     | library.mqtt_lib.mqtt_client:publish:168 - 发布的payload：{'msgId': '1608018473013', 'timestamp': 1608018474348, 'code': 0, 'message': 'AutoTesterSuccess', 'data': {}}
+2020-12-15 15:47:54.355 | INFO     | library.mqtt_lib.simulator:listen:178 - 开始监听：reboot
+2020-12-15 15:47:54.356 | INFO     | library.mqtt_lib.mqtt_client:subscribe:182 - 订阅的topic：/device/DH-001/DH0000000002/event/reboot/report
+2020-12-15 15:57:54.378 | ERROR    | library.mqtt_lib.mqtt_client:get_msg:278 - 获取消息异常：消息为空
+2020-12-15 15:57:54.378 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:190 - 取消订阅的topic：/device/DH-001/DH0000000002/event/reboot/report
+2020-12-15 15:57:54.379 | INFO     | library.mqtt_lib.simulator:listen:189 - 结束监听：reboot

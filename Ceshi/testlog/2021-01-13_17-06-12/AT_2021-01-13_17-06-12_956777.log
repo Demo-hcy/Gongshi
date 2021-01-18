@@ -1,0 +1,7 @@
+2021-01-13 17:06:13.091 | INFO     | library.mqtt_lib.mqtt_client:on_connect:114 - 连接结果：连接成功
+2021-01-13 17:06:13.191 | INFO     | library.mqtt_lib.mqtt_client:subscribe:229 - 订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/property/report
+2021-01-13 17:06:13.192 | INFO     | library.mqtt_lib.mqtt_client:subscribe:229 - 订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/service/setVolume/invoke_reply
+2021-01-13 17:06:13.193 | INFO     | library.mqtt_lib.mqtt_client:publish:216 - 发布的主题：/device/D1_7G_DHWG/D26670974B34332A/service/setVolume/invoke
+2021-01-13 17:06:13.193 | INFO     | library.mqtt_lib.mqtt_client:publish:217 - 发布的payload：{'params': {'volume': 100}, 'msgId': '70122669', 'timestamp': 1610528773193}
+2021-01-13 17:06:14.082 | INFO     | library.mqtt_lib.mqtt_client:on_message:83 - 获取消息：{"msgId":"70122669","timestamp":1610528773176,"code":0,"message":"success","data":{}}
+2021-01-13 17:06:14.128 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:237 - 取消订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/service/setVolume/invoke_reply

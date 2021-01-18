@@ -1,0 +1,9 @@
+2021-01-13 17:08:43.973 | INFO     | library.mqtt_lib.mqtt_client:on_connect:114 - 连接结果：连接成功
+2021-01-13 17:08:44.074 | INFO     | library.mqtt_lib.mqtt_client:subscribe:229 - 订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/property/report
+2021-01-13 17:08:44.075 | INFO     | library.mqtt_lib.mqtt_client:subscribe:229 - 订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/service/setVolume/invoke_reply
+2021-01-13 17:08:44.075 | INFO     | library.mqtt_lib.mqtt_client:publish:216 - 发布的主题：/device/D1_7G_DHWG/D26670974B34332A/service/setVolume/invoke
+2021-01-13 17:08:44.076 | INFO     | library.mqtt_lib.mqtt_client:publish:217 - 发布的payload：{'params': {'volume': -2}, 'msgId': '85906095', 'timestamp': 1610528924075}
+2021-01-13 17:08:44.168 | INFO     | library.mqtt_lib.mqtt_client:on_message:83 - 获取消息：{"msgId":"85906095","timestamp":1610528923000,"code":2,"message":"Params Error","data":{}}
+2021-01-13 17:08:44.177 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:237 - 取消订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/service/setVolume/invoke_reply
+2021-01-13 17:09:14.264 | ERROR    | library.mqtt_lib.mqtt_client:get_msg:337 - 获取消息异常：消息为空
+2021-01-13 17:09:14.265 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:237 - 取消订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/property/report

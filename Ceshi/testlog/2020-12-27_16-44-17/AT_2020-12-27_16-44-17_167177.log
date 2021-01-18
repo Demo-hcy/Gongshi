@@ -1,0 +1,14 @@
+2020-12-27 16:44:17.296 | INFO     | library.mqtt_lib.mqtt_client:on_connect:73 - 连接结果：连接成功
+2020-12-27 16:44:17.396 | INFO     | library.mqtt_lib.simulator:report_listen:544 - 开始监听属性：networkInfo
+2020-12-27 16:44:17.396 | INFO     | library.mqtt_lib.mqtt_client:subscribe:194 - 订阅的topic：/device/DH-001/DH0000000002/property/report
+2020-12-27 16:44:29.999 | INFO     | library.mqtt_lib.mqtt_client:on_message:43 - 获取消息：{"msgId":"1609058669065","timestamp":1609058669065,"params":{"holter":{"do1Default":true,"tilt":{"direction":0,"threshold":5,"angle":0,"online":true,"alarming":false},"interval":20,"alarmInterval":240,"eth":{"port4":true,"port2":true,"port3":true,"port1":true},"di1":false,"di2":false,"do2Default":false,"humidity":{"lowThreshold":10,"hiThreshold":50,"type":"","alarming":false,"humidity":39,"online":true},"do1":true,"do2":false,"enabled":true,"temperature":{"lowThreshold":10,"hiThreshold":50,"type":"","alarming":false,"online":true,"temperature":32},"water":{"status":false,"online":true}}}}
+2020-12-27 16:44:30.041 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:202 - 取消订阅的topic：/device/DH-001/DH0000000002/property/report
+2020-12-27 16:44:30.042 | INFO     | library.mqtt_lib.simulator:report_listen:549 - 结束监听属性：networkInfo
+2020-12-27 16:44:30.043 | INFO     | library.mqtt_lib.simulator:report_reply:623 - 响应属性上报：networkInfo
+2020-12-27 16:44:30.044 | INFO     | library.mqtt_lib.mqtt_client:publish:181 - 发布的topic：/device/DH-001/DH0000000002/property/report_reply
+2020-12-27 16:44:30.045 | INFO     | library.mqtt_lib.mqtt_client:publish:182 - 发布的payload：{'msgId': '1609058669065', 'timestamp': 1609058670044, 'code': 0, 'message': 'AutoTester', 'data': {}}
+2020-12-27 16:44:30.046 | INFO     | library.mqtt_lib.simulator:report_listen:544 - 开始监听属性：holter
+2020-12-27 16:44:30.046 | INFO     | library.mqtt_lib.mqtt_client:subscribe:194 - 订阅的topic：/device/DH-001/DH0000000002/property/report
+2020-12-27 16:54:30.145 | ERROR    | library.mqtt_lib.mqtt_client:get_msg:294 - 获取消息异常：消息为空
+2020-12-27 16:54:30.145 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:202 - 取消订阅的topic：/device/DH-001/DH0000000002/property/report
+2020-12-27 16:54:30.145 | INFO     | library.mqtt_lib.simulator:report_listen:549 - 结束监听属性：holter

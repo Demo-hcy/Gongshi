@@ -1,0 +1,135 @@
+{
+  "productId": "XC-RF807-FBT",
+  "productName": "远望谷RFID读卡器",
+  "properties": [{
+      "id": "onOff",
+      "name": "RFID状态",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "optional": [{
+            "value": 1,
+            "desc": "开"
+          },
+          {
+            "value": 0,
+            "desc": "关"
+          }
+        ]
+      }
+    },
+    {
+      "id": "online",
+      "name": "离线在线",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "specs": {
+        "optional": [{
+            "value": 0,
+            "desc": "离线"
+          },
+          {
+            "value": 1,
+            "desc": "在线"
+          }
+        ]
+      }
+    },
+    {
+      "id": "mode",
+      "name": "控制模式",
+      "accessMode": "rw",
+      "required": true,
+      "type": "string",
+      "specs": {
+        "optional": [{
+            "value": "manual",
+            "desc": "手动"
+          },
+          {
+            "value": "auto",
+            "desc": "自动"
+          }
+        ]
+      }
+    },
+    {
+      "id": "SN",
+      "name": "设备sn",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "id": "model",
+      "name": "RFID型号",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "id": "antennaPort",
+      "name": "天线端口号",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 0,
+        "max": 4,
+        "step": 1
+      }
+    },
+    {
+      "id": "macAddress",
+      "name": "MAC地址",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "id": "netInfo",
+      "name": "以太网信息",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "id": "antennaPortPower",
+      "name": "端口功率",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 0,
+        "max": 100000,
+        "unit": "dbm",
+        "unitName": "分贝毫瓦",
+        "step": 1
+      }
+    }
+  ],
+  "events": [],
+  "services": [{
+    "id": " switchMode",
+    "name": "切换控制模式",
+    "parameters": [{
+      "id": "mode",
+      "name": "控制模式",
+      "required": true,
+      "type": "string",
+      "specs": {
+        "optional": [{
+            "value": "manual",
+            "desc": "手动"
+          },
+          {
+            "value": "auto",
+            "desc": "自动"
+          }
+        ]
+      }
+    }]
+  }]
+}

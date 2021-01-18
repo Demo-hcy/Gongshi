@@ -1,0 +1,236 @@
+{
+  "productId": "Speaker",
+  "productName": "音柱",
+  "properties": [{
+      "id": "volume",
+      "name": "音量",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 0,
+        "max": 100,
+        "unit": "dB",
+        "unitName": "分贝",
+        "step": 1
+      }
+    },
+    {
+      "id": "sn",
+      "name": "设备sn",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "specs": {}
+    },
+    {
+      "id": "playingProgram",
+      "name": "当前播放歌曲",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "specs": {}
+    },
+    {
+      "id": "playStatus",
+      "name": "当前播放状态",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "optional": [{
+            "value": 0,
+            "desc": "正在播放"
+          },
+          {
+            "value": 1,
+            "desc": "播放暂停状态"
+          },
+          {
+            "value": 2,
+            "desc": "空闲状态"
+          }
+        ]
+      }
+    },
+    {
+      "id": "mode",
+      "name": "控制模式",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "specs": {
+        "optional": [{
+            "value": "manual",
+            "desc": "手动"
+          },
+          {
+            "value": "auto",
+            "desc": "自动"
+          }
+        ]
+      }
+    },
+    {
+      "id": "programsLists",
+      "name": "节目列表",
+      "accessMode": "ro",
+      "required": true,
+      "type": "array",
+      "columnSimple": {
+        "type": "string"
+      },
+      "specs": {}
+    }
+  ],
+  "events": [],
+  "services": [{
+      "id": "setVolume",
+      "name": "设置音量",
+      "type": "business",
+      "parameters": [{
+        "id": "volume",
+        "name": "音量",
+        "accessMode": "ro",
+        "required": true,
+        "type": "integer",
+        "specs": {
+          "min": 0,
+          "max": 100,
+          "unit": "db",
+          "unitName": "分贝",
+          "step": 1
+        }
+      }],
+      "output": []
+    },
+    {
+      "id": "addProgram",
+      "name": "添加节目",
+      "type": "management",
+      "parameters": [{
+          "id": "url",
+          "name": "下载地址",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "id": "md5Sum",
+          "name": "md5校验值",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "output": []
+    },
+    {
+      "id": "delProgram",
+      "name": "删除节目",
+      "type": "management",
+      "parameters": [{
+        "id": "md5Sum",
+        "name": "md5校验值",
+        "accessMode": "ro",
+        "required": true,
+        "type": "string"
+      }],
+      "output": []
+    },
+    {
+      "id": "getPrograms",
+      "name": "查询节目",
+      "type": "management",
+      "parameters": [],
+      "output": [{
+        "id": "md5List",
+        "name": "文件MD5列表",
+        "accessMode": "ro",
+        "required": true,
+        "type": "array",
+        "columnSimple": {
+          "type": "string"
+        },
+        "specs": {}
+      }]
+    },
+    {
+      "id": "playProgram",
+      "name": "播放节目",
+      "type": "business",
+      "parameters": [{
+          "id": "md5List",
+          "name": "文件MD5列表",
+          "accessMode": "ro",
+          "required": true,
+          "type": "array",
+          "columnSimple": {
+            "type": "string"
+          },
+          "specs": {}
+        },
+        {
+          "id": "times",
+          "name": "播放次数",
+          "accessMode": "ro",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "min": 0,
+            "max": 999999,
+            "unit": "time",
+            "unitName": "次数",
+            "step": 1
+          }
+        }
+      ],
+      "output": []
+    },
+    {
+      "id": "pauseProgram",
+      "name": "暂停播放",
+      "type": "business",
+      "parameters": [],
+      "output": []
+    },
+    {
+      "id": "resumeProgram",
+      "name": "继续播放",
+      "type": "business",
+      "parameters": [],
+      "output": []
+    },
+    {
+      "id": "stopProgram",
+      "name": "停止播放",
+      "type": "business",
+      "parameters": [],
+      "output": []
+    },
+    {
+      "id": "switchMode",
+      "name": "切换模式",
+      "type": "management",
+      "parameters": [{
+        "id": "mode",
+        "name": "模式",
+        "accessMode": "ro",
+        "required": true,
+        "type": "string",
+        "specs": {
+          "optional": [{
+              "value": "manual",
+              "desc": "手动"
+            },
+            {
+              "value": "auto",
+              "desc": "自动"
+            }
+          ]
+        }
+      }],
+      "output": []
+    }
+  ]
+}

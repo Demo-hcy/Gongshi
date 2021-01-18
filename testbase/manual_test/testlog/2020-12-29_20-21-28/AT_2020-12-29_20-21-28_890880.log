@@ -1,0 +1,6 @@
+2020-12-29 20:21:28.972 | INFO     | library.mqtt_lib.mqtt_client:on_connect:111 - 连接结果：连接成功
+2020-12-29 20:21:29.072 | INFO     | library.mqtt_lib.simulator:event_report_listen:659 - 开始监听事件：firmwareUpdate
+2020-12-29 20:21:29.072 | INFO     | library.mqtt_lib.mqtt_client:subscribe:232 - 订阅的topic：/device/DH_001/DH0000000002/event/firmwareUpdate/report
+2020-12-29 20:22:29.139 | ERROR    | library.mqtt_lib.mqtt_client:get_msg:332 - 获取消息异常：消息为空
+2020-12-29 20:22:29.141 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:240 - 取消订阅的topic：/device/DH_001/DH0000000002/event/firmwareUpdate/report
+2020-12-29 20:22:29.142 | INFO     | library.mqtt_lib.simulator:event_report_listen:664 - 结束监听事件：firmwareUpdate

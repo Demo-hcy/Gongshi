@@ -1,0 +1,314 @@
+{
+  "productId": "S7_ZC_ZCT245RDLBQE277",
+  "productName": "直川倾斜传感器",
+  "properties": [{
+      "id": "xAngle",
+      "name": "X轴倾斜角度",
+      "accessMode": "ro",
+      "required": true,
+      "type": "number",
+      "specs": {
+        "min": -45,
+        "max": 45,
+        "unit": "°",
+        "unitName": "度",
+        "step": 1
+      }
+    },
+    {
+      "id": "yAngle",
+      "name": "Y轴倾斜角度",
+      "accessMode": "ro",
+      "required": true,
+      "type": "number",
+      "specs": {
+        "min": -45,
+        "max": 45,
+        "unit": "°",
+        "unitName": "度",
+        "step": 1
+      }
+    },
+    {
+      "id": "xAngleThreshold",
+      "name": "X轴倾斜阈值",
+      "accessMode": "ro",
+      "required": true,
+      "type": "number",
+      "specs": {
+        "min": -45,
+        "max": 45,
+        "unit": "°",
+        "unitName": "度",
+        "step": 1
+      }
+    },
+    {
+      "id": "yAngleThreshold",
+      "name": "Y轴倾斜阈值",
+      "accessMode": "ro",
+      "required": true,
+      "type": "number",
+      "specs": {
+        "min": -45,
+        "max": 45,
+        "unit": "°",
+        "unitName": "度",
+        "step": 1
+      }
+    },
+    {
+      "id": "rs485Port",
+      "name": "rs485端口",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 1,
+        "max": 4,
+        "step": 1
+      }
+    },
+    {
+      "id": "rs485Addr",
+      "name": "rs485设备地址",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "id": "rs485Baund",
+      "name": "rs485波特率",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 1200,
+        "max": 19200
+      }
+    },
+    {
+      "id": "rs485DataBit",
+      "name": "rs485数据位",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 5,
+        "max": 8,
+        "step": 1
+      }
+    },
+    {
+      "id": "rs485Parity",
+      "name": "rs485校验位",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "specs": {
+        "optional": [{
+            "value": "N",
+            "desc": "无校验"
+          },
+          {
+            "value": "E",
+            "desc": "偶校验"
+          },
+          {
+            "value": "O",
+            "desc": "奇校验"
+          }
+        ]
+      }
+    },
+    {
+      "id": "rs485StopBit",
+      "name": "rs485停止位",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "optional": [{
+            "value": 1,
+            "desc": "1停止位"
+          },
+          {
+            "value": 2,
+            "desc": "2停止位"
+          }
+        ]
+      }
+    },
+    {
+      "id": "online",
+      "name": "在线状态",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "optional": [{
+            "value": 0,
+            "desc": "离线"
+          },
+          {
+            "value": 1,
+            "desc": "在线"
+          }
+        ]
+      }
+    },
+    {
+      "id": "mode",
+      "name": "控制模式",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "specs": {
+        "optional": [{
+            "value": "manual",
+            "desc": "手动"
+          },
+          {
+            "value": "auto",
+            "desc": "自动"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sn",
+      "name": "设备sn",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "specs": {
+
+      }
+    },
+    {
+      "id": "alarmInterval",
+      "name": "告警间隔",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 1,
+        "max": 86400,
+        "step": 1,
+        "unit": "S",
+        "unitName": "秒"
+      }
+    }
+  ],
+  "events": [{
+      "id": "xTiltAlarm",
+      "name": "X轴倾斜告警",
+      "parameters": [
+
+      ]
+    },
+    {
+      "id": "yTiltAlarm",
+      "name": "Y轴倾斜告警",
+      "parameters": [
+
+      ]
+    }
+  ],
+  "services": [{
+      "id": "setCurrentAsZero",
+      "name": "设置零点模式",
+      "parameters": [
+
+      ],
+      "output": [
+
+      ]
+    },
+    {
+      "id": "setXAlarmAngleThreshold",
+      "name": "设置X轴倾斜阈值",
+      "parameters": [{
+        "id": "Threshold",
+        "name": "X轴倾斜阈值",
+        "required": true,
+        "type": "integer",
+        "specs": {
+          "min": 1,
+          "max": 45,
+          "unit": "°",
+          "unitName": "度",
+          "step": 1
+        }
+      }],
+      "output": [
+
+      ]
+    },
+    {
+      "id": "setYAlarmAngleThreshold",
+      "name": "设置Y轴倾斜阈值",
+      "parameters": [{
+        "id": "Threshold",
+        "name": "Y轴倾斜阈值",
+        "required": true,
+        "type": "integer",
+        "specs": {
+          "min": 1,
+          "max": 45,
+          "unit": "°",
+          "unitName": "度",
+          "step": 1
+        }
+      }],
+      "output": [
+
+      ]
+    },
+    {
+      "id": "setAlarmInterval",
+      "name": "设置告警间隔",
+      "parameters": [{
+        "id": "interval",
+        "name": "告警间隔",
+        "required": true,
+        "type": "integer",
+        "specs": {
+          "min": 1,
+          "max": 86400,
+          "unit": "S",
+          "unitName": "秒",
+          "step": 1
+        }
+      }],
+      "output": [
+
+      ]
+    },
+    {
+      "id": "switchMode",
+      "name": "切换模式",
+      "type": "management",
+      "parameters": [{
+        "id": "mode",
+        "name": "模式",
+        "required": true,
+        "type": "string",
+        "specs": {
+          "optional": [{
+              "value": "manual",
+              "desc": "手动"
+            },
+            {
+              "value": "auto",
+              "desc": "自动"
+            }
+          ]
+        }
+      }],
+      "output": [
+
+      ]
+    }
+  ]
+}

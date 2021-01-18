@@ -1,0 +1,4 @@
+2020-12-15 16:00:28.523 | INFO     | library.mqtt_lib.mqtt_client:on_connect:73 - 连接结果：连接成功
+2020-12-15 16:00:28.622 | INFO     | library.mqtt_lib.mqtt_client:subscribe:182 - 订阅的topic：/device/DH-001/DH0000000002/service/updateFirmware/invoke_reply
+2020-12-15 16:00:28.623 | INFO     | library.mqtt_lib.mqtt_client:publish:167 - 发布的topic：/device/DH-001/DH0000000002/service/updateFirmware/invoke
+2020-12-15 16:00:28.623 | INFO     | library.mqtt_lib.mqtt_client:publish:168 - 发布的payload：{'params': {'url': 123123, 'md5Sum': 123123}, 'msgId': '32166310', 'timestamp': 1608019228623}

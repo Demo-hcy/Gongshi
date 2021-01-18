@@ -1,0 +1,6 @@
+2020-12-28 10:39:38.767 | INFO     | library.mqtt_lib.mqtt_client:on_connect:73 - 连接结果：连接成功
+2020-12-28 10:39:38.867 | INFO     | library.mqtt_lib.simulator:report_listen:544 - 开始监听属性：networkInfo
+2020-12-28 10:39:38.867 | INFO     | library.mqtt_lib.mqtt_client:subscribe:194 - 订阅的topic：/device/DH-001/DH0000000002/property/report
+2020-12-28 10:49:38.965 | ERROR    | library.mqtt_lib.mqtt_client:get_msg:294 - 获取消息异常：消息为空
+2020-12-28 10:49:38.966 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:202 - 取消订阅的topic：/device/DH-001/DH0000000002/property/report
+2020-12-28 10:49:38.966 | INFO     | library.mqtt_lib.simulator:report_listen:549 - 结束监听属性：networkInfo

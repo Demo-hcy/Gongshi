@@ -1,0 +1,8 @@
+2020-12-27 17:33:56.629 | INFO     | library.mqtt_lib.mqtt_client:on_connect:73 - 连接结果：连接成功
+2020-12-27 17:33:56.728 | INFO     | library.mqtt_lib.mqtt_client:subscribe:194 - 订阅的topic：/device/DH-001/DH0000000002/service/reboot/invoke_reply
+2020-12-27 17:33:56.729 | INFO     | library.mqtt_lib.mqtt_client:publish:181 - 发布的topic：/device/DH-001/DH0000000002/service/reboot/invoke
+2020-12-27 17:33:56.729 | INFO     | library.mqtt_lib.mqtt_client:publish:182 - 发布的payload：{'params': {}, 'msgId': '18891685', 'timestamp': 1609061636728}
+2020-12-27 17:33:56.782 | INFO     | library.mqtt_lib.mqtt_client:on_message:43 - 获取消息：{"msgId":"18891685","timestamp":1609061636000,"code":301,"message":"Resource Busy","data":{}}
+2020-12-27 17:33:56.830 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:202 - 取消订阅的topic：/device/DH-001/DH0000000002/service/reboot/invoke_reply
+2020-12-27 17:33:56.831 | WARNING  | library.mqtt_lib.simulator:parse_msg:139 - 响应消息状态：响应异常 Resource Busy
+2020-12-27 17:33:56.831 | INFO     | library.mqtt_lib.simulator:parse_msg:141 - 响应消息数据：{}

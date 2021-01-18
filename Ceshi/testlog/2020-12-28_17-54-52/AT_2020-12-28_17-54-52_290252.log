@@ -1,0 +1,3 @@
+2020-12-28 17:54:52.375 | INFO     | library.mqtt_lib.mqtt_client:on_connect:111 - 连接结果：连接成功
+2020-12-28 17:54:52.475 | INFO     | library.mqtt_lib.simulator:report_listen:621 - 开始监听属性：networkInfo
+2020-12-28 17:54:52.475 | INFO     | library.mqtt_lib.mqtt_client:subscribe:232 - 订阅的topic：/device/DH_001/DH0000000001/property/report

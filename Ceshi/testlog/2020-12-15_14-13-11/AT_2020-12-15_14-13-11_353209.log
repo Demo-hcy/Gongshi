@@ -1,0 +1,9 @@
+2020-12-15 14:13:11.452 | INFO     | library.mqtt_lib.mqtt_client:on_connect:73 - 连接结果：连接成功
+2020-12-15 14:13:11.547 | INFO     | library.mqtt_lib.mqtt_client:subscribe:182 - 订阅的topic：/device/DH-001/DH0000000002/service/setDO/invoke_reply
+2020-12-15 14:13:11.548 | INFO     | library.mqtt_lib.mqtt_client:publish:167 - 发布的topic：/device/DH-001/DH0000000002/service/setDO/invoke
+2020-12-15 14:13:11.548 | INFO     | library.mqtt_lib.mqtt_client:publish:168 - 发布的payload：{'params': {'port': 2, 'status': 'False', 'shootTime': 60}, 'msgId': '52143001', 'timestamp': 1608012791547}
+2020-12-15 14:13:11.597 | INFO     | library.mqtt_lib.mqtt_client:on_message:43 - 获取消息：{"msgId":"52143001","timestamp":1608012790000,"code":2,"message":"Params Error","data":{}}
+2020-12-15 14:13:11.649 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:190 - 取消订阅的topic：/device/DH-001/DH0000000002/service/setDO/invoke_reply
+2020-12-15 14:13:11.650 | ERROR    | library.mqtt_lib.simulator:_parse_resp:148 - 响应消息状态：失败 Params Error
+2020-12-15 14:13:11.653 | INFO     | library.mqtt_lib.simulator:_parse_resp:149 - 响应消息数据：{}
+2020-12-15 14:13:11.655 | INFO     | library.mqtt_lib.mqtt_client:on_disconnect:89 - 断开结果：断开成功

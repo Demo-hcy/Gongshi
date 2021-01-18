@@ -1,0 +1,8 @@
+2020-12-27 11:45:38.417 | INFO     | library.mqtt_lib.mqtt_client:on_connect:73 - 连接结果：连接成功
+2020-12-27 11:45:38.516 | INFO     | library.mqtt_lib.mqtt_client:subscribe:194 - 订阅的topic：/device/DH-001/DH0000000003/service/updateFirmware/invoke_reply
+2020-12-27 11:45:38.516 | INFO     | library.mqtt_lib.mqtt_client:publish:181 - 发布的topic：/device/DH-001/DH0000000003/service/updateFirmware/invoke
+2020-12-27 11:45:38.517 | INFO     | library.mqtt_lib.mqtt_client:publish:182 - 发布的payload：{'params': {'url': 'http://192.168.52.21:5002/download?fileId=uImage', 'md5Sum': 'af3112a91ee3af396eb2cbf367643320'}, 'msgId': '28529400', 'timestamp': 1609040738516}
+2020-12-27 11:45:38.568 | INFO     | library.mqtt_lib.mqtt_client:on_message:43 - 获取消息：{"msgId":"28529400","timestamp":1609040738000,"code":0,"message":"success","data":{}}
+2020-12-27 11:45:38.653 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:202 - 取消订阅的topic：/device/DH-001/DH0000000003/service/updateFirmware/invoke_reply
+2020-12-27 11:45:38.653 | INFO     | library.mqtt_lib.simulator:parse_msg:133 - 响应消息状态：成功 success
+2020-12-27 11:45:38.653 | INFO     | library.mqtt_lib.simulator:parse_msg:141 - 响应消息数据：{}

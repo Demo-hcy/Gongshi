@@ -1,0 +1,21 @@
+2020-12-24 16:08:52.822 | INFO     | library.mqtt_lib.mqtt_client:on_connect:73 - 连接结果：连接成功
+2020-12-24 16:08:52.922 | INFO     | library.mqtt_lib.mqtt_client:subscribe:194 - 订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-24 16:08:52.923 | INFO     | library.mqtt_lib.mqtt_client:publish:181 - 发布的topic：/device/DH-001/DH0000000002/property/read
+2020-12-24 16:08:52.923 | INFO     | library.mqtt_lib.mqtt_client:publish:182 - 发布的payload：{'params': {'properties': ['sn']}, 'msgId': '80626772', 'timestamp': 1608797332922}
+2020-12-24 16:09:22.997 | ERROR    | library.mqtt_lib.mqtt_client:get_msg:293 - 获取消息异常：消息为空
+2020-12-24 16:09:23.023 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:202 - 取消订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-24 16:09:23.024 | INFO     | library.mqtt_lib.mqtt_client:subscribe:194 - 订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-24 16:09:23.025 | INFO     | library.mqtt_lib.mqtt_client:publish:181 - 发布的topic：/device/DH-001/DH0000000002/property/read
+2020-12-24 16:09:23.025 | INFO     | library.mqtt_lib.mqtt_client:publish:182 - 发布的payload：{'params': {'properties': ['sn']}, 'msgId': '81224805', 'timestamp': 1608797363025}
+2020-12-24 16:09:53.096 | ERROR    | library.mqtt_lib.mqtt_client:get_msg:293 - 获取消息异常：消息为空
+2020-12-24 16:09:53.097 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:202 - 取消订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-24 16:09:53.098 | INFO     | library.mqtt_lib.mqtt_client:subscribe:194 - 订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-24 16:09:53.098 | INFO     | library.mqtt_lib.mqtt_client:publish:181 - 发布的topic：/device/DH-001/DH0000000002/property/read
+2020-12-24 16:09:53.099 | INFO     | library.mqtt_lib.mqtt_client:publish:182 - 发布的payload：{'params': {'properties': ['model']}, 'msgId': '74484732', 'timestamp': 1608797393098}
+2020-12-24 16:10:23.172 | ERROR    | library.mqtt_lib.mqtt_client:get_msg:293 - 获取消息异常：消息为空
+2020-12-24 16:10:23.172 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:202 - 取消订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-24 16:10:23.173 | INFO     | library.mqtt_lib.mqtt_client:subscribe:194 - 订阅的topic：/device/DH-001/DH0000000002/property/read_reply
+2020-12-24 16:10:23.173 | INFO     | library.mqtt_lib.mqtt_client:publish:181 - 发布的topic：/device/DH-001/DH0000000002/property/read
+2020-12-24 16:10:23.174 | INFO     | library.mqtt_lib.mqtt_client:publish:182 - 发布的payload：{'params': {'properties': ['model']}, 'msgId': '92545712', 'timestamp': 1608797423173}
+2020-12-24 16:10:53.257 | ERROR    | library.mqtt_lib.mqtt_client:get_msg:293 - 获取消息异常：消息为空
+2020-12-24 16:10:53.258 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:202 - 取消订阅的topic：/device/DH-001/DH0000000002/property/read_reply

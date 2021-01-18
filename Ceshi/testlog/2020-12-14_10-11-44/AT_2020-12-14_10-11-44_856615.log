@@ -1,0 +1,7 @@
+2020-12-14 10:11:44.932 | INFO     | library.mqtt_lib.mqtt_client:on_connect:73 - 连接结果：连接成功
+2020-12-14 10:11:45.030 | INFO     | library.mqtt_lib.mqtt_client:subscribe:182 - 订阅的topic：/device/DH-001/DH0000000002/service/humidityAlarm/invoke_reply
+2020-12-14 10:11:45.031 | INFO     | library.mqtt_lib.mqtt_client:publish:167 - 发布的topic：/device/DH-001/DH0000000002/service/humidityAlarm/invoke
+2020-12-14 10:11:45.032 | INFO     | library.mqtt_lib.mqtt_client:publish:168 - 发布的payload：{'params': {'hostA': '47.116.64.22', 'hostB': ''}, 'msgId': '38386470', 'timestamp': 1607911905031}
+2020-12-14 10:12:15.116 | ERROR    | library.mqtt_lib.mqtt_client:get_msg:278 - 获取消息异常：消息为空
+2020-12-14 10:12:15.149 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:190 - 取消订阅的topic：/device/DH-001/DH0000000002/service/humidityAlarm/invoke_reply
+2020-12-14 10:12:15.173 | INFO     | library.mqtt_lib.mqtt_client:on_disconnect:89 - 断开结果：断开成功

@@ -1,0 +1,8 @@
+2020-12-28 14:14:13.921 | INFO     | library.mqtt_lib.mqtt_client:on_connect:111 - 连接结果：连接成功
+2020-12-28 14:14:14.010 | INFO     | library.mqtt_lib.mqtt_client:subscribe:232 - 订阅的topic：/device/DH_001/DH0000000001/service/setSensor/invoke_reply
+2020-12-28 14:14:14.011 | INFO     | library.mqtt_lib.mqtt_client:publish:219 - 发布的topic：/device/DH_001/DH0000000001/service/setSensor/invoke
+2020-12-28 14:14:14.011 | INFO     | library.mqtt_lib.mqtt_client:publish:220 - 发布的payload：{'params': {'tiltCalibrate': True, 'tiltThreshold': 30}, 'msgId': '6576692', 'timestamp': 1609136054011}
+2020-12-28 14:14:14.109 | INFO     | library.mqtt_lib.mqtt_client:on_message:81 - 获取消息：{"msgId":"6576692","timestamp":1609136053000,"code":301,"message":"Resource Busy","data":{}}
+2020-12-28 14:14:14.112 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:240 - 取消订阅的topic：/device/DH_001/DH0000000001/service/setSensor/invoke_reply
+2020-12-28 14:14:14.113 | WARNING  | library.mqtt_lib.simulator:parse_msg:150 - 响应消息状态：响应异常 Resource Busy
+2020-12-28 14:14:14.113 | INFO     | library.mqtt_lib.simulator:parse_msg:152 - 响应消息数据：{}

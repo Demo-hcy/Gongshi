@@ -1,0 +1,4 @@
+2020-12-28 17:38:59.576 | INFO     | library.mqtt_lib.mqtt_client:on_connect:111 - 连接结果：连接成功
+2020-12-28 17:38:59.675 | INFO     | library.mqtt_lib.mqtt_client:subscribe:232 - 订阅的topic：/device/DH_001/DH0000000001/service/setDO/invoke_reply
+2020-12-28 17:38:59.676 | INFO     | library.mqtt_lib.mqtt_client:publish:219 - 发布的topic：/device/DH_001/DH0000000001/service/setDO/invoke
+2020-12-28 17:38:59.677 | INFO     | library.mqtt_lib.mqtt_client:publish:220 - 发布的payload：{'params': {'port': 1, 'status': False, 'shootTime': 0}, 'msgId': '15717482', 'timestamp': 1609148339675}

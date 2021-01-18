@@ -1,0 +1,8 @@
+2020-12-29 11:18:44.652 | INFO     | library.mqtt_lib.mqtt_client:on_connect:111 - 连接结果：连接成功
+2020-12-29 11:18:44.752 | INFO     | library.mqtt_lib.mqtt_client:subscribe:232 - 订阅的topic：/device/DH_001/DH0000000001/service/reboot/invoke_reply
+2020-12-29 11:18:44.753 | INFO     | library.mqtt_lib.mqtt_client:publish:219 - 发布的topic：/device/DH_001/DH0000000001/service/reboot/invoke
+2020-12-29 11:18:44.754 | INFO     | library.mqtt_lib.mqtt_client:publish:220 - 发布的payload：{'params': {}, 'msgId': '60325881', 'timestamp': 1609211924753}
+2020-12-29 11:18:44.807 | INFO     | library.mqtt_lib.mqtt_client:on_message:81 - 获取消息：{"msgId":"60325881","timestamp":1609211924000,"code":0,"message":"success","data":{}}
+2020-12-29 11:18:44.854 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:240 - 取消订阅的topic：/device/DH_001/DH0000000001/service/reboot/invoke_reply
+2020-12-29 11:18:44.855 | INFO     | library.mqtt_lib.simulator:parse_msg:144 - 响应消息状态：成功 success
+2020-12-29 11:18:44.856 | INFO     | library.mqtt_lib.simulator:parse_msg:152 - 响应消息数据：{}

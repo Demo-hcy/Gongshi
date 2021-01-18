@@ -1,0 +1,9 @@
+2020-12-23 14:42:50.901 | INFO     | library.mqtt_lib.mqtt_client:on_connect:73 - 连接结果：连接成功
+2020-12-23 14:42:50.997 | INFO     | library.mqtt_lib.mqtt_client:subscribe:182 - 订阅的topic：/device/DH-001/DH0000000002/service/setSensor/invoke_reply
+2020-12-23 14:42:50.998 | INFO     | library.mqtt_lib.mqtt_client:publish:167 - 发布的topic：/device/DH-001/DH0000000002/service/setSensor/invoke
+2020-12-23 14:42:50.999 | INFO     | library.mqtt_lib.mqtt_client:publish:168 - 发布的payload：{'params': {'humiHiThreshold': -55, 'humiLowThreshold': -55}, 'msgId': '28540300', 'timestamp': 1608705770998}
+2020-12-23 14:42:51.062 | INFO     | library.mqtt_lib.mqtt_client:on_message:43 - 获取消息：{"msgId":"28540300","timestamp":1608705771000,"code":2,"message":"Params Error","data":{}}
+2020-12-23 14:42:51.099 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:190 - 取消订阅的topic：/device/DH-001/DH0000000002/service/setSensor/invoke_reply
+2020-12-23 14:42:51.100 | ERROR    | library.mqtt_lib.simulator:_parse_resp:148 - 响应消息状态：失败 Params Error
+2020-12-23 14:42:51.100 | INFO     | library.mqtt_lib.simulator:_parse_resp:149 - 响应消息数据：{}
+2020-12-23 14:42:51.101 | INFO     | library.mqtt_lib.mqtt_client:on_disconnect:89 - 断开结果：断开成功

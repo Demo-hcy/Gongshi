@@ -1,0 +1,11 @@
+2020-12-24 09:46:16.254 | INFO     | library.mqtt_lib.mqtt_client:on_connect:73 - 连接结果：连接成功
+2020-12-24 09:46:16.349 | INFO     | library.mqtt_lib.simulator:listen:178 - 开始监听：upTime
+2020-12-24 09:46:16.350 | INFO     | library.mqtt_lib.mqtt_client:subscribe:182 - 订阅的topic：/device/DH-001/DH0000000002/property/report
+2020-12-24 09:46:33.552 | INFO     | library.mqtt_lib.mqtt_client:on_message:43 - 获取消息：{"msgId":"1608774393049","timestamp":1608774393049,"params":{"holter":{"humidity":{"hiThreshold":50,"type":"","lowThreshold":10,"alarming":false,"humidity":41,"online":true},"interval":30,"water":{"status":false,"online":true},"di1":false,"do1":false,"di2":false,"do2":false,"do1Default":false,"eth":{"port1":true,"port2":true,"port3":true,"port4":true},"enabled":true,"temperature":{"temperature":29,"hiThreshold":50,"type":"","lowThreshold":10,"alarming":false,"online":true},"do2Default":false,"alarmInterval":60,"tilt":{"alarming":false,"direction":0,"threshold":5,"angle":0,"online":true}}}}
+2020-12-24 09:46:33.672 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:190 - 取消订阅的topic：/device/DH-001/DH0000000002/property/report
+2020-12-24 09:46:33.673 | INFO     | library.mqtt_lib.simulator:listen:189 - 结束监听：upTime
+2020-12-24 09:46:33.673 | INFO     | library.mqtt_lib.simulator:listen:191 - 进行响应
+2020-12-24 09:46:33.673 | INFO     | library.mqtt_lib.mqtt_client:publish:167 - 发布的topic：/device/DH-001/DH0000000002/property/report_reply
+2020-12-24 09:46:33.674 | INFO     | library.mqtt_lib.mqtt_client:publish:168 - 发布的payload：{'msgId': '1608774393049', 'timestamp': 1608774393674, 'code': 0, 'message': 'AutoTesterSuccess', 'data': {}}
+2020-12-24 09:46:33.677 | INFO     | library.mqtt_lib.simulator:listen:178 - 开始监听：reboot
+2020-12-24 09:46:33.677 | INFO     | library.mqtt_lib.mqtt_client:subscribe:182 - 订阅的topic：/device/DH-001/DH0000000002/event/reboot/report

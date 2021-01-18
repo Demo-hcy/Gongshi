@@ -1,0 +1,18 @@
+2020-12-28 14:29:14.276 | INFO     | library.mqtt_lib.mqtt_client:on_connect:111 - 连接结果：连接成功
+2020-12-28 14:29:14.371 | INFO     | library.mqtt_lib.simulator:report_listen:621 - 开始监听属性：networkInfo
+2020-12-28 14:29:14.372 | INFO     | library.mqtt_lib.mqtt_client:subscribe:232 - 订阅的topic：/device/DH_001/DH0000000001/property/report
+2020-12-28 14:32:00.218 | INFO     | library.mqtt_lib.mqtt_client:on_message:81 - 获取消息：{"msgId":"1609137119216","timestamp":1609137119216,"params":{"holter":{"alarmInterval":30,"do1":false,"interval":240,"do2Default":false,"do2":false,"tilt":{"alarming":false,"angle":0,"online":true,"threshold":30},"enabled":true,"temperature":{"temperature":29,"hiThreshold":80,"lowThreshold":-20,"type":"","alarming":false,"online":true},"di1":false,"water":{"online":true,"status":false},"humidity":{"online":true,"humidity":38,"lowThreshold":30,"type":"","alarming":false,"hiThreshold":80},"di2":false,"do1Default":true,"eth":{"port2":true,"port3":true,"port1":true,"port4":true}}}}
+2020-12-28 14:32:00.275 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:240 - 取消订阅的topic：/device/DH_001/DH0000000001/property/report
+2020-12-28 14:32:00.276 | INFO     | library.mqtt_lib.simulator:report_listen:626 - 结束监听属性：networkInfo
+2020-12-28 14:32:00.276 | INFO     | library.mqtt_lib.simulator:report_reply:644 - 响应属性上报：networkInfo
+2020-12-28 14:32:00.277 | INFO     | library.mqtt_lib.mqtt_client:publish:219 - 发布的topic：/device/DH_001/DH0000000001/property/report_reply
+2020-12-28 14:32:00.278 | INFO     | library.mqtt_lib.mqtt_client:publish:220 - 发布的payload：{'msgId': '1609137119216', 'timestamp': 1609137120277, 'code': 0, 'message': 'AutoTester', 'data': {}}
+2020-12-28 14:32:00.278 | INFO     | library.mqtt_lib.simulator:report_listen:621 - 开始监听属性：holter
+2020-12-28 14:32:00.278 | INFO     | library.mqtt_lib.mqtt_client:subscribe:232 - 订阅的topic：/device/DH_001/DH0000000001/property/report
+2020-12-28 14:36:01.144 | INFO     | library.mqtt_lib.mqtt_client:on_message:81 - 获取消息：{"msgId":"1609137360140","timestamp":1609137360140,"params":{"holter":{"alarmInterval":30,"do1":false,"interval":240,"do2Default":false,"do2":false,"tilt":{"alarming":false,"angle":0,"online":true,"threshold":30},"enabled":true,"temperature":{"temperature":29,"hiThreshold":80,"lowThreshold":-20,"type":"","alarming":false,"online":true},"di1":false,"water":{"online":true,"status":false},"humidity":{"online":true,"humidity":38,"lowThreshold":30,"type":"","alarming":false,"hiThreshold":80},"di2":false,"do1Default":true,"eth":{"port2":true,"port3":true,"port1":true,"port4":true}}}}
+2020-12-28 14:36:01.238 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:240 - 取消订阅的topic：/device/DH_001/DH0000000001/property/report
+2020-12-28 14:36:01.239 | INFO     | library.mqtt_lib.simulator:report_listen:626 - 结束监听属性：holter
+2020-12-28 14:36:01.239 | INFO     | library.mqtt_lib.simulator:report_reply:644 - 响应属性上报：holter
+2020-12-28 14:36:01.240 | INFO     | library.mqtt_lib.mqtt_client:publish:219 - 发布的topic：/device/DH_001/DH0000000001/property/report_reply
+2020-12-28 14:36:01.240 | INFO     | library.mqtt_lib.mqtt_client:publish:220 - 发布的payload：{'msgId': '1609137360140', 'timestamp': 1609137361240, 'code': 0, 'message': 'AutoTester', 'data': {}}
+2020-12-28 14:36:01.242 | INFO     | library.mqtt_lib.mqtt_client:on_disconnect:127 - 断开结果：断开成功

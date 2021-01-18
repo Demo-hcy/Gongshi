@@ -1,0 +1,10 @@
+2021-01-12 10:48:16.287 | INFO     | library.mqtt_lib.mqtt_client:on_connect:114 - 连接结果：连接成功
+2021-01-12 10:48:16.385 | INFO     | library.mqtt_lib.mqtt_client:subscribe:229 - 订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/property/report
+2021-01-12 10:48:16.386 | INFO     | library.mqtt_lib.mqtt_client:subscribe:229 - 订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/service/setBasic/invoke_reply
+2021-01-12 10:48:16.387 | INFO     | library.mqtt_lib.mqtt_client:publish:216 - 发布的主题：/device/D1_7G_DHWG/D26670974B34332A/service/setBasic/invoke
+2021-01-12 10:48:16.387 | INFO     | library.mqtt_lib.mqtt_client:publish:217 - 发布的payload：{'params': {'enabled': True, 'interval': 240, 'alarmInterval': 30, 'do1': False, 'do2': True}, 'msgId': '51455039', 'timestamp': 1610419696386}
+2021-01-12 10:48:16.890 | INFO     | library.mqtt_lib.mqtt_client:on_message:83 - 获取消息：{"msgId":"51455039","timestamp":644260,"code":0,"message":"success","data":{}}
+2021-01-12 10:48:16.891 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:237 - 取消订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/service/setBasic/invoke_reply
+2021-01-12 10:48:17.303 | INFO     | library.mqtt_lib.mqtt_client:on_message:83 - 获取消息：{"msgId":"644672","timestamp":644672,"params":{"holter":{"interval":240,"enabled":true,"eth":{"port1":true,"port3":true,"port2":true,"port4":true},"tilt":{"online":true,"alarming":false,"threshold":5,"angle":4},"do2":false,"temperature":{"online":true,"temperature":26,"hiThreshold":80,"type":"none","lowThreshold":-20,"alarming":false},"do1Default":false,"di2":false,"di1":false,"alarmInterval":30,"water":{"online":true,"status":false},"voip":{"online":false,"volume":20,"busy":false},"do2Default":true,"humidity":{"online":true,"hiThreshold":80,"lowThreshold":30,"type":"low","alarming":true,"humidity":15},"do1":true}}}
+2021-01-12 10:48:17.392 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:237 - 取消订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/property/report
+2021-01-12 10:48:17.393 | INFO     | library.mqtt_lib.base_controller:parse_msg:133 - 响应消息状态：成功 success

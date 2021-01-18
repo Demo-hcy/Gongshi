@@ -1,0 +1,9 @@
+2021-01-12 15:56:45.480 | INFO     | library.mqtt_lib.mqtt_client:on_connect:114 - 连接结果：连接成功
+2021-01-12 15:56:45.575 | INFO     | library.mqtt_lib.mqtt_client:subscribe:229 - 订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/property/report
+2021-01-12 15:56:45.576 | INFO     | library.mqtt_lib.mqtt_client:subscribe:229 - 订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/service/updateFirmware/invoke_reply
+2021-01-12 15:56:45.577 | INFO     | library.mqtt_lib.mqtt_client:publish:216 - 发布的主题：/device/D1_7G_DHWG/D26670974B34332A/service/updateFirmware/invoke
+2021-01-12 15:56:45.577 | INFO     | library.mqtt_lib.mqtt_client:publish:217 - 发布的payload：{'params': {'url': 'http://192.168.52.21:5002/download?fileId=ten_second.mp3', 'md5Sum': 'a1798c8ecafac62fa7d49ef3b2d6103b'}, 'msgId': '12061387', 'timestamp': 1610438205576}
+2021-01-12 15:56:45.697 | INFO     | library.mqtt_lib.mqtt_client:on_message:83 - 获取消息：{"msgId":"12061387","timestamp":1610438204000,"code":0,"message":"success","data":{}}
+2021-01-12 15:56:45.783 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:237 - 取消订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/service/updateFirmware/invoke_reply
+2021-01-12 15:57:15.862 | ERROR    | library.mqtt_lib.mqtt_client:get_msg:337 - 获取消息异常：消息为空
+2021-01-12 15:57:15.863 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:237 - 取消订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/property/report

@@ -1,0 +1,10 @@
+2021-01-12 11:16:22.174 | INFO     | library.mqtt_lib.mqtt_client:on_connect:114 - 连接结果：连接成功
+2021-01-12 11:16:22.272 | INFO     | library.mqtt_lib.mqtt_client:subscribe:229 - 订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/property/report
+2021-01-12 11:16:22.273 | INFO     | library.mqtt_lib.mqtt_client:subscribe:229 - 订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/service/setDO/invoke_reply
+2021-01-12 11:16:22.273 | INFO     | library.mqtt_lib.mqtt_client:publish:216 - 发布的主题：/device/D1_7G_DHWG/D26670974B34332A/service/setDO/invoke
+2021-01-12 11:16:22.274 | INFO     | library.mqtt_lib.mqtt_client:publish:217 - 发布的payload：{'params': {'port': 2, 'status': True, 'shootTime': 0}, 'msgId': '60222025', 'timestamp': 1610421382273}
+2021-01-12 11:16:22.372 | INFO     | library.mqtt_lib.mqtt_client:on_message:83 - 获取消息：{"msgId":"60222025","timestamp":2329000,"code":0,"message":"success","data":{}}
+2021-01-12 11:16:22.376 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:237 - 取消订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/service/setDO/invoke_reply
+2021-01-12 11:16:23.995 | INFO     | library.mqtt_lib.mqtt_client:on_message:83 - 获取消息：{"msgId":"2331345","timestamp":2331345,"params":{"holter":{"interval":240,"enabled":true,"eth":{"port1":true,"port3":true,"port2":true,"port4":true},"tilt":{"online":true,"alarming":false,"threshold":30,"angle":0},"do2":true,"temperature":{"online":true,"temperature":25,"hiThreshold":50,"type":"none","lowThreshold":10,"alarming":false},"do1Default":false,"di2":false,"di1":false,"alarmInterval":30,"water":{"online":true,"status":false},"voip":{"online":false,"volume":20,"busy":false},"do2Default":true,"humidity":{"online":true,"hiThreshold":50,"lowThreshold":10,"type":"none","alarming":false,"humidity":16},"do1":true}}}
+2021-01-12 11:16:24.082 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:237 - 取消订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/property/report
+2021-01-12 11:16:24.082 | INFO     | library.mqtt_lib.base_controller:parse_msg:133 - 响应消息状态：成功 success

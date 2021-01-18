@@ -1,0 +1,228 @@
+{
+  "productId": "RHL_JGS869",
+  "productName": "瑞隆源机柜锁",
+  "properties": [{
+      "id": "onOff",
+      "name": "开关状态",
+      "accessMode": "ro",
+      "required": false,
+      "type": "integer",
+      "specs": {
+        "optional": [{
+            "value": 0,
+            "desc": "关闭"
+          },
+          {
+            "value": 1,
+            "desc": "开启"
+          }
+        ]
+      }
+    },
+    {
+      "id": "online",
+      "name": "在线状态",
+      "accessMode": "ro",
+      "required": false,
+      "type": "integer",
+      "specs": {
+        "optional": [{
+            "value": 0,
+            "desc": "离线"
+          },
+          {
+            "value": 1,
+            "desc": "在线"
+          }
+        ]
+      }
+    },
+    {
+      "id": "version",
+      "name": "设备软件版本",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "specs": {}
+    },
+    {
+      "id": "rs485Port",
+      "name": "485端口",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 1,
+        "max": 8
+      }
+    },
+    {
+      "id": "rs485Addr",
+      "name": "设备地址",
+      "accessMode": "rw",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "id": "rs485Baund",
+      "name": "波特率",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 1200,
+        "max": 19200
+      }
+    },
+    {
+      "id": "rs485DataBit",
+      "name": "数据位",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "optional": [{
+            "value": 6,
+            "desc": "6数据位"
+          },
+          {
+            "value": 7,
+            "desc": "7数据位"
+          },
+          {
+            "value": 8,
+            "desc": "8数据位"
+          }
+        ]
+      }
+    },
+    {
+      "id": "rs485Parity",
+      "name": "校验位",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "specs": {
+        "optional": [{
+            "value": "N",
+            "desc": "无校验"
+          },
+          {
+            "value": "E",
+            "desc": "偶校验"
+          },
+          {
+            "value": "O",
+            "desc": "奇校验"
+          }
+        ]
+      }
+    },
+    {
+      "id": "rs485StopBit",
+      "name": "停止位",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "optional": [{
+            "value": 1,
+            "desc": "1停止位"
+          },
+          {
+            "value": 2,
+            "desc": "2停止位"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sn",
+      "name": "设备sn",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "specs": {}
+    }
+  ],
+  "events": [{
+      "id": "lockerInvadeStart",
+      "name": "门锁入侵开始",
+      "parameters": []
+    },
+    {
+      "id": "lockerInvadeStop",
+      "name": "门锁入侵结束",
+      "parameters": []
+    }
+  ],
+  "services": [{
+      "id": "setOnOff",
+      "name": "设置开关锁",
+      "type": "business",
+      "parameters": [{
+        "id": "onOff",
+        "name": "开关状态",
+        "accessMode": "ro",
+        "required": true,
+        "type": "integer",
+        "specs": {
+          "optional": [{
+              "value": 0,
+              "desc": "关闭"
+            },
+            {
+              "value": 1,
+              "desc": "开启"
+            }
+          ]
+        }
+      }],
+      "output": []
+    },
+    {
+      "id": "setAlarmFrequency",
+      "name": "设置告警重复上报频率",
+      "type": "management",
+      "parameters": [{
+        "id": "frequency",
+        "name": "告警频率",
+        "accessMode": "ro",
+        "required": true,
+        "type": "integer",
+        "specs": {
+          "min": 1,
+          "max": 9999,
+          "unit": "s",
+          "unitName": "秒",
+          "step": 1
+        }
+      }],
+      "output": []
+    },
+    {
+      "id": "switchMode",
+      "name": "切换模式",
+      "type": "management",
+      "parameters": [{
+        "id": "mode",
+        "name": "模式",
+        "accessMode": "ro",
+        "required": true,
+        "type": "string",
+        "specs": {
+          "optional": [{
+              "value": "manual",
+              "desc": "手动"
+            },
+            {
+              "value": "auto",
+              "desc": "自动"
+            }
+          ]
+        }
+      }],
+      "output": []
+    }
+  ]
+}

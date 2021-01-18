@@ -1,0 +1,13 @@
+2020-12-29 20:20:31.001 | INFO     | library.mqtt_lib.mqtt_client:on_connect:111 - 连接结果：连接成功
+2020-12-29 20:20:31.101 | INFO     | library.mqtt_lib.simulator:event_report_listen:659 - 开始监听事件：firmwareUpdate
+2020-12-29 20:20:31.102 | INFO     | library.mqtt_lib.mqtt_client:subscribe:232 - 订阅的topic：/device/DH_001/DH0000000001/event/firmwareUpdate/report
+2020-12-29 20:20:33.707 | INFO     | library.mqtt_lib.mqtt_client:on_message:81 - 获取消息：{"msgId":"1609244422048","timestamp":1609244422048,"params":{"status":"failed","resultCode":3}}
+2020-12-29 20:20:33.711 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:240 - 取消订阅的topic：/device/DH_001/DH0000000001/event/firmwareUpdate/report
+2020-12-29 20:20:33.741 | INFO     | library.mqtt_lib.simulator:event_report_listen:664 - 结束监听事件：firmwareUpdate
+2020-12-29 20:20:33.741 | INFO     | library.mqtt_lib.simulator:event_report_reply:682 - 响应事件上报：firmwareUpdate
+2020-12-29 20:20:33.741 | INFO     | library.mqtt_lib.mqtt_client:publish:219 - 发布的topic：/device/DH_001/DH0000000001/event/firmwareUpdate/report_reply
+2020-12-29 20:20:33.742 | INFO     | library.mqtt_lib.mqtt_client:publish:220 - 发布的payload：{'msgId': '1609244422048', 'timestamp': 1609244433742, 'code': 0, 'message': 'AutoTester', 'data': {}}
+2020-12-29 20:20:33.742 | INFO     | library.mqtt_lib.simulator:event_report_reply:682 - 响应事件上报：firmwareUpdate
+2020-12-29 20:20:33.743 | INFO     | library.mqtt_lib.mqtt_client:publish:219 - 发布的topic：/device/DH_001/DH0000000001/event/firmwareUpdate/report_reply
+2020-12-29 20:20:33.743 | INFO     | library.mqtt_lib.mqtt_client:publish:220 - 发布的payload：{'msgId': '1609244422048', 'timestamp': 1609244433743, 'code': 0, 'message': 'AutoTester', 'data': {}}
+2020-12-29 20:20:33.744 | INFO     | library.mqtt_lib.mqtt_client:on_disconnect:127 - 断开结果：断开成功

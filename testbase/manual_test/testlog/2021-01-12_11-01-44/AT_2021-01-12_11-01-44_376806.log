@@ -1,0 +1,7 @@
+2021-01-12 11:01:44.467 | INFO     | library.mqtt_lib.mqtt_client:on_connect:114 - 连接结果：连接成功
+2021-01-12 11:01:44.567 | INFO     | library.mqtt_lib.platform_controller:event_report_listen:206 - 开始监听事件上报：calibrate
+2021-01-12 11:01:44.568 | INFO     | library.mqtt_lib.mqtt_client:subscribe:229 - 订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/event/calibrate/report
+2021-01-12 11:02:44.647 | ERROR    | library.mqtt_lib.mqtt_client:get_msg:337 - 获取消息异常：消息为空
+2021-01-12 11:02:44.648 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:237 - 取消订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/event/calibrate/report
+2021-01-12 11:02:44.650 | INFO     | library.mqtt_lib.platform_controller:event_report_listen:210 - 结束监听事件上报：calibrate
+2021-01-12 11:02:44.651 | INFO     | library.mqtt_lib.mqtt_client:on_disconnect:130 - 断开结果：断开成功

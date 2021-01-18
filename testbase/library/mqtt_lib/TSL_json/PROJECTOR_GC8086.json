@@ -1,0 +1,318 @@
+{
+  "productId": "GC8086",
+  "productName": "沃顿投影灯",
+  "properties": [{
+      "id": "onOff",
+      "name": "投影灯状态",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "optional": [{
+            "value": 1,
+            "desc": "开"
+          },
+          {
+            "value": 0,
+            "desc": "关"
+          }
+        ]
+      }
+    },
+    {
+      "id": "rs485Addr",
+      "name": "rs485地址",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "specs": {}
+    },
+    {
+      "id": "rs485Port",
+      "name": "rs485端口",
+      "accessMode": "rw",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 1,
+        "max": 8,
+        "step": 1
+      }
+    },
+    {
+      "id": "rs485Baund",
+      "name": "波特率",
+      "accessMode": "rw",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 1200,
+        "max": 19200,
+        "step": 1200
+      }
+    },
+    {
+      "id": "rs485DataBit",
+      "name": "数据位",
+      "accessMode": "rw",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "optional": [{
+            "value": 6,
+            "desc": "6数据位"
+          },
+          {
+            "value": 7,
+            "desc": "7数据位"
+          },
+          {
+            "value": 8,
+            "desc": "8数据位"
+          }
+        ]
+      }
+    },
+    {
+      "id": "rs485Parity",
+      "name": "校验位",
+      "accessMode": "rw",
+      "required": true,
+      "type": "string",
+      "specs": {
+        "optional": [{
+            "value": "N",
+            "desc": "无校验"
+          },
+          {
+            "value": "E",
+            "desc": "偶校验"
+          },
+          {
+            "value": "O",
+            "desc": "奇校验"
+          }
+        ]
+      }
+    },
+    {
+      "id": "rs485StopBit",
+      "name": "停止位",
+      "accessMode": "rw",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "optional": [{
+            "value": 1,
+            "desc": "1停止位"
+          },
+          {
+            "value": 2,
+            "desc": "2停止位"
+          }
+        ]
+      }
+    },
+    {
+      "id": "mode",
+      "name": "控制模式",
+      "accessMode": "rw",
+      "required": true,
+      "type": "string",
+      "specs": {
+        "optional": [{
+            "value": "manual",
+            "desc": "手动"
+          },
+          {
+            "value": "auto",
+            "desc": "自动"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sn",
+      "name": "设备sn",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "specs": {}
+    },
+    {
+      "id": "model",
+      "name": "设备型号",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "specs": {}
+    },
+    {
+      "id": "online",
+      "name": "离线在线",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "specs": {
+        "optional": [{
+            "value": 0,
+            "desc": "离线"
+          },
+          {
+            "value": 1,
+            "desc": "在线"
+          }
+        ]
+      }
+    },
+    {
+      "id": "brightness",
+      "name": "灯亮度",
+      "accessMode": "ro",
+      "required": true,
+      "type": "number",
+      "specs": {
+        "min": 0,
+        "max": 100,
+        "unit": "%",
+        "unitName": "百分值",
+        "step": 1
+      }
+    },
+    {
+      "id": "beads",
+      "name": "珠点亮",
+      "accessMode": "ro",
+      "required": true,
+      "type": "number"
+    },
+    {
+      "id": "flickerFrequency",
+      "name": "闪烁频率",
+      "accessMode": "ro",
+      "required": true,
+      "type": "number",
+      "specs": {
+        "min": 0,
+        "max": 255,
+        "step": 1
+      }
+    },
+    {
+      "id": "playPattern",
+      "name": "播放图案",
+      "accessMode": "ro",
+      "required": true,
+      "type": "number",
+      "specs": {
+        "min": 1,
+        "max": 3,
+        "step": 1
+      }
+    },
+    {
+      "id": "stepperMotor",
+      "name": "进步电机",
+      "accessMode": "ro",
+      "required": true,
+      "type": "number"
+    }
+  ],
+  "events": [],
+  "services": [{
+      "id": "setOnOff",
+      "name": "设置开关",
+      "parameters": [{
+        "id": "onOff",
+        "name": "开关",
+        "accessMode": "rw",
+        "required": true,
+        "type": "number",
+        "specs": {
+          "optional": [{
+              "value": 1,
+              "desc": "开"
+            },
+            {
+              "value": 0,
+              "desc": "关"
+            }
+          ]
+        }
+      }],
+      "output": []
+    },
+    {
+      "id": "setBrightness",
+      "name": "设置亮度",
+      "parameters": [{
+        "id": "brightness",
+        "name": "亮度",
+        "accessMode": "rw",
+        "required": true,
+        "type": "number",
+        "specs": {
+          "min": 0,
+          "max": 255,
+          "step": 1
+        }
+      }],
+      "output": []
+    },
+    {
+      "id": "setFlickerFrequency",
+      "name": "设置闪烁频率",
+      "parameters": [{
+        "id": "flickerFrequency",
+        "name": "闪烁频率",
+        "accessMode": "rw",
+        "required": true,
+        "type": "number",
+        "specs": {
+          "min": 0,
+          "max": 255,
+          "step": 1
+        }
+      }],
+      "output": []
+    },
+    {
+      "id": "switchMode",
+      "name": "切换控制模式",
+      "parameters": [{
+        "id": "mode",
+        "name": "控制模式",
+        "required": true,
+        "type": "string",
+        "specs": {
+          "optional": [{
+              "value": "manual",
+              "desc": "手动"
+            },
+            {
+              "value": "auto",
+              "desc": "自动"
+            }
+          ]
+        }
+      }]
+    },
+    {
+      "id": "setPlayPattern",
+      "name": "设置播放图案",
+      "parameters": [{
+        "id": "playPattern",
+        "name": "播放图案",
+        "accessMode": "rw",
+        "required": true,
+        "type": "number",
+        "specs": {
+          "min": 1,
+          "max": 3,
+          "step": 1
+        }
+      }],
+      "output": []
+    }
+  ]
+}

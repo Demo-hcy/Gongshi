@@ -1,0 +1,10 @@
+2021-01-13 10:28:28.506 | INFO     | library.mqtt_lib.mqtt_client:on_connect:114 - 连接结果：连接成功
+2021-01-13 10:28:28.603 | INFO     | library.mqtt_lib.mqtt_client:subscribe:229 - 订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/property/report
+2021-01-13 10:28:28.605 | INFO     | library.mqtt_lib.mqtt_client:subscribe:229 - 订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/service/setBasic/invoke_reply
+2021-01-13 10:28:28.607 | INFO     | library.mqtt_lib.mqtt_client:publish:216 - 发布的主题：/device/D1_7G_DHWG/D26670974B34332A/service/setBasic/invoke
+2021-01-13 10:28:28.608 | INFO     | library.mqtt_lib.mqtt_client:publish:217 - 发布的payload：{'params': {'enabled': True, 'interval': 250, 'alarmInterval': 30, 'do1': False, 'do2': False}, 'msgId': '17218070', 'timestamp': 1610504908605}
+2021-01-13 10:28:29.079 | INFO     | library.mqtt_lib.mqtt_client:on_message:83 - 获取消息：{"msgId":"17218070","timestamp":1610504906785,"code":0,"message":"success","data":{}}
+2021-01-13 10:28:29.125 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:237 - 取消订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/service/setBasic/invoke_reply
+2021-01-13 10:28:50.016 | INFO     | library.mqtt_lib.mqtt_client:on_disconnect:130 - 断开结果：断开失败
+2021-01-13 10:28:51.057 | ERROR    | library.mqtt_lib.mqtt_client:get_msg:337 - 获取消息异常：not enough values to unpack (expected 2, got 0)
+2021-01-13 10:28:51.057 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:237 - 取消订阅的主题：/device/D1_7G_DHWG/D26670974B34332A/property/report
