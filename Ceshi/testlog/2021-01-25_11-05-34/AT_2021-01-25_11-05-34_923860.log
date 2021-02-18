@@ -1,0 +1,7 @@
+2021-01-25 11:05:35.003 | INFO     | library.mqtt_lib.mqtt_client:on_connect:114 - 连接结果：连接成功
+2021-01-25 11:05:35.104 | INFO     | library.mqtt_lib.mqtt_client:subscribe:229 - 订阅的主题：/device/D1_7G_DHWG/E46854B287555333/property/report
+2021-01-25 11:05:35.104 | INFO     | library.mqtt_lib.mqtt_client:subscribe:229 - 订阅的主题：/device/D1_7G_DHWG/E46854B287555333/service/setRs485/invoke_reply
+2021-01-25 11:05:35.105 | INFO     | library.mqtt_lib.mqtt_client:publish:216 - 发布的主题：/device/D1_7G_DHWG/E46854B287555333/service/setRs485/invoke
+2021-01-25 11:05:35.105 | INFO     | library.mqtt_lib.mqtt_client:publish:217 - 发布的payload：{'params': {'port': 1, 'baudRate': 9600, 'byteSize': 8, 'stopBit': '1', 'parities': 'E'}, 'msgId': '65075339', 'timestamp': 1611543935105}
+2021-01-25 11:06:05.193 | ERROR    | library.mqtt_lib.mqtt_client:get_msg:337 - 获取消息异常：消息为空
+2021-01-25 11:06:05.194 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:237 - 取消订阅的主题：/device/D1_7G_DHWG/E46854B287555333/service/setRs485/invoke_reply

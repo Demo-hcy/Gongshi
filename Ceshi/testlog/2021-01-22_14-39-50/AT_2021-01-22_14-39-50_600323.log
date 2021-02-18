@@ -1,0 +1,16 @@
+2021-01-22 14:39:50.770 | ERROR    | library.common.logger:logger_error_debug:41 - 连接服务器出错：[Errno 11001] getaddrinfo failed
+2021-01-22 14:39:50.918 | DEBUG    | library.common.logger:logger_error_debug:42 - Traceback (most recent call last):
+  File "E:\AutoTester\testbase\library\mqtt_lib\mqtt_client.py", line 137, in connect_server
+    self.client.connect(self.host, self.port, self.timeout)
+  File "E:\Program Files\Python37\lib\site-packages\paho\mqtt\client.py", line 937, in connect
+    return self.reconnect()
+  File "E:\Program Files\Python37\lib\site-packages\paho\mqtt\client.py", line 1071, in reconnect
+    sock = self._create_socket_connection()
+  File "E:\Program Files\Python37\lib\site-packages\paho\mqtt\client.py", line 3522, in _create_socket_connection
+    return socket.create_connection(addr, source_address=source, timeout=self._keepalive)
+  File "E:\Program Files\Python37\lib\socket.py", line 707, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File "E:\Program Files\Python37\lib\socket.py", line 752, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+

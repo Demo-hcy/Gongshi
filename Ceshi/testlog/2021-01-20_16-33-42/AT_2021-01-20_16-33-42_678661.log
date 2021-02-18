@@ -1,0 +1,8 @@
+2021-01-20 16:33:42.785 | INFO     | library.mqtt_lib.mqtt_client:on_connect:114 - 连接结果：连接成功
+2021-01-20 16:33:42.882 | INFO     | library.mqtt_lib.mqtt_client:subscribe:229 - 订阅的主题：/device/D1_7G_DHWG/E46854B287555333/property/read_reply
+2021-01-20 16:33:42.882 | INFO     | library.mqtt_lib.mqtt_client:publish:216 - 发布的主题：/device/D1_7G_DHWG/E46854B287555333/property/read
+2021-01-20 16:33:42.883 | INFO     | library.mqtt_lib.mqtt_client:publish:217 - 发布的payload：{'params': {'properties': ['networkInfo']}, 'msgId': '49439026', 'timestamp': 1611131622882}
+2021-01-20 16:33:42.909 | INFO     | library.mqtt_lib.mqtt_client:on_message:83 - 获取消息：{"msgId":"49439026","timestamp":1611131622000,"code":301,"message":"Resource Busy","data":{}}
+2021-01-20 16:33:42.984 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:237 - 取消订阅的主题：/device/D1_7G_DHWG/E46854B287555333/property/read_reply
+2021-01-20 16:33:42.985 | WARNING  | library.mqtt_lib.base_controller:parse_msg:139 - 响应消息状态：响应异常 Resource Busy
+2021-01-20 16:33:42.986 | INFO     | library.mqtt_lib.mqtt_client:on_disconnect:130 - 断开结果：断开成功

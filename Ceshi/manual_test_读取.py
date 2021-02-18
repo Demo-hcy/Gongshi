@@ -9,7 +9,9 @@ import time
 mqtt_client = MQTTClient(host='192.168.49.96', port=1883, user="mosquitto", password="tN9NQe#fPh")
 
 # dh = D1_QG_DHWG('D26670974B34332A')
-dh = D1_QG_DHWG('E46854B287555333')
+# dh = D1_QG_DHWG('0202101271002AYG')
+dh = D1_QG_DHWG('0202101271000AYG')
+
 platform = PlatformController(mqtt_client)
 properties = []
 properties.append(dh.properties.networkInfo)

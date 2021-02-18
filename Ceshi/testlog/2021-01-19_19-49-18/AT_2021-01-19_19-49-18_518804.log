@@ -1,0 +1,4 @@
+2021-01-19 19:49:18.644 | INFO     | library.mqtt_lib.mqtt_client:on_connect:114 - 连接结果：连接成功
+2021-01-19 19:49:18.736 | INFO     | library.mqtt_lib.mqtt_client:subscribe:229 - 订阅的主题：/device/D1_7G_DHWG/E46854B287555333/property/read_reply
+2021-01-19 19:49:18.737 | INFO     | library.mqtt_lib.mqtt_client:publish:216 - 发布的主题：/device/D1_7G_DHWG/E46854B287555333/property/read
+2021-01-19 19:49:18.737 | INFO     | library.mqtt_lib.mqtt_client:publish:217 - 发布的payload：{'params': {'properties': ['networkInfo']}, 'msgId': '96767585', 'timestamp': 1611056958737}

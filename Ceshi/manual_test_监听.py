@@ -4,9 +4,10 @@ from library.mqtt_lib.mqtt_controller import PlatformController
 from library.mqtt_lib.TSL_model.D1_7G_DHWG_MODEL import D1_QG_DHWG
 
 # 动环盒子
-mqtt_client = MQTTClient(host='192.168.49.68', port=1883, timeout=6000)
+mqtt_client = MQTTClient(host='192.168.49.96', port=1883, timeout=6000)
 platform = PlatformController(mqtt_client)
-dh = D1_QG_DHWG('D26670974B34332A')
+# dh = D1_QG_DHWG('D26670974B34332A')
+dh = D1_QG_DHWG('E46854B287555333')
 
 # 监听属性
 print('-' * 50)

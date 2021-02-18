@@ -1,0 +1,10 @@
+2021-01-29 09:51:57.898 | INFO     | library.mqtt_lib.mqtt_client:on_connect:114 - 连接结果：连接成功
+2021-01-29 09:51:58.000 | INFO     | library.mqtt_lib.mqtt_client:subscribe:229 - 订阅的主题：/device/D1_7G_DHWG/DH0000000002/property/report
+2021-01-29 09:51:58.001 | INFO     | library.mqtt_lib.mqtt_client:subscribe:229 - 订阅的主题：/device/D1_7G_DHWG/DH0000000002/service/setVolume/invoke_reply
+2021-01-29 09:51:58.001 | INFO     | library.mqtt_lib.mqtt_client:publish:216 - 发布的主题：/device/D1_7G_DHWG/DH0000000002/service/setVolume/invoke
+2021-01-29 09:51:58.002 | INFO     | library.mqtt_lib.mqtt_client:publish:217 - 发布的payload：{'params': {'volume': 30}, 'msgId': '1606567', 'timestamp': 1611885118001}
+2021-01-29 09:51:58.803 | INFO     | library.mqtt_lib.mqtt_client:on_message:83 - 获取消息：{"msgId":"1606567","timestamp":1611885117109,"code":0,"message":"success","data":{}}
+2021-01-29 09:51:58.857 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:237 - 取消订阅的主题：/device/D1_7G_DHWG/DH0000000002/service/setVolume/invoke_reply
+2021-01-29 09:52:00.848 | INFO     | library.mqtt_lib.mqtt_client:on_message:83 - 获取消息：{"msgId":"1611885119150","timestamp":1611885119150,"params":{"holter":{"do2Default":false,"interval":180,"do1Default":false,"do2":false,"do1":false,"water":{"status":false,"online":true},"alarmInterval":1800,"humidity":{"humidity":27,"lowThreshold":5,"online":true,"alarming":false,"type":"none","hiThreshold":80},"voip":{"busy":false,"volume":30,"online":true},"tilt":{"threshold":5,"angle":30,"alarming":true,"online":true},"enabled":true,"di1":false,"eth":{"port4":true,"port3":true,"port2":true,"port1":true},"di2":false,"temperature":{"online":true,"lowThreshold":-30,"hiThreshold":80,"alarming":false,"type":"none","temperature":29}}}}
+2021-01-29 09:52:00.865 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:237 - 取消订阅的主题：/device/D1_7G_DHWG/DH0000000002/property/report
+2021-01-29 09:52:00.866 | INFO     | library.mqtt_lib.base_controller:parse_msg:133 - 响应消息状态：成功 success
