@@ -2897,10 +2897,12 @@ class NetworkInfoPropertyStruct:
         self.ip = IpNetworkInfoPropertyStruct()
         self.gateway = GatewayNetworkInfoPropertyStruct()
         self.mask = MaskNetworkInfoPropertyStruct()
+        self.apn = ApnNetworkInfoPropertyStruct()
+        self.wirelessStatus = WirelessStatusNetworkInfoPropertyStruct()
 
     @property
     def v(self):
-        return {'networkType': self.networkType.v, 'wirelessSupport': self.wirelessSupport.v, 'networkAvailable': self.networkAvailable.v, 'mac': self.mac.v, 'dhcp': self.dhcp.v, 'ip': self.ip.v, 'gateway': self.gateway.v, 'mask': self.mask.v}
+        return {'networkType': self.networkType.v, 'wirelessSupport': self.wirelessSupport.v, 'networkAvailable': self.networkAvailable.v, 'mac': self.mac.v, 'dhcp': self.dhcp.v, 'ip': self.ip.v, 'gateway': self.gateway.v, 'mask': self.mask.v, 'apn': self.apn.v, 'wirelessStatus': self.wirelessStatus.v}
 
     @v.setter
     def v(self, value):
@@ -2912,6 +2914,80 @@ class NetworkInfoPropertyStruct:
         if value.get('ip') is not None: self.ip.v = value['ip']
         if value.get('gateway') is not None: self.gateway.v = value['gateway']
         if value.get('mask') is not None: self.mask.v = value['mask']
+        if value.get('apn') is not None: self.apn.v = value['apn']
+        if value.get('wirelessStatus') is not None: self.wirelessStatus.v = value['wirelessStatus']
+
+
+class WirelessStatusNetworkInfoPropertyStruct:
+    def __init__(self) -> None:
+        self.id = 'wirelessStatus'
+        self.name = '无线状态'
+        self.accessMode = 'ro'
+        self.required = True
+        self.type = 'integer'
+        self.specs = WirelessStatusNetworkInfoPropertyStructSpecs()
+        self.v: int = 0
+
+
+class WirelessStatusNetworkInfoPropertyStructSpecs(BaseSpecs):
+    def __init__(self, min=None, max=None, unit=None, unitName=None, step=None, optional=None) -> None:
+        super().__init__(min, max, unit, unitName, step, optional)
+        self.optional = WirelessStatusNetworkInfoPropertyStructSpecsOptional()
+
+
+class WirelessStatusNetworkInfoPropertyStructSpecsOptional(BaseOptional):
+    def __init__(self, value=None, desc=None) -> None:
+        super().__init__(value, desc)
+        self.value0 = Value0WirelessStatusNetworkInfoPropertyStructSpecsOptional()
+        self.value1 = Value1WirelessStatusNetworkInfoPropertyStructSpecsOptional()
+        self.value2 = Value2WirelessStatusNetworkInfoPropertyStructSpecsOptional()
+        self.value3 = Value3WirelessStatusNetworkInfoPropertyStructSpecsOptional()
+        self.value4 = Value4WirelessStatusNetworkInfoPropertyStructSpecsOptional()
+
+
+class Value4WirelessStatusNetworkInfoPropertyStructSpecsOptional(BaseOptional):
+    def __init__(self, value=None, desc=None) -> None:
+        super().__init__(value, desc)
+        self.value = 4
+        self.desc = '无数据连接'
+
+
+class Value3WirelessStatusNetworkInfoPropertyStructSpecsOptional(BaseOptional):
+    def __init__(self, value=None, desc=None) -> None:
+        super().__init__(value, desc)
+        self.value = 3
+        self.desc = '未注册到网络'
+
+
+class Value2WirelessStatusNetworkInfoPropertyStructSpecsOptional(BaseOptional):
+    def __init__(self, value=None, desc=None) -> None:
+        super().__init__(value, desc)
+        self.value = 2
+        self.desc = '未检测到SIM卡'
+
+
+class Value1WirelessStatusNetworkInfoPropertyStructSpecsOptional(BaseOptional):
+    def __init__(self, value=None, desc=None) -> None:
+        super().__init__(value, desc)
+        self.value = 1
+        self.desc = '网络正常'
+
+
+class Value0WirelessStatusNetworkInfoPropertyStructSpecsOptional(BaseOptional):
+    def __init__(self, value=None, desc=None) -> None:
+        super().__init__(value, desc)
+        self.value = 0
+        self.desc = '不支无线网络'
+
+
+class ApnNetworkInfoPropertyStruct:
+    def __init__(self) -> None:
+        self.id = 'apn'
+        self.name = 'APN'
+        self.accessMode = 'ro'
+        self.required = True
+        self.type = 'string'
+        self.v: str = ''
 
 
 class MaskNetworkInfoPropertyStruct:

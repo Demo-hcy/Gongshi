@@ -229,8 +229,8 @@ def create_attr_list(attrs: Union[Dict, List], class_name: str) -> List:
 
 
 if __name__ == "__main__":
-    json_path = Path.cwd().joinpath('E:/AutoTester/testbase/library/mqtt_lib/TSL_json')
-    model_path = Path.cwd().joinpath('E:/AutoTester/testbase/library/mqtt_lib/TSL_model')
+    json_path = Path.cwd().joinpath('library/mqtt_lib/TSL_json')
+    model_path = Path.cwd().joinpath('library/mqtt_lib/TSL_model')
     schema_path = json_path.joinpath('_SCHEMA.json')
     for j in json_path.iterdir():
         if j.name == '_SCHEMA.json':

@@ -1,0 +1,831 @@
+{
+  "productId": "S3_KLT_C4",
+  "productName": "卡莱特信息屏C4",
+  "properties": [
+    {
+      "id": "sn",
+      "name": "设备sn号",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "id": "model",
+      "name": "设备型号",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "id": "width",
+      "name": "宽度",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 64,
+        "max": 4096,
+        "unit": "px",
+        "unitName": "像素",
+        "step": 32
+      }
+    },
+    {
+      "id": "height",
+      "name": "长度",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 64,
+        "max": 1536,
+        "unit": "px",
+        "unitName": "像素",
+        "step": 32
+      }
+    },
+    {
+      "id": "ip",
+      "name": "ip地址",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "id": "online",
+      "name": "在线状态",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "optional": [
+          {
+            "value": 0,
+            "desc": "离线"
+          },
+          {
+            "value": 1,
+            "desc": "在线"
+          }
+        ]
+      }
+    },
+    {
+      "id": "playStatus",
+      "name": "播放状态",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "optional": [
+          {
+            "value": 0,
+            "desc": "空闲"
+          },
+          {
+            "value": 1,
+            "desc": "在播"
+          }
+        ]
+      }
+    },
+    {
+      "id": "onOff",
+      "name": "屏幕状态",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "optional": [
+          {
+            "value": 0,
+            "desc": "关屏"
+          },
+          {
+            "value": 1,
+            "desc": "开屏"
+          }
+        ]
+      }
+    },
+    {
+      "id": "playingProgram",
+      "name": "正在播放的节目",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "id": "brightness",
+      "name": "亮度",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 0,
+        "max": 100,
+        "step": 1
+      }
+    },
+    {
+      "id": "programList",
+      "name": "节目列表",
+      "accessMode": "ro",
+      "required": true,
+      "type": "array",
+      "columnComplex": [
+        {
+          "id": "fileName",
+          "name": "节目文件名",
+          "type": "string"
+        },
+        {
+          "id": "md5",
+          "name": "节目的md5",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "mode",
+      "name": "控制模式",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "specs": {
+        "optional": [
+          {
+            "value": "auto",
+            "desc": "自动"
+          },
+          {
+            "value": "manual",
+            "desc": "手动"
+          }
+        ]
+      }
+    }
+  ],
+  "events": [],
+  "services": [
+    {
+      "id": "reboot",
+      "name": "重启",
+      "parameters": [],
+      "output": []
+    },
+    {
+      "id": "setOnOff",
+      "name": "开关屏",
+      "parameters": [
+        {
+          "id": "onOff",
+          "name": "开关",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "optional": [
+              {
+                "value": 0,
+                "desc": "关屏"
+              },
+              {
+                "value": 1,
+                "desc": "开屏"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "setBrightness",
+      "name": "设置亮度",
+      "parameters": [
+        {
+          "id": "brightness",
+          "name": "亮度",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "min": 0,
+            "max": 100,
+            "step": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "setResolution",
+      "name": "设置分辨率",
+      "parameters": [
+        {
+          "id": "width",
+          "name": "宽度",
+          "type": "integer",
+          "specs": {
+            "min": 1,
+            "unit": "px",
+            "unitName": "像素",
+            "step": 1
+          }
+        },
+        {
+          "id": "height",
+          "name": "高度",
+          "type": "integer",
+          "specs": {
+            "min": 1,
+            "unit": "px",
+            "unitName": "像素",
+            "step": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "addProgram",
+      "name": "添加节目",
+      "parameters": [
+        {
+          "id": "url",
+          "name": "节目url地址",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "id": "fileName",
+          "name": "节目名",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "id": "md5Sum",
+          "name": "文件MD5",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "delProgram",
+      "name": "删除节目",
+      "parameters": [
+        {
+          "id": "fileName",
+          "name": "节目名",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "renameProgram",
+      "name": "更改节目名",
+      "parameters": [
+        {
+          "id": "oldProgramName",
+          "name": "改动前节目名字",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "id": "newProgramName",
+          "name": "改动后节目名字",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "playProgram",
+      "name": "播放节目",
+      "parameters": [
+        {
+          "id": "fileName",
+          "name": "节目名",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "play_by_module_from_inner_dev",
+      "name": "播放自定义节目内部联动",
+      "parameters": [
+        {
+          "id": "devId",
+          "name": "告警设备来源ID",
+          "required": true,
+          "type": "integer"
+        },
+        {
+          "id": "devChannel",
+          "name": "告警设备来源ID",
+          "required": true,
+          "type": "integer"
+        },
+        {
+          "id": "alarmType",
+          "name": "告警设备来源ID",
+          "required": true,
+          "type": "integer"
+        },
+        {
+          "id": "alarmSubType",
+          "name": "告警设备来源ID",
+          "required": true,
+          "type": "integer"
+        },
+        {
+          "id": "moduleMd5Sum",
+          "name": "模板图片MD5",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "id": "centerX",
+          "name": "图片叠加在模板图片上的中心位置的X坐标",
+          "required": true,
+          "type": "integer"
+        },
+        {
+          "id": "centerY",
+          "name": "图片叠加在模板图片上的中心位置的Y坐标",
+          "required": true,
+          "type": "integer"
+        },
+        {
+          "id": "maxWidth",
+          "name": "叠加图片的缩放宽度最大大小",
+          "required": true,
+          "type": "integer"
+        },
+        {
+          "id": "maxHeight",
+          "name": "叠加图片的缩放高度最大大小",
+          "required": true,
+          "type": "integer"
+        },
+        {
+          "id": "textList",
+          "name": "StaticText 列表",
+          "required": true,
+          "type": "struct",
+          "struct": [
+            {
+              "id": "rectX",
+              "name": "文字背景区域的左上角坐标X",
+              "type": "integer"
+            },
+            {
+              "id": "rectY",
+              "name": "文字背景区域的左上角坐标Y",
+              "type": "integer"
+            },
+            {
+              "id": "rectWidth",
+              "name": "文字背景区域的宽大小",
+              "type": "integer"
+            },
+            {
+              "id": "rectHeight",
+              "name": "文字背景区域的高大小",
+              "type": "integer"
+            },
+            {
+              "id": "rectA",
+              "name": "文字背景不透明度",
+              "type": "integer",
+              "specs": {
+                "min": 0,
+                "max": 255,
+                "step": 1
+              }
+            },
+            {
+              "id": "rectR",
+              "name": "文字背景颜色R",
+              "type": "integer",
+              "specs": {
+                "min": 0,
+                "max": 255,
+                "step": 1
+              }
+            },
+            {
+              "id": "rectG",
+              "name": "文字背景颜色G",
+              "type": "integer",
+              "specs": {
+                "min": 0,
+                "max": 255,
+                "step": 1
+              }
+            },
+            {
+              "id": "rectB",
+              "name": "文字背景颜色B",
+              "type": "integer",
+              "specs": {
+                "min": 0,
+                "max": 255,
+                "step": 1
+              }
+            },
+            {
+              "id": "textA",
+              "name": "文字颜色不透明度",
+              "type": "integer",
+              "specs": {
+                "min": 0,
+                "max": 255,
+                "step": 1
+              }
+            },
+            {
+              "id": "textR",
+              "name": "文字颜色R",
+              "type": "integer",
+              "specs": {
+                "min": 0,
+                "max": 255,
+                "step": 1
+              }
+            },
+            {
+              "id": "textG",
+              "name": "文字颜色G",
+              "type": "integer",
+              "specs": {
+                "min": 0,
+                "max": 255,
+                "step": 1
+              }
+            },
+            {
+              "id": "textB",
+              "name": "文字颜色B",
+              "type": "integer",
+              "specs": {
+                "min": 0,
+                "max": 255,
+                "step": 1
+              }
+            },
+            {
+              "id": "isScroll",
+              "name": "文字是否滚动",
+              "type": "integer",
+              "specs": {
+                "optional": [
+                  {
+                    "value": 0,
+                    "desc": "否"
+                  },
+                  {
+                    "value": 1,
+                    "desc": "是"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "fontSize",
+              "name": "文字大小",
+              "type": "integer"
+            },
+            {
+              "id": "textType",
+              "name": "文本类型",
+              "type": "string"
+            },
+            {
+              "id": "text",
+              "name": "静态文字内容",
+              "required": true,
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "playCustomizeProgram",
+      "name": "播放自定义节目",
+      "parameters": [
+        {
+          "id": "imageUrl",
+          "name": "叠加图片的url",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "id": "imageMd5Sum",
+          "name": "叠加图片MD5",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "id": "moduleMd5Sum",
+          "name": "模板图片MD5",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "id": "centerX",
+          "name": "图片叠加在模板图片上的中心位置的X坐标",
+          "required": true,
+          "type": "integer"
+        },
+        {
+          "id": "centerY",
+          "name": "图片叠加在模板图片上的中心位置的Y坐标",
+          "required": true,
+          "type": "integer"
+        },
+        {
+          "id": "maxWidth",
+          "name": "叠加图片的缩放宽度最大大小",
+          "required": true,
+          "type": "integer"
+        },
+        {
+          "id": "maxHeight",
+          "name": "叠加图片的缩放高度最大大小",
+          "required": true,
+          "type": "integer"
+        },
+        {
+          "id": "textList",
+          "name": "StaticText 列表",
+          "required": true,
+          "type": "struct",
+          "struct": [
+            {
+              "id": "rectX",
+              "name": "文字背景区域的左上角坐标X",
+              "type": "integer"
+            },
+            {
+              "id": "rectY",
+              "name": "文字背景区域的左上角坐标Y",
+              "type": "integer"
+            },
+            {
+              "id": "rectWidth",
+              "name": "文字背景区域的宽大小",
+              "type": "integer"
+            },
+            {
+              "id": "rectHeight",
+              "name": "文字背景区域的高大小",
+              "type": "integer"
+            },
+            {
+              "id": "rectA",
+              "name": "文字背景不透明度",
+              "type": "integer",
+              "specs": {
+                "min": 0,
+                "max": 255,
+                "step": 1
+              }
+            },
+            {
+              "id": "rectR",
+              "name": "文字背景颜色R",
+              "type": "integer",
+              "specs": {
+                "min": 0,
+                "max": 255,
+                "step": 1
+              }
+            },
+            {
+              "id": "rectG",
+              "name": "文字背景颜色G",
+              "type": "integer",
+              "specs": {
+                "min": 0,
+                "max": 255,
+                "step": 1
+              }
+            },
+            {
+              "id": "rectB",
+              "name": "文字背景颜色B",
+              "type": "integer",
+              "specs": {
+                "min": 0,
+                "max": 255,
+                "step": 1
+              }
+            },
+            {
+              "id": "textA",
+              "name": "文字颜色不透明度",
+              "type": "integer",
+              "specs": {
+                "min": 0,
+                "max": 255,
+                "step": 1
+              }
+            },
+            {
+              "id": "textR",
+              "name": "文字颜色R",
+              "type": "integer",
+              "specs": {
+                "min": 0,
+                "max": 255,
+                "step": 1
+              }
+            },
+            {
+              "id": "textG",
+              "name": "文字颜色G",
+              "type": "integer",
+              "specs": {
+                "min": 0,
+                "max": 255,
+                "step": 1
+              }
+            },
+            {
+              "id": "textB",
+              "name": "文字颜色B",
+              "type": "integer",
+              "specs": {
+                "min": 0,
+                "max": 255,
+                "step": 1
+              }
+            },
+            {
+              "id": "isScroll",
+              "name": "文字是否滚动",
+              "type": "integer",
+              "specs": {
+                "optional": [
+                  {
+                    "value": 0,
+                    "desc": "否"
+                  },
+                  {
+                    "value": 1,
+                    "desc": "是"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "fontSize",
+              "name": "文字大小",
+              "type": "integer"
+            },
+            {
+              "id": "text",
+              "name": "静态文字内容",
+              "required": true,
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "delCustomizeProgram",
+      "name": "删除自定义节目模板",
+      "parameters": [
+        {
+          "id": "fileName",
+          "name": "节目名",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "getProgramList",
+      "name": "查询节目列表",
+      "parameters": [],
+      "output": [
+        {
+          "id": "programList",
+          "name": "节目文件名和md5列表",
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "fileName",
+              "name": "节目文件名",
+              "type": "string"
+            },
+            {
+              "id": "md5",
+              "name": "节目的md5",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "getCustomizeProgramList",
+      "name": "查询自定义模板节目",
+      "parameters": [],
+      "output": [
+        {
+          "id": "customizeProgramList",
+          "name": "模板文件名和md5列表",
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "fileName",
+              "name": "节目文件名",
+              "type": "string"
+            },
+            {
+              "id": "md5",
+              "name": "节目的md5",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "addCustomizeProgram",
+      "name": "添加自定义节目模板",
+      "parameters": [
+        {
+          "id": "fileName",
+          "name": "节目名",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "id": "url",
+          "name": "模板文件的url地址",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "id": "md5Sum",
+          "name": "模板文件的MD5",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "screenShot",
+      "name": "截图存储",
+      "parameters": [
+        {
+          "id": "url",
+          "name": "截图存储地址",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "output": [
+        {
+          "id": "url",
+          "name": "实际存储url",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "stopProgram",
+      "name": "停止播放",
+      "parameters": []
+    },
+    {
+      "id": "switchMode",
+      "name": "切换控制模式",
+      "parameters": [
+        {
+          "id": "mode",
+          "name": "控制模式",
+          "required": true,
+          "type": "string",
+          "specs": {
+            "optional": [
+              {
+                "value": "auto",
+                "desc": "自动"
+              },
+              {
+                "value": "manual",
+                "desc": "手动"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

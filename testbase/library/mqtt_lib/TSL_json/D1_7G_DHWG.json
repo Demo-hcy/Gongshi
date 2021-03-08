@@ -1,1426 +1,1464 @@
 {
-    "productId": "D1_7G_DHWG",
-    "productName": "7G智能网关",
-    "properties": [
-      {
-        "id": "sn",
-        "name": "设备序列号",
-        "accessMode": "ro",
-        "required": true,
-        "type": "string"
-      },
-      {
-        "id": "model",
-        "name": "设备型号",
-        "accessMode": "ro",
-        "required": true,
-        "type": "string"
-      },
-      {
-        "id": "networkInfo",
-        "name": "网络信息",
-        "accessMode": "ro",
-        "required": true,
-        "type": "struct",
-        "struct": [
-          {
-            "id": "networkType",
-            "name": "网络类型",
-            "accessMode": "ro",
-            "required": true,
-            "type": "string",
-            "specs": {
-              "optional": [
-                {
-                  "value": "wired",
-                  "desc": "有线"
-                },
-                {
-                  "value": "4G",
-                  "desc": "4G"
-                },
-                {
-                  "value": "5G",
-                  "desc": "5G"
-                }
-              ]
-            }
-          },
-          {
-            "id": "wirelessSupport",
-            "name": "支持的无线网络",
-            "accessMode": "ro",
-            "required": true,
-            "type": "string",
-            "specs": {
-              "optional": [
-                {
-                  "value": "none",
-                  "desc": "不支持无线网络"
-                },
-                {
-                  "value": "4G",
-                  "desc": "支持4G无线网络"
-                },
-                {
-                  "value": "5G",
-                  "desc": "支持5G无线网络"
-                }
-              ]
-            }
-          },
-          {
-            "id": "networkAvailable",
-            "name": "是否支持有线网络",
-            "accessMode": "ro",
-            "required": true,
-            "type": "boolean"
-          },
-          {
-            "id": "mac",
-            "name": "MAC地址",
-            "accessMode": "ro",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "id": "dhcp",
-            "name": "是否启用DHCP",
-            "accessMode": "ro",
-            "required": true,
-            "type": "boolean"
-          },
-          {
-            "id": "ip",
-            "name": "IP地址",
-            "accessMode": "ro",
-            "required": true,
-            "type": "string",
-            "format": "ipv4"
-          },
-          {
-            "id": "gateway",
-            "name": "网关",
-            "accessMode": "ro",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "id": "mask",
-            "name": "子网掩码",
-            "accessMode": "ro",
-            "required": true,
-            "type": "string"
+  "productId": "D1_7G_DHWG",
+  "productName": "7G智能网关",
+  "properties": [
+    {
+      "id": "sn",
+      "name": "设备序列号",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "id": "model",
+      "name": "设备型号",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "id": "networkInfo",
+      "name": "网络信息",
+      "accessMode": "ro",
+      "required": true,
+      "type": "struct",
+      "struct": [
+        {
+          "id": "networkType",
+          "name": "网络类型",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string",
+          "specs": {
+            "optional": [
+              {
+                "value": "wired",
+                "desc": "有线"
+              },
+              {
+                "value": "4G",
+                "desc": "4G"
+              },
+              {
+                "value": "5G",
+                "desc": "5G"
+              }
+            ]
           }
-        ]
-      },
-      {
-        "id": "mqttPrefix",
-        "name": "MQTT Topic 前缀",
-        "accessMode": "ro",
-        "required": true,
-        "type": "string"
-      },
-      {
-        "id": "ntpInfo",
-        "name": "NTP信息",
-        "accessMode": "ro",
-        "required": true,
-        "type": "struct",
-        "struct": [
-          {
-            "id": "ntpStatus",
-            "name": "NTP校时状态",
-            "accessMode": "ro",
-            "required": true,
-            "type": "boolean"
-          },
-          {
-            "id": "hostA",
-            "name": "主NTP校时服务器",
-            "accessMode": "ro",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "id": "hostB",
-            "name": "备NTP校时服务器",
-            "accessMode": "ro",
-            "required": true,
-            "type": "string"
+        },
+        {
+          "id": "wirelessSupport",
+          "name": "支持的无线网络",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string",
+          "specs": {
+            "optional": [
+              {
+                "value": "none",
+                "desc": "不支持无线网络"
+              },
+              {
+                "value": "4G",
+                "desc": "支持4G无线网络"
+              },
+              {
+                "value": "5G",
+                "desc": "支持5G无线网络"
+              }
+            ]
           }
-        ]
-      },
-      {
-        "id": "upTime",
-        "name": "系统启动时长",
-        "accessMode": "ro",
-        "required": true,
-        "type": "string",
-        "specs": {
-          "unit": "S",
-          "unitName": "秒"
+        },
+        {
+          "id": "networkAvailable",
+          "name": "是否支持有线网络",
+          "accessMode": "ro",
+          "required": true,
+          "type": "boolean"
+        },
+        {
+          "id": "mac",
+          "name": "MAC地址",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "id": "dhcp",
+          "name": "是否启用DHCP",
+          "accessMode": "ro",
+          "required": true,
+          "type": "boolean"
+        },
+        {
+          "id": "ip",
+          "name": "IP地址",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string",
+          "format": "ipv4"
+        },
+        {
+          "id": "gateway",
+          "name": "网关",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "id": "mask",
+          "name": "子网掩码",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "id": "apn",
+          "name": "APN",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "id": "wirelessStatus",
+          "name": "无线状态",
+          "accessMode": "ro",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "optional": [
+              {
+                "value": 0,
+                "desc": "不支无线网络"
+              },
+              {
+                "value": 1,
+                "desc": "网络正常"
+              },
+              {
+                "value": 2,
+                "desc": "未检测到SIM卡"
+              },
+              {
+                "value": 3,
+                "desc": "未注册到网络"
+              },
+              {
+                "value": 4,
+                "desc": "无数据连接"
+              }
+            ]
+          }
         }
-      },
-      {
-        "id": "time",
-        "name": "系统时间",
-        "accessMode": "ro",
-        "required": true,
-        "type": "string",
-        "format": "date-time"
-      },
-      {
-        "id": "fwVersion",
-        "name": "软件版本",
-        "accessMode": "ro",
-        "required": true,
-        "type": "string"
-      },
-      {
-        "id": "hwVersion",
-        "name": "硬件版本",
-        "accessMode": "ro",
-        "required": true,
-        "type": "string"
-      },
-      {
-        "id": "voipServer",
-        "name": "广播服务器信息",
-        "accessMode": "ro",
-        "required": true,
-        "type": "struct",
-        "struct": [
-          {
-            "id": "host",
-            "name": "地址",
-            "accessMode": "ro",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "id": "port",
-            "name": "端口",
-            "accessMode": "ro",
-            "required": true,
-            "type": "integer"
-          }
-        ]
-      },
-      {
-        "id": "holter",
-        "name": "动环信息",
-        "accessMode": "ro",
-        "required": true,
-        "type": "struct",
-        "struct": [
-          {
-            "id": "enabled",
-            "name": "定时上报开关",
-            "accessMode": "ro",
-            "required": true,
-            "type": "boolean"
-          },
-          {
-            "id": "interval",
-            "name": "定时上报间隔",
-            "accessMode": "ro",
-            "required": true,
-            "type": "integer",
-            "specs": {
-              "min": 10,
-              "max": 65535,
-              "unit": "s",
-              "unitName": "秒"
-            }
-          },
-          {
-            "id": "alarmInterval",
-            "name": "告警上报间隔",
-            "accessMode": "ro",
-            "required": true,
-            "type": "integer",
-            "specs": {
-              "min": 10,
-              "max": 65535,
-              "unit": "s",
-              "unitName": "秒"
-            }
-          },
-          {
-            "id": "do1Default",
-            "name": "DO1默认状态",
-            "accessMode": "ro",
-            "required": true,
-            "type": "boolean"
-          },
-          {
-            "id": "do2Default",
-            "name": "DO2默认状态",
-            "accessMode": "ro",
-            "required": true,
-            "type": "boolean"
-          },
-          {
-            "id": "di1",
-            "name": "DI1状态",
-            "accessMode": "ro",
-            "required": true,
-            "type": "boolean"
-          },
-          {
-            "id": "di2",
-            "name": "DI2状态",
-            "accessMode": "ro",
-            "required": true,
-            "type": "boolean"
-          },
-          {
-            "id": "do1",
-            "name": "DO1状态",
-            "accessMode": "ro",
-            "required": true,
-            "type": "boolean"
-          },
-          {
-            "id": "do2",
-            "name": "DO2状态",
-            "accessMode": "ro",
-            "required": true,
-            "type": "boolean"
-          },
-          {
-            "id": "eth",
-            "name": "网口连接状态",
-            "accessMode": "ro",
-            "required": true,
-            "type": "struct",
-            "struct": [
-              {
-                "id": "port1",
-                "name": "网口1状态",
-                "accessMode": "ro",
-                "required": true,
-                "type": "boolean"
-              },
-              {
-                "id": "port2",
-                "name": "网口2状态",
-                "accessMode": "ro",
-                "required": true,
-                "type": "boolean"
-              },
-              {
-                "id": "port3",
-                "name": "网口3状态",
-                "accessMode": "ro",
-                "required": true,
-                "type": "boolean"
-              },
-              {
-                "id": "port4",
-                "name": "网口4状态",
-                "accessMode": "ro",
-                "required": true,
-                "type": "boolean"
-              }
-            ]
-          },
-          {
-            "id": "tilt",
-            "name": "倾斜信息",
-            "accessMode": "ro",
-            "required": true,
-            "type": "struct",
-            "struct": [
-              {
-                "id": "online",
-                "name": "在线状态",
-                "accessMode": "ro",
-                "required": true,
-                "type": "boolean"
-              },
-              {
-                "id": "angle",
-                "name": "倾斜角度",
-                "accessMode": "ro",
-                "required": true,
-                "type": "integer",
-                "specs": {
-                  "min": -1,
-                  "max": 30,
-                  "unit": "°",
-                  "unitName": "度"
-                }
-              },
-              {
-                "id": "threshold",
-                "name": "告警值",
-                "accessMode": "ro",
-                "required": true,
-                "type": "integer",
-                "specs": {
-                  "min": 5,
-                  "max": 30,
-                  "unit": "°",
-                  "unitName": "度"
-                }
-              },
-              {
-                "id": "alarming",
-                "name": "告警状态",
-                "accessMode": "ro",
-                "required": true,
-                "type": "boolean"
-              }
-            ]
-          },
-          {
-            "id": "temperature",
-            "name": "温度信息",
-            "accessMode": "ro",
-            "required": true,
-            "type": "struct",
-            "struct": [
-              {
-                "id": "online",
-                "name": "在线状态",
-                "accessMode": "ro",
-                "required": true,
-                "type": "boolean"
-              },
-              {
-                "id": "temperature",
-                "name": "温度",
-                "accessMode": "ro",
-                "required": true,
-                "type": "integer",
-                "specs": {
-                  "unit": "°C",
-                  "unitName": "摄氏度"
-                }
-              },
-              {
-                "id": "hiThreshold",
-                "name": "高温告警值",
-                "accessMode": "ro",
-                "required": true,
-                "type": "integer",
-                "specs": {
-                  "min": -50,
-                  "max": 100,
-                  "unit": "°C",
-                  "unitName": "摄氏度"
-                }
-              },
-              {
-                "id": "lowThreshold",
-                "name": "低温告警值",
-                "accessMode": "ro",
-                "required": true,
-                "type": "integer",
-                "specs": {
-                  "min": -50,
-                  "max": 100,
-                  "unit": "°C",
-                  "unitName": "摄氏度"
-                }
-              },
-              {
-                "id": "type",
-                "name": "告警类型",
-                "accessMode": "ro",
-                "required": true,
-                "type": "string",
-                "specs": {
-                  "optional": [
-                    {
-                      "value": "hi",
-                      "desc": "高温"
-                    },
-                    {
-                      "value": "low",
-                      "desc": "低温"
-                    }
-                  ]
-                }
-              },
-              {
-                "id": "alarming",
-                "name": "告警状态",
-                "accessMode": "ro",
-                "required": true,
-                "type": "boolean"
-              }
-            ]
-          },
-          {
-            "id": "humidity",
-            "name": "湿度信息",
-            "accessMode": "ro",
-            "required": true,
-            "type": "struct",
-            "struct": [
-              {
-                "id": "online",
-                "name": "在线状态",
-                "accessMode": "ro",
-                "required": true,
-                "type": "boolean"
-              },
-              {
-                "id": "humidity",
-                "name": "湿度",
-                "accessMode": "ro",
-                "required": true,
-                "type": "integer",
-                "specs": {
-                  "unit": "%",
-                  "unitName": "相对湿度"
-                }
-              },
-              {
-                "id": "hiThreshold",
-                "name": "高湿告警值",
-                "accessMode": "ro",
-                "required": true,
-                "type": "integer",
-                "specs": {
-                  "min": 0,
-                  "max": 100,
-                  "unit": "%",
-                  "unitName": "相对湿度"
-                }
-              },
-              {
-                "id": "lowThreshold",
-                "name": "低湿告警值",
-                "accessMode": "ro",
-                "required": true,
-                "type": "integer",
-                "specs": {
-                  "min": 0,
-                  "max": 100,
-                  "unit": "%",
-                  "unitName": "相对湿度"
-                }
-              },
-              {
-                "id": "type",
-                "name": "告警类型",
-                "accessMode": "ro",
-                "required": true,
-                "type": "string",
-                "specs": {
-                  "optional": [
-                    {
-                      "value": "hi",
-                      "desc": "高湿"
-                    },
-                    {
-                      "value": "low",
-                      "desc": "低湿"
-                    }
-                  ]
-                }
-              },
-              {
-                "id": "alarming",
-                "name": "告警状态",
-                "accessMode": "ro",
-                "required": true,
-                "type": "boolean"
-              }
-            ]
-          },
-          {
-            "id": "water",
-            "name": "水浸信息",
-            "accessMode": "ro",
-            "required": true,
-            "type": "struct",
-            "struct": [
-              {
-                "id": "online",
-                "name": "在线状态",
-                "accessMode": "ro",
-                "required": true,
-                "type": "boolean"
-              },
-              {
-                "id": "status",
-                "name": "水浸状态",
-                "accessMode": "ro",
-                "required": true,
-                "type": "boolean"
-              }
-            ]
-          },
-          {
-            "id": "voip",
-            "name": "广播信息",
-            "accessMode": "ro",
-            "required": true,
-            "type": "struct",
-            "struct": [
-              {
-                "id": "online",
-                "name": "在线状态",
-                "accessMode": "ro",
-                "required": true,
-                "type": "boolean"
-              },
-              {
-                "id": "volume",
-                "name": "音量",
-                "accessMode": "ro",
-                "required": true,
-                "type": "integer",
-                "specs":{
-                  "min":0,
-                  "max":100,
-                  "unit":"%"
-                }
-              },
-              {
-                "id": "busy",
-                "name": "通话状态",
-                "accessMode": "ro",
-                "required": true,
-                "type": "boolean"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "serverA",
-        "name": "有线MQTT服务器信息",
-        "accessMode": "ro",
-        "required": true,
-        "type": "struct",
-        "struct": [
-          {
-            "id": "host",
-            "name": "IP地址",
-            "accessMode": "ro",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "id": "port",
-            "name": "端口",
-            "accessMode": "ro",
-            "required": true,
-            "type": "integer"
-          },
-          {
-            "id": "user",
-            "name": "用户名",
-            "accessMode": "ro",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "id": "password",
-            "name": "密码",
-            "accessMode": "ro",
-            "required": true,
-            "type": "string"
-          }
-        ]
-      },
-      {
-        "id": "serverB",
-        "name": "无线MQTT服务器信息",
-        "accessMode": "ro",
-        "required": true,
-        "type": "struct",
-        "struct": [
-          {
-            "id": "host",
-            "name": "IP地址",
-            "accessMode": "ro",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "id": "port",
-            "name": "端口",
-            "accessMode": "ro",
-            "required": true,
-            "type": "integer"
-          },
-          {
-            "id": "user",
-            "name": "用户名",
-            "accessMode": "ro",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "id": "password",
-            "name": "密码",
-            "accessMode": "ro",
-            "required": true,
-            "type": "string"
-          }
-        ]
-      },
-      {
-        "id": "rs485_1",
-        "name": "1号RS485口配置信息",
-        "accessMode": "ro",
-        "required": true,
-        "type": "struct",
-        "struct": [
-          {
-            "id": "baudRate",
-            "name": "波特率",
-            "accessMode": "ro",
-            "required": true,
-            "type": "integer",
-            "specs": {
-              "min": 2400,
-              "max": 250000
-            }
-          },
-          {
-            "id": "byteSize",
-            "name": "数据位",
-            "accessMode": "ro",
-            "required": true,
-            "type": "integer",
-            "specs": {
-              "min": 5,
-              "max": 8
-            }
-          },
-          {
-            "id": "stopBit",
-            "name": "停止位",
-            "accessMode": "ro",
-            "required": true,
-            "type": "string",
-            "specs": {
-              "optional": [
-                {
-                  "value": "1",
-                  "desc": "1位"
-                },
-                {
-                  "value": "1.5",
-                  "desc": "1.5位"
-                },
-                {
-                  "value": "2",
-                  "desc": "2位"
-                }
-              ]
-            }
-          },
-          {
-            "id": "parities",
-            "name": "校验",
-            "accessMode": "ro",
-            "required": true,
-            "type": "string",
-            "specs": {
-              "optional": [
-                {
-                  "value": "N",
-                  "desc": "无"
-                },
-                {
-                  "value": "E",
-                  "desc": "偶"
-                },
-                {
-                  "value": "O",
-                  "desc": "奇"
-                },
-                {
-                  "value": "M",
-                  "desc": "高"
-                },
-                {
-                  "value": "S",
-                  "desc": "低"
-                }
-              ]
-            }
-          }
-        ]
-      },
-      {
-        "id": "rs485_2",
-        "name": "2号RS485口配置信息",
-        "accessMode": "ro",
-        "required": true,
-        "type": "struct",
-        "struct": [
-          {
-            "id": "baudRate",
-            "name": "波特率",
-            "accessMode": "ro",
-            "required": true,
-            "type": "integer",
-            "specs": {
-              "min": 2400,
-              "max": 250000
-            }
-          },
-          {
-            "id": "byteSize",
-            "name": "数据位",
-            "accessMode": "ro",
-            "required": true,
-            "type": "integer",
-            "specs": {
-              "min": 5,
-              "max": 8
-            }
-          },
-          {
-            "id": "stopBit",
-            "name": "停止位",
-            "accessMode": "ro",
-            "required": true,
-            "type": "string",
-            "specs": {
-              "optional": [
-                {
-                  "value": "1",
-                  "desc": "1位"
-                },
-                {
-                  "value": "1.5",
-                  "desc": "1.5位"
-                },
-                {
-                  "value": "2",
-                  "desc": "2位"
-                }
-              ]
-            }
-          },
-          {
-            "id": "parities",
-            "name": "校验",
-            "accessMode": "ro",
-            "required": true,
-            "type": "string",
-            "specs": {
-              "optional": [
-                {
-                  "value": "N",
-                  "desc": "无"
-                },
-                {
-                  "value": "E",
-                  "desc": "偶"
-                },
-                {
-                  "value": "O",
-                  "desc": "奇"
-                },
-                {
-                  "value": "M",
-                  "desc": "高"
-                },
-                {
-                  "value": "S",
-                  "desc": "低"
-                }
-              ]
-            }
-          }
-        ]
+      ]
+    },
+    {
+      "id": "mqttPrefix",
+      "name": "MQTT Topic 前缀",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "id": "ntpInfo",
+      "name": "NTP信息",
+      "accessMode": "ro",
+      "required": true,
+      "type": "struct",
+      "struct": [
+        {
+          "id": "ntpStatus",
+          "name": "NTP校时状态",
+          "accessMode": "ro",
+          "required": true,
+          "type": "boolean"
+        },
+        {
+          "id": "hostA",
+          "name": "主NTP校时服务器",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "id": "hostB",
+          "name": "备NTP校时服务器",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "upTime",
+      "name": "系统启动时长",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "specs": {
+        "unit": "S",
+        "unitName": "秒"
       }
-    ],
-    "events": [
-      {
-        "id": "firmwareUpdate",
-        "name": "固件升级",
-        "parameters": [
-          {
-            "id": "status",
-            "name": "操作状态",
-            "type": "string",
-            "specs": {
-              "optional": [
-                {
-                  "value": "start",
-                  "desc": "开始"
-                },
-                {
-                  "value": "success",
-                  "desc": "成功"
-                },
-                {
-                  "value": "failed",
-                  "desc": "失败"
-                }
-              ]
-            }
-          },
-          {
-            "id": "resultCode",
-            "name": "结果码",
-            "type": "integer",
-            "specs": {
-              "optional": [
-                {
-                  "value": 0,
-                  "desc": "成功"
-                },
-                {
-                  "value": 1,
-                  "desc": "升级失败"
-                },
-                {
-                  "value": 2,
-                  "desc": "下载失败"
-                },
-                      {
-                  "value": 3,
-                  "desc": "MD5错误"
-                },
-                {
-                  "value": 4,
-                  "desc": "文件无法识别"
-                }
-              ]
-            }
+    },
+    {
+      "id": "time",
+      "name": "系统时间",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "format": "date-time"
+    },
+    {
+      "id": "fwVersion",
+      "name": "软件版本",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "id": "hwVersion",
+      "name": "硬件版本",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "id": "voipServer",
+      "name": "广播服务器信息",
+      "accessMode": "ro",
+      "required": true,
+      "type": "struct",
+      "struct": [
+        {
+          "id": "host",
+          "name": "地址",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "id": "port",
+          "name": "端口",
+          "accessMode": "ro",
+          "required": true,
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "id": "holter",
+      "name": "动环信息",
+      "accessMode": "ro",
+      "required": true,
+      "type": "struct",
+      "struct": [
+        {
+          "id": "enabled",
+          "name": "定时上报开关",
+          "accessMode": "ro",
+          "required": true,
+          "type": "boolean"
+        },
+        {
+          "id": "interval",
+          "name": "定时上报间隔",
+          "accessMode": "ro",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "min": 10,
+            "max": 65535,
+            "unit": "s",
+            "unitName": "秒"
           }
-        ]
-      },
-      {
-        "id": "reboot",
-        "name": "重启",
-        "parameters": [
-          {
-            "id": "status",
-            "name": "重启原因",
-            "type": "string",
-            "specs": {
-              "optional": [
-                {
-                  "value": "update",
-                  "desc": "系统升级"
-                },
-                {
-                  "value": "config changed",
-                  "desc": "配置参数更改"
-                },
-                {
-                  "value": "other",
-                  "desc": "其他"
-                }
-              ]
-            }
-          },
-          {
-            "id": "resultCode",
-            "name": "结果码",
-            "type": "integer",
-            "specs": {
-              "optional": [
-                {
-                  "value": 0,
-                  "desc": "系统升级"
-                },
-                {
-                  "value": 1,
-                  "desc": "配置参数更改"
-                },
-                {
-                  "value": 2,
-                  "desc": "其他"
-                }
-              ]
-            }
+        },
+        {
+          "id": "alarmInterval",
+          "name": "告警上报间隔",
+          "accessMode": "ro",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "min": 10,
+            "max": 65535,
+            "unit": "s",
+            "unitName": "秒"
           }
-        ]
-      },
-      {
-        "id": "calibrate",
-        "name": "倾斜校准",
-        "parameters": [
-          {
-            "id": "status",
-            "name": "操作状态",
-            "type": "string",
-            "specs": {
-              "optional": [
-                {
-                  "value": "success",
-                  "desc": "成功"
-                },
-                {
-                  "value": "failed",
-                  "desc": "失败"
-                }
-              ]
+        },
+        {
+          "id": "do1Default",
+          "name": "DO1默认状态",
+          "accessMode": "ro",
+          "required": true,
+          "type": "boolean"
+        },
+        {
+          "id": "do2Default",
+          "name": "DO2默认状态",
+          "accessMode": "ro",
+          "required": true,
+          "type": "boolean"
+        },
+        {
+          "id": "di1",
+          "name": "DI1状态",
+          "accessMode": "ro",
+          "required": true,
+          "type": "boolean"
+        },
+        {
+          "id": "di2",
+          "name": "DI2状态",
+          "accessMode": "ro",
+          "required": true,
+          "type": "boolean"
+        },
+        {
+          "id": "do1",
+          "name": "DO1状态",
+          "accessMode": "ro",
+          "required": true,
+          "type": "boolean"
+        },
+        {
+          "id": "do2",
+          "name": "DO2状态",
+          "accessMode": "ro",
+          "required": true,
+          "type": "boolean"
+        },
+        {
+          "id": "eth",
+          "name": "网口连接状态",
+          "accessMode": "ro",
+          "required": true,
+          "type": "struct",
+          "struct": [
+            {
+              "id": "port1",
+              "name": "网口1状态",
+              "accessMode": "ro",
+              "required": true,
+              "type": "boolean"
+            },
+            {
+              "id": "port2",
+              "name": "网口2状态",
+              "accessMode": "ro",
+              "required": true,
+              "type": "boolean"
+            },
+            {
+              "id": "port3",
+              "name": "网口3状态",
+              "accessMode": "ro",
+              "required": true,
+              "type": "boolean"
+            },
+            {
+              "id": "port4",
+              "name": "网口4状态",
+              "accessMode": "ro",
+              "required": true,
+              "type": "boolean"
             }
-          },
-          {
-            "id": "resultCode",
-            "name": "结果码",
-            "type": "integer",
-            "specs": {
-              "optional": [
-                {
-                  "value": 0,
-                  "desc": "成功"
-                },
-                {
-                  "value": 1,
-                  "desc": "失败"
-                }
-              ]
+          ]
+        },
+        {
+          "id": "tilt",
+          "name": "倾斜信息",
+          "accessMode": "ro",
+          "required": true,
+          "type": "struct",
+          "struct": [
+            {
+              "id": "online",
+              "name": "在线状态",
+              "accessMode": "ro",
+              "required": true,
+              "type": "boolean"
+            },
+            {
+              "id": "angle",
+              "name": "倾斜角度",
+              "accessMode": "ro",
+              "required": true,
+              "type": "integer",
+              "specs": {
+                "min": -1,
+                "max": 30,
+                "unit": "°",
+                "unitName": "度"
+              }
+            },
+            {
+              "id": "threshold",
+              "name": "告警值",
+              "accessMode": "ro",
+              "required": true,
+              "type": "integer",
+              "specs": {
+                "min": 5,
+                "max": 30,
+                "unit": "°",
+                "unitName": "度"
+              }
+            },
+            {
+              "id": "alarming",
+              "name": "告警状态",
+              "accessMode": "ro",
+              "required": true,
+              "type": "boolean"
             }
+          ]
+        },
+        {
+          "id": "temperature",
+          "name": "温度信息",
+          "accessMode": "ro",
+          "required": true,
+          "type": "struct",
+          "struct": [
+            {
+              "id": "online",
+              "name": "在线状态",
+              "accessMode": "ro",
+              "required": true,
+              "type": "boolean"
+            },
+            {
+              "id": "temperature",
+              "name": "温度",
+              "accessMode": "ro",
+              "required": true,
+              "type": "integer",
+              "specs": {
+                "unit": "°C",
+                "unitName": "摄氏度"
+              }
+            },
+            {
+              "id": "hiThreshold",
+              "name": "高温告警值",
+              "accessMode": "ro",
+              "required": true,
+              "type": "integer",
+              "specs": {
+                "min": -50,
+                "max": 100,
+                "unit": "°C",
+                "unitName": "摄氏度"
+              }
+            },
+            {
+              "id": "lowThreshold",
+              "name": "低温告警值",
+              "accessMode": "ro",
+              "required": true,
+              "type": "integer",
+              "specs": {
+                "min": -50,
+                "max": 100,
+                "unit": "°C",
+                "unitName": "摄氏度"
+              }
+            },
+            {
+              "id": "type",
+              "name": "告警类型",
+              "accessMode": "ro",
+              "required": true,
+              "type": "string",
+              "specs": {
+                "optional": [
+                  {
+                    "value": "hi",
+                    "desc": "高温"
+                  },
+                  {
+                    "value": "low",
+                    "desc": "低温"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "alarming",
+              "name": "告警状态",
+              "accessMode": "ro",
+              "required": true,
+              "type": "boolean"
+            }
+          ]
+        },
+        {
+          "id": "humidity",
+          "name": "湿度信息",
+          "accessMode": "ro",
+          "required": true,
+          "type": "struct",
+          "struct": [
+            {
+              "id": "online",
+              "name": "在线状态",
+              "accessMode": "ro",
+              "required": true,
+              "type": "boolean"
+            },
+            {
+              "id": "humidity",
+              "name": "湿度",
+              "accessMode": "ro",
+              "required": true,
+              "type": "integer",
+              "specs": {
+                "unit": "%",
+                "unitName": "相对湿度"
+              }
+            },
+            {
+              "id": "hiThreshold",
+              "name": "高湿告警值",
+              "accessMode": "ro",
+              "required": true,
+              "type": "integer",
+              "specs": {
+                "min": 0,
+                "max": 100,
+                "unit": "%",
+                "unitName": "相对湿度"
+              }
+            },
+            {
+              "id": "lowThreshold",
+              "name": "低湿告警值",
+              "accessMode": "ro",
+              "required": true,
+              "type": "integer",
+              "specs": {
+                "min": 0,
+                "max": 100,
+                "unit": "%",
+                "unitName": "相对湿度"
+              }
+            },
+            {
+              "id": "type",
+              "name": "告警类型",
+              "accessMode": "ro",
+              "required": true,
+              "type": "string",
+              "specs": {
+                "optional": [
+                  {
+                    "value": "hi",
+                    "desc": "高湿"
+                  },
+                  {
+                    "value": "low",
+                    "desc": "低湿"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "alarming",
+              "name": "告警状态",
+              "accessMode": "ro",
+              "required": true,
+              "type": "boolean"
+            }
+          ]
+        },
+        {
+          "id": "water",
+          "name": "水浸信息",
+          "accessMode": "ro",
+          "required": true,
+          "type": "struct",
+          "struct": [
+            {
+              "id": "online",
+              "name": "在线状态",
+              "accessMode": "ro",
+              "required": true,
+              "type": "boolean"
+            },
+            {
+              "id": "status",
+              "name": "水浸状态",
+              "accessMode": "ro",
+              "required": true,
+              "type": "boolean"
+            }
+          ]
+        },
+        {
+          "id": "voip",
+          "name": "广播信息",
+          "accessMode": "ro",
+          "required": true,
+          "type": "struct",
+          "struct": [
+            {
+              "id": "online",
+              "name": "在线状态",
+              "accessMode": "ro",
+              "required": true,
+              "type": "boolean"
+            },
+            {
+              "id": "volume",
+              "name": "音量",
+              "accessMode": "ro",
+              "required": true,
+              "type": "integer",
+              "specs": {
+                "min": 0,
+                "max": 100,
+                "unit": "%"
+              }
+            },
+            {
+              "id": "busy",
+              "name": "通话状态",
+              "accessMode": "ro",
+              "required": true,
+              "type": "boolean"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "serverA",
+      "name": "有线MQTT服务器信息",
+      "accessMode": "ro",
+      "required": true,
+      "type": "struct",
+      "struct": [
+        {
+          "id": "host",
+          "name": "IP地址",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "id": "port",
+          "name": "端口",
+          "accessMode": "ro",
+          "required": true,
+          "type": "integer"
+        },
+        {
+          "id": "user",
+          "name": "用户名",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "id": "password",
+          "name": "密码",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "serverB",
+      "name": "无线MQTT服务器信息",
+      "accessMode": "ro",
+      "required": true,
+      "type": "struct",
+      "struct": [
+        {
+          "id": "host",
+          "name": "IP地址",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "id": "port",
+          "name": "端口",
+          "accessMode": "ro",
+          "required": true,
+          "type": "integer"
+        },
+        {
+          "id": "user",
+          "name": "用户名",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "id": "password",
+          "name": "密码",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "rs485_1",
+      "name": "1号RS485口配置信息",
+      "accessMode": "ro",
+      "required": true,
+      "type": "struct",
+      "struct": [
+        {
+          "id": "baudRate",
+          "name": "波特率",
+          "accessMode": "ro",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "min": 2400,
+            "max": 250000
           }
-        ]
-      }
-    ],
-    "services": [
-      {
-        "id": "reboot",
-        "name": "重启",
-        "parameters": []
-      },
-      {
-        "id": "setBasic",
-        "name": "动环设置",
-        "parameters": [
-          {
-            "id": "enabled",
-            "name": "定时上报开关",
-            "required": false,
-            "type": "boolean"
-          },
-          {
-            "id": "interval",
-            "name": "定时上报间隔",
-            "required": false,
-            "type": "integer",
-            "specs": {
-              "min": 10,
-              "max": 65535,
-              "unit": "s",
-              "unitName": "秒"
-            }
-          },
-          {
-            "id": "alarmInterval",
-            "name": "告警上报间隔",
-            "required": false,
-            "type": "integer",
-            "specs": {
-              "min": 10,
-              "max": 65535,
-              "unit": "s",
-              "unitName": "秒"
-            }
-          },
-          {
-            "id": "do1",
-            "name": "DO1默认状态",
-            "required": false,
-            "type": "boolean"
-          },
-          {
-            "id": "do2",
-            "name": "DO2默认状态",
-            "required": false,
-            "type": "boolean"
+        },
+        {
+          "id": "byteSize",
+          "name": "数据位",
+          "accessMode": "ro",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "min": 5,
+            "max": 8
           }
-        ]
-      },
-      {
-        "id": "setDO",
-        "name": "设置DO输出",
-        "parameters": [
-          {
-            "id": "port",
-            "name": "端口号",
-            "required": true,
-            "type": "integer",
-            "specs": {
-              "optional": [
-                {
-                  "value": 1,
-                  "desc": "DO1"
-                },
-                {
-                  "value": 2,
-                  "desc": "DO2"
-                }
-              ]
-            }
-          },
-          {
-            "id": "status",
-            "name": "状态",
-            "required": true,
-            "type": "boolean"
-          },
-          {
-            "id": "shootTime",
-            "name": "持续时间",
-            "required": true,
-            "type": "integer",
-            "specs": {
-              "min": 0,
-              "max": 10000,
-              "optional": [
-                {
-                  "value": 0,
-                  "desc": "保持"
-                }
-              ]
-            }
+        },
+        {
+          "id": "stopBit",
+          "name": "停止位",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string",
+          "specs": {
+            "optional": [
+              {
+                "value": "1",
+                "desc": "1位"
+              },
+              {
+                "value": "1.5",
+                "desc": "1.5位"
+              },
+              {
+                "value": "2",
+                "desc": "2位"
+              }
+            ]
           }
-        ]
-      },
-      {
-        "id": "updateFirmware",
-        "name": "更新固件",
-        "parameters": [
-          {
-            "id": "url",
-            "name": "固件下载地址",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "id": "md5Sum",
-            "name": "固件文件MD5",
-            "required": true,
-            "type": "string"
+        },
+        {
+          "id": "parities",
+          "name": "校验",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string",
+          "specs": {
+            "optional": [
+              {
+                "value": "N",
+                "desc": "无"
+              },
+              {
+                "value": "E",
+                "desc": "偶"
+              },
+              {
+                "value": "O",
+                "desc": "奇"
+              },
+              {
+                "value": "M",
+                "desc": "高"
+              },
+              {
+                "value": "S",
+                "desc": "低"
+              }
+            ]
           }
-        ]
-      },
-      {
-        "id": "setNtpHost",
-        "name": "设置ntp校时服务器地址",
-        "parameters": [
-          {
-            "id": "hostA",
-            "name": "主ntp校时服务器",
-            "required": false,
-            "type": "string",
-            "format": "ipv4"
-          },
-          {
-            "id": "hostB",
-            "name": "备ntp校时服务器",
-            "required": false,
-            "type": "string",
-            "format": "ipv4"
+        }
+      ]
+    },
+    {
+      "id": "rs485_2",
+      "name": "2号RS485口配置信息",
+      "accessMode": "ro",
+      "required": true,
+      "type": "struct",
+      "struct": [
+        {
+          "id": "baudRate",
+          "name": "波特率",
+          "accessMode": "ro",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "min": 2400,
+            "max": 250000
           }
-        ]
-      },
-      {
-        "id": "setSensor",
-        "name": "设置传感器信息",
-        "parameters": [
-          {
-            "id": "tiltCalibrate",
-            "name": "倾斜校准",
-            "required": false,
-            "type": "boolean",
-            "specs": {
-              "optional": [
-                {
-                  "value": true,
-                  "desc": "校准"
-                },
-                {
-                  "value": false,
-                  "desc": "无操作"
-                }
-              ]
-            }
-          },
-          {
-            "id": "tiltThreshold",
-            "name": "倾斜告警值",
-            "required": false,
-            "type": "integer",
-            "specs": {
-              "min": 5,
-              "max": 30
-            }
-          },
-          {
-            "id": "tempHiThreshold",
-            "name": "高温告警值",
-            "required": false,
-            "type": "integer",
-            "specs": {
-              "min": -50,
-              "max": 100
-            }
-          },
-          {
-            "id": "tempLowThreshold",
-            "name": "低温告警值",
-            "required": false,
-            "type": "integer",
-            "specs": {
-              "min": -50,
-              "max": 100
-            }
-          },
-          {
-            "id": "humiHiThreshold",
-            "name": "高湿告警值",
-            "required": false,
-            "type": "integer",
-            "specs": {
-              "min": 0,
-              "max": 100
-            }
-          },
-          {
-            "id": "humiLowThreshold",
-            "name": "低湿告警值",
-            "required": false,
-            "type": "integer",
-            "specs": {
-              "min": 0,
-              "max": 100
-            }
+        },
+        {
+          "id": "byteSize",
+          "name": "数据位",
+          "accessMode": "ro",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "min": 5,
+            "max": 8
           }
-        ]
-      },
-      {
-        "id": "setRs485",
-        "name": "设置RS485",
-        "parameters": [
-          {
-            "id": "port",
-            "name": "端口号",
-            "required": true,
-            "type": "integer",
-            "specs": {
-              "optional": [
-                {
-                  "value": 1,
-                  "desc": "1号RS485口"
-                },
-                {
-                  "value": 2,
-                  "desc": "2号RS485口"
-                }
-              ]
-            }
-          },
-          {
-            "id": "baudRate",
-            "name": "波特率",
-            "required": true,
-            "type": "integer",
-            "specs": {
-              "min": 2400,
-              "max": 250000
-            }
-          },
-          {
-            "id": "byteSize",
-            "name": "数据位",
-            "required": true,
-            "type": "integer",
-            "specs": {
-              "min": 5,
-              "max": 8
-            }
-          },
-          {
-            "id": "stopBit",
-            "name": "停止位",
-            "required": true,
-            "type": "string",
-            "specs": {
-              "optional": [
-                {
-                  "value": "1",
-                  "desc": "1位"
-                },
-                {
-                  "value": "1.5",
-                  "desc": "1.5位"
-                },
-                {
-                  "value": "2",
-                  "desc": "2位"
-                }
-              ]
-            }
-          },
-          {
-            "id": "parities",
-            "name": "校验",
-            "required": true,
-            "type": "string",
-            "specs": {
-              "optional": [
-                {
-                  "value": "N",
-                  "desc": "无"
-                },
-                {
-                  "value": "E",
-                  "desc": "偶"
-                },
-                {
-                  "value": "O",
-                  "desc": "奇"
-                },
-                {
-                  "value": "M",
-                  "desc": "高"
-                },
-                {
-                  "value": "S",
-                  "desc": "低"
-                }
-              ]
-            }
+        },
+        {
+          "id": "stopBit",
+          "name": "停止位",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string",
+          "specs": {
+            "optional": [
+              {
+                "value": "1",
+                "desc": "1位"
+              },
+              {
+                "value": "1.5",
+                "desc": "1.5位"
+              },
+              {
+                "value": "2",
+                "desc": "2位"
+              }
+            ]
           }
-        ]
-      },
-      {
-        "id": "writeRs485",
-        "name": "RS485发送数据",
-        "parameters": [
-          {
-            "id": "port",
-            "name": "端口号",
-            "required": true,
-            "type": "integer",
-            "specs": {
-              "optional": [
-                {
-                  "value": 1,
-                  "desc": "1号RS485口"
-                },
-                {
-                  "value": 2,
-                  "desc": "2号RS485口"
-                }
-              ]
-            }
-          },
-          {
-            "id": "data",
-            "name": "要发送的数据",
-            "required": true,
-            "type": "string",
-            "specs": {
-              "max": 4096
-            }
-          },
-          {
-            "id": "flush",
-            "name": "清空接收缓冲区",
-            "required": false,
-            "type": "boolean",
-            "specs": {
-              "optional": [
-                {
-                  "value": true,
-                  "desc": "发送前清空接收缓冲区"
-                },
-                {
-                  "value": false,
-                  "desc": "发送前不清空接收缓冲区"
-                }
-              ]
-            }
+        },
+        {
+          "id": "parities",
+          "name": "校验",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string",
+          "specs": {
+            "optional": [
+              {
+                "value": "N",
+                "desc": "无"
+              },
+              {
+                "value": "E",
+                "desc": "偶"
+              },
+              {
+                "value": "O",
+                "desc": "奇"
+              },
+              {
+                "value": "M",
+                "desc": "高"
+              },
+              {
+                "value": "S",
+                "desc": "低"
+              }
+            ]
           }
-        ]
-      },
-      {
-        "id": "readRs485",
-        "name": "RS485读取数据",
-        "parameters": [
-          {
-            "id": "port",
-            "name": "端口号",
-            "required": true,
-            "type": "integer",
-            "specs": {
-              "optional": [
-                {
-                  "value": 1,
-                  "desc": "1号RS485口"
-                },
-                {
-                  "value": 2,
-                  "desc": "2号RS485口"
-                }
-              ]
-            }
-          },
-          {
-            "id": "len",
-            "name": "要读取的数据长度",
-            "required": false,
-            "type": "integer",
-            "specs": {
-              "min": 1,
-              "max": 4096
-            }
-          },
-          {
-            "id": "wait",
-            "name": "读取等待时长",
-            "required": true,
-            "type": "integer",
-            "specs": {
-              "min": 0,
-              "max": 10000
-            }
-          },
-          {
-            "id": "flush",
-            "name": "清空接收缓冲区",
-            "required": false,
-            "type": "boolean",
-            "specs": {
-              "optional": [
-                {
-                  "value": true,
-                  "desc": "读取前清空接收缓冲区"
-                },
-                {
-                  "value": false,
-                  "desc": "读取前不清空接收缓冲区"
-                }
-              ]
-            }
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "firmwareUpdate",
+      "name": "固件升级",
+      "parameters": [
+        {
+          "id": "status",
+          "name": "操作状态",
+          "type": "string",
+          "specs": {
+            "optional": [
+              {
+                "value": "start",
+                "desc": "开始"
+              },
+              {
+                "value": "success",
+                "desc": "成功"
+              },
+              {
+                "value": "failed",
+                "desc": "失败"
+              }
+            ]
           }
-        ]
-      },
-      {
-        "id": "setVolume",
-        "name": "设置音量",
-        "parameters": [
-          {
-            "id": "volume",
-            "name": "音量",
-            "required": true,
-            "type": "integer",
-            "specs": {
-              "min":0,
-              "max":100,
-              "unit":"%"
-            }
+        },
+        {
+          "id": "resultCode",
+          "name": "结果码",
+          "type": "integer",
+          "specs": {
+            "optional": [
+              {
+                "value": 0,
+                "desc": "成功"
+              },
+              {
+                "value": 1,
+                "desc": "升级失败"
+              },
+              {
+                "value": 2,
+                "desc": "下载失败"
+              },
+              {
+                "value": 3,
+                "desc": "MD5错误"
+              },
+              {
+                "value": 4,
+                "desc": "文件无法识别"
+              }
+            ]
           }
-        ]
-      }
-    ]
-  }
+        }
+      ]
+    },
+    {
+      "id": "reboot",
+      "name": "重启",
+      "parameters": [
+        {
+          "id": "status",
+          "name": "重启原因",
+          "type": "string",
+          "specs": {
+            "optional": [
+              {
+                "value": "update",
+                "desc": "系统升级"
+              },
+              {
+                "value": "config changed",
+                "desc": "配置参数更改"
+              },
+              {
+                "value": "other",
+                "desc": "其他"
+              }
+            ]
+          }
+        },
+        {
+          "id": "resultCode",
+          "name": "结果码",
+          "type": "integer",
+          "specs": {
+            "optional": [
+              {
+                "value": 0,
+                "desc": "系统升级"
+              },
+              {
+                "value": 1,
+                "desc": "配置参数更改"
+              },
+              {
+                "value": 2,
+                "desc": "其他"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "calibrate",
+      "name": "倾斜校准",
+      "parameters": [
+        {
+          "id": "status",
+          "name": "操作状态",
+          "type": "string",
+          "specs": {
+            "optional": [
+              {
+                "value": "success",
+                "desc": "成功"
+              },
+              {
+                "value": "failed",
+                "desc": "失败"
+              }
+            ]
+          }
+        },
+        {
+          "id": "resultCode",
+          "name": "结果码",
+          "type": "integer",
+          "specs": {
+            "optional": [
+              {
+                "value": 0,
+                "desc": "成功"
+              },
+              {
+                "value": 1,
+                "desc": "失败"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "id": "reboot",
+      "name": "重启",
+      "parameters": []
+    },
+    {
+      "id": "setBasic",
+      "name": "动环设置",
+      "parameters": [
+        {
+          "id": "enabled",
+          "name": "定时上报开关",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "id": "interval",
+          "name": "定时上报间隔",
+          "required": false,
+          "type": "integer",
+          "specs": {
+            "min": 10,
+            "max": 65535,
+            "unit": "s",
+            "unitName": "秒"
+          }
+        },
+        {
+          "id": "alarmInterval",
+          "name": "告警上报间隔",
+          "required": false,
+          "type": "integer",
+          "specs": {
+            "min": 10,
+            "max": 65535,
+            "unit": "s",
+            "unitName": "秒"
+          }
+        },
+        {
+          "id": "do1",
+          "name": "DO1默认状态",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "id": "do2",
+          "name": "DO2默认状态",
+          "required": false,
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "setDO",
+      "name": "设置DO输出",
+      "parameters": [
+        {
+          "id": "port",
+          "name": "端口号",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "optional": [
+              {
+                "value": 1,
+                "desc": "DO1"
+              },
+              {
+                "value": 2,
+                "desc": "DO2"
+              }
+            ]
+          }
+        },
+        {
+          "id": "status",
+          "name": "状态",
+          "required": true,
+          "type": "boolean"
+        },
+        {
+          "id": "shootTime",
+          "name": "持续时间",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "min": 0,
+            "max": 10000,
+            "optional": [
+              {
+                "value": 0,
+                "desc": "保持"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "updateFirmware",
+      "name": "更新固件",
+      "parameters": [
+        {
+          "id": "url",
+          "name": "固件下载地址",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "id": "md5Sum",
+          "name": "固件文件MD5",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "setNtpHost",
+      "name": "设置ntp校时服务器地址",
+      "parameters": [
+        {
+          "id": "hostA",
+          "name": "主ntp校时服务器",
+          "required": false,
+          "type": "string",
+          "format": "ipv4"
+        },
+        {
+          "id": "hostB",
+          "name": "备ntp校时服务器",
+          "required": false,
+          "type": "string",
+          "format": "ipv4"
+        }
+      ]
+    },
+    {
+      "id": "setSensor",
+      "name": "设置传感器信息",
+      "parameters": [
+        {
+          "id": "tiltCalibrate",
+          "name": "倾斜校准",
+          "required": false,
+          "type": "boolean",
+          "specs": {
+            "optional": [
+              {
+                "value": true,
+                "desc": "校准"
+              },
+              {
+                "value": false,
+                "desc": "无操作"
+              }
+            ]
+          }
+        },
+        {
+          "id": "tiltThreshold",
+          "name": "倾斜告警值",
+          "required": false,
+          "type": "integer",
+          "specs": {
+            "min": 5,
+            "max": 30
+          }
+        },
+        {
+          "id": "tempHiThreshold",
+          "name": "高温告警值",
+          "required": false,
+          "type": "integer",
+          "specs": {
+            "min": -50,
+            "max": 100
+          }
+        },
+        {
+          "id": "tempLowThreshold",
+          "name": "低温告警值",
+          "required": false,
+          "type": "integer",
+          "specs": {
+            "min": -50,
+            "max": 100
+          }
+        },
+        {
+          "id": "humiHiThreshold",
+          "name": "高湿告警值",
+          "required": false,
+          "type": "integer",
+          "specs": {
+            "min": 0,
+            "max": 100
+          }
+        },
+        {
+          "id": "humiLowThreshold",
+          "name": "低湿告警值",
+          "required": false,
+          "type": "integer",
+          "specs": {
+            "min": 0,
+            "max": 100
+          }
+        }
+      ]
+    },
+    {
+      "id": "setRs485",
+      "name": "设置RS485",
+      "parameters": [
+        {
+          "id": "port",
+          "name": "端口号",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "optional": [
+              {
+                "value": 1,
+                "desc": "1号RS485口"
+              },
+              {
+                "value": 2,
+                "desc": "2号RS485口"
+              }
+            ]
+          }
+        },
+        {
+          "id": "baudRate",
+          "name": "波特率",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "min": 2400,
+            "max": 250000
+          }
+        },
+        {
+          "id": "byteSize",
+          "name": "数据位",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "min": 5,
+            "max": 8
+          }
+        },
+        {
+          "id": "stopBit",
+          "name": "停止位",
+          "required": true,
+          "type": "string",
+          "specs": {
+            "optional": [
+              {
+                "value": "1",
+                "desc": "1位"
+              },
+              {
+                "value": "1.5",
+                "desc": "1.5位"
+              },
+              {
+                "value": "2",
+                "desc": "2位"
+              }
+            ]
+          }
+        },
+        {
+          "id": "parities",
+          "name": "校验",
+          "required": true,
+          "type": "string",
+          "specs": {
+            "optional": [
+              {
+                "value": "N",
+                "desc": "无"
+              },
+              {
+                "value": "E",
+                "desc": "偶"
+              },
+              {
+                "value": "O",
+                "desc": "奇"
+              },
+              {
+                "value": "M",
+                "desc": "高"
+              },
+              {
+                "value": "S",
+                "desc": "低"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "writeRs485",
+      "name": "RS485发送数据",
+      "parameters": [
+        {
+          "id": "port",
+          "name": "端口号",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "optional": [
+              {
+                "value": 1,
+                "desc": "1号RS485口"
+              },
+              {
+                "value": 2,
+                "desc": "2号RS485口"
+              }
+            ]
+          }
+        },
+        {
+          "id": "data",
+          "name": "要发送的数据",
+          "required": true,
+          "type": "string",
+          "specs": {
+            "max": 4096
+          }
+        },
+        {
+          "id": "flush",
+          "name": "清空接收缓冲区",
+          "required": false,
+          "type": "boolean",
+          "specs": {
+            "optional": [
+              {
+                "value": true,
+                "desc": "发送前清空接收缓冲区"
+              },
+              {
+                "value": false,
+                "desc": "发送前不清空接收缓冲区"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "readRs485",
+      "name": "RS485读取数据",
+      "parameters": [
+        {
+          "id": "port",
+          "name": "端口号",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "optional": [
+              {
+                "value": 1,
+                "desc": "1号RS485口"
+              },
+              {
+                "value": 2,
+                "desc": "2号RS485口"
+              }
+            ]
+          }
+        },
+        {
+          "id": "len",
+          "name": "要读取的数据长度",
+          "required": false,
+          "type": "integer",
+          "specs": {
+            "min": 1,
+            "max": 4096
+          }
+        },
+        {
+          "id": "wait",
+          "name": "读取等待时长",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "min": 0,
+            "max": 10000
+          }
+        },
+        {
+          "id": "flush",
+          "name": "清空接收缓冲区",
+          "required": false,
+          "type": "boolean",
+          "specs": {
+            "optional": [
+              {
+                "value": true,
+                "desc": "读取前清空接收缓冲区"
+              },
+              {
+                "value": false,
+                "desc": "读取前不清空接收缓冲区"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "setVolume",
+      "name": "设置音量",
+      "parameters": [
+        {
+          "id": "volume",
+          "name": "音量",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "min": 0,
+            "max": 100,
+            "unit": "%"
+          }
+        }
+      ]
+    }
+  ]
+}

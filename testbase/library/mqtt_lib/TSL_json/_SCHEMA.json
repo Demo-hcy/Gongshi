@@ -99,7 +99,8 @@
             "type": "object",
             "properties": {
               "value": {
-                "oneOf": [{
+                "oneOf": [
+                  {
                     "type": "string"
                   },
                   {
@@ -130,6 +131,9 @@
         },
         "columnComplex": {
           "$ref": "#/definitions/columnComplex"
+        },
+        "specs": {
+          "$ref": "#/definitions/specsDef"
         }
       },
       "additionalProperties": false
@@ -139,7 +143,7 @@
       "items": {
         "$ref": "#/definitions/parameterDef"
       },
-      "additionalItems": false
+      "additionalProperties": false
     },
     "parameterDef": {
       "type": "object",
@@ -213,7 +217,7 @@
       "items": {
         "$ref": "#/definitions/parameterDef"
       },
-      "additionalItems": false
+      "additionalProperties": false
     },
     "events": {
       "type": "array",
@@ -252,6 +256,12 @@
           "timeout": {
             "type": "integer",
             "description": "超时时间,单位毫秒."
+          },
+          "type": {
+            "enum": [
+              "business",
+              "management"
+            ]
           },
           "parameters": {
             "$ref": "#/definitions/parametersDef"

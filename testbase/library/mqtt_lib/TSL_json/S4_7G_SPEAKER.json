@@ -1,0 +1,287 @@
+{
+  "productId": "S4_7G_SPEAKER",
+  "productName": "音柱",
+  "properties": [
+    {
+      "id": "volume",
+      "name": "音量",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 0,
+        "max": 100
+      }
+    },
+    {
+      "id": "model",
+      "name": "设备型号",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "specs": {}
+    },
+    {
+      "id": "sn",
+      "name": "设备sn",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "specs": {}
+    },
+    {
+      "id": "playingProgram",
+      "name": "当前播放歌曲",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "specs": {}
+    },
+    {
+      "id": "online",
+      "name": "在线状态",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "optional": [
+          {
+            "value": 0,
+            "desc": "离线"
+          },
+          {
+            "value": 1,
+            "desc": "在线"
+          }
+        ]
+      }
+    },
+    {
+      "id": "playStatus",
+      "name": "当前播放状态",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "optional": [
+          {
+            "value": 0,
+            "desc": "正在播放"
+          },
+          {
+            "value": 1,
+            "desc": "播放暂停状态"
+          },
+          {
+            "value": 2,
+            "desc": "空闲状态"
+          }
+        ]
+      }
+    },
+    {
+      "id": "mode",
+      "name": "控制模式",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "specs": {
+        "optional": [
+          {
+            "value": "manual",
+            "desc": "手动"
+          },
+          {
+            "value": "auto",
+            "desc": "自动"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fileNameList",
+      "name": "节目列表",
+      "accessMode": "ro",
+      "required": true,
+      "type": "array",
+      "columnSimple": {
+        "type": "string"
+      },
+      "specs": {}
+    }
+  ],
+  "events": [],
+  "services": [
+    {
+      "id": "setVolume",
+      "name": "设置音量",
+      "type": "business",
+      "parameters": [
+        {
+          "id": "volume",
+          "name": "音量",
+          "accessMode": "ro",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "min": 0,
+            "max": 100
+          }
+        }
+      ],
+      "output": []
+    },
+    {
+      "id": "addProgram",
+      "name": "添加节目",
+      "type": "management",
+      "parameters": [
+        {
+          "id": "url",
+          "name": "下载地址",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "id": "fileName",
+          "name": "节目名",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "id": "md5Sum",
+          "name": "md5校验值",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "output": []
+    },
+    {
+      "id": "renameProgram",
+      "name": "更改节目名",
+      "type": "management",
+      "parameters": [
+        {
+          "id": "oldProgramName",
+          "name": "改动前节目名字",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "id": "newProgramName",
+          "name": "改动后节目名字",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "delProgram",
+      "name": "删除节目",
+      "type": "management",
+      "parameters": [
+        {
+          "id": "fileName",
+          "name": "节目名",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "output": []
+    },
+    {
+      "id": "getPrograms",
+      "name": "查询节目",
+      "type": "management",
+      "parameters": [],
+      "output": [
+        {
+          "id": "files",
+          "name": "节目列表",
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "fileName",
+              "name": "节目名列表",
+              "type": "string"
+            },
+            {
+              "id": "md5",
+              "name": "md5列表",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "playProgram",
+      "name": "播放节目",
+      "type": "business",
+      "parameters": [
+        {
+          "id": "program",
+          "name": "节目名字",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string",
+          "specs": {}
+        }
+      ],
+      "output": []
+    },
+    {
+      "id": "pauseProgram",
+      "name": "暂停播放",
+      "type": "business",
+      "parameters": [],
+      "output": []
+    },
+    {
+      "id": "resumeProgram",
+      "name": "继续播放",
+      "type": "business",
+      "parameters": [],
+      "output": []
+    },
+    {
+      "id": "stopProgram",
+      "name": "停止播放",
+      "type": "business",
+      "parameters": [],
+      "output": []
+    },
+    {
+      "id": "switchMode",
+      "name": "切换模式",
+      "type": "management",
+      "parameters": [
+        {
+          "id": "mode",
+          "name": "模式",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string",
+          "specs": {
+            "optional": [
+              {
+                "value": "manual",
+                "desc": "手动"
+              },
+              {
+                "value": "auto",
+                "desc": "自动"
+              }
+            ]
+          }
+        }
+      ],
+      "output": []
+    }
+  ]
+}

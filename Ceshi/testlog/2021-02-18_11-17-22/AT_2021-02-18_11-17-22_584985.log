@@ -1,0 +1,9 @@
+2021-02-18 11:17:23.114 | INFO     | library.mqtt_lib.mqtt_client:on_connect:114 - 连接结果：连接成功
+2021-02-18 11:17:23.214 | INFO     | library.mqtt_lib.mqtt_client:subscribe:229 - 订阅的主题：/device/D1_7G_DHWG/0202101271000AYG/property/report
+2021-02-18 11:17:23.215 | INFO     | library.mqtt_lib.mqtt_client:subscribe:229 - 订阅的主题：/device/D1_7G_DHWG/0202101271000AYG/service/setSensor/invoke_reply
+2021-02-18 11:17:23.215 | INFO     | library.mqtt_lib.mqtt_client:publish:216 - 发布的主题：/device/D1_7G_DHWG/0202101271000AYG/service/setSensor/invoke
+2021-02-18 11:17:23.216 | INFO     | library.mqtt_lib.mqtt_client:publish:217 - 发布的payload：{'params': {'tiltCalibrate': True, 'tiltThreshold': 29, 'tempHiThreshold': 106, 'tempLowThreshold': 10, 'humiHiThreshold': 40, 'humiLowThreshold': 10}, 'msgId': '86604688', 'timestamp': 1613618243215}
+2021-02-18 11:17:23.281 | INFO     | library.mqtt_lib.mqtt_client:on_message:83 - 获取消息：{"msgId":"86604688","timestamp":1613618241000,"code":301,"message":"Resource Busy","data":{}}
+2021-02-18 11:17:23.316 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:237 - 取消订阅的主题：/device/D1_7G_DHWG/0202101271000AYG/service/setSensor/invoke_reply
+2021-02-18 11:17:53.346 | ERROR    | library.mqtt_lib.mqtt_client:get_msg:337 - 获取消息异常：消息为空
+2021-02-18 11:17:53.346 | INFO     | library.mqtt_lib.mqtt_client:unsubscribe:237 - 取消订阅的主题：/device/D1_7G_DHWG/0202101271000AYG/property/report

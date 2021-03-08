@@ -155,18 +155,14 @@ class MQTTClient:
             logger_error_debug(f'设置遗愿出错:{e}')
             raise
 
-    def online(self, pub_topic: str, payload: Dict, qos: int = 2) -> None:
+    def online(self, pub_topic: str, payload: Dict) -> None:
         """
         上线消息
         :param pub_topic: 发布的主题
         :param payload: 消息内容
-        :param qos: 服务质量
-        - level 0：最多一次的传输
-        - level 1：至少一次的传输
-        - level 2：只有一次的传输
         """
         try:
-            self.client.publish(pub_topic, json.dumps(payload), qos)
+            self.publish(pub_topic, payload)
         except Exception as e:
             logger_error_debug(f'上线消息出错:{e}')
             raise
@@ -279,7 +275,7 @@ class MQTTClient:
         r = self.get_msg(sub_topic, expr={'msgId': seq})
         return r
 
-    def send_reply(self, reply_topic: str, msgId: str, code: int = 0, data: Optional[Dict] = None):
+    def send_reply(self, reply_topic: str, msgId: str, code: int = 0, data: Dict = None):
         """
         发送MQTT响应消息
         :param reply_topic: 响应的主题
@@ -295,7 +291,7 @@ class MQTTClient:
         payload['data'] = data
         self.publish(reply_topic, payload)
 
-    def get_msg(self, sub_topic: str, expr: Optional[Dict] = None) -> ResultData:
+    def get_msg(self, sub_topic: str, expr: Dict = None) -> ResultData:
         """
         获取MQTT消息
         :param sub_topic: 订阅的主题
@@ -339,7 +335,7 @@ class MQTTClient:
         self.unsubscribe(sub_topic)
         return result
 
-    def listen(self, listen_topic: str, expr: Optional[Dict] = None) -> ResultData:
+    def listen(self, listen_topic: str, expr: Dict = None) -> ResultData:
         """
         监听MQTT消息
         :param listen_topic: 监听的主题

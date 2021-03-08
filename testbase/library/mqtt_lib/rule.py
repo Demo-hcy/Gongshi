@@ -16,33 +16,48 @@ class DeviceInfo:
 
 
 class RefProperty(DeviceInfo):
-    def __init__(self, device: Device, property: str) -> None:
+    def __init__(self, device: Device, property: str, more_str: str = None) -> None:
         """
         对属性取值，基于设备信息类
         :param device: 设备的物模型
         :param property: 需提前由get_var_name()获取到属性物模型名称再传入
+        :param more_str: 前置额外字符串
         """
         super().__init__(device)
+        self.more_str = more_str
         self.property = property.split('.properties.')[1]
+        self.property = self.property.replace('.columnComplex', '')
+        self.property = self.property.replace('.columnSimple', '')
 
     def __repr__(self) -> str:
         device_info = super().__repr__()
-        return f'#ref("{device_info}.properties.{self.property}")'
+        if self.more_str:
+            s = f'\'{self.more_str}\' + #ref("{device_info}.properties.{self.property}")'
+        else:
+            s = f'#ref("{device_info}.properties.{self.property}")'
+        return s
 
 
 class RefEvent(DeviceInfo):
-    def __init__(self, device: Device, event: str) -> None:
+    def __init__(self, device: Device, event: str, more_str: str = None) -> None:
         """
         对事件取值，基于设备信息类
         :param device: 设备的物模型
         :param event: 需提前由get_var_name()获取到事件物模型名称再传入
+        :param more_str: 前置额外字符串
         """
         super().__init__(device)
+        self.more_str = more_str
         self.event = event.split('.events.')[1]
+        self.event = self.event.replace('.parameters.', '.')
 
     def __repr__(self) -> str:
         device_info = super().__repr__()
-        return f'#ref("{device_info}.events.{self.event}")'
+        if self.more_str:
+            s = f'\'{self.more_str}\' + #ref("{device_info}.events.{self.event}")'
+        else:
+            s = f'#ref("{device_info}.events.{self.event}")'
+        return s
 
 
 class CallService(DeviceInfo):
@@ -155,10 +170,7 @@ class Condition:
 
 
 class Script:
-    def __init__(self,
-                 conditions: Optional[List] = None,
-                 if_block: Optional[List] = None,
-                 else_block: Optional[List] = None) -> None:
+    def __init__(self, conditions: List = None, if_block: List = None, else_block: List = None) -> None:
         """
         策略
         :param conditions: 条件列表

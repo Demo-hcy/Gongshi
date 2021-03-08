@@ -1,0 +1,1820 @@
+{
+  "productId": "S5_DH_CP902QJAU3F",
+  "productName": "大华交通事件摄像头",
+  "properties": [
+    {
+      "id": "sn",
+      "name": "设备序列号",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "id": "ip",
+      "name": "设备IP地址",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "id": "httpPort",
+      "name": "Onvif端口",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer"
+    },
+    {
+      "id": "onvifUser",
+      "name": "Onvif账号",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "id": "onvifPassword",
+      "name": "Onvif密码",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "id": "online",
+      "name": "在线状态",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "optional": [
+          {
+            "value": 1,
+            "desc": "在线"
+          },
+          {
+            "value": 0,
+            "desc": "离线"
+          }
+        ]
+      }
+    },
+    {
+      "id": "mode",
+      "name": "控制模式",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "specs": {
+        "optional": [
+          {
+            "value": "auto",
+            "desc": "自动"
+          },
+          {
+            "value": "manual",
+            "desc": "手动"
+          }
+        ]
+      }
+    },
+    {
+      "id": "manufacturer",
+      "name": "设备厂商",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "id": "model",
+      "name": "设备型号",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "id": "channelCnt",
+      "name": "通道个数",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 1,
+        "max": 1,
+        "step": 1
+      }
+    },
+    {
+      "id": "channels",
+      "name": "通道属性",
+      "accessMode": "ro",
+      "required": true,
+      "type": "array",
+      "columnComplex": [
+        {
+          "id": "id",
+          "name": "通道id",
+          "accessMode": "ro",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "min": 1,
+            "max": 1,
+            "step": 1
+          }
+        },
+        {
+          "id": "alarmList",
+          "name": "告警事件",
+          "accessMode": "ro",
+          "required": true,
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "type",
+              "name": "告警类型",
+              "type": "string",
+              "specs": {
+                "optional": [
+                  {
+                    "value": "trafficJam",
+                    "desc": "交通拥堵事件"
+                  },
+                  {
+                    "value": "vehicleInBusRoute",
+                    "desc": "占用公交车道事件"
+                  },
+                  {
+                    "value": "nonMotorInMotorRoute",
+                    "desc": "非机动车占用机动车道"
+                  },
+                  {
+                    "value": "trafficAccident",
+                    "desc": "交通事故事件"
+                  },
+                  {
+                    "value": "trafficJunctionMotor",
+                    "desc": "交通路口事件----机动车拌线入侵"
+                  },
+                  {
+                    "value": "trafficJunctionTruck",
+                    "desc": "交通路口事件----大卡车告警"
+                  },
+                  {
+                    "value": "trafficPedestrain",
+                    "desc": "交通行人事件"
+                  },
+                  {
+                    "value": "nonMotorWithoutSafeHat",
+                    "desc": "非机动车未戴安全帽事件"
+                  },
+                  {
+                    "value": "trafficParking",
+                    "desc": "违章停车"
+                  },
+                  {
+                    "value": "trafficFlowState",
+                    "desc": "交通流量事件"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "enable",
+              "name": "是否订阅",
+              "type": "integer",
+              "specs": {
+                "optional": [
+                  {
+                    "value": 1,
+                    "desc": "告警已订阅"
+                  },
+                  {
+                    "value": 0,
+                    "desc": "告警未订阅"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "hasPic",
+              "name": "是否上传图片",
+              "type": "integer",
+              "specs": {
+                "optional": [
+                  {
+                    "value": 1,
+                    "desc": "上传图片"
+                  },
+                  {
+                    "value": 0,
+                    "desc": "不上传图片"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "streamCnt",
+          "name": "每个通道视频流个数",
+          "accessMode": "ro",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "min": 1,
+            "max": 2,
+            "step": 1
+          }
+        },
+        {
+          "id": "resolutions",
+          "name": "视频流分辨率",
+          "accessMode": "ro",
+          "required": true,
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "name",
+              "name": "视频流名称",
+              "type": "string",
+              "specs": {
+                "optional": [
+                  {
+                    "value": "mainStream",
+                    "desc": "主码流"
+                  },
+                  {
+                    "value": "subStream",
+                    "desc": "子码流"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "id",
+              "name": "视频流id",
+              "type": "integer",
+              "specs": {
+                "optional": [
+                  {
+                    "value": 1,
+                    "desc": "主码流"
+                  },
+                  {
+                    "value": 2,
+                    "desc": "子码流"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "resolution",
+              "name": "分辨率",
+              "type": "struct",
+              "struct": [
+                {
+                  "id": "width",
+                  "name": "水平象素",
+                  "type": "integer"
+                },
+                {
+                  "id": "height",
+                  "name": "垂直象素",
+                  "type": "integer"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "trafficJam",
+      "name": "交通拥堵事件",
+      "parameters": [
+        {
+          "id": "eventType",
+          "name": "大华摄像机告警类型",
+          "type": "string",
+          "specs": {
+            "optional": [
+              {
+                "value": "trafficJam",
+                "desc": "交通拥堵事件"
+              }
+            ]
+          }
+        },
+        {
+          "id": "process",
+          "name": "告警开始/结束",
+          "type": "integer",
+          "specs": {
+            "optional": [
+              {
+                "value": 1,
+                "desc": "告警开始"
+              }
+            ]
+          }
+        },
+        {
+          "id": "lane",
+          "name": "车道号",
+          "type": "integer",
+          "specs": {
+            "min": 1,
+            "max": 10,
+            "step": 1
+          }
+        },
+        {
+          "id": "trafficJamLength",
+          "name": "拥堵长度",
+          "type": "integer",
+          "specs": {
+            "unit": "米",
+            "unitName": "米"
+          }
+        },
+        {
+          "id": "imagePath",
+          "name": "文件服务器返回的图片信息",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "vehicleInBusRoute",
+      "name": "占用公交车道事件",
+      "parameters": [
+        {
+          "id": "eventType",
+          "name": "大华摄像机告警类型",
+          "type": "string",
+          "specs": {
+            "optional": [
+              {
+                "value": "vehicleInBusRoute",
+                "desc": "占用公交车道事件"
+              }
+            ]
+          }
+        },
+        {
+          "id": "process",
+          "name": "告警开始/结束",
+          "type": "integer",
+          "specs": {
+            "optional": [
+              {
+                "value": 1,
+                "desc": "告警开始"
+              }
+            ]
+          }
+        },
+        {
+          "id": "lane",
+          "name": "车道号",
+          "type": "integer",
+          "specs": {
+            "min": 1,
+            "max": 10,
+            "step": 1
+          }
+        },
+        {
+          "id": "objectType",
+          "name": "物体类型",
+          "type": "string"
+        },
+        {
+          "id": "type",
+          "name": "物体子类型",
+          "type": "string"
+        },
+        {
+          "id": "imagePath",
+          "name": "文件服务器返回的图片信息",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "nonMotorInMotorRoute",
+      "name": "非机动车占用机动车道",
+      "parameters": [
+        {
+          "id": "eventType",
+          "name": "大华摄像机告警类型",
+          "type": "string",
+          "specs": {
+            "optional": [
+              {
+                "value": "nonMotorInMotorRoute",
+                "desc": "非机动车占用机动车道"
+              }
+            ]
+          }
+        },
+        {
+          "id": "process",
+          "name": "告警开始/结束",
+          "type": "integer",
+          "specs": {
+            "optional": [
+              {
+                "value": 1,
+                "desc": "告警开始"
+              }
+            ]
+          }
+        },
+        {
+          "id": "lane",
+          "name": "车道号",
+          "type": "integer",
+          "specs": {
+            "min": 1,
+            "max": 10,
+            "step": 1
+          }
+        },
+        {
+          "id": "imagePath",
+          "name": "文件服务器返回的图片信息",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "trafficAccident",
+      "name": "交通事故事件",
+      "parameters": [
+        {
+          "id": "eventType",
+          "name": "大华摄像机告警类型",
+          "type": "string",
+          "specs": {
+            "optional": [
+              {
+                "value": "trafficAccident",
+                "desc": "交通事故事件"
+              }
+            ]
+          }
+        },
+        {
+          "id": "process",
+          "name": "告警开始/结束",
+          "type": "integer",
+          "specs": {
+            "optional": [
+              {
+                "value": 1,
+                "desc": "告警开始"
+              }
+            ]
+          }
+        },
+        {
+          "id": "lane",
+          "name": "车道号",
+          "type": "integer",
+          "specs": {
+            "min": 1,
+            "max": 10,
+            "step": 1
+          }
+        },
+        {
+          "id": "imagePath",
+          "name": "文件服务器返回的图片信息",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "trafficJunctionMotor",
+      "name": "交通路口事件----机动车拌线入侵",
+      "parameters": [
+        {
+          "id": "eventType",
+          "name": "大华摄像机告警类型",
+          "type": "string",
+          "specs": {
+            "optional": [
+              {
+                "value": "trafficJunctionMotor",
+                "desc": "交通路口事件----机动车拌线入侵"
+              }
+            ]
+          }
+        },
+        {
+          "id": "process",
+          "name": "告警开始/结束",
+          "type": "integer",
+          "specs": {
+            "optional": [
+              {
+                "value": 1,
+                "desc": "告警开始"
+              }
+            ]
+          }
+        },
+        {
+          "id": "lane",
+          "name": "车道号",
+          "type": "integer",
+          "specs": {
+            "min": 1,
+            "max": 10,
+            "step": 1
+          }
+        },
+        {
+          "id": "objectType",
+          "name": "物体类型",
+          "type": "string"
+        },
+        {
+          "id": "type",
+          "name": "车型",
+          "type": "string"
+        },
+        {
+          "id": "plateNumber",
+          "name": "车牌号",
+          "type": "string"
+        },
+        {
+          "id": "imagePath",
+          "name": "文件服务器返回的图片信息",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "trafficJunctionTruck",
+      "name": "交通路口事件----大卡车告警",
+      "parameters": [
+        {
+          "id": "eventType",
+          "name": "大华摄像机告警类型",
+          "type": "string",
+          "specs": {
+            "optional": [
+              {
+                "value": "trafficJunctionTruck",
+                "desc": "交通路口事件----大卡车告警"
+              }
+            ]
+          }
+        },
+        {
+          "id": "process",
+          "name": "告警开始/结束",
+          "type": "integer",
+          "specs": {
+            "optional": [
+              {
+                "value": 1,
+                "desc": "告警开始"
+              }
+            ]
+          }
+        },
+        {
+          "id": "lane",
+          "name": "车道号",
+          "type": "integer",
+          "specs": {
+            "min": 1,
+            "max": 10,
+            "step": 1
+          }
+        },
+        {
+          "id": "objectType",
+          "name": "物体类型",
+          "type": "string"
+        },
+        {
+          "id": "type",
+          "name": "车型",
+          "type": "string"
+        },
+        {
+          "id": "plateNumber",
+          "name": "车牌号",
+          "type": "string"
+        },
+        {
+          "id": "imagePath",
+          "name": "文件服务器返回的图片信息",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "trafficPedestrain",
+      "name": "交通行人事件",
+      "parameters": [
+        {
+          "id": "eventType",
+          "name": "大华摄像机告警类型",
+          "type": "string",
+          "specs": {
+            "optional": [
+              {
+                "value": "trafficPedestrain",
+                "desc": "交通行人事件"
+              }
+            ]
+          }
+        },
+        {
+          "id": "process",
+          "name": "告警开始/结束",
+          "type": "integer",
+          "specs": {
+            "optional": [
+              {
+                "value": 1,
+                "desc": "告警开始"
+              }
+            ]
+          }
+        },
+        {
+          "id": "lane",
+          "name": "车道号",
+          "type": "integer",
+          "specs": {
+            "min": 1,
+            "max": 10,
+            "step": 1
+          }
+        },
+        {
+          "id": "imagePath",
+          "name": "文件服务器返回的图片信息",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "nonMotorWithoutSafeHat",
+      "name": "非机动车未戴安全帽事件",
+      "parameters": [
+        {
+          "id": "eventType",
+          "name": "大华摄像机告警类型",
+          "type": "string",
+          "specs": {
+            "optional": [
+              {
+                "value": "nonMotorWithoutSafeHat",
+                "desc": "非机动车未戴安全帽事件"
+              }
+            ]
+          }
+        },
+        {
+          "id": "process",
+          "name": "告警开始/结束",
+          "type": "integer",
+          "specs": {
+            "optional": [
+              {
+                "value": 1,
+                "desc": "告警开始"
+              }
+            ]
+          }
+        },
+        {
+          "id": "lane",
+          "name": "车道号",
+          "type": "integer",
+          "specs": {
+            "min": 1,
+            "max": 10,
+            "step": 1
+          }
+        },
+        {
+          "id": "imagePath",
+          "name": "文件服务器返回的图片信息",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "trafficParking",
+      "name": "违章停车",
+      "parameters": [
+        {
+          "id": "eventType",
+          "name": "大华摄像机告警类型",
+          "type": "string",
+          "specs": {
+            "optional": [
+              {
+                "value": "trafficParking",
+                "desc": "违章停车"
+              }
+            ]
+          }
+        },
+        {
+          "id": "process",
+          "name": "告警开始/结束",
+          "type": "integer",
+          "specs": {
+            "optional": [
+              {
+                "value": 1,
+                "desc": "告警开始"
+              }
+            ]
+          }
+        },
+        {
+          "id": "lane",
+          "name": "车道号",
+          "type": "integer",
+          "specs": {
+            "min": 1,
+            "max": 10,
+            "step": 1
+          }
+        },
+        {
+          "id": "objectType",
+          "name": "物体类型",
+          "type": "string"
+        },
+        {
+          "id": "type",
+          "name": "车型",
+          "type": "string"
+        },
+        {
+          "id": "plateNumber",
+          "name": "车牌号",
+          "type": "string"
+        },
+        {
+          "id": "imagePath",
+          "name": "文件服务器返回的图片信息",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "trafficFlowState",
+      "name": "交通流量事件",
+      "parameters": [
+        {
+          "id": "eventType",
+          "name": "大华摄像机告警类型",
+          "type": "string",
+          "specs": {
+            "optional": [
+              {
+                "value": "trafficFlowState",
+                "desc": "交通流量事件"
+              }
+            ]
+          }
+        },
+        {
+          "id": "stateNum",
+          "name": "流量状态数量",
+          "type": "integer",
+          "specs": {
+            "min": 1,
+            "max": 10,
+            "step": 1
+          }
+        },
+        {
+          "id": "states",
+          "name": "流量状态",
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "lane",
+              "name": "车道号",
+              "type": "integer",
+              "specs": {
+                "min": 1,
+                "max": 10,
+                "step": 1
+              }
+            },
+            {
+              "id": "dwState",
+              "name": "状态值",
+              "type": "integer",
+              "specs": {
+                "optional": [
+                  {
+                    "value": 1,
+                    "desc": "流量过大"
+                  },
+                  {
+                    "value": 2,
+                    "desc": "流量过大恢复"
+                  },
+                  {
+                    "value": 3,
+                    "desc": "正常"
+                  },
+                  {
+                    "value": 4,
+                    "desc": "流量过小"
+                  },
+                  {
+                    "value": 5,
+                    "desc": "流量过小恢复"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "flow",
+              "name": "流量值",
+              "type": "integer",
+              "specs": {
+                "unit": "辆",
+                "unitName": "辆"
+              }
+            },
+            {
+              "id": "period",
+              "name": "流量值对应的统计时间",
+              "type": "integer",
+              "specs": {
+                "min": 1,
+                "max": 250,
+                "unit": "分钟",
+                "unitName": "分钟",
+                "step": 1
+              }
+            },
+            {
+              "id": "trafficFlowDir_drivingDir",
+              "name": "车道方向信息",
+              "type": "integer",
+              "specs": {
+                "optional": [
+                  {
+                    "value": 1,
+                    "desc": "上行,即车辆离设备部署点越来越近"
+                  },
+                  {
+                    "value": 2,
+                    "desc": "下行,即车辆离设备部署点越来越远"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "vehicles",
+              "name": "通过车辆总数",
+              "type": "integer",
+              "specs": {
+                "unit": "辆",
+                "unitName": "辆"
+              }
+            },
+            {
+              "id": "averageSpeed",
+              "name": "平均车速",
+              "type": "number",
+              "specs": {
+                "unit": "km/h",
+                "unitName": "km/h"
+              }
+            },
+            {
+              "id": "averageLength",
+              "name": "平均车长",
+              "type": "number",
+              "specs": {
+                "unit": "米",
+                "unitName": "米"
+              }
+            },
+            {
+              "id": "timeOccupyRatio",
+              "name": "时间占有率",
+              "type": "number"
+            },
+            {
+              "id": "spaceOccupyRatio",
+              "name": "空间占有率",
+              "type": "number"
+            },
+            {
+              "id": "spaceHeadway",
+              "name": "车头间距",
+              "type": "number",
+              "specs": {
+                "unit": "米/辆",
+                "unitName": "米/辆"
+              }
+            },
+            {
+              "id": "timeHeadway",
+              "name": "车头时距",
+              "type": "number",
+              "specs": {
+                "unit": "秒/辆",
+                "unitName": "秒/辆"
+              }
+            },
+            {
+              "id": "density",
+              "name": "车辆密度",
+              "type": "number",
+              "specs": {
+                "unit": "辆/km",
+                "unitName": "辆/km"
+              }
+            },
+            {
+              "id": "overSpeedVehicles",
+              "name": "超速车辆数",
+              "type": "integer",
+              "specs": {
+                "unit": "辆",
+                "unitName": "辆"
+              }
+            },
+            {
+              "id": "underSpeedVehicles",
+              "name": "低速车辆数",
+              "type": "integer",
+              "specs": {
+                "unit": "辆",
+                "unitName": "辆"
+              }
+            },
+            {
+              "id": "largeVehicles",
+              "name": "大车交通量",
+              "type": "integer",
+              "specs": {
+                "unit": "辆/单位时间",
+                "unitName": "辆/单位时间"
+              }
+            },
+            {
+              "id": "mediumVehicles",
+              "name": "中型车交通量",
+              "type": "integer",
+              "specs": {
+                "unit": "辆/单位时间",
+                "unitName": "辆/单位时间"
+              }
+            },
+            {
+              "id": "smallVehicles",
+              "name": "小车交通量",
+              "type": "integer",
+              "specs": {
+                "unit": "辆/单位时间",
+                "unitName": "辆/单位时间"
+              }
+            },
+            {
+              "id": "motoVehicles",
+              "name": "摩托交通量",
+              "type": "integer",
+              "specs": {
+                "unit": "辆/单位时间",
+                "unitName": "辆/单位时间"
+              }
+            },
+            {
+              "id": "longVehicles",
+              "name": "超长交通量",
+              "type": "integer",
+              "specs": {
+                "unit": "辆/单位时间",
+                "unitName": "辆/单位时间"
+              }
+            },
+            {
+              "id": "volume",
+              "name": "交通量",
+              "type": "integer",
+              "specs": {
+                "unit": "辆/单位时间",
+                "unitName": "辆/单位时间"
+              }
+            },
+            {
+              "id": "flowRate",
+              "name": "流率小车当量",
+              "type": "integer",
+              "specs": {
+                "unit": "辆/小时",
+                "unitName": "辆/小时"
+              }
+            },
+            {
+              "id": "backOfQueue",
+              "name": "排队长度",
+              "type": "integer",
+              "specs": {
+                "unit": "米",
+                "unitName": "米"
+              }
+            },
+            {
+              "id": "travelTime",
+              "name": "旅行时间",
+              "type": "integer",
+              "specs": {
+                "unit": "秒",
+                "unitName": "秒"
+              }
+            },
+            {
+              "id": "delay",
+              "name": "延误",
+              "type": "integer",
+              "specs": {
+                "unit": "秒",
+                "unitName": "秒"
+              }
+            },
+            {
+              "id": "direction",
+              "name": "车道方向",
+              "type": "string"
+            },
+            {
+              "id": "directionNum",
+              "name": "车道行驶方向个数",
+              "type": "integer"
+            },
+            {
+              "id": "jamState",
+              "name": "道路拥挤状况",
+              "type": "integer",
+              "specs": {
+                "optional": [
+                  {
+                    "value": 0,
+                    "desc": "未知"
+                  },
+                  {
+                    "value": 1,
+                    "desc": "通畅"
+                  },
+                  {
+                    "value": 2,
+                    "desc": "拥堵"
+                  },
+                  {
+                    "value": 3,
+                    "desc": "拥堵"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "passengerCarVehicles",
+              "name": "客车交通量",
+              "type": "integer",
+              "specs": {
+                "unit": "辆/单位时间",
+                "unitName": "辆/单位时间"
+              }
+            },
+            {
+              "id": "largeTruckVehicles",
+              "name": "大货车交通量",
+              "type": "integer",
+              "specs": {
+                "unit": "辆/单位时间",
+                "unitName": "辆/单位时间"
+              }
+            },
+            {
+              "id": "midTruckVehicles",
+              "name": "中货车交通量",
+              "type": "integer",
+              "specs": {
+                "unit": "辆/单位时间",
+                "unitName": "辆/单位时间"
+              }
+            },
+            {
+              "id": "saloonCarVehicles",
+              "name": "轿车交通量",
+              "type": "integer",
+              "specs": {
+                "unit": "辆/单位时间",
+                "unitName": "辆/单位时间"
+              }
+            },
+            {
+              "id": "microbusVehicles",
+              "name": "面包车交通量",
+              "type": "integer",
+              "specs": {
+                "unit": "辆/单位时间",
+                "unitName": "辆/单位时间"
+              }
+            },
+            {
+              "id": "microTruckVehicles",
+              "name": "小货车交通量",
+              "type": "integer",
+              "specs": {
+                "unit": "辆/单位时间",
+                "unitName": "辆/单位时间"
+              }
+            },
+            {
+              "id": "tricycleVehicles",
+              "name": "三轮车交通量",
+              "type": "integer",
+              "specs": {
+                "unit": "辆/单位时间",
+                "unitName": "辆/单位时间"
+              }
+            },
+            {
+              "id": "motorcycleVehicles",
+              "name": "摩托车交通量",
+              "type": "integer",
+              "specs": {
+                "unit": "辆/单位时间",
+                "unitName": "辆/单位时间"
+              }
+            },
+            {
+              "id": "passerbyVehicles",
+              "name": "行人交通量",
+              "type": "integer",
+              "specs": {
+                "unit": "辆/单位时间",
+                "unitName": "辆/单位时间"
+              }
+            },
+            {
+              "id": "rank",
+              "name": "道路等级",
+              "type": "integer",
+              "specs": {
+                "optional": [
+                  {
+                    "value": 0,
+                    "desc": "未知"
+                  },
+                  {
+                    "value": 1,
+                    "desc": "快速路"
+                  },
+                  {
+                    "value": 2,
+                    "desc": "主干路"
+                  },
+                  {
+                    "value": 3,
+                    "desc": "次干路"
+                  },
+                  {
+                    "value": 3,
+                    "desc": "支路"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "nState",
+              "name": "流量状态",
+              "type": "integer",
+              "specs": {
+                "optional": [
+                  {
+                    "value": 1,
+                    "desc": "流量过大（拥堵）"
+                  },
+                  {
+                    "value": 2,
+                    "desc": "流量过大恢复（略堵）"
+                  },
+                  {
+                    "value": 3,
+                    "desc": "正常"
+                  },
+                  {
+                    "value": 4,
+                    "desc": "流量过小（畅通）"
+                  },
+                  {
+                    "value": 5,
+                    "desc": "流量过小恢复（良好）"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "statistics",
+              "name": "流量数据是否有效",
+              "type": "integer",
+              "specs": {
+                "optional": [
+                  {
+                    "value": 0,
+                    "desc": "无效"
+                  },
+                  {
+                    "value": 1,
+                    "desc": "有效"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "leftVehicles",
+              "name": "左转车辆总数",
+              "type": "integer",
+              "specs": {
+                "unit": "辆",
+                "unitName": "辆"
+              }
+            },
+            {
+              "id": "rightVehicles",
+              "name": "右转车辆总数",
+              "type": "integer",
+              "specs": {
+                "unit": "辆",
+                "unitName": "辆"
+              }
+            },
+            {
+              "id": "straightVehicles",
+              "name": "直行车辆总数",
+              "type": "integer",
+              "specs": {
+                "unit": "辆",
+                "unitName": "辆"
+              }
+            },
+            {
+              "id": "uTurnVehicles",
+              "name": "掉头车辆总数",
+              "type": "integer",
+              "specs": {
+                "unit": "辆",
+                "unitName": "辆"
+              }
+            },
+            {
+              "id": "backOfQueue",
+              "name": "排队长度",
+              "type": "number",
+              "specs": {
+                "unit": "米",
+                "unitName": "米"
+              }
+            },
+            {
+              "id": "periodByMili",
+              "name": "流量值的毫秒时间",
+              "type": "integer",
+              "specs": {
+                "min": 0,
+                "max": 60000,
+                "unit": "毫秒",
+                "unitName": "毫秒",
+                "step": 1
+              }
+            },
+            {
+              "id": "busVehicles",
+              "name": "公交车交通量",
+              "type": "integer",
+              "specs": {
+                "unit": "辆/单位时间",
+                "unitName": "辆/单位时间"
+              }
+            },
+            {
+              "id": "MPVVehicles",
+              "name": "MPV交通量",
+              "type": "integer",
+              "specs": {
+                "unit": "辆/单位时间",
+                "unitName": "辆/单位时间"
+              }
+            },
+            {
+              "id": "midPassengerCarVehicles",
+              "name": "中客车交通量",
+              "type": "integer",
+              "specs": {
+                "unit": "辆/单位时间",
+                "unitName": "辆/单位时间"
+              }
+            },
+            {
+              "id": "miniCarriageVehicles",
+              "name": "微型轿车交通量",
+              "type": "integer",
+              "specs": {
+                "unit": "辆/单位时间",
+                "unitName": "辆/单位时间"
+              }
+            },
+            {
+              "id": "oilTankTruckVehicles",
+              "name": "油罐车交通量",
+              "type": "integer",
+              "specs": {
+                "unit": "辆/单位时间",
+                "unitName": "辆/单位时间"
+              }
+            },
+            {
+              "id": "pickupVehicles",
+              "name": "皮卡车交通量",
+              "type": "integer",
+              "specs": {
+                "unit": "辆/单位时间",
+                "unitName": "辆/单位时间"
+              }
+            },
+            {
+              "id": "SUVVehicles",
+              "name": "SUV交通量",
+              "type": "integer",
+              "specs": {
+                "unit": "辆/单位时间",
+                "unitName": "辆/单位时间"
+              }
+            },
+            {
+              "id": "SUVorMPVVehicles",
+              "name": "SUV或者MPV交通量",
+              "type": "integer",
+              "specs": {
+                "unit": "辆/单位时间",
+                "unitName": "辆/单位时间"
+              }
+            },
+            {
+              "id": "tankCarVehicles",
+              "name": "槽罐车交通量",
+              "type": "integer",
+              "specs": {
+                "unit": "辆/单位时间",
+                "unitName": "辆/单位时间"
+              }
+            },
+            {
+              "id": "unknownVehicles",
+              "name": "未知车辆交通量",
+              "type": "integer",
+              "specs": {
+                "unit": "辆/单位时间",
+                "unitName": "辆/单位时间"
+              }
+            },
+            {
+              "id": "customFlowAttribute",
+              "name": "车道流量信息属性",
+              "type": "integer",
+              "specs": {
+                "optional": [
+                  {
+                    "value": 0,
+                    "desc": "未知"
+                  },
+                  {
+                    "value": 1,
+                    "desc": "流量监测"
+                  },
+                  {
+                    "value": 2,
+                    "desc": "排队检测"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "id": "switchMode",
+      "name": "切换控制模式",
+      "type": "management",
+      "parameters": [
+        {
+          "id": "mode",
+          "name": "模式",
+          "type": "string",
+          "required": true,
+          "specs": {
+            "optional": [
+              {
+                "value": "manual",
+                "desc": "手动"
+              },
+              {
+                "value": "auto",
+                "desc": "自动"
+              }
+            ]
+          }
+        }
+      ],
+      "output": []
+    },
+    {
+      "id": "reboot",
+      "name": "重启",
+      "type": "business",
+      "parameters": [],
+      "output": []
+    },
+    {
+      "id": "setTime",
+      "name": "设置时间",
+      "type": "management",
+      "parameters": [
+        {
+          "id": "year",
+          "name": "年",
+          "type": "integer",
+          "required": true,
+          "specs": {
+            "min": 1,
+            "max": 9999,
+            "unit": "年",
+            "unitName": "年",
+            "step": 1
+          }
+        },
+        {
+          "id": "month",
+          "name": "月",
+          "type": "integer",
+          "required": true,
+          "specs": {
+            "min": 1,
+            "max": 12,
+            "unit": "月",
+            "unitName": "月",
+            "step": 1
+          }
+        },
+        {
+          "id": "day",
+          "name": "日",
+          "type": "integer",
+          "required": true,
+          "specs": {
+            "min": 1,
+            "max": 31,
+            "unit": "日",
+            "unitName": "日",
+            "step": 1
+          }
+        },
+        {
+          "id": "hour",
+          "name": "时",
+          "type": "integer",
+          "required": true,
+          "specs": {
+            "min": 0,
+            "max": 23,
+            "unit": "时",
+            "unitName": "时",
+            "step": 1
+          }
+        },
+        {
+          "id": "minute",
+          "name": "分",
+          "type": "integer",
+          "required": true,
+          "specs": {
+            "min": 0,
+            "max": 59,
+            "unit": "分",
+            "unitName": "分",
+            "step": 1
+          }
+        },
+        {
+          "id": "second",
+          "name": "秒",
+          "type": "integer",
+          "required": true,
+          "specs": {
+            "min": 0,
+            "max": 59,
+            "unit": "秒",
+            "unitName": "秒",
+            "step": 1
+          }
+        }
+      ],
+      "output": []
+    },
+    {
+      "id": "refreshVideoResolution",
+      "name": "刷新视频流分辨率",
+      "type": "business",
+      "parameters": [],
+      "output": [
+        {
+          "id": "resolutions",
+          "name": "视频流分辨率",
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "channel",
+              "name": "通道号",
+              "type": "integer",
+              "specs": {
+                "min": 1,
+                "max": 1,
+                "step": 1
+              }
+            },
+            {
+              "id": "channelResolution",
+              "name": "通道分辨率",
+              "type": "array",
+              "columnComplex": [
+                {
+                  "id": "name",
+                  "name": "视频流名称",
+                  "type": "string",
+                  "specs": {
+                    "optional": [
+                      {
+                        "value": "mainStream",
+                        "desc": "主码流"
+                      },
+                      {
+                        "value": "subStream",
+                        "desc": "子码流"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "id",
+                  "name": "视频流ID",
+                  "type": "number",
+                  "specs": {
+                    "optional": [
+                      {
+                        "value": 1,
+                        "desc": "主码流"
+                      },
+                      {
+                        "value": 2,
+                        "desc": "子码流"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "resolution",
+                  "name": "分辨率",
+                  "type": "struct",
+                  "struct": [
+                    {
+                      "id": "width",
+                      "name": "水平象素",
+                      "type": "integer"
+                    },
+                    {
+                      "id": "height",
+                      "name": "垂直象素",
+                      "type": "integer"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "setAlarmPicUploadServer",
+      "name": "设置图片上传地址",
+      "type": "management",
+      "parameters": [
+        {
+          "id": "server",
+          "name": "文件服务器地址",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "output": []
+    },
+    {
+      "id": "snapshot",
+      "name": "视频抓拍",
+      "type": "business",
+      "parameters": [
+        {
+          "id": "channel",
+          "name": "通道号",
+          "type": "integer",
+          "required": true,
+          "specs": {
+            "min": 1,
+            "max": 1,
+            "step": 1
+          }
+        },
+        {
+          "id": "url",
+          "name": "图片上传地址",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "output": [
+        {
+          "id": "imagePath",
+          "name": "文件服务器返回的图片信息",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "getVideoStream",
+      "name": "获取视频流列表",
+      "type": "management",
+      "parameters": [
+        {
+          "id": "channel",
+          "name": "通道号",
+          "type": "integer",
+          "required": true,
+          "specs": {
+            "min": 1,
+            "max": 1,
+            "step": 1
+          }
+        },
+        {
+          "id": "stream",
+          "name": "视频流ID",
+          "type": "integer",
+          "required": true,
+          "specs": {
+            "optional": [
+              {
+                "value": 1,
+                "desc": "主码流"
+              },
+              {
+                "value": 2,
+                "desc": "子码流"
+              }
+            ]
+          }
+        }
+      ],
+      "output": [
+        {
+          "id": "streamURL",
+          "name": "视频流URL",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "setDHSDKAlarm",
+      "name": "设置告警开关",
+      "type": "management",
+      "parameters": [
+        {
+          "id": "channel",
+          "name": "通道号",
+          "type": "integer",
+          "required": true,
+          "specs": {
+            "min": 1,
+            "max": 1,
+            "step": 1
+          }
+        },
+        {
+          "id": "alarm",
+          "name": "告警类型",
+          "type": "string",
+          "required": true,
+          "specs": {
+            "optional": [
+              {
+                "value": "trafficJam",
+                "desc": "交通拥堵事件"
+              },
+              {
+                "value": "vehicleInBusRoute",
+                "desc": "占用公交车道事件"
+              },
+              {
+                "value": "nonMotorInMotorRoute",
+                "desc": "非机动车占用机动车道"
+              },
+              {
+                "value": "trafficAccident",
+                "desc": "交通事故事件"
+              },
+              {
+                "value": "trafficJunctionMotor",
+                "desc": "交通路口事件----机动车拌线入侵"
+              },
+              {
+                "value": "trafficJunctionTruck",
+                "desc": "交通路口事件----大卡车告警"
+              },
+              {
+                "value": "trafficPedestrain",
+                "desc": "交通行人事件"
+              },
+              {
+                "value": "nonMotorWithoutSafeHat",
+                "desc": "非机动车未戴安全帽事件"
+              },
+              {
+                "value": "trafficParking",
+                "desc": "违章停车"
+              },
+              {
+                "value": "trafficFlowState",
+                "desc": "交通流量事件"
+              }
+            ]
+          }
+        },
+        {
+          "id": "enable",
+          "name": "订阅/取消订阅",
+          "type": "integer",
+          "required": true,
+          "specs": {
+            "optional": [
+              {
+                "value": 1,
+                "desc": "订阅告警"
+              },
+              {
+                "value": 0,
+                "desc": "取消订阅告警"
+              }
+            ]
+          }
+        },
+        {
+          "id": "hasPic",
+          "name": "是否上传图片",
+          "type": "integer",
+          "required": true,
+          "specs": {
+            "optional": [
+              {
+                "value": 1,
+                "desc": "上传图片"
+              },
+              {
+                "value": 0,
+                "desc": "不上传图片"
+              }
+            ]
+          }
+        }
+      ],
+      "output": []
+    }
+  ]
+}

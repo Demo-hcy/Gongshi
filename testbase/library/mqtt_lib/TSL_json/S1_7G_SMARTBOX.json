@@ -1,0 +1,2126 @@
+{
+  "productId": "S1_7G_SMARTBOX",
+  "productName": "智慧盒",
+  "properties": [
+    {
+      "id": "sn",
+      "name": "设备序列号",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "id": "model",
+      "name": "设备型号",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "id": "productId",
+      "name": "产品标识符",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "id": "online",
+      "name": "在线状态",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "optional": [
+          {
+            "value": 1,
+            "desc": "设备在线"
+          },
+          {
+            "value": 0,
+            "desc": "设备离线"
+          }
+        ]
+      }
+    },
+    {
+      "id": "mode",
+      "name": "控制模式",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "description": "当前控制模式，自动(auto)/手动(manual)",
+      "specs": {
+        "optional": [
+          {
+            "value": "auto",
+            "desc": "自动模式"
+          },
+          {
+            "value": "manual",
+            "desc": "手动模式"
+          }
+        ]
+      }
+    },
+    {
+      "id": "networkInfo",
+      "name": "网络信息",
+      "accessMode": "ro",
+      "required": true,
+      "type": "struct",
+      "struct": [
+        {
+          "id": "networkType",
+          "name": "当前网络类型",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string",
+          "specs": {
+            "optional": [
+              {
+                "value": "wired",
+                "desc": "有线"
+              },
+              {
+                "value": "4G",
+                "desc": "4G"
+              },
+              {
+                "value": "5G",
+                "desc": "5G"
+              }
+            ]
+          }
+        },
+        {
+          "id": "wirelessSupport",
+          "name": "支持的无线网络",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string",
+          "specs": {
+            "optional": [
+              {
+                "value": "none",
+                "desc": "不支持无线网络"
+              },
+              {
+                "value": "4G",
+                "desc": "支持4G无线网络"
+              },
+              {
+                "value": "5G",
+                "desc": "支持5G无线网络"
+              }
+            ]
+          }
+        },
+        {
+          "id": "mac",
+          "name": "有线MAC地址",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "id": "ip",
+          "name": "有线IP地址",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string",
+          "format": "ipv4"
+        },
+        {
+          "id": "gateway",
+          "name": "有线默认网关",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "id": "mask",
+          "name": "有线子网掩码",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "ntpInfo",
+      "name": "NTP信息",
+      "accessMode": "ro",
+      "required": true,
+      "type": "struct",
+      "struct": [
+        {
+          "id": "ntpHostList",
+          "name": "NTP校时服务器地址列表",
+          "accessMode": "ro",
+          "required": true,
+          "type": "array",
+          "columnSimple": {
+            "type": "string"
+          }
+        },
+        {
+          "id": "ntpStatus",
+          "name": "NTP校时状态",
+          "accessMode": "ro",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "optional": [
+              {
+                "value": 1,
+                "desc": "已联通"
+              },
+              {
+                "value": 0,
+                "desc": "未连通"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "upTime",
+      "name": "系统启动时间",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 0,
+        "max": 2147483647,
+        "unit": "S",
+        "unitName": "秒"
+      }
+    },
+    {
+      "id": "time",
+      "name": "系统时间",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "format": "date-time"
+    },
+    {
+      "id": "hwInfo",
+      "name": "硬件信息",
+      "accessMode": "ro",
+      "required": true,
+      "type": "struct",
+      "struct": [
+        {
+          "id": "cpuUsed",
+          "name": "CPU使用率",
+          "accessMode": "ro",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "min": 0,
+            "max": 100,
+            "unit": "%",
+            "unitName": "%"
+          }
+        },
+        {
+          "id": "memUsed",
+          "name": "内存使用率",
+          "accessMode": "ro",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "min": 0,
+            "max": 100,
+            "unit": "%",
+            "unitName": "%"
+          }
+        },
+        {
+          "id": "hdUsed",
+          "name": "硬盘使用率",
+          "accessMode": "ro",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "min": 0,
+            "max": 100,
+            "unit": "%",
+            "unitName": "%"
+          }
+        },
+        {
+          "id": "temperature",
+          "name": "当前工作温度",
+          "accessMode": "ro",
+          "required": true,
+          "type": "number",
+          "specs": {
+            "min": -40,
+            "max": 100,
+            "unit": "℃",
+            "unitName": "摄氏度"
+          }
+        }
+      ]
+    },
+    {
+      "id": "logHost",
+      "name": "日志服务器地址",
+      "accessMode": "rw",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "id": "configureMode",
+      "name": "运行模式",
+      "accessMode": "rw",
+      "required": true,
+      "type": "string",
+      "specs": {
+        "optional": [
+          {
+            "value": "factory",
+            "desc": "出厂模式"
+          },
+          {
+            "value": "configure",
+            "desc": "配置模式"
+          },
+          {
+            "value": "networking",
+            "desc": "入网模式"
+          },
+          {
+            "value": "active",
+            "desc": "激活模式"
+          }
+        ]
+      }
+    },
+    {
+      "id": "version",
+      "name": "版本信息",
+      "accessMode": "ro",
+      "required": true,
+      "type": "struct",
+      "struct": [
+        {
+          "id": "firmwareVersion",
+          "name": "固件版本号",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "id": "appVersion",
+          "name": "应用版本号",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "mqttInfo",
+      "name": "有线mqtt服务器信息",
+      "accessMode": "ro",
+      "required": true,
+      "type": "struct",
+      "struct": [
+        {
+          "id": "host",
+          "name": "地址",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "id": "port",
+          "name": "端口",
+          "accessMode": "ro",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "min": 0,
+            "max": 65535
+          }
+        },
+        {
+          "id": "userName",
+          "name": "用户名",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "id": "passwd",
+          "name": "密码",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "mqttInfoBackup",
+      "name": "无线mqtt服务器信息",
+      "accessMode": "ro",
+      "required": true,
+      "type": "struct",
+      "struct": [
+        {
+          "id": "host",
+          "name": "地址",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "id": "port",
+          "name": "端口",
+          "accessMode": "ro",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "min": 0,
+            "max": 65535
+          }
+        },
+        {
+          "id": "userName",
+          "name": "用户名",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "id": "passwd",
+          "name": "密码",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "ruleList",
+      "name": "规则列表",
+      "accessMode": "ro",
+      "required": true,
+      "type": "array",
+      "columnComplex": [
+        {
+          "id": "uuid",
+          "name": "规则uuid",
+          "type": "string"
+        },
+        {
+          "id": "enable",
+          "name": "是否启用",
+          "accessMode": "ro",
+          "required": true,
+          "type": "boolean"
+        },
+        {
+          "id": "type",
+          "name": "规则类型",
+          "type": "string",
+          "specs": {
+            "optional": [
+              {
+                "value": "timer",
+                "desc": "定时规则"
+              },
+              {
+                "value": "linkage",
+                "desc": "联动规则"
+              }
+            ]
+          }
+        },
+        {
+          "id": "priority",
+          "name": "优先级",
+          "type": "integer",
+          "specs": {
+            "min": 0,
+            "max": 99
+          }
+        },
+        {
+          "id": "date",
+          "name": "执行日期",
+          "accessMode": "ro",
+          "required": true,
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "startDate",
+              "name": "开始日期",
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "id": "endDate",
+              "name": "结束日期",
+              "type": "string",
+              "format": "date"
+            }
+          ]
+        },
+        {
+          "id": "time",
+          "name": "执行时间",
+          "accessMode": "ro",
+          "required": true,
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "startTime",
+              "name": "开始时间",
+              "type": "string",
+              "format": "time"
+            },
+            {
+              "id": "endTime",
+              "name": "结束时间",
+              "type": "string",
+              "format": "time"
+            }
+          ]
+        },
+        {
+          "id": "srcDevice",
+          "name": "触发源设备列表",
+          "accessMode": "ro",
+          "required": true,
+          "type": "array",
+          "columnSimple": {
+            "type": "string"
+          }
+        },
+        {
+          "id": "dstDevice",
+          "name": "联动设备列表",
+          "accessMode": "ro",
+          "required": true,
+          "type": "array",
+          "columnSimple": {
+            "type": "string"
+          }
+        },
+        {
+          "id": "script",
+          "name": "脚本",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "subDevList",
+      "name": "子设备列表",
+      "accessMode": "ro",
+      "required": true,
+      "type": "array",
+      "columnComplex": [
+        {
+          "id": "productId",
+          "name": "设备产品ID",
+          "type": "string"
+        },
+        {
+          "id": "devId",
+          "name": "设备实例ID",
+          "type": "string"
+        },
+        {
+          "id": "devType",
+          "name": "设备类型",
+          "type": "string",
+          "specs": {
+            "optional": [
+              {
+                "value": "GW",
+                "desc": "网关设备"
+              },
+              {
+                "value": "IPCOnvif",
+                "desc": "摄像头"
+              },
+              {
+                "value": "Lamp",
+                "desc": "灯"
+              },
+              {
+                "value": "Sensor",
+                "desc": "传感器"
+              },
+              {
+                "value": "Locker",
+                "desc": "智能锁"
+              },
+              {
+                "value": "Breaker",
+                "desc": "断路器"
+              },
+              {
+                "value": "Trafficscreen",
+                "desc": "横臂交通屏"
+              },
+              {
+                "value": "Projector",
+                "desc": "投影灯"
+              },
+              {
+                "value": "Rfid",
+                "desc": "rfid读写器"
+              },
+              {
+                "value": "Power",
+                "desc": "智能电源"
+              },
+              {
+                "value": "SOSOnvif",
+                "desc": "一键报警"
+              },
+              {
+                "value": "Inforscreen",
+                "desc": "信息屏"
+              },
+              {
+                "value": "AI",
+                "desc": "AI"
+              },
+              {
+                "value": "Brocast",
+                "desc": "广播"
+              }
+            ]
+          }
+        },
+        {
+          "id": "setting",
+          "name": "设备配置",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "reboot",
+      "name": "智慧盒主动重启",
+      "parameters": [
+        {
+          "id": "sn",
+          "name": "设备序列号",
+          "type": "string"
+        },
+        {
+          "id": "reason",
+          "name": "重启原因",
+          "type": "string",
+          "specs": {
+            "optional": [
+              {
+                "value": "firmwareUpadte",
+                "desc": "固件升级"
+              },
+              {
+                "value": "softwareUpdate",
+                "desc": "软件升级"
+              },
+              {
+                "value": "other",
+                "desc": "其他"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ntpSyncSuccess",
+      "name": "NTP校时成功",
+      "parameters": [
+        {
+          "id": "ntpHost",
+          "name": "校时成功的NTP服务器",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "ntpSyncFailure",
+      "name": "NTP校时失败",
+      "parameters": [
+        {
+          "id": "ntpHost",
+          "name": "校时失败的NTP服务器",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "wiredConnect",
+      "name": "有线网络连接",
+      "parameters": []
+    },
+    {
+      "id": "wiredDisconnect",
+      "name": "有线网络断开",
+      "parameters": []
+    },
+    {
+      "id": "4GConnect",
+      "name": "4G网络连接",
+      "parameters": []
+    },
+    {
+      "id": "4GDisconnect",
+      "name": "4G网络断开",
+      "parameters": []
+    },
+    {
+      "id": "5GConnect",
+      "name": "5G网络连接",
+      "parameters": []
+    },
+    {
+      "id": "5GDisconnect",
+      "name": "5G网络断开",
+      "parameters": []
+    },
+    {
+      "id": "firmwareUpdateStart",
+      "name": "固件开始升级",
+      "parameters": []
+    },
+    {
+      "id": "firmwareUpdateSuccess",
+      "name": "固件升级成功",
+      "parameters": [
+        {
+          "id": "currentVersion",
+          "name": "当前版本",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "firmwareUpdateFailed",
+      "name": "固件升级失败",
+      "parameters": [
+        {
+          "id": "resultCode",
+          "name": "执行结果码",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "id": "appUpdateStart",
+      "name": "应用软件开始升级",
+      "parameters": []
+    },
+    {
+      "id": "appUpdateSuccess",
+      "name": "应用软件升级成功",
+      "parameters": [
+        {
+          "id": "currentVersion",
+          "name": "当前应用版本号",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "appUpdateFail",
+      "name": "应用软件升级失败",
+      "parameters": [
+        {
+          "id": "resultCode",
+          "name": "错误码",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "id": "ruleStart",
+      "name": "规则开始执行",
+      "parameters": [
+        {
+          "id": "uuid",
+          "name": "规则ID",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "ruleEnd",
+      "name": "规则结束执行",
+      "parameters": [
+        {
+          "id": "uuid",
+          "name": "规则ID",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "ruleCommandStatus",
+      "name": "规则指令执行结果",
+      "parameters": [
+        {
+          "id": "uuid",
+          "name": "规则ID",
+          "type": "string"
+        },
+        {
+          "id": "devId",
+          "name": "设备ID",
+          "type": "string"
+        },
+        {
+          "id": "command",
+          "name": "指令名称",
+          "type": "string"
+        },
+        {
+          "id": "resultCode",
+          "name": "执行结果码",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "id": "ruleDefaultCommandStatus",
+      "name": "规则指令执行默认参数结果",
+      "parameters": [
+        {
+          "id": "devId",
+          "name": "设备ID",
+          "type": "string"
+        },
+        {
+          "id": "command",
+          "name": "指令名称",
+          "type": "string"
+        },
+        {
+          "id": "resultCode",
+          "name": "执行结果码",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "id": "ruleCommandCover",
+      "name": "被高优先级规则抢占",
+      "parameters": [
+        {
+          "id": "devId",
+          "name": "设备ID",
+          "type": "string"
+        },
+        {
+          "id": "command",
+          "name": "指令名称",
+          "type": "string"
+        },
+        {
+          "id": "beCoverRuleUuid",
+          "name": "被抢占规则uuid",
+          "type": "string"
+        },
+        {
+          "id": "coverRuleUuid",
+          "name": "抢占规则uuid",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "ruleCommandIgnore",
+      "name": "忽略执行规则",
+      "parameters": [
+        {
+          "id": "devId",
+          "name": "设备ID",
+          "type": "string"
+        },
+        {
+          "id": "command",
+          "name": "指令名称",
+          "type": "string"
+        },
+        {
+          "id": "uuid",
+          "name": "规则uuid",
+          "type": "string"
+        },
+        {
+          "id": "higherPriorityUuid",
+          "name": "正在执行的更高优先级的规则uuid",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "customEvent",
+      "name": "用户自定义事件",
+      "parameters": [
+        {
+          "id": "eventId",
+          "name": "事件ID",
+          "type": "string"
+        },
+        {
+          "id": "srcList",
+          "name": "触发源设备列表",
+          "accessMode": "ro",
+          "required": true,
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "productId",
+              "name": "产品ID",
+              "type": "string"
+            },
+            {
+              "id": "deviceId",
+              "name": "设备ID",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "id": "reboot",
+      "name": "重启",
+      "parameters": [],
+      "output": [
+        {
+          "id": "sn",
+          "name": "设备SN",
+          "type": "string"
+        },
+        {
+          "id": "time",
+          "name": "重启时间",
+          "type": "string",
+          "format": "date-time"
+        }
+      ]
+    },
+    {
+      "id": "switchMode",
+      "name": "切换模式",
+      "parameters": [
+        {
+          "id": "mode",
+          "name": "模式",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string",
+          "specs": {
+            "optional": [
+              {
+                "value": "auto",
+                "desc": "自动模式"
+              },
+              {
+                "value": "manual",
+                "desc": "手动模式"
+              }
+            ]
+          }
+        }
+      ],
+      "output": []
+    },
+    {
+      "id": "updateFirmware",
+      "name": "固件升级",
+      "parameters": [
+        {
+          "id": "url",
+          "name": "固件下载地址",
+          "type": "string"
+        },
+        {
+          "id": "md5Sum",
+          "name": "固件文件MD5",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "updateApp",
+      "name": "应用程序升级",
+      "parameters": [
+        {
+          "id": "url",
+          "name": "应用程序下载地址",
+          "type": "string"
+        },
+        {
+          "id": "md5Sum",
+          "name": "应用程序文件MD5",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "startReport",
+      "name": "监控智慧盒实时数据",
+      "parameters": []
+    },
+    {
+      "id": "stopReport",
+      "name": "停止监控智慧盒实时数据",
+      "parameters": []
+    },
+    {
+      "id": "addRule",
+      "name": "添加策略",
+      "parameters": [
+        {
+          "id": "rules",
+          "name": "规则列表",
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "uuid",
+              "name": "规则ID",
+              "type": "string"
+            },
+            {
+              "id": "enable",
+              "name": "规则使能",
+              "type": "boolean"
+            },
+            {
+              "id": "type",
+              "name": "规则类型",
+              "type": "string",
+              "specs": {
+                "optional": [
+                  {
+                    "value": "timer",
+                    "desc": "定时规则"
+                  },
+                  {
+                    "value": "linkage",
+                    "desc": "联动规则"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "priority",
+              "name": "优先级",
+              "type": "integer",
+              "specs": {
+                "min": 0,
+                "max": 99
+              }
+            },
+            {
+              "id": "date",
+              "name": "执行日期",
+              "type": "array",
+              "columnComplex": [
+                {
+                  "id": "startDate",
+                  "name": "开始日期",
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "id": "endDate",
+                  "name": "结束日期",
+                  "type": "string",
+                  "format": "date"
+                }
+              ]
+            },
+            {
+              "id": "time",
+              "name": "执行时间",
+              "type": "array",
+              "columnComplex": [
+                {
+                  "id": "startTime",
+                  "name": "开始时间",
+                  "type": "string",
+                  "format": "time"
+                },
+                {
+                  "id": "endTime",
+                  "name": "结束时间",
+                  "type": "string",
+                  "format": "time"
+                }
+              ]
+            },
+            {
+              "id": "srcDevice",
+              "name": "触发源设备",
+              "type": "array",
+              "columnSimple": {
+                "type": "string"
+              }
+            },
+            {
+              "id": "dstDevice",
+              "name": "联动设备",
+              "type": "array",
+              "columnSimple": {
+                "type": "string"
+              }
+            },
+            {
+              "id": "script",
+              "name": "脚本",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "updateRule",
+      "name": "更新策略",
+      "parameters": [
+        {
+          "id": "rules",
+          "name": "规则列表",
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "uuid",
+              "name": "规则ID",
+              "type": "string"
+            },
+            {
+              "id": "enable",
+              "name": "规则使能",
+              "type": "boolean"
+            },
+            {
+              "id": "type",
+              "name": "规则类型",
+              "type": "string",
+              "specs": {
+                "optional": [
+                  {
+                    "value": "timer",
+                    "desc": "定时规则"
+                  },
+                  {
+                    "value": "linkage",
+                    "desc": "联动规则"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "priority",
+              "name": "优先级",
+              "type": "integer",
+              "specs": {
+                "min": 0,
+                "max": 99
+              }
+            },
+            {
+              "id": "date",
+              "name": "执行日期",
+              "type": "array",
+              "columnComplex": [
+                {
+                  "id": "startDate",
+                  "name": "开始日期",
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "id": "endDate",
+                  "name": "结束日期",
+                  "type": "string",
+                  "format": "date"
+                }
+              ]
+            },
+            {
+              "id": "time",
+              "name": "执行时间",
+              "type": "array",
+              "columnComplex": [
+                {
+                  "id": "startTime",
+                  "name": "开始时间",
+                  "type": "string",
+                  "format": "time"
+                },
+                {
+                  "id": "endTime",
+                  "name": "结束时间",
+                  "type": "string",
+                  "format": "time"
+                }
+              ]
+            },
+            {
+              "id": "srcDevice",
+              "name": "触发源设备",
+              "type": "array",
+              "columnSimple": {
+                "type": "string"
+              }
+            },
+            {
+              "id": "dstDevice",
+              "name": "联动设备",
+              "type": "array",
+              "columnSimple": {
+                "type": "string"
+              }
+            },
+            {
+              "id": "script",
+              "name": "脚本",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deleteRuleByUuid",
+      "name": "删除策略",
+      "parameters": [
+        {
+          "id": "uuids",
+          "name": "规则ID列表",
+          "type": "array",
+          "columnSimple": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "clearAllRule",
+      "name": "清空智盒策略",
+      "parameters": []
+    },
+    {
+      "id": "getAllRules",
+      "name": "获取所有策略",
+      "parameters": [],
+      "output": [
+        {
+          "id": "rules",
+          "name": "规则列表",
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "uuid",
+              "name": "规则ID",
+              "type": "string"
+            },
+            {
+              "id": "enable",
+              "name": "规则使能",
+              "type": "boolean"
+            },
+            {
+              "id": "type",
+              "name": "规则类型",
+              "type": "string",
+              "specs": {
+                "optional": [
+                  {
+                    "value": "timer",
+                    "desc": "定时规则"
+                  },
+                  {
+                    "value": "linkage",
+                    "desc": "联动规则"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "priority",
+              "name": "优先级",
+              "type": "integer",
+              "specs": {
+                "min": 0,
+                "max": 99
+              }
+            },
+            {
+              "id": "date",
+              "name": "执行日期",
+              "type": "array",
+              "columnComplex": [
+                {
+                  "id": "startDate",
+                  "name": "开始日期",
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "id": "endDate",
+                  "name": "结束日期",
+                  "type": "string",
+                  "format": "date"
+                }
+              ]
+            },
+            {
+              "id": "time",
+              "name": "执行时间",
+              "type": "array",
+              "columnComplex": [
+                {
+                  "id": "startTime",
+                  "name": "开始时间",
+                  "type": "string",
+                  "format": "time"
+                },
+                {
+                  "id": "endTime",
+                  "name": "结束时间",
+                  "type": "string",
+                  "format": "time"
+                }
+              ]
+            },
+            {
+              "id": "srcDevice",
+              "name": "触发源设备",
+              "type": "array",
+              "columnSimple": {
+                "type": "string"
+              }
+            },
+            {
+              "id": "dstDevice",
+              "name": "联动设备",
+              "type": "array",
+              "columnSimple": {
+                "type": "string"
+              }
+            },
+            {
+              "id": "script",
+              "name": "脚本",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "getRulesByUuids",
+      "name": "获取多个策略",
+      "parameters": [
+        {
+          "id": "uuids",
+          "name": "规则ID列表",
+          "type": "array",
+          "columnSimple": {
+            "type": "string"
+          }
+        }
+      ],
+      "output": [
+        {
+          "id": "rules",
+          "name": "规则列表",
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "uuid",
+              "name": "规则ID",
+              "type": "string"
+            },
+            {
+              "id": "enable",
+              "name": "规则使能",
+              "type": "boolean"
+            },
+            {
+              "id": "type",
+              "name": "规则类型",
+              "type": "string",
+              "specs": {
+                "optional": [
+                  {
+                    "value": "timer",
+                    "desc": "定时规则"
+                  },
+                  {
+                    "value": "linkage",
+                    "desc": "联动规则"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "priority",
+              "name": "优先级",
+              "type": "integer",
+              "specs": {
+                "min": 0,
+                "max": 99
+              }
+            },
+            {
+              "id": "date",
+              "name": "执行日期",
+              "type": "array",
+              "columnComplex": [
+                {
+                  "id": "startDate",
+                  "name": "开始日期",
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "id": "endDate",
+                  "name": "结束日期",
+                  "type": "string",
+                  "format": "date"
+                }
+              ]
+            },
+            {
+              "id": "time",
+              "name": "执行时间",
+              "type": "array",
+              "columnComplex": [
+                {
+                  "id": "startTime",
+                  "name": "开始时间",
+                  "type": "string",
+                  "format": "time"
+                },
+                {
+                  "id": "endTime",
+                  "name": "结束时间",
+                  "type": "string",
+                  "format": "time"
+                }
+              ]
+            },
+            {
+              "id": "srcDevice",
+              "name": "触发源设备",
+              "type": "array",
+              "columnSimple": {
+                "type": "string"
+              }
+            },
+            {
+              "id": "dstDevice",
+              "name": "联动设备",
+              "type": "array",
+              "columnSimple": {
+                "type": "string"
+              }
+            },
+            {
+              "id": "script",
+              "name": "脚本",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "enableRule",
+      "name": "启用策略",
+      "parameters": [
+        {
+          "id": "uuids",
+          "name": "规则ID列表",
+          "type": "array",
+          "columnSimple": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "disableRule",
+      "name": "停用策略",
+      "parameters": [
+        {
+          "id": "uuids",
+          "name": "规则ID列表",
+          "type": "array",
+          "columnSimple": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "stopLinkageRuleRunning",
+      "name": "停止联动策略",
+      "parameters": [
+        {
+          "id": "uuids",
+          "name": "规则ID列表",
+          "type": "array",
+          "columnSimple": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "outsideLinkage",
+      "name": "外部联动策略",
+      "parameters": [
+        {
+          "id": "services",
+          "name": "服务列表",
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "uuid",
+              "name": "规则ID",
+              "type": "string"
+            },
+            {
+              "id": "priority",
+              "name": "优先级",
+              "type": "integer",
+              "specs": {
+                "min": 0,
+                "max": 99
+              }
+            },
+            {
+              "id": "script",
+              "name": "执行脚本",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "manualControl",
+      "name": "临时手动干预",
+      "parameters": [
+        {
+          "id": "services",
+          "name": "服务列表",
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "priority",
+              "name": "优先级",
+              "type": "integer",
+              "specs": {
+                "min": 0,
+                "max": 99
+              }
+            },
+            {
+              "id": "script",
+              "name": "执行脚本",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stopManualControl",
+      "name": "取消手动控制",
+      "parameters": [
+        {
+          "id": "services",
+          "name": "服务列表",
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "productId",
+              "name": "产品ID",
+              "type": "string"
+            },
+            {
+              "id": "devId",
+              "name": "设备ID",
+              "type": "string"
+            },
+            {
+              "id": "service",
+              "name": "服务名称",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "setNtpHostList",
+      "name": "设置ntp校时服务器地址",
+      "parameters": [
+        {
+          "id": "ntpHostList",
+          "name": "ntp校时服务器地址列表",
+          "type": "array",
+          "columnSimple": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "setMqttBroker",
+      "name": "设置有线mqtt服务器信息",
+      "parameters": [
+        {
+          "id": "mqttInfo",
+          "name": "mqtt服务器信息",
+          "type": "struct",
+          "struct": [
+            {
+              "id": "host",
+              "name": "mqtt服务器地址",
+              "type": "string"
+            },
+            {
+              "id": "port",
+              "name": "端口",
+              "type": "integer",
+              "specs": {
+                "min": 0,
+                "max": 65535
+              }
+            },
+            {
+              "id": "userName",
+              "name": "用户名",
+              "type": "string"
+            },
+            {
+              "id": "passwd",
+              "name": "密码",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "setMqttBrokerBackup",
+      "name": "设置无线mqtt服务器信息",
+      "parameters": [
+        {
+          "id": "mqttInfo",
+          "name": "mqtt服务器信息",
+          "type": "struct",
+          "struct": [
+            {
+              "id": "host",
+              "name": "mqtt服务器地址",
+              "type": "string"
+            },
+            {
+              "id": "port",
+              "name": "端口",
+              "type": "integer",
+              "specs": {
+                "min": 0,
+                "max": 65535
+              }
+            },
+            {
+              "id": "userName",
+              "name": "用户名",
+              "type": "string"
+            },
+            {
+              "id": "passwd",
+              "name": "密码",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "editSmartBox",
+      "name": "修改智慧盒配置",
+      "parameters": [
+        {
+          "id": "devInfos",
+          "name": "设备信息",
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "productId",
+              "name": "产品ID",
+              "type": "string"
+            },
+            {
+              "id": "devId",
+              "name": "设备实例ID",
+              "type": "string"
+            },
+            {
+              "id": "devType",
+              "name": "设备类型",
+              "type": "string",
+              "specs": {
+                "optional": [
+                  {
+                    "value": "GW",
+                    "desc": "网关设备"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "setting",
+              "name": "设备配置",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "editSubDev",
+      "name": "更新子设备",
+      "parameters": [
+        {
+          "id": "devInfos",
+          "name": "设备信息",
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "productId",
+              "name": "产品ID",
+              "type": "string"
+            },
+            {
+              "id": "devId",
+              "name": "设备实例ID",
+              "type": "string"
+            },
+            {
+              "id": "devType",
+              "name": "设备类型",
+              "type": "string",
+              "specs": {
+                "optional": [
+                  {
+                    "value": "GW",
+                    "desc": "网关设备"
+                  },
+                  {
+                    "value": "IPCOnvif",
+                    "desc": "Onvif摄像头"
+                  },
+                  {
+                    "value": "SOSOnvif",
+                    "desc": "一键报警"
+                  },
+                  {
+                    "value": "Trafficscreen",
+                    "desc": "交通屏"
+                  },
+                  {
+                    "value": "Projector",
+                    "desc": "投影仪"
+                  },
+                  {
+                    "value": "Power",
+                    "desc": "智能电源"
+                  },
+                  {
+                    "value": "Rfid",
+                    "desc": "读卡器"
+                  },
+                  {
+                    "value": "Lamp",
+                    "desc": "灯控设备"
+                  },
+                  {
+                    "value": "Sensor",
+                    "desc": "传感器"
+                  },
+                  {
+                    "value": "Locker",
+                    "desc": "锁"
+                  },
+                  {
+                    "value": "Breaker",
+                    "desc": "断路器"
+                  },
+                  {
+                    "value": "Inforscreen",
+                    "desc": "信息屏"
+                  },
+                  {
+                    "value": "AI",
+                    "desc": "AI"
+                  },
+                  {
+                    "value": "Brocast",
+                    "desc": "广播"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "setting",
+              "name": "设备配置",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "addSubDevs",
+      "name": "批量添加子设备",
+      "parameters": [
+        {
+          "id": "devInfos",
+          "name": "设备信息列表",
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "productId",
+              "name": "产品ID",
+              "type": "string"
+            },
+            {
+              "id": "devId",
+              "name": "设备实例ID",
+              "type": "string"
+            },
+            {
+              "id": "devType",
+              "name": "设备类型",
+              "type": "string",
+              "specs": {
+                "optional": [
+                  {
+                    "value": "GW",
+                    "desc": "网关设备"
+                  },
+                  {
+                    "value": "IPCOnvif",
+                    "desc": "Onvif摄像头"
+                  },
+                  {
+                    "value": "SOSOnvif",
+                    "desc": "一键报警"
+                  },
+                  {
+                    "value": "Trafficscreen",
+                    "desc": "交通屏"
+                  },
+                  {
+                    "value": "Projector",
+                    "desc": "投影仪"
+                  },
+                  {
+                    "value": "Power",
+                    "desc": "智能电源"
+                  },
+                  {
+                    "value": "Rfid",
+                    "desc": "读卡器"
+                  },
+                  {
+                    "value": "Lamp",
+                    "desc": "灯控设备"
+                  },
+                  {
+                    "value": "Sensor",
+                    "desc": "传感器"
+                  },
+                  {
+                    "value": "Locker",
+                    "desc": "锁"
+                  },
+                  {
+                    "value": "Breaker",
+                    "desc": "断路器"
+                  },
+                  {
+                    "value": "Inforscreen",
+                    "desc": "信息屏"
+                  },
+                  {
+                    "value": "AI",
+                    "desc": "AI"
+                  },
+                  {
+                    "value": "Brocast",
+                    "desc": "广播"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "setting",
+              "name": "设备配置",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "delSubDevs",
+      "name": "批量删除子设备",
+      "parameters": [
+        {
+          "id": "productInfos",
+          "name": "设备信息列表",
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "productId",
+              "name": "产品ID",
+              "type": "string"
+            },
+            {
+              "id": "devId",
+              "name": "设备实例ID",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "getAllSubDevs",
+      "name": "获取所有子设备",
+      "parameters": [],
+      "output": [
+        {
+          "id": "subDevs",
+          "name": "设备信息列表",
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "productId",
+              "name": "产品ID",
+              "type": "string"
+            },
+            {
+              "id": "devId",
+              "name": "设备实例ID",
+              "type": "string"
+            },
+            {
+              "id": "devType",
+              "name": "设备类型",
+              "type": "string",
+              "specs": {
+                "optional": [
+                  {
+                    "value": "GW",
+                    "desc": "网关设备"
+                  },
+                  {
+                    "value": "IPCOnvif",
+                    "desc": "Onvif摄像头"
+                  },
+                  {
+                    "value": "SOSOnvif",
+                    "desc": "一键报警"
+                  },
+                  {
+                    "value": "Trafficscreen",
+                    "desc": "交通屏"
+                  },
+                  {
+                    "value": "Projector",
+                    "desc": "投影仪"
+                  },
+                  {
+                    "value": "Power",
+                    "desc": "智能电源"
+                  },
+                  {
+                    "value": "Rfid",
+                    "desc": "读卡器"
+                  },
+                  {
+                    "value": "Lamp",
+                    "desc": "灯控设备"
+                  },
+                  {
+                    "value": "Sensor",
+                    "desc": "传感器"
+                  },
+                  {
+                    "value": "Locker",
+                    "desc": "锁"
+                  },
+                  {
+                    "value": "Breaker",
+                    "desc": "断路器"
+                  },
+                  {
+                    "value": "Inforscreen",
+                    "desc": "信息屏"
+                  },
+                  {
+                    "value": "AI",
+                    "desc": "AI"
+                  },
+                  {
+                    "value": "Brocast",
+                    "desc": "广播"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "setting",
+              "name": "设备配置",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "getSubDevs",
+      "name": "批量获取子设备",
+      "parameters": [
+        {
+          "id": "productInfos",
+          "name": "设备信息列表",
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "productId",
+              "name": "产品ID",
+              "type": "string"
+            },
+            {
+              "id": "devId",
+              "name": "设备实例ID",
+              "type": "string"
+            }
+          ]
+        }
+      ],
+      "output": [
+        {
+          "id": "subDevs",
+          "name": "设备信息列表",
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "productId",
+              "name": "产品ID",
+              "type": "string"
+            },
+            {
+              "id": "devId",
+              "name": "设备实例ID",
+              "type": "string"
+            },
+            {
+              "id": "devType",
+              "name": "设备类型",
+              "type": "string",
+              "specs": {
+                "optional": [
+                  {
+                    "value": "GW",
+                    "desc": "网关设备"
+                  },
+                  {
+                    "value": "IPCOnvif",
+                    "desc": "Onvif摄像头"
+                  },
+                  {
+                    "value": "SOSOnvif",
+                    "desc": "一键报警"
+                  },
+                  {
+                    "value": "Trafficscreen",
+                    "desc": "交通屏"
+                  },
+                  {
+                    "value": "Projector",
+                    "desc": "投影仪"
+                  },
+                  {
+                    "value": "Power",
+                    "desc": "智能电源"
+                  },
+                  {
+                    "value": "Rfid",
+                    "desc": "读卡器"
+                  },
+                  {
+                    "value": "Lamp",
+                    "desc": "灯控设备"
+                  },
+                  {
+                    "value": "Sensor",
+                    "desc": "传感器"
+                  },
+                  {
+                    "value": "Locker",
+                    "desc": "锁"
+                  },
+                  {
+                    "value": "Breaker",
+                    "desc": "断路器"
+                  },
+                  {
+                    "value": "Inforscreen",
+                    "desc": "信息屏"
+                  },
+                  {
+                    "value": "AI",
+                    "desc": "AI"
+                  },
+                  {
+                    "value": "Brocast",
+                    "desc": "广播"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "setting",
+              "name": "设备配置",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

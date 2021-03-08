@@ -18,7 +18,7 @@ class PlatformController(BaseController):
         :return: 返回读取属性的结果
         """
         pub_topic, sub_topic = self.build_topic(device, 'property', 'read')
-        params = {"properties": [property.id for property in properties]}
+        params = {"properties": [x.id for x in properties]}
         payload = {"params": params}
         r = self.mqtt_client.send_msg(pub_topic, sub_topic, payload)
         if is_parsed:
@@ -39,13 +39,13 @@ class PlatformController(BaseController):
         """
         pub_topic, sub_topic = self.build_topic(device, 'property', 'set')
         params = {}
-        for property in properties:
+        for x in properties:
             if not is_validate:
-                params[property.id] = property.v
-            elif self.validate_data(property, property.v):
-                params[property.id] = property.v
+                params[x.id] = x.v
+            elif self.validate_data(x, x.v):
+                params[x.id] = x.v
             else:
-                msg = f'设置的{property.id}属性，数据校验失败'
+                msg = f'设置的{x.id}属性，数据校验失败'
                 logger_error_debug(msg)
                 return False, msg
         payload = {"params": params}
@@ -57,8 +57,9 @@ class PlatformController(BaseController):
     def service_invoke(self,
                        device: Device,
                        service: BaseService,
+                       data: Dict = None,
                        is_validate: bool = False,
-                       check_property: Optional[BaseProperty] = None,
+                       check_property: BaseProperty = None,
                        is_parsed: bool = False) -> ResultData:
         """
         服务调用
@@ -79,16 +80,22 @@ class PlatformController(BaseController):
 
         pub_topic, sub_topic = self.build_topic(device, 'service', 'invoke', service.id)
         params = {}
-        if service.parameters:
-            for k, v in service.parameters.v.items():
-                if not is_validate:
-                    params[k] = v
-                elif self.validate_data(getattr(service.parameters, k), v):
-                    params[k] = v
-                else:
-                    msg = f'调用的{service.id}服务，参数{k}数据校验失败'
-                    logger_error_debug(msg)
-                    return ResultData(False, msg)
+        if data or data == {}:
+            params_dict = data
+        else:
+            if service.parameters == None:
+                params_dict = {}
+            else:
+                params_dict = service.parameters.v
+        for k, v in params_dict.items():
+            if not is_validate:
+                params[k] = v
+            elif self.validate_data(getattr(service.parameters, k), v):
+                params[k] = v
+            else:
+                msg = f'调用的{service.id}服务，参数{k}数据校验失败'
+                logger_error_debug(msg)
+                return ResultData(False, msg)
         payload = {"params": params}
         r = self.mqtt_client.send_msg(pub_topic, sub_topic, payload)
 
@@ -142,7 +149,7 @@ class PlatformController(BaseController):
 
     def report_listen(self,
                       device: Device,
-                      properties: Optional[List[BaseProperty]] = None,
+                      properties: List[BaseProperty] = None,
                       is_reply: bool = False,
                       code: int = 0,
                       is_parsed: bool = False) -> ResultData:
@@ -154,17 +161,20 @@ class PlatformController(BaseController):
         :param code: 响应的结果，参见常量const.CODE_INFO
         :return: 返回监听成功与否, 返回的消息内容
         """
-        property_list = [property.id for property in properties] if properties else None
+        if not properties:
+            property_list = '全部属性'
+        else:
+            property_list = [x.id for x in properties] if properties else None
         logger.info(f'开始监听属性上报：{property_list}')
         pub_topic, sub_topic = self.build_topic(device, 'property', 'report')
-        expr = {property: {} for property in property_list} if properties else None
+        expr = {x: {} for x in property_list} if properties else None
         r = self.mqtt_client.listen(pub_topic, expr)
         logger.info(f'结束监听属性上报：{property_list}')
         if is_reply and r.result:
             try:
                 if not properties:
                     property_list = self.parse_msg(r.data_dict).data_dict['properties']
-                    properties = [getattr(device.properties, property) for property in property_list]
+                    properties = [getattr(device.properties, x) for x in property_list]
                 self.report_reply(device, r.data_dict['msgId'], properties, code)
             except ValueError:
                 logger.error('监听到的消息中不包含正确msgId')
@@ -175,7 +185,7 @@ class PlatformController(BaseController):
     def report_reply(self,
                      device: Device,
                      msgId: str,
-                     properties: Optional[List[BaseProperty]],
+                     properties: List[BaseProperty],
                      code: int = 0) -> None:
         """
         响应属性上报
@@ -184,7 +194,7 @@ class PlatformController(BaseController):
         :param properties: 需要响应的属性列表
         :param code: 响应的结果，参见常量const.CODE_INFO
         """
-        property_list = [property.id for property in properties]
+        property_list = [x.id for x in properties]
         logger.info(f'响应属性上报：{property_list}')
         pub_topic, sub_topic = self.build_topic(device, 'property', 'report')
         self.mqtt_client.send_reply(sub_topic, msgId, code)
@@ -192,7 +202,7 @@ class PlatformController(BaseController):
     def event_report_listen(self,
                             device: Device,
                             event: BaseEvent,
-                            is_reply: bool = True,
+                            is_reply: bool = False,
                             code: int = 0,
                             is_parsed: bool = False) -> ResultData:
         """

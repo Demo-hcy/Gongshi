@@ -1,0 +1,355 @@
+{
+  "productId": "S7_FRT_RDM306",
+  "productName": "富奥通306",
+  "properties": [
+    {
+      "id": "minWindDirection",
+      "name": "最小风向角度",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 0,
+        "max": 360,
+        "unit": "°",
+        "unitName": "度",
+        "step": 1
+      }
+    },
+    {
+      "id": "model",
+      "name": "设备型号",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "specs": {}
+    },
+    {
+      "id": "mode",
+      "name": "控制模式",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "specs": {
+        "optional": [
+          {
+            "value": "manual",
+            "desc": "手动"
+          },
+          {
+            "value": "auto",
+            "desc": "自动"
+          }
+        ]
+      }
+    },
+    {
+      "id": "windDirection",
+      "name": "平均风向角度",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 0,
+        "max": 360,
+        "unit": "°",
+        "unitName": "度",
+        "step": 1
+      }
+    },
+    {
+      "id": "airPressure",
+      "name": "气压",
+      "accessMode": "ro",
+      "required": true,
+      "type": "number",
+      "specs": {
+        "min": 10,
+        "max": 1300,
+        "unit": "Pa",
+        "unitName": "帕"
+      }
+    },
+    {
+      "id": "temperature",
+      "name": "温度",
+      "accessMode": "ro",
+      "required": true,
+      "type": "number",
+      "specs": {
+        "min": -50,
+        "max": 80,
+        "unit": "°",
+        "unitName": "摄氏度"
+      }
+    },
+    {
+      "id": "humidity",
+      "name": "湿度",
+      "accessMode": "ro",
+      "required": true,
+      "type": "number",
+      "specs": {
+        "min": 0,
+        "max": 100,
+        "unit": "%",
+        "unitName": "百分比"
+      }
+    },
+    {
+      "id": "noise",
+      "name": "噪声",
+      "accessMode": "ro",
+      "required": true,
+      "type": "number",
+      "specs": {
+        "min": 30,
+        "max": 130,
+        "unit": "dB",
+        "unitName": "分贝"
+      }
+    },
+    {
+      "id": "precipitation",
+      "name": "降雨量",
+      "accessMode": "ro",
+      "required": true,
+      "type": "number",
+      "specs": {
+        "min": 0,
+        "max": 1000,
+        "unit": "M",
+        "unitName": "毫米"
+      }
+    },
+    {
+      "id": "maxWindDirection",
+      "name": "最大风向角度",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 0,
+        "max": 360,
+        "unit": "°",
+        "unitName": "度",
+        "step": 1
+      }
+    },
+    {
+      "id": "minWindSpeed",
+      "name": "最小风速",
+      "accessMode": "ro",
+      "required": true,
+      "type": "number",
+      "specs": {
+        "min": 0,
+        "max": 70,
+        "unit": "m/s",
+        "unitName": "米每秒"
+      }
+    },
+    {
+      "id": "windSpeed",
+      "name": "风速",
+      "accessMode": "ro",
+      "required": true,
+      "type": "number",
+      "specs": {
+        "min": 0,
+        "max": 70,
+        "unit": "m/s",
+        "unitName": "米每秒"
+      }
+    },
+    {
+      "id": "maxWindSpeed",
+      "name": "最大风速",
+      "accessMode": "ro",
+      "required": true,
+      "type": "number",
+      "specs": {
+        "min": 0,
+        "max": 70,
+        "unit": "m/s",
+        "unitName": "米每秒"
+      }
+    },
+    {
+      "id": "PM2_5",
+      "name": "细颗粒物浓度值",
+      "accessMode": "ro",
+      "required": true,
+      "type": "number",
+      "specs": {
+        "min": 0,
+        "max": 1000,
+        "unit": "ug/m2",
+        "unitName": "ug/m2"
+      }
+    },
+    {
+      "id": "PM10",
+      "name": "细颗粒物浓度值",
+      "accessMode": "ro",
+      "required": true,
+      "type": "number",
+      "specs": {
+        "min": 0,
+        "max": 1000,
+        "unit": "ug/m2",
+        "unitName": "ug/m2"
+      }
+    },
+    {
+      "id": "rs485Port",
+      "name": "485端口",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 1,
+        "max": 8
+      }
+    },
+    {
+      "id": "rs485Addr",
+      "name": "设备地址",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "specs": {}
+    },
+    {
+      "id": "rs485Baund",
+      "name": "波特率",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 1200,
+        "max": 19200
+      }
+    },
+    {
+      "id": "rs485DataBit",
+      "name": "数据位",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "optional": [
+          {
+            "value": 6,
+            "desc": "6数据位"
+          },
+          {
+            "value": 7,
+            "desc": "7数据位"
+          },
+          {
+            "value": 8,
+            "desc": "8数据位"
+          }
+        ]
+      }
+    },
+    {
+      "id": "rs485Parity",
+      "name": "校验位",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "specs": {
+        "optional": [
+          {
+            "value": "N",
+            "desc": "无校验"
+          },
+          {
+            "value": "E",
+            "desc": "偶校验"
+          },
+          {
+            "value": "O",
+            "desc": "奇校验"
+          }
+        ]
+      }
+    },
+    {
+      "id": "rs485StopBit",
+      "name": "停止位",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "optional": [
+          {
+            "value": 1,
+            "desc": "1停止位"
+          },
+          {
+            "value": 2,
+            "desc": "2停止位"
+          }
+        ]
+      }
+    },
+    {
+      "id": "online",
+      "name": "在线状态",
+      "accessMode": "ro",
+      "required": false,
+      "type": "integer",
+      "specs": {
+        "optional": [
+          {
+            "value": 0,
+            "desc": "离线"
+          },
+          {
+            "value": 1,
+            "desc": "在线"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sn",
+      "name": "设备sn",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "specs": {}
+    }
+  ],
+  "services": [
+    {
+      "id": "switchMode",
+      "name": "切换模式",
+      "type": "management",
+      "parameters": [
+        {
+          "id": "mode",
+          "name": "模式",
+          "required": true,
+          "type": "string",
+          "specs": {
+            "optional": [
+              {
+                "value": "manual",
+                "desc": "手动"
+              },
+              {
+                "value": "auto",
+                "desc": "自动"
+              }
+            ]
+          }
+        }
+      ],
+      "output": []
+    }
+  ]
+}

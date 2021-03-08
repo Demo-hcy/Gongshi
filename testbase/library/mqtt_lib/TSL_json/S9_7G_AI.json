@@ -1,0 +1,2918 @@
+{
+  "productId": "S9_7G_AI",
+  "productName": "AI微服务",
+  "properties": [
+    {
+      "id": "sn",
+      "name": "序列号",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "id": "model",
+      "name": "AI设备型号",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "id": "productId",
+      "name": "产品ID",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "id": "online",
+      "name": "状态",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "optional": [
+          {
+            "value": 0,
+            "desc": "离线"
+          },
+          {
+            "value": 1,
+            "desc": "在线"
+          }
+        ]
+      }
+    },
+    {
+      "id": "mode",
+      "name": "控制模式",
+      "accessMode": "rw",
+      "required": true,
+      "type": "string",
+      "specs": {
+        "optional": [
+          {
+            "value": "auto",
+            "desc": "自动"
+          },
+          {
+            "value": "manual",
+            "desc": "手动"
+          }
+        ]
+      }
+    },
+    {
+      "id": "modelInfoList",
+      "name": "模型信息列表",
+      "accessMode": "ro",
+      "required": true,
+      "type": "array",
+      "columnComplex": [
+        {
+          "id": "modelId",
+          "name": "模型ID",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "modelName",
+          "name": "模型名称",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "modelUrl",
+          "name": "模型url地址",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "modelFile",
+          "name": "模型存储地址",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "modelMd5",
+          "name": "模型md5值",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "modelFunction",
+          "name": "模型功能(行为识别、目标检测、目标分类)",
+          "type": "string",
+          "required": true,
+          "specs": {
+            "optional": [
+              {
+                "value": "behaviorDetetct",
+                "desc": "行为识别"
+              },
+              {
+                "value": "targetDetetct",
+                "desc": "目标检测"
+              },
+              {
+                "value": "targetIdentify",
+                "desc": "目标分类"
+              }
+            ]
+          }
+        },
+        {
+          "id": "modelAlgType",
+          "name": "模型类别(ssd、yolo、built-in)",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "targetNameList",
+          "name": "识别能力列表",
+          "type": "array",
+          "required": true,
+          "columnSimple": {
+            "type": "string"
+          }
+        },
+        {
+          "id": "updateTime",
+          "name": "模型更新时间",
+          "type": "string",
+          "format": "date-time",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "cameraInfoList",
+      "name": "摄像头列表",
+      "accessMode": "ro",
+      "required": true,
+      "type": "array",
+      "columnComplex": [
+        {
+          "id": "cameraId",
+          "name": "摄像头ID",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "cameraUrl",
+          "name": "摄像头视频流URL",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "pushRtsp",
+          "name": "识别推送视频流地址",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "modelInfoList",
+          "name": "模型信息列表",
+          "type": "array",
+          "required": true,
+          "columnComplex": [
+            {
+              "id": "modelId",
+              "name": "模型id",
+              "type": "string",
+              "required": true
+            },
+            {
+              "id": "detectionInfo",
+              "name": "检测区域检测信息",
+              "type": "struct",
+              "required": true,
+              "struct": [
+                {
+                  "id": "objList",
+                  "name": "目标列表",
+                  "type": "array",
+                  "required": true,
+                  "columnSimple": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "id": "alarmIntervalList",
+                  "name": "告警间隔",
+                  "type": "array",
+                  "required": true,
+                  "columnSimple": {
+                    "type": "integer",
+                    "specs": {
+                      "min": 0,
+                      "max": 999999
+                    }
+                  }
+                },
+                {
+                  "id": "objThreshList",
+                  "name": "目标上报阈值",
+                  "type": "array",
+                  "required": true,
+                  "columnSimple": {
+                    "type": "number",
+                    "specs": {
+                      "min": 0,
+                      "max": 100
+                    }
+                  }
+                },
+                {
+                  "id": "pushImageFile",
+                  "name": "识别推送图片地址",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "id": "detectionAreaInfo",
+                  "name": "检测区域信息",
+                  "type": "array",
+                  "required": true,
+                  "columnComplex": [
+                    {
+                      "id": "regionId",
+                      "name": "区域ID",
+                      "type": "string",
+                      "required": true
+                    },
+                    {
+                      "id": "regionArea",
+                      "name": "检测区域面积信息",
+                      "type": "struct",
+                      "required": true,
+                      "struct": [
+                        {
+                          "id": "x",
+                          "name": "检测区域x",
+                          "type": "number",
+                          "required": true,
+                          "specs": {
+                            "min": 0,
+                            "max": 999999
+                          }
+                        },
+                        {
+                          "id": "y",
+                          "name": "检测区域y",
+                          "type": "number",
+                          "required": true,
+                          "specs": {
+                            "min": 0,
+                            "max": 999999
+                          }
+                        },
+                        {
+                          "id": "w",
+                          "name": "检测区域w",
+                          "type": "number",
+                          "required": true,
+                          "specs": {
+                            "min": 0,
+                            "max": 999999
+                          }
+                        },
+                        {
+                          "id": "h",
+                          "name": "检测区域h",
+                          "type": "number",
+                          "required": true,
+                          "specs": {
+                            "min": 0,
+                            "max": 999999
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "imageCollectInfo",
+              "name": "图片采集信息",
+              "type": "struct",
+              "required": true,
+              "struct": [
+                {
+                  "id": "pushImageAddress",
+                  "name": "图片推送地址",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "id": "startTime",
+                  "name": "采集开始时间",
+                  "type": "string",
+                  "required": true,
+                  "format": "date-time"
+                },
+                {
+                  "id": "endTime",
+                  "name": "采集结束时间",
+                  "type": "string",
+                  "required": true,
+                  "format": "date-time"
+                },
+                {
+                  "id": "circulationTime",
+                  "name": "采集时间是否循环",
+                  "type": "boolean",
+                  "required": true
+                },
+                {
+                  "id": "objList",
+                  "name": "目标列表",
+                  "type": "array",
+                  "required": true,
+                  "columnSimple": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "id": "objThreshList",
+                  "name": "目标上报阈值",
+                  "type": "array",
+                  "required": true,
+                  "columnSimple": {
+                    "type": "number",
+                    "specs": {
+                      "min": 0,
+                      "max": 100
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cameraAIList",
+      "name": "摄像头AI应用列表",
+      "accessMode": "ro",
+      "required": true,
+      "type": "array",
+      "columnComplex": [
+        {
+          "id": "channelId",
+          "name": "通道id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "cameraId",
+          "name": "摄像头ID",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "cameraUrl",
+          "name": "摄像头URL",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "modelInfoList",
+          "name": "模型信息列表",
+          "type": "array",
+          "required": true,
+          "columnComplex": [
+            {
+              "id": "modelId",
+              "name": "模型id",
+              "type": "string",
+              "required": true
+            },
+            {
+              "id": "detectionAreaIdList",
+              "name": "检测区域ID列表",
+              "type": "array",
+              "required": true,
+              "columnSimple": {
+                "type": "string"
+              }
+            },
+            {
+              "id": "function",
+              "name": "模型实现功能",
+              "type": "string",
+              "required": true,
+              "specs": {
+                "optional": [
+                  {
+                    "value": "Detection",
+                    "desc": "检测"
+                  },
+                  {
+                    "value": "Collection",
+                    "desc": "采集"
+                  },
+                  {
+                    "value": "DetectandCollect",
+                    "desc": "检测采集"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "status",
+              "name": "模型检测状态",
+              "type": "integer",
+              "required": true,
+              "specs": {
+                "optional": [
+                  {
+                    "value": 0,
+                    "desc": "未开启"
+                  },
+                  {
+                    "value": 1,
+                    "desc": "开启"
+                  },
+                  {
+                    "value": 2,
+                    "desc": "开启异常"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "behaviorDetetcAlarm",
+      "name": "行为识别告警",
+      "parameters": [
+        {
+          "id": "channelId",
+          "name": "通道id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "cameraId",
+          "name": "摄像头Id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "cameraUrl",
+          "name": "摄像头url",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "storageUrl",
+          "name": "告警视频存储URL",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "imagePath",
+          "name": "告警图片地址",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "modelId",
+          "name": "模型Id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "modelFunction",
+          "name": "模型功能",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "alarmList",
+          "name": "告警列表信息",
+          "type": "array",
+          "required": true,
+          "columnComplex": [
+            {
+              "id": "className",
+              "name": "识别类型名称",
+              "type": "string",
+              "required": true
+            },
+            {
+              "id": "startTime",
+              "name": "行为开始时间",
+              "type": "string",
+              "required": true,
+              "format": "date-time"
+            },
+            {
+              "id": "endTime",
+              "name": "行为结束时间",
+              "type": "string",
+              "required": true,
+              "format": "date-time"
+            },
+            {
+              "id": "similarity",
+              "name": "行为相似度",
+              "type": "number",
+              "required": true,
+              "specs": {
+                "min": 0,
+                "max": 100
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "targetDetetctAlarm",
+      "name": "目标检测告警",
+      "parameters": [
+        {
+          "id": "channelId",
+          "name": "通道id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "cameraId",
+          "name": "摄像头Id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "cameraUrl",
+          "name": "摄像头url",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "storageUrl",
+          "name": "告警视频存储URL",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "imagePath",
+          "name": "告警图片智盒路径",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "modelId",
+          "name": "模型Id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "modelFunction",
+          "name": "模型功能",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "alarmList",
+          "name": "告警列表信息",
+          "type": "array",
+          "required": true,
+          "columnComplex": [
+            {
+              "id": "className",
+              "name": "识别类型名称",
+              "type": "string",
+              "required": true
+            },
+            {
+              "id": "objectId",
+              "name": "目标跟踪Id",
+              "type": "string",
+              "required": true
+            },
+            {
+              "id": "X1",
+              "name": "目标左上角X坐标",
+              "type": "number",
+              "required": true,
+              "specs": {
+                "min": 0,
+                "max": 999999
+              }
+            },
+            {
+              "id": "Y1",
+              "name": "目标左上角Y坐标",
+              "type": "number",
+              "required": true,
+              "specs": {
+                "min": 0,
+                "max": 999999
+              }
+            },
+            {
+              "id": "X2",
+              "name": "目标右下角X坐标",
+              "type": "number",
+              "required": true,
+              "specs": {
+                "min": 0,
+                "max": 999999
+              }
+            },
+            {
+              "id": "Y2",
+              "name": "目标右下角Y坐标",
+              "type": "number",
+              "required": true,
+              "specs": {
+                "min": 0,
+                "max": 999999
+              }
+            },
+            {
+              "id": "targetEigenvalues",
+              "name": "识别目标特征值",
+              "type": "string",
+              "required": true
+            },
+            {
+              "id": "targetUuid",
+              "name": "样本特征值对应的uuid",
+              "type": "string",
+              "required": true
+            },
+            {
+              "id": "similarity",
+              "name": "目标相似度",
+              "type": "number",
+              "required": true,
+              "specs": {
+                "min": 0,
+                "max": 100
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "targetIdentifyAlarm",
+      "name": "目标分类告警",
+      "parameters": [
+        {
+          "id": "channelId",
+          "name": "通道id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "cameraId",
+          "name": "摄像头Id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "cameraUrl",
+          "name": "摄像头url",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "storageUrl",
+          "name": "告警视频存储URL",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "imagePath",
+          "name": "告警图片智盒路径",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "modelId",
+          "name": "模型Id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "modelFunction",
+          "name": "模型功能",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "alarmList",
+          "name": "告警列表信息",
+          "type": "array",
+          "required": true,
+          "columnComplex": [
+            {
+              "id": "className",
+              "name": "识别类型名称",
+              "type": "string",
+              "required": true
+            },
+            {
+              "id": "targetEigenvalues",
+              "name": "识别目标特征值",
+              "type": "string",
+              "required": true
+            },
+            {
+              "id": "targetUuid",
+              "name": "样本特征值对应的uuid",
+              "type": "string",
+              "required": true
+            },
+            {
+              "id": "similarity",
+              "name": "相似度",
+              "type": "number",
+              "required": true,
+              "specs": {
+                "min": 0,
+                "max": 100
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cameraAbnormal",
+      "name": "视频异常事件",
+      "parameters": [
+        {
+          "id": "camerIdList",
+          "name": "异常摄像头列表",
+          "type": "array",
+          "required": true,
+          "columnComplex": [
+            {
+              "id": "cameraId",
+              "name": "摄像头ID",
+              "type": "string",
+              "required": true
+            },
+            {
+              "id": "cameraUrl",
+              "name": "摄像头视频流URL",
+              "type": "string",
+              "required": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "id": "reboot",
+      "name": "重启",
+      "type": "management",
+      "parameters": [],
+      "output": []
+    },
+    {
+      "id": "addModel",
+      "name": "模型增加",
+      "type": "management",
+      "parameters": [
+        {
+          "id": "modelInfoList",
+          "name": "模型信息列表",
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "modelId",
+              "name": "模型ID",
+              "type": "string",
+              "required": true
+            },
+            {
+              "id": "modelName",
+              "name": "模型名称",
+              "type": "string",
+              "required": true
+            },
+            {
+              "id": "modelUrl",
+              "name": "模型url地址",
+              "type": "string",
+              "required": true
+            },
+            {
+              "id": "modelMd5",
+              "name": "模型md5值",
+              "type": "string",
+              "required": true
+            },
+            {
+              "id": "updateTime",
+              "name": "模型更新时间",
+              "type": "string",
+              "required": true,
+              "format": "date-time"
+            }
+          ]
+        }
+      ],
+      "output": [
+        {
+          "id": "modelInfoList",
+          "name": "模型信息列表",
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "code",
+              "name": "返回状态码",
+              "type": "integer",
+              "specs": {
+                "min": 0,
+                "max": 999999
+              }
+            },
+            {
+              "id": "message",
+              "name": "状态描述",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deleteModel",
+      "name": "删除模型",
+      "type": "management",
+      "parameters": [
+        {
+          "id": "modelIdList",
+          "name": "删除模型ID列表",
+          "type": "array",
+          "required": true,
+          "columnSimple": {
+            "type": "string"
+          }
+        }
+      ],
+      "output": [
+        {
+          "id": "modelInfoList",
+          "name": "模型信息列表",
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "code",
+              "name": "返回状态码",
+              "type": "integer",
+              "specs": {
+                "min": 0,
+                "max": 999999
+              }
+            },
+            {
+              "id": "message",
+              "name": "状态描述",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "updateModel",
+      "name": "模型更新",
+      "type": "management",
+      "parameters": [
+        {
+          "id": "modelInfoList",
+          "name": "模型信息列表",
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "modelSrcId",
+              "name": "模型原始Id",
+              "type": "string",
+              "required": true
+            },
+            {
+              "id": "modelId",
+              "name": "模型ID",
+              "type": "string",
+              "required": true
+            },
+            {
+              "id": "modelName",
+              "name": "模型名称",
+              "type": "string",
+              "required": true
+            },
+            {
+              "id": "modelUrl",
+              "name": "模型url地址",
+              "type": "string",
+              "required": true
+            },
+            {
+              "id": "modelMd5",
+              "name": "模型md5值",
+              "type": "string",
+              "required": true
+            },
+            {
+              "id": "updateTime",
+              "name": "模型更新时间",
+              "type": "string",
+              "required": true,
+              "format": "date-time"
+            }
+          ]
+        }
+      ],
+      "output": [
+        {
+          "id": "modelInfoList",
+          "name": "模型信息列表",
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "code",
+              "name": "返回状态码",
+              "type": "integer",
+              "specs": {
+                "min": 0,
+                "max": 999999
+              }
+            },
+            {
+              "id": "message",
+              "name": "状态描述",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "queryModelById",
+      "name": "根据ID查询模型",
+      "type": "management",
+      "parameters": [
+        {
+          "id": "modelIdList",
+          "name": "模型ID",
+          "type": "array",
+          "required": true,
+          "columnSimple": {
+            "type": "string"
+          }
+        }
+      ],
+      "output": [
+        {
+          "id": "modelInfoList",
+          "name": "模型信息列表",
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "modelId",
+              "name": "模型ID",
+              "type": "string"
+            },
+            {
+              "id": "modelName",
+              "name": "模型名称",
+              "type": "string"
+            },
+            {
+              "id": "modelUrl",
+              "name": "模型url地址",
+              "type": "string"
+            },
+            {
+              "id": "modelFile",
+              "name": "模型文件地址",
+              "type": "string"
+            },
+            {
+              "id": "modelMd5",
+              "name": "模型md5值",
+              "type": "string"
+            },
+            {
+              "id": "modelFunction",
+              "name": "模型功能(分类、检测)",
+              "type": "string"
+            },
+            {
+              "id": "modelAlgType",
+              "name": "模型类别(ssd、yolo、built-in)",
+              "type": "string"
+            },
+            {
+              "id": "targetNameList",
+              "name": "识别能力列表",
+              "type": "array",
+              "columnSimple": {
+                "type": "string"
+              }
+            },
+            {
+              "id": "updateTime",
+              "name": "模型更新时间",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "queryModel",
+      "name": "模型查询",
+      "type": "management",
+      "parameters": [],
+      "output": [
+        {
+          "id": "modelInfoList",
+          "name": "模型信息列表",
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "modelId",
+              "name": "模型ID",
+              "type": "string"
+            },
+            {
+              "id": "modelName",
+              "name": "模型名称",
+              "type": "string"
+            },
+            {
+              "id": "modelUrl",
+              "name": "模型url地址",
+              "type": "string"
+            },
+            {
+              "id": "modelFile",
+              "name": "模型文件地址",
+              "type": "string"
+            },
+            {
+              "id": "modelMd5",
+              "name": "模型md5值",
+              "type": "string"
+            },
+            {
+              "id": "modelFunction",
+              "name": "模型功能(分类、检测)",
+              "type": "string"
+            },
+            {
+              "id": "modelAlgType",
+              "name": "模型类别(ssd、yolo、built-in)",
+              "type": "string"
+            },
+            {
+              "id": "targetNameList",
+              "name": "识别能力列表",
+              "type": "array",
+              "columnSimple": {
+                "type": "string"
+              }
+            },
+            {
+              "id": "updateTime",
+              "name": "模型更新时间",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "addCamera",
+      "name": "增加摄像头",
+      "type": "management",
+      "parameters": [
+        {
+          "id": "cameraInfoList",
+          "name": "摄像头列表",
+          "type": "array",
+          "required": true,
+          "columnComplex": [
+            {
+              "id": "cameraId",
+              "name": "摄像头ID",
+              "type": "string",
+              "required": true
+            },
+            {
+              "id": "cameraUrl",
+              "name": "摄像头视频流URL",
+              "type": "string",
+              "required": true
+            },
+            {
+              "id": "pushRtsp",
+              "name": "识别推送视频流地址",
+              "type": "string",
+              "required": true
+            },
+            {
+              "id": "modelInfoList",
+              "name": "模型信息列表",
+              "type": "array",
+              "required": true,
+              "columnComplex": [
+                {
+                  "id": "modelId",
+                  "name": "模型id",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "id": "detectionInfo",
+                  "name": "检测区域检测信息",
+                  "type": "struct",
+                  "struct": [
+                    {
+                      "id": "objList",
+                      "name": "目标列表",
+                      "type": "array",
+                      "required": true,
+                      "columnSimple": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "id": "alarmIntervalList",
+                      "name": "告警间隔",
+                      "type": "array",
+                      "required": true,
+                      "columnSimple": {
+                        "type": "integer",
+                        "specs": {
+                          "min": 0,
+                          "max": 999999
+                        }
+                      }
+                    },
+                    {
+                      "id": "objThreshList",
+                      "name": "目标上报阈值",
+                      "type": "array",
+                      "required": true,
+                      "columnSimple": {
+                        "type": "number",
+                        "specs": {
+                          "min": 0,
+                          "max": 100
+                        }
+                      }
+                    },
+                    {
+                      "id": "pushImageFile",
+                      "name": "识别推送图片地址",
+                      "type": "string",
+                      "required": true
+                    },
+                    {
+                      "id": "detectionAreaInfoList",
+                      "name": "检测区域信息",
+                      "type": "array",
+                      "required": true,
+                      "columnComplex": [
+                        {
+                          "id": "regionId",
+                          "name": "区域ID",
+                          "type": "string",
+                          "required": true
+                        },
+                        {
+                          "id": "regionArea",
+                          "name": "检测区域面积信息",
+                          "type": "struct",
+                          "struct": [
+                            {
+                              "id": "x",
+                              "name": "检测区域x",
+                              "type": "number",
+                              "required": true,
+                              "specs": {
+                                "min": 0,
+                                "max": 999999
+                              }
+                            },
+                            {
+                              "id": "y",
+                              "name": "检测区域y",
+                              "type": "number",
+                              "required": true,
+                              "specs": {
+                                "min": 0,
+                                "max": 999999
+                              }
+                            },
+                            {
+                              "id": "w",
+                              "name": "检测区域w",
+                              "type": "number",
+                              "required": true,
+                              "specs": {
+                                "min": 0,
+                                "max": 999999
+                              }
+                            },
+                            {
+                              "id": "h",
+                              "name": "检测区域h",
+                              "type": "number",
+                              "required": true,
+                              "specs": {
+                                "min": 0,
+                                "max": 999999
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "imageCollectInfo",
+                  "name": "图片采集信息",
+                  "type": "struct",
+                  "struct": [
+                    {
+                      "id": "pushImageAddress",
+                      "name": "图片推送地址",
+                      "type": "string",
+                      "required": true
+                    },
+                    {
+                      "id": "startTime",
+                      "name": "采集开始时间",
+                      "type": "string",
+                      "required": true,
+                      "format": "date-time"
+                    },
+                    {
+                      "id": "endTime",
+                      "name": "采集结束时间",
+                      "type": "string",
+                      "required": true,
+                      "format": "date-time"
+                    },
+                    {
+                      "id": "circulationTime",
+                      "name": "采集时间是否循环",
+                      "type": "boolean",
+                      "required": true
+                    },
+                    {
+                      "id": "objList",
+                      "name": "目标列表",
+                      "type": "array",
+                      "required": true,
+                      "columnSimple": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "id": "objThreshList",
+                      "name": "目标采集阈值",
+                      "type": "array",
+                      "required": true,
+                      "columnSimple": {
+                        "type": "number",
+                        "specs": {
+                          "min": 0,
+                          "max": 100
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "output": [
+        {
+          "id": "cameraInfoList",
+          "name": "摄像头信息列表",
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "code",
+              "name": "返回状态码",
+              "type": "integer",
+              "specs": {
+                "min": 0,
+                "max": 999999
+              }
+            },
+            {
+              "id": "message",
+              "name": "状态描述",
+              "type": "string"
+            },
+            {
+              "id": "modelInfoList",
+              "name": "模型信息列表",
+              "type": "array",
+              "columnComplex": [
+                {
+                  "id": "code",
+                  "name": "返回状态码",
+                  "type": "integer",
+                  "specs": {
+                    "min": 0,
+                    "max": 999999
+                  }
+                },
+                {
+                  "id": "message",
+                  "name": "状态描述",
+                  "type": "string"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deleteCamera",
+      "name": "删除摄像头",
+      "type": "management",
+      "parameters": [
+        {
+          "id": "cameraIdList",
+          "name": "摄像头列表",
+          "type": "array",
+          "required": true,
+          "columnSimple": {
+            "type": "string"
+          }
+        }
+      ],
+      "output": [
+        {
+          "id": "cameraInfoList",
+          "name": "摄像头信息列表",
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "code",
+              "name": "返回状态码",
+              "type": "integer",
+              "specs": {
+                "min": 0,
+                "max": 999999
+              }
+            },
+            {
+              "id": "message",
+              "name": "状态描述",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deleteCameraSub",
+      "name": "删除摄像头下关联的模型",
+      "type": "management",
+      "parameters": [
+        {
+          "id": "cameraInfoList",
+          "name": "摄像头列表",
+          "type": "array",
+          "required": true,
+          "columnComplex": [
+            {
+              "id": "cameraId",
+              "name": "摄像头ID",
+              "type": "string",
+              "required": true
+            },
+            {
+              "id": "modelInfoList",
+              "name": "模型ID列表",
+              "type": "array",
+              "required": true,
+              "columnSimple": {
+                "type": "string"
+              }
+            }
+          ]
+        }
+      ],
+      "output": [
+        {
+          "id": "cameraInfoList",
+          "name": "摄像头信息列表",
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "code",
+              "name": "返回状态码",
+              "type": "integer",
+              "specs": {
+                "min": 0,
+                "max": 999999
+              }
+            },
+            {
+              "id": "message",
+              "name": "状态描述",
+              "type": "string"
+            },
+            {
+              "id": "modelInfoList",
+              "name": "模型信息列表",
+              "type": "array",
+              "columnComplex": [
+                {
+                  "id": "code",
+                  "name": "返回状态码",
+                  "type": "integer",
+                  "specs": {
+                    "min": 0,
+                    "max": 999999
+                  }
+                },
+                {
+                  "id": "message",
+                  "name": "状态描述",
+                  "type": "string"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "modifyCamera",
+      "name": "修改摄像头信息",
+      "type": "management",
+      "parameters": [
+        {
+          "id": "cameraInfoList",
+          "name": "摄像头列表",
+          "type": "array",
+          "required": true,
+          "columnComplex": [
+            {
+              "id": "cameraId",
+              "name": "摄像头ID",
+              "type": "string",
+              "required": true
+            },
+            {
+              "id": "pushRtsp",
+              "name": "识别推送视频流地址",
+              "type": "string",
+              "required": true
+            },
+            {
+              "id": "modelInfoList",
+              "name": "模型信息列表",
+              "type": "array",
+              "required": true,
+              "columnComplex": [
+                {
+                  "id": "modelId",
+                  "name": "模型id",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "id": "detectionInfo",
+                  "name": "检测区域检测信息",
+                  "type": "struct",
+                  "struct": [
+                    {
+                      "id": "objList",
+                      "name": "目标列表",
+                      "type": "array",
+                      "required": true,
+                      "columnSimple": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "id": "alarmIntervalList",
+                      "name": "告警间隔",
+                      "type": "array",
+                      "required": true,
+                      "columnSimple": {
+                        "type": "integer",
+                        "specs": {
+                          "min": 0,
+                          "max": 999999
+                        }
+                      }
+                    },
+                    {
+                      "id": "objThreshList",
+                      "name": "目标上报阈值",
+                      "type": "array",
+                      "required": true,
+                      "columnSimple": {
+                        "type": "number",
+                        "specs": {
+                          "min": 0,
+                          "max": 100
+                        }
+                      }
+                    },
+                    {
+                      "id": "pushImageFile",
+                      "name": "识别推送图片地址",
+                      "type": "string",
+                      "required": true
+                    },
+                    {
+                      "id": "detectionAreaInfoList",
+                      "name": "检测区域信息",
+                      "type": "array",
+                      "required": true,
+                      "columnComplex": [
+                        {
+                          "id": "regionId",
+                          "name": "区域ID",
+                          "type": "string",
+                          "required": true
+                        },
+                        {
+                          "id": "regionArea",
+                          "name": "检测区域面积信息",
+                          "type": "struct",
+                          "required": true,
+                          "struct": [
+                            {
+                              "id": "x",
+                              "name": "检测区域x",
+                              "type": "number",
+                              "required": true,
+                              "specs": {
+                                "min": 0,
+                                "max": 999999
+                              }
+                            },
+                            {
+                              "id": "y",
+                              "name": "检测区域y",
+                              "type": "number",
+                              "required": true,
+                              "specs": {
+                                "min": 0,
+                                "max": 999999
+                              }
+                            },
+                            {
+                              "id": "w",
+                              "name": "检测区域w",
+                              "type": "number",
+                              "required": true,
+                              "specs": {
+                                "min": 0,
+                                "max": 999999
+                              }
+                            },
+                            {
+                              "id": "h",
+                              "name": "检测区域h",
+                              "type": "number",
+                              "required": true,
+                              "specs": {
+                                "min": 0,
+                                "max": 999999
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "imageCollectInfo",
+                  "name": "图片采集信息",
+                  "type": "struct",
+                  "struct": [
+                    {
+                      "id": "pushImageAddress",
+                      "name": "图片推送地址",
+                      "type": "string",
+                      "required": true
+                    },
+                    {
+                      "id": "startTime",
+                      "name": "采集开始时间",
+                      "type": "string",
+                      "required": true,
+                      "format": "date-time"
+                    },
+                    {
+                      "id": "endTime",
+                      "name": "采集结束时间",
+                      "type": "string",
+                      "required": true,
+                      "format": "date-time"
+                    },
+                    {
+                      "id": "circulationTime",
+                      "name": "采集时间是否循环",
+                      "type": "boolean",
+                      "required": true
+                    },
+                    {
+                      "id": "objList",
+                      "name": "目标列表",
+                      "type": "array",
+                      "required": true,
+                      "columnSimple": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "id": "objThreshList",
+                      "name": "目标采集阈值",
+                      "type": "array",
+                      "required": true,
+                      "columnSimple": {
+                        "type": "number",
+                        "specs": {
+                          "min": 0,
+                          "max": 100
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "output": [
+        {
+          "id": "cameraInfoList",
+          "name": "摄像头信息列表",
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "code",
+              "name": "返回状态码",
+              "type": "integer",
+              "specs": {
+                "min": 0,
+                "max": 999999
+              }
+            },
+            {
+              "id": "message",
+              "name": "状态描述",
+              "type": "string"
+            },
+            {
+              "id": "modelInfoList",
+              "name": "模型信息列表",
+              "type": "array",
+              "columnComplex": [
+                {
+                  "id": "code",
+                  "name": "返回状态码",
+                  "type": "integer",
+                  "specs": {
+                    "min": 0,
+                    "max": 999999
+                  }
+                },
+                {
+                  "id": "message",
+                  "name": "状态描述",
+                  "type": "string"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "queryCameraByCameraId",
+      "name": "根据ID查询摄像头",
+      "type": "management",
+      "parameters": [
+        {
+          "id": "cameraIdList",
+          "name": "摄像头ID列表",
+          "type": "array",
+          "required": true,
+          "columnSimple": {
+            "type": "string"
+          }
+        }
+      ],
+      "output": [
+        {
+          "id": "cameraInfoList",
+          "name": "摄像头列表",
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "cameraId",
+              "name": "摄像头ID",
+              "type": "string"
+            },
+            {
+              "id": "cameraUrl",
+              "name": "摄像头视频流URL",
+              "type": "string"
+            },
+            {
+              "id": "pushRtsp",
+              "name": "识别推送视频流地址",
+              "type": "string"
+            },
+            {
+              "id": "modelInfoList",
+              "name": "模型信息列表",
+              "type": "array",
+              "columnComplex": [
+                {
+                  "id": "modelId",
+                  "name": "模型id",
+                  "type": "string"
+                },
+                {
+                  "id": "detectionInfo",
+                  "name": "检测区域检测信息",
+                  "type": "struct",
+                  "struct": [
+                    {
+                      "id": "objList",
+                      "name": "目标列表",
+                      "type": "array",
+                      "columnSimple": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "id": "alarmIntervalList",
+                      "name": "告警间隔",
+                      "type": "array",
+                      "columnSimple": {
+                        "type": "integer",
+                        "specs": {
+                          "min": 0,
+                          "max": 999999
+                        }
+                      }
+                    },
+                    {
+                      "id": "objThreshList",
+                      "name": "目标上报阈值",
+                      "type": "array",
+                      "columnSimple": {
+                        "type": "number",
+                        "specs": {
+                          "min": 0,
+                          "max": 100
+                        }
+                      }
+                    },
+                    {
+                      "id": "pushImageFile",
+                      "name": "识别推送图片地址",
+                      "type": "string"
+                    },
+                    {
+                      "id": "detectionAreaInfoList",
+                      "name": "检测区域信息",
+                      "type": "array",
+                      "columnComplex": [
+                        {
+                          "id": "regionId",
+                          "name": "区域ID",
+                          "type": "string"
+                        },
+                        {
+                          "id": "regionArea",
+                          "name": "检测区域面积信息",
+                          "type": "struct",
+                          "struct": [
+                            {
+                              "id": "x",
+                              "name": "检测区域x",
+                              "type": "number",
+                              "specs": {
+                                "min": 0,
+                                "max": 999999
+                              }
+                            },
+                            {
+                              "id": "y",
+                              "name": "检测区域y",
+                              "type": "number",
+                              "specs": {
+                                "min": 0,
+                                "max": 999999
+                              }
+                            },
+                            {
+                              "id": "w",
+                              "name": "检测区域w",
+                              "type": "number",
+                              "specs": {
+                                "min": 0,
+                                "max": 999999
+                              }
+                            },
+                            {
+                              "id": "h",
+                              "name": "检测区域h",
+                              "type": "number",
+                              "specs": {
+                                "min": 0,
+                                "max": 999999
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "imageCollectInfo",
+                  "name": "图片采集信息",
+                  "type": "struct",
+                  "struct": [
+                    {
+                      "id": "pushImageAddress",
+                      "name": "图片推送地址",
+                      "type": "string"
+                    },
+                    {
+                      "id": "startTime",
+                      "name": "采集开始时间",
+                      "type": "string"
+                    },
+                    {
+                      "id": "endTime",
+                      "name": "采集结束时间",
+                      "type": "string"
+                    },
+                    {
+                      "id": "circulationTime",
+                      "name": "采集时间是否循环",
+                      "type": "boolean"
+                    },
+                    {
+                      "id": "objList",
+                      "name": "目标列表",
+                      "type": "array",
+                      "columnSimple": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "id": "objThreshList",
+                      "name": "目标采集阈值",
+                      "type": "array",
+                      "columnSimple": {
+                        "type": "number",
+                        "specs": {
+                          "min": 0,
+                          "max": 100
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "queryCameraByCameraIdAndModelId",
+      "name": "查询指定摄像头ID下关联的指定模型配置",
+      "type": "management",
+      "parameters": [
+        {
+          "id": "cameraInfoList",
+          "name": "摄像头列表",
+          "type": "array",
+          "required": true,
+          "columnComplex": [
+            {
+              "id": "cameraId",
+              "name": "摄像头ID",
+              "type": "string",
+              "required": true
+            },
+            {
+              "id": "modelInfoList",
+              "name": "模型ID列表",
+              "type": "array",
+              "required": true,
+              "columnSimple": {
+                "type": "string"
+              }
+            }
+          ]
+        }
+      ],
+      "output": [
+        {
+          "id": "cameraInfoList",
+          "name": "摄像头列表",
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "cameraId",
+              "name": "摄像头ID",
+              "type": "string"
+            },
+            {
+              "id": "cameraUrl",
+              "name": "摄像头视频流URL",
+              "type": "string"
+            },
+            {
+              "id": "pushRtsp",
+              "name": "识别推送视频流地址",
+              "type": "string"
+            },
+            {
+              "id": "modelInfoList",
+              "name": "模型信息列表",
+              "type": "array",
+              "columnComplex": [
+                {
+                  "id": "modelId",
+                  "name": "模型id",
+                  "type": "string"
+                },
+                {
+                  "id": "detectionInfo",
+                  "name": "检测区域检测信息",
+                  "type": "struct",
+                  "struct": [
+                    {
+                      "id": "objList",
+                      "name": "目标列表",
+                      "type": "array",
+                      "columnSimple": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "id": "alarmIntervalList",
+                      "name": "告警间隔",
+                      "type": "array",
+                      "columnSimple": {
+                        "type": "integer",
+                        "specs": {
+                          "min": 0,
+                          "max": 999999
+                        }
+                      }
+                    },
+                    {
+                      "id": "objThreshList",
+                      "name": "目标上报阈值",
+                      "type": "array",
+                      "columnSimple": {
+                        "type": "number",
+                        "specs": {
+                          "min": 0,
+                          "max": 100
+                        }
+                      }
+                    },
+                    {
+                      "id": "pushImageFile",
+                      "name": "识别推送图片地址",
+                      "type": "string"
+                    },
+                    {
+                      "id": "detectionAreaInfoList",
+                      "name": "检测区域信息",
+                      "type": "array",
+                      "columnComplex": [
+                        {
+                          "id": "regionId",
+                          "name": "区域ID",
+                          "type": "string"
+                        },
+                        {
+                          "id": "regionArea",
+                          "name": "检测区域面积信息",
+                          "type": "struct",
+                          "struct": [
+                            {
+                              "id": "x",
+                              "name": "检测区域x",
+                              "type": "number",
+                              "specs": {
+                                "min": 0,
+                                "max": 999999
+                              }
+                            },
+                            {
+                              "id": "y",
+                              "name": "检测区域y",
+                              "type": "number",
+                              "specs": {
+                                "min": 0,
+                                "max": 999999
+                              }
+                            },
+                            {
+                              "id": "w",
+                              "name": "检测区域w",
+                              "type": "number",
+                              "specs": {
+                                "min": 0,
+                                "max": 999999
+                              }
+                            },
+                            {
+                              "id": "h",
+                              "name": "检测区域h",
+                              "type": "number",
+                              "specs": {
+                                "min": 0,
+                                "max": 999999
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "imageCollectInfo",
+                  "name": "图片采集信息",
+                  "type": "struct",
+                  "struct": [
+                    {
+                      "id": "pushImageAddress",
+                      "name": "图片推送地址",
+                      "type": "string"
+                    },
+                    {
+                      "id": "startTime",
+                      "name": "采集开始时间",
+                      "type": "string"
+                    },
+                    {
+                      "id": "endTime",
+                      "name": "采集结束时间",
+                      "type": "string"
+                    },
+                    {
+                      "id": "circulationTime",
+                      "name": "采集时间是否循环",
+                      "type": "boolean"
+                    },
+                    {
+                      "id": "objList",
+                      "name": "目标列表",
+                      "type": "array",
+                      "columnSimple": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "id": "objThreshList",
+                      "name": "目标采集阈值",
+                      "type": "array",
+                      "columnSimple": {
+                        "type": "number",
+                        "specs": {
+                          "min": 0,
+                          "max": 100
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "queryCamera",
+      "name": "查询摄像头",
+      "type": "management",
+      "parameters": [],
+      "output": [
+        {
+          "id": "cameraInfoList",
+          "name": "摄像头列表",
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "cameraId",
+              "name": "摄像头ID",
+              "type": "string"
+            },
+            {
+              "id": "cameraUrl",
+              "name": "摄像头视频流URL",
+              "type": "string"
+            },
+            {
+              "id": "pushRtsp",
+              "name": "识别推送视频流地址",
+              "type": "string"
+            },
+            {
+              "id": "modelInfoList",
+              "name": "模型信息列表",
+              "type": "array",
+              "columnComplex": [
+                {
+                  "id": "modelId",
+                  "name": "模型id",
+                  "type": "string"
+                },
+                {
+                  "id": "detectionInfo",
+                  "name": "检测区域检测信息",
+                  "type": "struct",
+                  "struct": [
+                    {
+                      "id": "objList",
+                      "name": "目标列表",
+                      "type": "array",
+                      "columnSimple": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "id": "alarmIntervalList",
+                      "name": "告警间隔",
+                      "type": "array",
+                      "columnSimple": {
+                        "type": "integer",
+                        "specs": {
+                          "min": 0,
+                          "max": 999999
+                        }
+                      }
+                    },
+                    {
+                      "id": "objThreshList",
+                      "name": "目标上报阈值",
+                      "type": "array",
+                      "columnSimple": {
+                        "type": "number",
+                        "specs": {
+                          "min": 0,
+                          "max": 100
+                        }
+                      }
+                    },
+                    {
+                      "id": "pushImageFile",
+                      "name": "识别推送图片地址",
+                      "type": "string"
+                    },
+                    {
+                      "id": "detectionAreaInfoList",
+                      "name": "检测区域信息",
+                      "type": "array",
+                      "columnComplex": [
+                        {
+                          "id": "regionId",
+                          "name": "区域ID",
+                          "type": "string"
+                        },
+                        {
+                          "id": "regionArea",
+                          "name": "检测区域面积信息",
+                          "type": "struct",
+                          "struct": [
+                            {
+                              "id": "x",
+                              "name": "检测区域x",
+                              "type": "number",
+                              "specs": {
+                                "min": 0,
+                                "max": 999999
+                              }
+                            },
+                            {
+                              "id": "y",
+                              "name": "检测区域y",
+                              "type": "number",
+                              "specs": {
+                                "min": 0,
+                                "max": 999999
+                              }
+                            },
+                            {
+                              "id": "w",
+                              "name": "检测区域w",
+                              "type": "number",
+                              "specs": {
+                                "min": 0,
+                                "max": 999999
+                              }
+                            },
+                            {
+                              "id": "h",
+                              "name": "检测区域h",
+                              "type": "number",
+                              "specs": {
+                                "min": 0,
+                                "max": 999999
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "imageCollectInfo",
+                  "name": "图片采集信息",
+                  "type": "struct",
+                  "struct": [
+                    {
+                      "id": "pushImageAddress",
+                      "name": "图片推送地址",
+                      "type": "string"
+                    },
+                    {
+                      "id": "startTime",
+                      "name": "采集开始时间",
+                      "type": "string"
+                    },
+                    {
+                      "id": "endTime",
+                      "name": "采集结束时间",
+                      "type": "string"
+                    },
+                    {
+                      "id": "circulationTime",
+                      "name": "采集时间是否循环",
+                      "type": "boolean"
+                    },
+                    {
+                      "id": "objList",
+                      "name": "目标列表",
+                      "type": "array",
+                      "columnSimple": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "id": "objThreshList",
+                      "name": "目标采集阈值",
+                      "type": "array",
+                      "columnSimple": {
+                        "type": "number",
+                        "specs": {
+                          "min": 0,
+                          "max": 100
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "openCameraAI",
+      "name": "开启摄像头AI应用",
+      "type": "management",
+      "parameters": [
+        {
+          "id": "cameraAIList",
+          "name": "摄像头AI应用列表",
+          "type": "array",
+          "required": true,
+          "columnComplex": [
+            {
+              "id": "cameraId",
+              "name": "摄像头ID",
+              "type": "string",
+              "required": true
+            },
+            {
+              "id": "modelInfoList",
+              "name": "模型信息列表",
+              "type": "array",
+              "required": true,
+              "columnComplex": [
+                {
+                  "id": "modelId",
+                  "name": "模型id",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "id": "detectionAreaIdList",
+                  "name": "检测区域ID列表",
+                  "type": "array",
+                  "required": true,
+                  "columnSimple": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "id": "function",
+                  "name": "模型实现功能",
+                  "type": "string",
+                  "required": true,
+                  "specs": {
+                    "optional": [
+                      {
+                        "value": "Detection",
+                        "desc": "检测"
+                      },
+                      {
+                        "value": "Collection",
+                        "desc": "采集"
+                      },
+                      {
+                        "value": "DetectandCollect",
+                        "desc": "检测采集"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "output": [
+        {
+          "id": "cameraAIList",
+          "name": "摄像头应用信息列表",
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "code",
+              "name": "返回状态码",
+              "type": "integer",
+              "specs": {
+                "min": 0,
+                "max": 999999
+              }
+            },
+            {
+              "id": "message",
+              "name": "状态描述",
+              "type": "string"
+            },
+            {
+              "id": "modelInfoList",
+              "name": "模型信息列表",
+              "type": "array",
+              "columnComplex": [
+                {
+                  "id": "code",
+                  "name": "返回状态码",
+                  "type": "integer",
+                  "specs": {
+                    "min": 0,
+                    "max": 999999
+                  }
+                },
+                {
+                  "id": "message",
+                  "name": "状态描述",
+                  "type": "string"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "closeCameraAI",
+      "name": "关闭摄像头AI应用",
+      "type": "management",
+      "parameters": [
+        {
+          "id": "cameraIdList",
+          "name": "摄像头ID列表",
+          "type": "array",
+          "required": true,
+          "columnSimple": {
+            "type": "string"
+          }
+        }
+      ],
+      "output": [
+        {
+          "id": "cameraAIList",
+          "name": "摄像头应用信息列表",
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "code",
+              "name": "返回状态码",
+              "type": "integer",
+              "specs": {
+                "min": 0,
+                "max": 999999
+              }
+            },
+            {
+              "id": "message",
+              "name": "状态描述",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "closeCameraAISub",
+      "name": "关闭摄像头AI应用模型",
+      "type": "management",
+      "parameters": [
+        {
+          "id": "cameraAIList",
+          "name": "摄像头AI应用列表",
+          "type": "array",
+          "required": true,
+          "columnComplex": [
+            {
+              "id": "cameraId",
+              "name": "摄像头ID",
+              "type": "string",
+              "required": true
+            },
+            {
+              "id": "modelInfoList",
+              "name": "模型ID列表",
+              "type": "array",
+              "required": true,
+              "columnSimple": {
+                "type": "string"
+              }
+            }
+          ]
+        }
+      ],
+      "output": [
+        {
+          "id": "cameraAIList",
+          "name": "摄像头应用信息列表",
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "code",
+              "name": "返回状态码",
+              "type": "integer",
+              "specs": {
+                "min": 0,
+                "max": 999999
+              }
+            },
+            {
+              "id": "message",
+              "name": "状态描述",
+              "type": "string"
+            },
+            {
+              "id": "modelInfoList",
+              "name": "模型信息列表",
+              "type": "array",
+              "columnComplex": [
+                {
+                  "id": "code",
+                  "name": "返回状态码",
+                  "type": "integer",
+                  "specs": {
+                    "min": 0,
+                    "max": 999999
+                  }
+                },
+                {
+                  "id": "message",
+                  "name": "状态描述",
+                  "type": "string"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deleteCameraAI",
+      "name": "删除摄像头AI应用",
+      "type": "management",
+      "parameters": [
+        {
+          "id": "cameraIdList",
+          "name": "摄像头ID列表",
+          "type": "array",
+          "required": true,
+          "columnSimple": {
+            "type": "string"
+          }
+        }
+      ],
+      "output": [
+        {
+          "id": "cameraAIList",
+          "name": "摄像头应用信息列表",
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "code",
+              "name": "返回状态码",
+              "type": "integer",
+              "specs": {
+                "min": 0,
+                "max": 999999
+              }
+            },
+            {
+              "id": "message",
+              "name": "状态描述",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deleteCameraAISub",
+      "name": "删除摄像头AI应用模型",
+      "type": "management",
+      "parameters": [
+        {
+          "id": "cameraAIList",
+          "name": "摄像头AI应用列表",
+          "type": "array",
+          "required": true,
+          "columnComplex": [
+            {
+              "id": "cameraId",
+              "name": "摄像头ID",
+              "type": "string",
+              "required": true
+            },
+            {
+              "id": "modelInfoList",
+              "name": "模型ID列表",
+              "type": "array",
+              "required": true,
+              "columnSimple": {
+                "type": "string"
+              }
+            }
+          ]
+        }
+      ],
+      "output": [
+        {
+          "id": "cameraAIList",
+          "name": "摄像头应用信息列表",
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "code",
+              "name": "返回状态码",
+              "type": "integer",
+              "specs": {
+                "min": 0,
+                "max": 999999
+              }
+            },
+            {
+              "id": "message",
+              "name": "状态描述",
+              "type": "string"
+            },
+            {
+              "id": "modelInfoList",
+              "name": "模型信息列表",
+              "type": "array",
+              "columnComplex": [
+                {
+                  "id": "code",
+                  "name": "返回状态码",
+                  "type": "integer",
+                  "specs": {
+                    "min": 0,
+                    "max": 999999
+                  }
+                },
+                {
+                  "id": "message",
+                  "name": "状态描述",
+                  "type": "string"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "queryCameraAIByCameraId",
+      "name": "查询摄像头AI应用",
+      "type": "management",
+      "parameters": [
+        {
+          "id": "cameraIdList",
+          "name": "摄像头ID列表",
+          "type": "array",
+          "required": true,
+          "columnSimple": {
+            "type": "string"
+          }
+        }
+      ],
+      "output": [
+        {
+          "id": "cameraAIList",
+          "name": "摄像头AI应用列表",
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "channelId",
+              "name": "通道id",
+              "type": "string"
+            },
+            {
+              "id": "cameraId",
+              "name": "摄像头ID",
+              "type": "string"
+            },
+            {
+              "id": "cameraUrl",
+              "name": "摄像头url",
+              "type": "string"
+            },
+            {
+              "id": "modelInfoList",
+              "name": "模型信息列表",
+              "type": "array",
+              "columnComplex": [
+                {
+                  "id": "modelId",
+                  "name": "模型id",
+                  "type": "string"
+                },
+                {
+                  "id": "detectionAreaIdList",
+                  "name": "检测区域ID列表",
+                  "type": "array",
+                  "columnSimple": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "id": "function",
+                  "name": "模型实现功能",
+                  "type": "string"
+                },
+                {
+                  "id": "status",
+                  "name": "运行状态",
+                  "type": "integer",
+                  "specs": {
+                    "optional": [
+                      {
+                        "value": 0,
+                        "desc": "未开启"
+                      },
+                      {
+                        "value": 1,
+                        "desc": "开启"
+                      },
+                      {
+                        "value": 2,
+                        "desc": "开启异常"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "queryCamerAIByCameraIdAndModelId",
+      "name": "查询摄像头AI应用模型",
+      "type": "management",
+      "parameters": [
+        {
+          "id": "cameraAIList",
+          "name": "摄像头AI应用列表",
+          "type": "array",
+          "required": true,
+          "columnComplex": [
+            {
+              "id": "cameraId",
+              "name": "摄像头ID",
+              "type": "string",
+              "required": true
+            },
+            {
+              "id": "modelInfoList",
+              "name": "模型ID列表",
+              "type": "array",
+              "required": true,
+              "columnSimple": {
+                "type": "string"
+              }
+            }
+          ]
+        }
+      ],
+      "output": [
+        {
+          "id": "cameraAIList",
+          "name": "摄像头AI应用列表",
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "channelId",
+              "name": "通道id",
+              "type": "string"
+            },
+            {
+              "id": "cameraId",
+              "name": "摄像头ID",
+              "type": "string"
+            },
+            {
+              "id": "cameraUrl",
+              "name": "摄像头url",
+              "type": "string"
+            },
+            {
+              "id": "modelInfoList",
+              "name": "模型ID列表",
+              "type": "array",
+              "columnComplex": [
+                {
+                  "id": "modelId",
+                  "name": "模型id",
+                  "type": "string"
+                },
+                {
+                  "id": "detectionAreaIdList",
+                  "name": "检测区域ID列表",
+                  "type": "array",
+                  "columnSimple": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "id": "function",
+                  "name": "模型实现功能",
+                  "type": "string"
+                },
+                {
+                  "id": "status",
+                  "name": "运行状态",
+                  "type": "integer",
+                  "specs": {
+                    "optional": [
+                      {
+                        "value": 0,
+                        "desc": "未开启"
+                      },
+                      {
+                        "value": 1,
+                        "desc": "开启"
+                      },
+                      {
+                        "value": 2,
+                        "desc": "开启异常"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "queryCameraAI",
+      "name": "查询所有摄像头AI应用",
+      "type": "management",
+      "parameters": [],
+      "output": [
+        {
+          "id": "cameraAIList",
+          "name": "摄像头AI应用列表",
+          "type": "array",
+          "columnComplex": [
+            {
+              "id": "channelId",
+              "name": "通道id",
+              "type": "string"
+            },
+            {
+              "id": "cameraId",
+              "name": "摄像头ID",
+              "type": "string"
+            },
+            {
+              "id": "cameraUrl",
+              "name": "摄像头url",
+              "type": "string"
+            },
+            {
+              "id": "modelInfoList",
+              "name": "模型ID列表",
+              "type": "array",
+              "columnComplex": [
+                {
+                  "id": "modelId",
+                  "name": "模型id",
+                  "type": "string"
+                },
+                {
+                  "id": "detectionAreaIdList",
+                  "name": "检测区域ID列表",
+                  "type": "array",
+                  "columnSimple": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "id": "function",
+                  "name": "模型实现功能",
+                  "type": "string"
+                },
+                {
+                  "id": "status",
+                  "name": "运行状态",
+                  "type": "integer",
+                  "specs": {
+                    "optional": [
+                      {
+                        "value": 0,
+                        "desc": "未开启"
+                      },
+                      {
+                        "value": 1,
+                        "desc": "开启"
+                      },
+                      {
+                        "value": 2,
+                        "desc": "开启异常"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

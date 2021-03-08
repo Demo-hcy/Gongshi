@@ -24,13 +24,13 @@ class DeviceController(BaseController):
         """
         pub_topic, sub_topic = self.build_topic(device, 'property', 'report')
         params = {}
-        for property in properties:
+        for x in properties:
             if not is_validate:
-                params[property.id] = property.v
-            elif self.validate_data(property, property.v):
-                params[property.id] = property.v
+                params[x.id] = x.v
+            elif self.validate_data(x, x.v):
+                params[x.id] = x.v
             else:
-                msg = f'上报的{property.id}属性，数据校验失败'
+                msg = f'上报的{x.id}属性，数据校验失败'
                 logger_error_debug(msg)
                 return ResultData(False, msg)
         payload = {"params": params}
@@ -91,9 +91,7 @@ class DeviceController(BaseController):
             msg = f'配置的salt长度错误，应在6-32个字符以内'
             logger_error_debug(msg)
             return ResultData(False, msg)
-        md5_str = md5(device.productId + salt + device.deviceId)
-        sha512_str = sha512('7gbox3' + md5_str).hexdigest()
-        signature = base64.encodestring(sha512_str)
+        signature = self.gen_signature(device, salt)
         pub_topic, sub_topic = self.build_topic(device, 'online')
         params = {'salt': salt, 'signature': signature}
         payload = {"params": params}
@@ -135,7 +133,7 @@ class DeviceController(BaseController):
 
     def read_listen(self,
                     device: Device,
-                    properties: Optional[List[BaseProperty]] = None,
+                    properties: List[BaseProperty] = None,
                     is_reply: bool = False,
                     code: int = 0,
                     is_parsed: bool = False) -> ResultData:
@@ -147,17 +145,20 @@ class DeviceController(BaseController):
         :param code: 响应的结果，参见常量const.CODE_INFO
         :return: 返回监听成功与否, 返回的消息内容
         """
-        propertie_list = [property.id for property in properties]
-        logger.info(f'开始监听属性读取：{propertie_list}')
+        if not properties:
+            property_list = '全部属性'
+        else:
+            property_list = [x.id for x in properties]
+        logger.info(f'开始监听属性读取：{property_list}')
         pub_topic, sub_topic = self.build_topic(device, 'property', 'read')
-        expr = {property: {} for property in propertie_list} if properties else None
+        expr = {x: {} for x in property_list} if properties else None
         r = self.mqtt_client.listen(pub_topic, expr)
-        logger.info(f'结束监听属性读取：{propertie_list}')
+        logger.info(f'结束监听属性读取：{property_list}')
         if is_reply and r.result:
             try:
                 if not properties:
-                    propertie_list = self.parse_msg(r.data_dict).data_dict['properties']
-                    properties = [getattr(device.properties, property) for property in propertie_list]
+                    property_list = self.parse_msg(r.data_dict).data_dict['properties']
+                    properties = [getattr(device.properties, x) for x in property_list]
                 self.read_reply(device, r.data_dict['msgId'], properties, code)
             except ValueError:
                 logger.error('监听到的消息中不包含正确msgId')
@@ -165,7 +166,7 @@ class DeviceController(BaseController):
             r = self.parse_msg(r.data_dict)
         return r
 
-    def read_reply(self, device: Device, msgId: str, properties: Optional[List[BaseProperty]], code: int = 0) -> None:
+    def read_reply(self, device: Device, msgId: str, properties: List[BaseProperty], code: int = 0) -> None:
         """
         响应属性读取
         :param device: 要响应的设备
@@ -173,14 +174,14 @@ class DeviceController(BaseController):
         :param properties: 需要响应的属性列表
         :param code: 响应的结果，参见常量const.CODE_INFO
         """
-        propertie_list = [property.id for property in properties]
-        logger.info(f'响应属性读取：{propertie_list}')
+        property_list = [x.id for x in properties]
+        logger.info(f'响应属性读取：{property_list}')
         pub_topic, sub_topic = self.build_topic(device, 'property', 'read')
         self.mqtt_client.send_reply(sub_topic, msgId, code)
 
     def set_listen(self,
                    device: Device,
-                   properties: Optional[List[BaseProperty]] = None,
+                   properties: List[BaseProperty] = None,
                    is_reply: bool = False,
                    code: int = 0,
                    is_parsed: bool = False) -> ResultData:
@@ -192,17 +193,20 @@ class DeviceController(BaseController):
         :param code: 响应的结果，参见常量const.CODE_INFO
         :return: 返回监听成功与否, 返回的消息内容
         """
-        propertie_list = [property.id for property in properties] if properties else None
-        logger.info(f'开始监听属性设置：{propertie_list}')
+        if not properties:
+            property_list = '全部属性'
+        else:
+            property_list = [x.id for x in properties] if properties else None
+        logger.info(f'开始监听属性设置：{property_list}')
         pub_topic, sub_topic = self.build_topic(device, 'property', 'set')
-        expr = {property: {} for property in propertie_list} if properties else None
+        expr = {x: {} for x in property_list} if properties else None
         r = self.mqtt_client.listen(pub_topic, expr)
-        logger.info(f'结束监听属性设置：{propertie_list}')
+        logger.info(f'结束监听属性设置：{property_list}')
         if is_reply and r.result:
             try:
                 if not properties:
-                    propertie_list = self.parse_msg(r.data_dict).data_dict['properties']
-                    properties = [getattr(device.properties, property) for property in propertie_list]
+                    property_list = self.parse_msg(r.data_dict).data_dict['properties']
+                    properties = [getattr(device.properties, x) for x in property_list]
                 self.set_reply(device, r.data_dict['msgId'], properties, code)
             except ValueError:
                 logger.error('监听到的消息中不包含正确msgId')
@@ -210,7 +214,7 @@ class DeviceController(BaseController):
             r = self.parse_msg(r.data_dict)
         return r
 
-    def set_reply(self, device: Device, msgId: str, properties: Optional[List[BaseProperty]], code: int = 0) -> None:
+    def set_reply(self, device: Device, msgId: str, properties: List[BaseProperty], code: int = 0) -> None:
         """
         响应属性设置
         :param device: 要响应的设备
@@ -218,8 +222,8 @@ class DeviceController(BaseController):
         :param properties: 需要响应的属性列表
         :param code: 响应的结果，参见常量const.CODE_INFO
         """
-        propertie_list = [property.id for property in properties]
-        logger.info(f'响应属性设置：{propertie_list}')
+        property_list = [x.id for x in properties]
+        logger.info(f'响应属性设置：{property_list}')
         pub_topic, sub_topic = self.build_topic(device, 'property', 'set')
         self.mqtt_client.send_reply(sub_topic, msgId, code)
 

@@ -1,0 +1,124 @@
+{
+  "msgId": "57872595",
+  "timestamp": 1611993725051,
+  "code": 0,
+  "message": "qjBoxOpcodeSucess",
+  "data": {
+    "sn": "03846600411",
+    "model": "SmartBox",
+    "online": true,
+    "mode": "auto",
+    "networkInfo": {
+      "networkType": "wired",
+      "wirelessSupport": "none",
+      "networkAvailable": false,
+      "ip": "192.168.54.17",
+      "gateway": "192.168.54.1",
+      "mask": "255.255.255.0",
+      "mac": "00:50:c2:45:26:d6"
+    },
+    "ntpInfo": {
+      "ntpStatus": true,
+      "ntpHostList": [
+        "ntp.aliyun.com"
+      ]
+    },
+    "upTime": 1611991477.0,
+    "time": "2021-01-30 16:02:03",
+    "hwInfo": {
+      "cpuUsed": 71,
+      "memUsed": 39,
+      "hdUsed": 6,
+      "temperature": 36
+    },
+    "logHost": "192.168.54.17",
+    "configureMode": "active",
+    "version": {
+      "firmwareVersion": "V2.0.0_20201202134625",
+      "appVersion": "V2.0.0-20210129183948-C-A"
+    },
+    "mqttInfo": {
+      "host": "192.168.49.96",
+      "port": 1883,
+      "userName": "mosquitto",
+      "passwd": "tN9NQe#fph"
+    },
+    "ruleList": {},
+    "subDevList": {
+      "subDevs": [
+        {
+          "devId": "1700009",
+          "devType": "Power",
+          "productId": "S2_7G_GDH",
+          "setting": "{\"rs485Addr\": 1, \"rs485Port\": 4}"
+        },
+        {
+          "devId": "1700013",
+          "devType": "SOSOnvif",
+          "productId": "S8_HK_DSPEA22F",
+          "setting": "{\"ip\": \"192.168.52.161\", \"httpPort\": 80, \"onvifUser\": \"admin\", \"onvifPassword\": \"Admin@123\"}"
+        },
+        {
+          "devId": "1700003",
+          "devType": "AI",
+          "productId": "S9_7G_AI",
+          "setting": "{}"
+        },
+        {
+          "devId": "1700015",
+          "devType": "IPCOnvif",
+          "productId": "S5_DH_HFS8849ZMVSLED",
+          "setting": "{\"onvifUser\": \"admin\", \"httpPort\": 80, \"ip\": \"192.168.14.12\", \"onvifPassword\": \"admin123\"}"
+        },
+        {
+          "devId": "1700008",
+          "devType": "Trafficscreen",
+          "productId": "S3_DH_ITSXS170127RGAB",
+          "setting": "{\"ip\": \"192.168.54.70\"}"
+        },
+        {
+          "devId": "1700002",
+          "devType": "Inforscreen",
+          "productId": "S3_KLT_C4",
+          "setting": "{\"ip\": \"192.168.54.112\"}"
+        },
+        {
+          "devId": "1700010",
+          "devType": "Inforscreen",
+          "productId": "S3_KLT_A35",
+          "setting": "{\"ip\": \"192.168.54.113\"}"
+        },
+        {
+          "devId": "1700005",
+          "devType": "IPCOnvif",
+          "productId": "S5_DH_SD6A9233XAHNT",
+          "setting": "{\"onvifUser\": \"admin\", \"httpPort\": 80, \"ip\": \"192.168.54.65\", \"onvifPassword\": \"admin1234\"}"
+        },
+        {
+          "devId": "1700006",
+          "devType": "Locker",
+          "productId": "S8_RLY_RUILONJGS869",
+          "setting": "{\"rs485Addr\": \"1\", \"rs485Port\": 2}"
+        },
+        {
+          "devId": "1700001",
+          "devType": "Lamp",
+          "productId": "S6_YM_1031LRKCT",
+          "setting": "{\"rs485Addr\": \"160000003066\", \"rs485Port\": 1}"
+        },
+        {
+          "devId": "1700014",
+          "devType": "Sensor",
+          "productId": "S7_FRT_RDM305",
+          "setting": "{\"rs485Addr\": \"48\", \"rs485Port\": 3}"
+        },
+        {
+          "devId": "1700004",
+          "devType": "Brocast",
+          "productId": "S4_7G_SPEAKER",
+          "setting": "{}"
+        }
+      ]
+    }
+  }
+}

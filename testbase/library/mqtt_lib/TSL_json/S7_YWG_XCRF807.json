@@ -1,0 +1,173 @@
+{
+  "productId": "S7_YWG_XCRF807",
+  "productName": "远望谷RFID读卡器",
+  "properties": [
+    {
+      "id": "online",
+      "name": "离线在线",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "optional": [
+          {
+            "value": 0,
+            "desc": "离线"
+          },
+          {
+            "value": 1,
+            "desc": "在线"
+          }
+        ]
+      }
+    },
+    {
+      "id": "mode",
+      "name": "控制模式",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "specs": {
+        "optional": [
+          {
+            "value": "manual",
+            "desc": "手动"
+          },
+          {
+            "value": "auto",
+            "desc": "自动"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sn",
+      "name": "设备sn",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "id": "model",
+      "name": "RFID型号",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "id": "antennaPort",
+      "name": "天线端口号",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "specs": {}
+    },
+    {
+      "id": "mac",
+      "name": "MAC地址",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "id": "labelFiltrationTime",
+      "name": "标签过滤时间",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "id": "netInfo",
+      "name": "以太网信息",
+      "accessMode": "ro",
+      "required": true,
+      "type": "array",
+      "columnComplex": [
+        {
+          "id": "ip",
+          "name": "ip地址",
+          "required": true,
+          "type": "string",
+          "specs": {}
+        },
+        {
+          "id": "mask",
+          "name": "掩码",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string",
+          "specs": {}
+        },
+        {
+          "id": "gateway",
+          "name": "网关",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string",
+          "specs": {}
+        }
+      ]
+    },
+    {
+      "id": "port",
+      "name": "端口号",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "id": "antennaPortPower",
+      "name": "端口功率",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "specs": {}
+    }
+  ],
+  "events": [
+    {
+      "id": "userData",
+      "name": "rfid读取告警",
+      "parameters": [
+        {
+          "id": "data",
+          "name": "读取类型",
+          "type": "string",
+          "specs": {}
+        },
+        {
+          "id": "labelTimes",
+          "name": "时间戳",
+          "type": "integer",
+          "specs": {}
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "id": "switchMode",
+      "name": "切换控制模式",
+      "parameters": [
+        {
+          "id": "mode",
+          "name": "控制模式",
+          "required": true,
+          "type": "string",
+          "specs": {
+            "optional": [
+              {
+                "value": "manual",
+                "desc": "手动"
+              },
+              {
+                "value": "auto",
+                "desc": "自动"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

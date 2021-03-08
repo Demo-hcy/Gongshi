@@ -1,0 +1,479 @@
+{
+  "productId": "S2_SFQ_KQI3SZK",
+  "productName": "赛飞奇断路器",
+  "properties": [
+    {
+      "id": "model",
+      "name": "设备型号",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "id": "sn",
+      "name": "设备标识符",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "id": "mode",
+      "name": "控制模式",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "specs": {
+        "optional": [
+          {
+            "value": "auto",
+            "desc": "自动模式"
+          },
+          {
+            "value": "manual",
+            "desc": "手动模式"
+          }
+        ]
+      }
+    },
+    {
+      "id": "subDevCount",
+      "name": "连接子设备数量",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 0,
+        "max": 8
+      }
+    },
+    {
+      "id": "rs485Port",
+      "name": "485端口",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 1,
+        "max": 8
+      }
+    },
+    {
+      "id": "rs485Addr",
+      "name": "设备地址",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "id": "rs485Baund",
+      "name": "波特率",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "min": 1200,
+        "max": 19200
+      }
+    },
+    {
+      "id": "rs485DataBit",
+      "name": "数据位",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "optional": [
+          {
+            "value": 6,
+            "desc": "6数据位"
+          },
+          {
+            "value": 7,
+            "desc": "7数据位"
+          },
+          {
+            "value": 8,
+            "desc": "8数据位"
+          }
+        ]
+      }
+    },
+    {
+      "id": "rs485Parity",
+      "name": "校验位",
+      "accessMode": "ro",
+      "required": true,
+      "type": "string",
+      "specs": {
+        "optional": [
+          {
+            "value": "N",
+            "desc": "无校验"
+          },
+          {
+            "value": "E",
+            "desc": "偶校验"
+          },
+          {
+            "value": "O",
+            "desc": "奇校验"
+          }
+        ]
+      }
+    },
+    {
+      "id": "rs485StopBit",
+      "name": "停止位",
+      "accessMode": "ro",
+      "required": true,
+      "type": "integer",
+      "specs": {
+        "optional": [
+          {
+            "value": 1,
+            "desc": "1停止位"
+          },
+          {
+            "value": 2,
+            "desc": "2停止位"
+          }
+        ]
+      }
+    },
+    {
+      "id": "subDevList",
+      "name": "子设备列表",
+      "accessMode": "ro",
+      "required": true,
+      "type": "array",
+      "columnComplex": [
+        {
+          "id": "channelId",
+          "name": "通道号",
+          "accessMode": "ro",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "min": 1,
+            "max": 10,
+            "step": 1
+          }
+        },
+        {
+          "id": "online",
+          "name": "通信状态",
+          "accessMode": "ro",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "optional": [
+              {
+                "value": 1,
+                "desc": "设备在线"
+              },
+              {
+                "value": 0,
+                "desc": "设备离线"
+              }
+            ]
+          }
+        },
+        {
+          "id": "onOff",
+          "name": "开关状态",
+          "accessMode": "ro",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "optional": [
+              {
+                "value": 1,
+                "desc": "合闸"
+              },
+              {
+                "value": 0,
+                "desc": "分闸"
+              }
+            ]
+          }
+        },
+        {
+          "id": "overCurrentStatus",
+          "name": "发生过流保护",
+          "accessMode": "ro",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "optional": [
+              {
+                "value": 1,
+                "desc": "是"
+              },
+              {
+                "value": 0,
+                "desc": "否"
+              }
+            ]
+          }
+        },
+        {
+          "id": "overVoltageStatus",
+          "name": "发生过压保护",
+          "accessMode": "ro",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "optional": [
+              {
+                "value": 1,
+                "desc": "是"
+              },
+              {
+                "value": 0,
+                "desc": "否"
+              }
+            ]
+          }
+        },
+        {
+          "id": "underVoltageStatus",
+          "name": "发生欠压保护",
+          "accessMode": "ro",
+          "required": false,
+          "type": "integer",
+          "specs": {
+            "optional": [
+              {
+                "value": 1,
+                "desc": "是"
+              },
+              {
+                "value": 0,
+                "desc": "否"
+              }
+            ]
+          }
+        },
+        {
+          "id": "overPowerStatus",
+          "name": "发生过载保护",
+          "accessMode": "ro",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "optional": [
+              {
+                "value": 1,
+                "desc": "是"
+              },
+              {
+                "value": 0,
+                "desc": "否"
+              }
+            ]
+          }
+        },
+        {
+          "id": "batteryExhausted",
+          "name": "电量用完",
+          "accessMode": "ro",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "optional": [
+              {
+                "value": 1,
+                "desc": "是"
+              },
+              {
+                "value": 0,
+                "desc": "否"
+              }
+            ]
+          }
+        },
+        {
+          "id": "overTempretureStatus",
+          "name": "发生过温保护",
+          "accessMode": "ro",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "optional": [
+              {
+                "value": 1,
+                "desc": "是"
+              },
+              {
+                "value": 0,
+                "desc": "否"
+              }
+            ]
+          }
+        },
+        {
+          "id": "shortCircuitStatus",
+          "name": "发生短路保护",
+          "accessMode": "ro",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "optional": [
+              {
+                "value": 1,
+                "desc": "是"
+              },
+              {
+                "value": 0,
+                "desc": "否"
+              }
+            ]
+          }
+        },
+        {
+          "id": "leakageStatus",
+          "name": "发生漏电保护",
+          "accessMode": "ro",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "optional": [
+              {
+                "value": 1,
+                "desc": "是"
+              },
+              {
+                "value": 0,
+                "desc": "否"
+              }
+            ]
+          }
+        },
+        {
+          "id": "current",
+          "name": "电流有效值",
+          "accessMode": "ro",
+          "required": true,
+          "type": "number",
+          "specs": {
+            "min": 0,
+            "max": 10000,
+            "unit": "mA",
+            "unitName": "毫安",
+            "step": 1
+          }
+        },
+        {
+          "id": "voltage",
+          "name": "电压有效值",
+          "accessMode": "ro",
+          "required": true,
+          "type": "number",
+          "specs": {
+            "min": 0,
+            "max": 2800,
+            "unit": "mV",
+            "unitName": "毫伏",
+            "step": 1
+          }
+        },
+        {
+          "id": "leakage",
+          "name": "漏电有效值",
+          "accessMode": "ro",
+          "required": true,
+          "type": "number",
+          "specs": {
+            "min": 0,
+            "max": 10000,
+            "unit": "mA",
+            "unitName": "毫安",
+            "step": 1
+          }
+        },
+        {
+          "id": "storedTotalBattery",
+          "name": "保存的总电量",
+          "accessMode": "ro",
+          "required": true,
+          "type": "number",
+          "specs": {
+            "min": 0,
+            "max": 65535,
+            "unit": "W.h",
+            "unitName": "瓦时",
+            "step": 1
+          }
+        }
+      ]
+    }
+  ],
+  "events": [],
+  "services": [
+    {
+      "id": "setOnOff",
+      "name": "设置合分闸",
+      "type": "business",
+      "parameters": [
+        {
+          "id": "onOff",
+          "name": "合分闸状态",
+          "accessMode": "ro",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "optional": [
+              {
+                "value": 0,
+                "desc": "分闸"
+              },
+              {
+                "value": 1,
+                "desc": "合闸"
+              }
+            ]
+          }
+        },
+        {
+          "id": "channelId",
+          "name": "通道号",
+          "accessMode": "ro",
+          "required": true,
+          "type": "integer",
+          "specs": {
+            "min": 1,
+            "max": 8
+          }
+        }
+      ],
+      "output": []
+    },
+    {
+      "id": "switchMode",
+      "name": "切换模式",
+      "type": "management",
+      "parameters": [
+        {
+          "id": "mode",
+          "name": "模式",
+          "accessMode": "ro",
+          "required": true,
+          "type": "string",
+          "specs": {
+            "optional": [
+              {
+                "value": "manual",
+                "desc": "手动"
+              },
+              {
+                "value": "auto",
+                "desc": "自动"
+              }
+            ]
+          }
+        }
+      ],
+      "output": []
+    }
+  ]
+}

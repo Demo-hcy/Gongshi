@@ -145,3 +145,5 @@ print('*' * 25, '解析数据如下', '*' * 25)
 print('服务调用响应数据')
 pprint(r.data_dict)
 pprint(platform.check_property_data)
+
+

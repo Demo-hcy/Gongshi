@@ -129,13 +129,16 @@ def str_format(val: str, is_first_upper: bool = True) -> str:
     """
     去除首尾空格，将-转为_
     :param val: 待处理的字符串
-    :param is_first_upper: 待处理的字符串
+    :param is_first_upper: 是否首字母大写
     :return: 返回处理后的字符串
     """
+    s = val.strip()
     if is_first_upper:
-        s = first_upper(val.strip())
-    else:
-        s = val.strip()
+        s = first_upper(s)
+    import keyword
+    for x in keyword.kwlist:
+        if s == x:
+            s = x + '_'
     s = s.replace('-', '_')
     s = s.replace('.', '_')
     s = s.replace(' ', '')
